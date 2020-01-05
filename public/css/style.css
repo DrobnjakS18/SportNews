@@ -371,7 +371,7 @@ blockquote.pull-left {
     border-radius: 2px;
     padding: 15px 30px;
     font-weight: 700;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     color: #fff;
     transition: 350ms;
 }

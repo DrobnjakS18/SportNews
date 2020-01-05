@@ -161,7 +161,7 @@
                         <a class="nav-link username-button" href="{{route('author')}}">
                             {{ Auth::user()->name }}
                         </a>
-                            <a class="nav-link register-button" href="{{ route('logout') }}"
+                            <a class="nav-link register-button" href="#"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Logout</a>
 
