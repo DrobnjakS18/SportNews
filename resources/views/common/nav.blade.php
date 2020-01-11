@@ -152,24 +152,24 @@
 {{--                    <a href="#">--}}
 {{--                        <img src="{{asset('images/news/ad-pro.png')}}" class="img-fluid" alt="banner-ads">--}}
 {{--                    </a>--}}
-                    @guest
-                        <a class="nav-link login-button mr-5 mr-lg-4" href="{{ route('login') }}">Log in</a>
-                        @if (Route::has('register'))
-                            <a class="nav-link register-button" href="{{route('register')}}">Sign up</a>
-                        @endif
-                    @else
+                    @if(Auth::check())
+
                         <a class="nav-link username-button" href="{{route('author')}}">
                             {{ Auth::user()->name }}
                         </a>
-                            <a class="nav-link register-button" href="#"
-                               onclick="event.preventDefault();
+                        <a class="nav-link register-button" href="#"
+                           onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Logout</a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
-                        </div>
-                    @endguest
+                    @else
+                        <a class="nav-link login-button mr-5 mr-lg-4" href="{{ route('login') }}">Log in</a>
+                        @if (Route::has('register'))
+                            <a class="nav-link register-button" href="{{route('register')}}">Sign up</a>
+                        @endif
+                    @endif
                 </div>
             </div>
         </div>
