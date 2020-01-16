@@ -1,3 +1,12 @@
+<ol>
+    <li>Instalirati XAMPP: https://www.apachefriends.org/download.html</li>
+    <li>Otvoriti XAMPP i pokrenuti Apache i MySQL</li>
+    <li>Napraviti .env file i prebaciti sve iz .env.example</li>
+    <li>Otvoriti phpMyAdmin i napraviti bazu sports_news</li>
+    <li>Izvrisiti komandu php artisan migrate:fresh --seed</li>
+    <li>Izvrisiti komandu php artisan key:generate</li>
+</ol>
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
