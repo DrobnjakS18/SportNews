@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9574d27d-6f08-4da0-b234-801fccad2c35" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sports-news.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sports-news.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/common/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/common/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/common/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/common/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +133,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/projects/website-unlimited3d" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -136,16 +144,16 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\sports-news\public" />
+      <recent name="C:\xampp\htdocs\sports-news\public\js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\SportNews\database\seeds" />
       <recent name="C:\xampp\htdocs\sports-news\app\Models" />
       <recent name="C:\xampp\htdocs\sports-news\resources\views\errors" />
       <recent name="C:\xampp\htdocs\sports-news\public\plugins" />
       <recent name="C:\xampp\htdocs\sports-news\public" />
-      <recent name="C:\xampp\htdocs\sports-news\resources\views\pages" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\sports-news\public" />
-      <recent name="C:\xampp\htdocs\sports-news\public\js" />
     </key>
   </component>
   <component name="RunManager">
@@ -190,7 +198,7 @@
       <workItem from="1578472425466" duration="25000" />
       <workItem from="1578753831509" duration="8970000" />
       <workItem from="1579171186149" duration="228000" />
-      <workItem from="1579171442489" duration="872000" />
+      <workItem from="1579171442489" duration="11181000" />
     </task>
     <servers />
   </component>
@@ -211,6 +219,18 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1579185943054">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579185943054" />
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1579177851207">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1579177851207" />
+    <state x="746" y="335" key="NewPhpClassDialog" timestamp="1579185762641">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="746" y="335" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579185762641" />
     <state x="655" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1579171443632">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

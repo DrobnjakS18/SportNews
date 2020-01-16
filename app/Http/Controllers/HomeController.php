@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\CategoryService;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -31,9 +32,9 @@ class HomeController extends Controller
         return view('pages.single_post');
     }
 
-    public function category()
+    public function category($category)
     {
-        return view('pages.category');
+        return view('pages.category')->with(compact('category'));
     }
 
     public function author()

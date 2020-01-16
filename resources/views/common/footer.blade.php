@@ -15,7 +15,7 @@
                 </ul>
 
                 <div class="copyright-text text-center">
-                    <p class="mb-0">© All Copyright Reserved to - <a href="https://themefisher.com/" target="_blank">Themefisher</a></p>
+                    <p class="mb-0">© All Copyright Reserved to - <span class="text-light">Stefan Drobnjak</span></p>
                 </div>
             </div>
 

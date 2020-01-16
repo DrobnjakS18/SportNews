@@ -193,13 +193,22 @@
                         <ul class="navbar-nav mr-auto">
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link" href="{{route('home')}}">
-                                    Home
-                                </a>
-{{--                                <div class="dropdown-menu" >--}}
-{{--                                    <a class="dropdown-item" href="index-2.html" >Home 1</a>--}}
-{{--                                    <a class="dropdown-item" href="index-3.html">Home 2</a>--}}
-{{--                                </div>--}}
+                                <a class="nav-link" href="{{route('home')}}">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="{{route('category','Football')}}">Football</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="{{route('category','Basketball')}}">Basketball</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="{{route('category','Tenis')}}">Tenis</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="{{route('category','AUTOMOTO')}}">Automoto</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="{{route('category', 'ESPORTS')}}">ESPORTS</a>
                             </li>
 
                             <li class="nav-item dropdown">

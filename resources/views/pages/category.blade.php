@@ -2,16 +2,16 @@
 @section('title', 'Sport News - Category')
 
 @section('content')
-
+{{--    {{dd($$category)}}--}}
     <div class="breadcrumb-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index-2.html">Home</a>
+                            <a href="{{route('home')}}">Home</a>
                         </li>
-                        <li>Technology</li>
+                        <li>{{$category}}</li>
                     </ol>
                 </div>
             </div>
@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                     <div class="block category-listing category-style2">
-                        <h3 class="news-title"><span>Technology</span></h3>
+                        <h3 class="news-title"><span>{{$category}}</span></h3>
                         <div class="post-block-wrapper post-list-view clearfix">
                             <div class="row">
                                 <div class="col-md-5 col-sm-6">

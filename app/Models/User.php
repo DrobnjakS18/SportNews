@@ -36,4 +36,12 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     *  Get all posts from user
+     */
+    public function posts()
+    {
+        $this->hasMany('App\Models\Post','user_id');
+    }
 }

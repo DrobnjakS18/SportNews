@@ -308,7 +308,7 @@
                 <div class="py-40"></div>
                 <div class="news-style-two">
                     <h3 class="news-title">
-                        <span>Tech</span>
+                        <span>Football</span>
                     </h3>
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
@@ -523,7 +523,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="block">
                     <h3 class="news-title">
-                        <span>Tour</span>
+                        <span>Tenis</span>
                     </h3>
                     <div class="post-overlay-wrapper clearfix">
                         <div class="post-thumbnail">
@@ -598,7 +598,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="block">
                     <h3 class="news-title">
-                        <span>Game</span>
+                        <span>ESPORTS</span>
                     </h3>
                     <div class="post-overlay-wrapper clearfix">
                         <div class="post-thumbnail">
@@ -673,7 +673,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="block">
                     <h3 class="news-title">
-                        <span>Health</span>
+                        <span>Basketball</span>
                     </h3>
                     <div class="post-overlay-wrapper clearfix">
                         <div class="post-thumbnail">
