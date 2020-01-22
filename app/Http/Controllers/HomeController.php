@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\CategoryService;
+use App\Services\PostService;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,7 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.home');
+        $postService = new PostService();
+
+        $items = $postService::getAllWithCategories();
+
+        return view('pages.home')->with(compact('items'));
     }
 
     public function single()

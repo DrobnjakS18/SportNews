@@ -16,7 +16,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','profile_picture'
     ];
 
     /**
@@ -43,5 +43,13 @@ class User extends Authenticatable implements MustVerifyEmail
     public function posts()
     {
         $this->hasMany('App\Models\Post','user_id');
+    }
+
+    /**
+     *  Get the role of the user
+     */
+    public function role()
+    {
+        return $this->belongsTo(Role::class,'role_id','id');
     }
 }

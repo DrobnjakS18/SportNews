@@ -9,81 +9,85 @@
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                     <div class="single-post">
                         <div class="post-header mb-5">
-                            <a class="post-category" href="post-category-1.html">Health</a>
+                            <a class="post-category" href="#">{{$item->category->name}}</a>
                             <h2 class="post-title">
-                                First Look At Self-Portrait's Autumn Collection
+                                {{$item->title}}
                             </h2>
-                            <p>It was a cheerful prospect. I asked Perry what he thought about it; but he only shrugged his shoulders and continued a longwinded prayer he had been at for some time. He was wont to say that the only redeeming feature of our captivity was the ample time it gave him for the improvisation of prayers</p>
+                            <p>{{$item->content}}</p>
                         </div>
-                        <div class="post-body">
-                            <div class="post-featured-image">
-                                <img src="{{asset('images/news/img-2.jpg')}}" class="img-fluid" alt="featured-image">
-                            </div>
-                            <div class="entry-content">
-                                <p>
-                                    It was a cheerful prospect. I asked Perry what he thought about it; but he only shrugged his shoulders and continued a longwinded prayer he had been at for some time. He was wont to say that the only redeeming feature of our captivity was the ample time it gave him for the improvisation of prayers—it was becoming an obsession with him. The Sagoths had begun to take notice of his habit of declaiming throughout entire marches. One of them asked him what he was saying—to whom he was talking. The question gave me an idea, so I answered quickly before Perry could say anything.
-                                </p>
-                                <h2>Perfect design & code delivered to you</h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Repellat sapiente neque iusto praesentium adipisci itaque error, commodi laborum doloremque. Esse?
-                                </p>
-                                <div class="media mb-4 single-media">
-                                    <img src="{{asset('images/news/img-1.jpg')}}" alt="post-ads" class="img-fluid mr-4">
-                                    <div class="media-body">
-                                        <p>
-                                            Oblique facilisi vix ei, quo ignota appetere lucilius at. Apeirian voluptatibus ius ei, an periculis imperdiet consequat sea. His ea everti placerat. Ad mea utroque convenire, an quo reque aperiam, has et unum cibo adipiscing. Brute instructior te vix, consequat definitiones conclusionemque et usu, et per idque quaerendum. Id pro ridens appareat, vim in verear pertinacia.
-                                        </p>
-                                    </div>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde cum delectus exercitationem
-                                    natus quidem enim error suscipit. Iure cupiditate nobis quaerat consectetur! Vero aliquam,
-                                    amet ipsum ullam reiciendis nostrum voluptate accusantium provident ut blanditiis incidunt.
-                                </p>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ab ratione animi nobis in et consequatur
-                                    earum modi repellendus, qui, non debitis pariatur tempora consequuntur!
-                                </p>
-                            </div>
 
-                            <div class="share-block  d-flex justify-content-between align-items-center border-top border-bottom mt-5">
-                                <div class="post-tags">
-                                    <span>Tags</span>
-                                    <a href="post-category-2.html">Health</a>
-                                    <a href="post-category-2.html">Game</a>
-                                    <a href="post-category-2.html">Tour</a>
-                                </div>
 
-                                <ul class="share-icons list-unstyled ">
-                                    <li class="facebook">
-                                        <a href="#">
-                                            <i class="fa fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li class="twitter">
-                                        <a href="#">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li class="gplus">
-                                        <a href="#">
-                                            <i class="fa fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li class="pinterest">
-                                        <a href="#">
-                                            <i class="fa fa-pinterest"></i>
-                                        </a>
-                                    </li>
-                                    <li class="reddit">
-                                        <a href="#">
-                                            <i class="fa fa-reddit-alien"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+{{--                        <div class="post-body">--}}
+{{--                            <div class="post-featured-image">--}}
+{{--                                <img src="{{asset('images/news/img-2.jpg')}}" class="img-fluid" alt="featured-image">--}}
+{{--                            </div>--}}
+{{--                            <div class="entry-content">--}}
+{{--                                <p>--}}
+{{--                                    It was a cheerful prospect. I asked Perry what he thought about it; but he only shrugged his shoulders and continued a longwinded prayer he had been at for some time. He was wont to say that the only redeeming feature of our captivity was the ample time it gave him for the improvisation of prayers—it was becoming an obsession with him. The Sagoths had begun to take notice of his habit of declaiming throughout entire marches. One of them asked him what he was saying—to whom he was talking. The question gave me an idea, so I answered quickly before Perry could say anything.--}}
+{{--                                </p>--}}
+{{--                                <h2>Perfect design & code delivered to you</h2>--}}
+{{--                                <p>--}}
+{{--                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.--}}
+{{--                                    Repellat sapiente neque iusto praesentium adipisci itaque error, commodi laborum doloremque. Esse?--}}
+{{--                                </p>--}}
+{{--                                <div class="media mb-4 single-media">--}}
+{{--                                    <img src="{{asset('images/news/img-1.jpg')}}" alt="post-ads" class="img-fluid mr-4">--}}
+{{--                                    <div class="media-body">--}}
+{{--                                        <p>--}}
+{{--                                            Oblique facilisi vix ei, quo ignota appetere lucilius at. Apeirian voluptatibus ius ei, an periculis imperdiet consequat sea. His ea everti placerat. Ad mea utroque convenire, an quo reque aperiam, has et unum cibo adipiscing. Brute instructior te vix, consequat definitiones conclusionemque et usu, et per idque quaerendum. Id pro ridens appareat, vim in verear pertinacia.--}}
+{{--                                        </p>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <p>--}}
+{{--                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde cum delectus exercitationem--}}
+{{--                                    natus quidem enim error suscipit. Iure cupiditate nobis quaerat consectetur! Vero aliquam,--}}
+{{--                                    amet ipsum ullam reiciendis nostrum voluptate accusantium provident ut blanditiis incidunt.--}}
+{{--                                </p>--}}
+{{--                                <p>--}}
+{{--                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ab ratione animi nobis in et consequatur--}}
+{{--                                    earum modi repellendus, qui, non debitis pariatur tempora consequuntur!--}}
+{{--                                </p>--}}
+{{--                            </div>--}}
+
+{{--                            <div class="share-block  d-flex justify-content-between align-items-center border-top border-bottom mt-5">--}}
+{{--                                <div class="post-tags">--}}
+{{--                                    <span>Tags</span>--}}
+{{--                                    <a href="post-category-2.html">Health</a>--}}
+{{--                                    <a href="post-category-2.html">Game</a>--}}
+{{--                                    <a href="post-category-2.html">Tour</a>--}}
+{{--                                </div>--}}
+
+{{--                                <ul class="share-icons list-unstyled ">--}}
+{{--                                    <li class="facebook">--}}
+{{--                                        <a href="#">--}}
+{{--                                            <i class="fa fa-facebook"></i>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                    <li class="twitter">--}}
+{{--                                        <a href="#">--}}
+{{--                                            <i class="fa fa-twitter"></i>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                    <li class="gplus">--}}
+{{--                                        <a href="#">--}}
+{{--                                            <i class="fa fa-google-plus"></i>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                    <li class="pinterest">--}}
+{{--                                        <a href="#">--}}
+{{--                                            <i class="fa fa-pinterest"></i>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                    <li class="reddit">--}}
+{{--                                        <a href="#">--}}
+{{--                                            <i class="fa fa-reddit-alien"></i>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+
                     </div>
 
                     <nav class="post-navigation clearfix">
@@ -110,7 +114,7 @@
                             <img src="{{asset('images/news/author-02.jpg')}}" alt="author-image">
                         </div>
                         <div class="author-content">
-                            <h3><a href="author.html">Lint Handson</a></h3>
+                            <h3><a href="author.html">{{$item->user->name}}</a></h3>
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quod molestias delectus illum quisquam.
                                 Quasi iure perferendis suscipit officiis dicta!
                             </p>

@@ -2,71 +2,51 @@
 @section('title', 'Sport News - Home')
 
 @section('content')
-{{--<div class="container">--}}
-{{--    <div class="row justify-content-center">--}}
-{{--        <div class="col-md-8">--}}
-{{--            <div class="card">--}}
-{{--                <div class="card-header">Dashboard</div>--}}
-
-{{--                <div class="card-body">--}}
-{{--                    @if (session('status'))--}}
-{{--                        <div class="alert alert-success" role="alert">--}}
-{{--                            {{ session('status') }}--}}
-{{--                        </div>--}}
-{{--                    @endif--}}
-
-{{--                    You are logged in!--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
-
-
 <div class="py-30"></div>
 
 <section class="featured-posts">
     <div class="container">
         <div class="row no-gutters">
-            <div class="col-md-6 col-xs-12 col-lg-4">
-                <div class="featured-slider mr-md-3 mr-lg-3">
-                    <div class="item" style="background-image:url({{asset('images/news/img-1.jpg')}})">
-                        <div class="post-content">
-                            <a href="#" class="post-cat bg-primary">Entertainment</a>
-                            <h2 class="slider-post-title">
-                                <a href="single-post.html">Here's How To Get Free Pizza On</a>
-                            </h2>
-                            <div class="post-meta mt-2">
-                                <span class="posted-time"><i class="fa fa-clock-o mr-2 text-danger"></i>19 hours ago</span>
-                                <span class="post-author">
-                                    by
-                                    <a href="author.html">Rodinho Summon</a>
-                                </span>
+            @foreach($items as $item)
+                <div class="col-md-6 col-xs-12 col-lg-4">
+                    <div class="featured-slider mr-md-3 mr-lg-3">
+                        <div class="item" style="background-image:url({{asset('images/news/img-1.jpg')}})">
+                            <div class="post-content">
+                                <a href="#" class="post-cat bg-primary">{{$item->category->name}}</a>
+                                <h2 class="slider-post-title">
+                                    <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                </h2>
+                                <div class="post-meta mt-2">
+                                    <span class="posted-time"><i class="fa fa-clock-o mr-2 text-danger"></i>{{$item->created_at->diffForHumans()}}</span>
+                                    <span class="post-author">
+                                        by
+                                        <a href="author.html">{{$item->user->name}}</a>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-md-6 col-xs-12 col-lg-4">
-                <div class="featured-slider mr-lg-3">
-                    <div class="item" style="background-image:url({{asset('images/news/img-2.jpg')}})">
-                        <div class="post-content">
-                            <a href="#" class="post-cat bg-danger">game</a>
-                            <h2 class="slider-post-title">
-                                <a href="single-post.html">Call Of Duty: Black Ops 4 Releasing</a>
-                            </h2>
-                            <div class="post-meta mt-2">
-                                <span class="posted-time"><i class="fa fa-clock-o mr-2 text-danger"></i>19 hours ago</span>
-                                <span class="post-author">
-                                    <span> by </span>
-                                    <a href="author.html">Rodinho Summon</a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+{{--            <div class="col-md-6 col-xs-12 col-lg-4">--}}
+{{--                <div class="featured-slider mr-lg-3">--}}
+{{--                    <div class="item" style="background-image:url({{asset('images/news/img-2.jpg')}})">--}}
+{{--                        <div class="post-content">--}}
+{{--                            <a href="#" class="post-cat bg-danger">game</a>--}}
+{{--                            <h2 class="slider-post-title">--}}
+{{--                                <a href="single-post.html">Call Of Duty: Black Ops 4 Releasing</a>--}}
+{{--                            </h2>--}}
+{{--                            <div class="post-meta mt-2">--}}
+{{--                                <span class="posted-time"><i class="fa fa-clock-o mr-2 text-danger"></i>19 hours ago</span>--}}
+{{--                                <span class="post-author">--}}
+{{--                                    <span> by </span>--}}
+{{--                                    <a href="author.html">Rodinho Summon</a>--}}
+{{--                                </span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
 
             <div class="col-md-12 col-xs-12 col-sm-12 col-lg-4">

@@ -16,6 +16,8 @@ Auth::routes(['verify' => true]);
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/single', 'HomeController@single')->name('single');
+
+Route::get('/post/{id}', 'PostController@show')->name('post');
 Route::get('/categories/{category}', 'HomeController@category')->name('category');
 Route::get('/author', 'HomeController@author')->name('author');
 Route::get('/about', 'HomeController@about')->name('about');

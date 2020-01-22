@@ -21,7 +21,7 @@ class Post extends Model
      */
     public function user()
     {
-        $this->belongsTo('App\Models\User');
+        return $this->belongsTo('App\Models\User');
     }
 
     /**
@@ -29,6 +29,6 @@ class Post extends Model
      */
     public function category()
     {
-        $this->belongsTo('App\Models\Category');
+        return $this->belongsTo('App\Models\Category');
     }
 }
