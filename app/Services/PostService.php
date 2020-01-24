@@ -11,7 +11,12 @@ class PostService
 
     static public function getAllWithCategories()
     {
-        return PostRepository::allWithCategory();
+        $data = PostRepository::allWithCategory();
+
+        $items['all'] = $data;
+        $items['main'] = $data->take(4);
+
+        return (object) $items;
     }
 
     static public function getById($id)

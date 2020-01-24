@@ -1312,6 +1312,7 @@ a.post-category.absolute {
 }
 
 .post-cat:hover {
+    text-decoration: none;
     color: #fff;
 }
 

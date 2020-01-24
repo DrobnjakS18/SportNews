@@ -7,12 +7,13 @@
 <section class="featured-posts">
     <div class="container">
         <div class="row no-gutters">
-            @foreach($items as $item)
+            {{--TAKES FIRST TWO ITEMS--}}
+            @foreach($items->main->take(2) as $item)
                 <div class="col-md-6 col-xs-12 col-lg-4">
                     <div class="featured-slider mr-md-3 mr-lg-3">
-                        <div class="item" style="background-image:url({{asset('images/news/img-1.jpg')}})">
+                        <div class="item" style="background-image:url({{asset('images/news/'.$item->picture)}})">
                             <div class="post-content">
-                                <a href="#" class="post-cat bg-primary">{{$item->category->name}}</a>
+                                <a href="#" class="post-cat" style="background:{{$item->color}}">{{$item->category->name}}</a>
                                 <h2 class="slider-post-title">
                                     <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
                                 </h2>
@@ -20,7 +21,7 @@
                                     <span class="posted-time"><i class="fa fa-clock-o mr-2 text-danger"></i>{{$item->created_at->diffForHumans()}}</span>
                                     <span class="post-author">
                                         by
-                                        <a href="author.html">{{$item->user->name}}</a>
+                                        <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
                                     </span>
                                 </div>
                             </div>
@@ -28,63 +29,29 @@
                     </div>
                 </div>
             @endforeach
-{{--            <div class="col-md-6 col-xs-12 col-lg-4">--}}
-{{--                <div class="featured-slider mr-lg-3">--}}
-{{--                    <div class="item" style="background-image:url({{asset('images/news/img-2.jpg')}})">--}}
-{{--                        <div class="post-content">--}}
-{{--                            <a href="#" class="post-cat bg-danger">game</a>--}}
-{{--                            <h2 class="slider-post-title">--}}
-{{--                                <a href="single-post.html">Call Of Duty: Black Ops 4 Releasing</a>--}}
-{{--                            </h2>--}}
-{{--                            <div class="post-meta mt-2">--}}
-{{--                                <span class="posted-time"><i class="fa fa-clock-o mr-2 text-danger"></i>19 hours ago</span>--}}
-{{--                                <span class="post-author">--}}
-{{--                                    <span> by </span>--}}
-{{--                                    <a href="author.html">Rodinho Summon</a>--}}
-{{--                                </span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
 
             <div class="col-md-12 col-xs-12 col-sm-12 col-lg-4">
                 <div class="row mt-3 mt-lg-0">
-                    <div class="col-lg-12 col-xs-12 col-sm-6 col-md-6">
-                        <div class="post-featured-style" style="background-image:url({{asset('images/news/news-02.jpg')}})">
-                            <div class="post-content">
-                                <a href="#" class="post-cat bg-success">lifestyle</a>
-                                <h2 class="post-title">
-                                    <a href="single-post.html">Healthy diet to keep you healthy and strong</a>
-                                </h2>
-                                <div class="post-meta mt-2">
-                                    <span class="posted-time"><i class="fa fa-clock-o mr-2 text-danger"></i>19 hours ago</span>
-                                    <span class="post-author">
-                                        <span> by </span>
-                                        <a href="author.html">Rodinho Summon</a>
-                                    </span>
+                    {{--TAKES LAST TWO ITEMS--}}
+                    @foreach($items->main->take(-2) as $item)
+                        <div class="col-lg-12 col-xs-12 col-sm-6 col-md-6">
+                            <div class="post-featured-style" style="background-image:url({{asset('images/news/news-02.jpg')}})">
+                                <div class="post-content">
+                                    <a href="#" class="post-cat" style="background:{{$item->color}}">{{$item->category->name}}</a>
+                                    <h2 class="post-title">
+                                        <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                    </h2>
+                                    <div class="post-meta mt-2">
+                                        <span class="posted-time"><i class="fa fa-clock-o mr-2 text-danger"></i>{{$item->created_at->diffForHumans()}}</span>
+                                        <span class="post-author">
+                                            <span> by </span>
+                                                     <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-12 col-xs-12 col-sm-6 col-md-6">
-                        <div class="post-featured-style" style="background-image:url({{asset('images/news/news-04.jpg')}})">
-                            <div class="post-content">
-                                <a href="#" class="post-cat bg-info">travel</a>
-                                <h2 class="post-title">
-                                    <a href="single-post.html">Call Of Duty: Black Ops 4 Releasing</a>
-                                </h2>
-                                <div class="post-meta mt-2">
-                                    <span class="posted-time"><i class="fa fa-clock-o mr-2 text-danger"></i>19 hours ago</span>
-                                    <span class="post-author">
-                                        <span> by </span>
-                                        <a href="author.html">Rodinho Summon</a>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -101,197 +68,123 @@
                         <span>Editor Picks</span>
                     </h3>
                     <div class="news-style-one-slide">
+                    {{--SHOWS TWO IN A SINGLE ROW--}}
                         <div class="item">
-                            <div class="post-block-wrapper clearfix mb-5">
-                                <div class="post-thumbnail">
-                                    <a href="single-post-2.html">
-                                        <img class="img-fluid" src="{{asset('images/news/news-01.jpg')}}" alt="post-image"/>
-                                    </a>
-                                </div>
-                                <div class="post-content">
-                                    <h2 class="post-title mt-3">
-                                        <a href="single-post.html">Ex-Googler warns coding bootcamps are lacking</a>
-                                    </h2>
-                                    <div class="post-meta mb-2">
-                                        <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>5 hours ago</span>
-                                        <span class="post-author">
-                            by
-                            <a href="author.html">Tarnak Sunder</a>
-                        </span>
+                             @foreach($items->all->whereIn('id', [1,2]) as $item)
+                                <div class="post-block-wrapper clearfix @if($loop->first) mb-5 @endif">
+                                    <div class="post-thumbnail">
+                                        <a href="{{route('post',$item->id)}}">
+                                            <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-image"/>
+                                        </a>
                                     </div>
-                                    <p>Suscipit beatae facilis doloribus aliquam sed expedita accusantium itaque assumenda laborum facere aliquid hic.</p>
-                                </div>
-                            </div>
-
-
-                            <div class="post-block-wrapper clearfix mb-5 ">
-                                <div class="post-thumbnail">
-                                    <a href="single-post-2.html">
-                                        <img class="img-fluid" src="{{asset('images/news/news-02.jpg')}}" alt="post-thumbnail"/>
-                                    </a>
-                                </div>
-                                <div class="post-content">
-                                    <h2 class="post-title">
-                                        <a href="single-post.html">Extra Crunch The next service marketplace wave: Vertical </a>
-                                    </h2>
-                                    <div class="post-meta mb-2">
-                                        <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>5 hours ago</span>
-                                        <span class="post-author">
-                            by
-                            <a href="author.html">Tarnak Sunder</a>
-                        </span>
+                                    <div class="post-content">
+                                        <h2 class="post-title mt-3">
+                                            <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                        </h2>
+                                        <div class="post-meta mb-2">
+                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>{{$item->created_at->diffForHumans()}}</span>
+                                            <span class="post-author">
+                                                by
+                                                <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
+                                            </span>
+                                        </div>
+                                        <p>{{substr($item->content,0,100).'...'}}</p>
                                     </div>
-                                    <p>Suscipit beatae facilis doloribus aliquam sed expedita accusantium itaque assumenda laborum facere aliquid hic.</p>
                                 </div>
-                            </div>
+                            @endforeach
+                        </div>
+                        {{--SHOWS TWO IN A SINGLE ROW--}}
+                        <div class="item">
+                            @foreach($items->all->whereIn('id', [3,4]) as $item)
+                                <div class="post-block-wrapper clearfix @if($loop->first) mb-5 @endif">
+                                    <div class="post-thumbnail">
+                                        <a href="{{route('post',$item->id)}}">
+                                            <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-image"/>
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <h2 class="post-title mt-3">
+                                            <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                        </h2>
+                                        <div class="post-meta mb-2">
+                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>{{$item->created_at->diffForHumans()}}</span>
+                                            <span class="post-author">
+                                                by
+                                                <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
+                                            </span>
+                                        </div>
+                                        <p>{{substr($item->content,0,100).'...'}}</p>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
 
-                        <div class="item">
-                            <div class="post-block-wrapper clearfix mb-5">
-                                <div class="post-thumbnail">
-                                    <a href="single-post-2.html">
-                                        <img class="img-fluid" src="{{asset('images/news/news-03.jpg')}}" alt="post-thumbnail"/>
-                                    </a>
-                                </div>
-                                <div class="post-content">
-                                    <h2 class="post-title ">
-                                        <a href="single-post.html">Apple HomePod review: locked in device to start out</a>
-                                    </h2>
-                                    <div class="post-meta mb-2">
-                                        <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>5 hours ago</span>
-                                        <span class="post-author">
-                            by
-                            <a href="author.html">Tarnak Sunder</a>
-                        </span>
-                                    </div>
-                                    <p>Suscipit beatae facilis doloribus aliquam sed expedita accusantium itaque assumenda laborum facere aliquid hic.</p>
-                                </div>
-                            </div>
-
-
-                            <div class="post-block-wrapper clearfix mb-5">
-                                <div class="post-thumbnail">
-                                    <a href="single-post-2.html">
-                                        <img class="img-fluid" src="{{asset('images/news/news-04.jpg')}}" alt="post-thumbnail"/>
-                                    </a>
-                                </div>
-                                <div class="post-content">
-                                    <h2 class="post-title title-lg">
-                                        <a href="single-post.html">Intel’s new smart glasses actually look good</a>
-                                    </h2>
-                                    <div class="post-meta mb-2">
-                                        <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>5 hours ago</span>
-                                        <span class="post-author">
-                            by
-                            <a href="author.html">Tarnak Sunder</a>
-                        </span>
-                                    </div>
-                                    <p>Suscipit beatae facilis doloribus aliquam sed expedita accusantium itaque assumenda laborum facere aliquid Reiciendis.</p>
-
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="item">
-                            <div class="post-block-wrapper clearfix  mb-5">
-                                <div class="post-thumbnail">
-                                    <a href="single-post-2.html">
-                                        <img class="img-fluid" src="{{asset('images/news/news-05.jpg')}}" alt="post-thumbnail"/>
-                                    </a>
-                                </div>
-                                <div class="post-content">
-                                    <h2 class="post-title">
-                                        <a href="single-post.html">Here's How To Get Free Pizza On lets check it out</a>
-                                    </h2>
-                                    <div class="post-meta mb-2">
-                                        <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>5 hours ago</span>
-                                        <span class="post-author">
-                            by
-                            <a href="author.html">Tarnak Sunder</a>
-                        </span>
+                            @foreach($items->all->whereIn('id', [5,6]) as $item)
+                                <div class="post-block-wrapper clearfix @if($loop->first) mb-5 @endif">
+                                    <div class="post-thumbnail">
+                                        <a href="{{route('post',$item->id)}}">
+                                            <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-image"/>
+                                        </a>
                                     </div>
-                                    <p>Suscipit beatae facilis doloribus aliquam sed expedita accusantium itaque assumenda laborum facere aliquid hic.</p>
-
-                                </div>
-                            </div>
-
-
-                            <div class="post-block-wrapper clearfix  mb-5">
-                                <div class="post-thumbnail">
-                                    <a href="single-post-2.html">
-                                        <img class="img-fluid" src="{{asset('images/news/news-06.jpg')}}" alt="post-thumbnail"/>
-                                    </a>
-                                </div>
-                                <div class="post-content">
-                                    <h2 class="post-title">
-                                        <a href="single-post.html">Call Of Duty: Black Ops 4 Releasing</a>
-                                    </h2>
-
-                                    <div class="post-meta mb-2">
-                                        <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>5 hours ago</span>
-                                        <span class="post-author">
-                            by
-                            <a href="author.html">Tarnak Sunder</a>
-                        </span>
+                                    <div class="post-content">
+                                        <h2 class="post-title mt-3">
+                                            <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                        </h2>
+                                        <div class="post-meta mb-2">
+                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>{{$item->created_at->diffForHumans()}}</span>
+                                            <span class="post-author">
+                                                by
+                                                <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
+                                            </span>
+                                        </div>
+                                        <p>{{substr($item->content,0,100).'...'}}</p>
                                     </div>
-                                    <p>Suscipit beatae facilis doloribus aliquam sed expedita accusantium itaque assumenda laborum facere aliquid similique.</p>
-
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
+
+
                         <div class="item">
-                            <div class="post-block-wrapper clearfix  mb-5">
-                                <div class="post-thumbnail">
-                                    <a href="single-post-2.html">
-                                        <img class="img-fluid" src="{{asset('images/news/news-07.jpg')}}" alt="post-thumbnail"/>
-                                    </a>
-                                </div>
-                                <div class="post-content">
-                                    <h2 class="post-title">
-                                        <a href="single-post.html">Your social media apps want to help</a>
-                                    </h2>
-                                    <div class="post-meta mb-2">
-                                        <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>5 hours ago</span>
-                                        <span class="post-author">
-                            by
-                            <a href="author.html">Tarnak Sunder</a>
-                        </span>
+                            @foreach($items->all->whereIn('id', [7,8]) as $item)
+                                <div class="post-block-wrapper clearfix @if($loop->first) mb-5 @endif">
+                                    <div class="post-thumbnail">
+                                        <a href="{{route('post',$item->id)}}">
+                                            <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-image"/>
+                                        </a>
                                     </div>
-                                    <p>Suscipit beatae facilis doloribus aliquam sed expedita accusantium itaque assumenda laborum facere aliquid hic.</p>
-                                </div>
-                            </div>
-
-
-                            <div class="post-block-wrapper clearfix  mb-5">
-                                <div class="post-thumbnail">
-                                    <a href="single-post-2.html">
-                                        <img class="img-fluid" src="{{asset('images/news/news-08.jpg')}}" alt="post-thumbnail"/>
-                                    </a>
-                                </div>
-                                <div class="post-content">
-                                    <h2 class="post-title">
-                                        <a href="single-post.html">PS4 Games Sale: All The PSN Deals</a>
-                                    </h2>
-                                    <div class="post-meta mb-2">
-                                        <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>5 hours ago</span>
-                                        <span class="post-author">
-                            by
-                            <a href="author.html">Tarnak Sunder</a>
-                        </span>
+                                    <div class="post-content">
+                                        <h2 class="post-title mt-3">
+                                            <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                        </h2>
+                                        <div class="post-meta mb-2">
+                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>{{$item->created_at->diffForHumans()}}</span>
+                                            <span class="post-author">
+                                                by
+                                                <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
+                                            </span>
+                                        </div>
+                                        <p>{{substr($item->content,0,100).'...'}}</p>
                                     </div>
-                                    <p>Suscipit beatae facilis doloribus aliquam sed expedita accusantium itaque assumenda laborum facere aliquid Reiciendis.</p>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
+
+
+
+
                     </div>
                 </div>
                 <div class="py-40"></div>
+
                 <div class="news-style-two">
                     <h3 class="news-title">
                         <span>Football</span>
                     </h3>
                     <div class="row">
-                        <div class="col-md-6 col-sm-6">
+                        <div class="col-md-6 col-sm-6 border border-primary">
+
                             <div class="post-block-wrapper clearfix">
                                 <div class="post-thumbnail">
                                     <a href="single-post.html">
@@ -317,9 +210,13 @@
 
                                 </div>
                             </div>
+
                         </div>
+
                         <div class="col-md-6 col-sm-6">
+
                             <div class="post-list-block m-top-0">
+
                                 <div class="post-block-wrapper post-float clearfix">
                                     <div class="post-thumbnail">
                                         <a href="single-post.html">
@@ -336,6 +233,7 @@
                                         </div>
                                     </div>
                                 </div>
+
 
                                 <div class="post-block-wrapper post-float clearfix">
                                     <div class="post-thumbnail">
@@ -354,6 +252,7 @@
                                     </div>
                                 </div>
 
+
                                 <div class="post-block-wrapper post-float clearfix">
                                     <div class="post-thumbnail">
                                         <a href="single-post.html">
@@ -371,6 +270,7 @@
                                     </div>
                                 </div>
 
+
                                 <div class="post-block-wrapper post-float clearfix">
                                     <div class="post-thumbnail">
                                         <a href="single-post.html">
@@ -387,10 +287,14 @@
                                         </div>
                                     </div>
                                 </div>
+
+
                             </div>
                         </div>
                     </div>
                 </div>
+
+
 
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">

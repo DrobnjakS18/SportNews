@@ -29,6 +29,8 @@ class HomeController extends Controller
 
         $items = $postService::getAllWithCategories();
 
+//        dd($items);
+
         return view('pages.home')->with(compact('items'));
     }
 
@@ -42,13 +44,15 @@ class HomeController extends Controller
         return view('pages.category')->with(compact('category'));
     }
 
-    public function author()
+    public function author($name)
     {
+
         return view('pages.author');
     }
 
     public function about()
     {
+
         return view('pages.about');
     }
 

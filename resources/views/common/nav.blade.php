@@ -154,7 +154,7 @@
 {{--                    </a>--}}
                     @if(Auth::check())
 
-                        <a class="nav-link username-button" href="{{route('author')}}">
+                        <a class="nav-link username-button" href="{{route('author',Auth::user()->name)}}">
                             {{ Auth::user()->name }}
                         </a>
                         <a class="nav-link register-button" href="#"
@@ -215,13 +215,8 @@
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Post
                                 </a>
-                                <div class="dropdown-menu" >
-{{--                                    <a class="dropdown-item" href="post-left-sidebar.html">Post Left Sidebar</a>--}}
-{{--                                    <a class="dropdown-item" href="post-full-width.html">Post Full Width</a>--}}
+                                <div class="dropdown-menu">
                                     <a class="dropdown-item" href="{{route('single')}}">Single Post</a>
-{{--                                    <a class="dropdown-item" href="post-category-1.html">Category 1</a>--}}
-{{--                                    <a class="dropdown-item" href="post-category-2.html">Category 2</a>--}}
-                                    <a class="dropdown-item" href="{{route('author')}}">Author</a>
                                 </div>
                             </li>
 {{--                            <li class="nav-item dropdown">--}}
