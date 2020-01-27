@@ -18,7 +18,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/single', 'HomeController@single')->name('single');
 
 Route::get('/post/{id}', 'PostController@show')->name('post');
-Route::get('/categories/{category}', 'HomeController@category')->name('category');
+Route::get('/categories/{name}', 'HomeController@category')->name('category');
 
 Route::get('/author/{name}', 'HomeController@author')->name('author');
 

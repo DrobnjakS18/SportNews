@@ -18,16 +18,11 @@ class HomeController extends Controller
 //        $this->middleware('guest');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
         $postService = new PostService();
 
-        $items = $postService::getAllWithCategories();
+        $items = $postService::getAll();
 
 //        dd($items);
 
@@ -39,9 +34,13 @@ class HomeController extends Controller
         return view('pages.single_post');
     }
 
-    public function category($category)
+    public function category($name)
     {
-        return view('pages.category')->with(compact('category'));
+        $postService = new PostService();
+
+        $items = $postService::getByCategoryName($name);
+
+        return view('pages.category')->with(compact('items','name'));
     }
 
     public function author($name)

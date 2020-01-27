@@ -18,4 +18,11 @@ class CategoryRepository extends BaseRepository
         return Category::all();
     }
 
+    static public function findIdByName($name)
+    {
+        return Category::where('name',$name)->value('id');
+    }
+
+
+
 }

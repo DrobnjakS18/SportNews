@@ -15,11 +15,11 @@ class PostRepository extends BaseRepository
 
 
     /**
-     * All posts joined with category table
+     * All posts
      */
-    static public function allWithCategory()
+    static public function all()
     {
-        return Post::with('category')->get();
+        return Post::all();
     }
 
     /**
@@ -28,6 +28,14 @@ class PostRepository extends BaseRepository
     static public function findById($id)
     {
         return Post::find($id);
+    }
+
+    /**
+     * Single post by category
+     */
+    static public function findByCategory($id)
+    {
+        return Post::where('category_id',$id)->simplePaginate(4) ;
     }
 
 

@@ -14,4 +14,9 @@ class CategoryService
         return CategoryRepository::all();
     }
 
+    static public function getByName($name)
+    {
+        return CategoryRepository::findIdByName($name);
+    }
+
 }

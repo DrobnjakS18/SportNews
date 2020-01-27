@@ -1259,7 +1259,8 @@ a.post-category.absolute {
 }
 
 .pagination .page-item a {
-    margin-right: 8px;
+    /*margin-right: 8px;*/
+    margin: 0 15px 0 15px;
     color: #292931;
     padding: 10px 16px;
     transition: all .3s ease;

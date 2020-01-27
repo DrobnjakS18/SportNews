@@ -4,23 +4,32 @@
 namespace App\Services;
 
 
+use App\Repositories\CategoryRepository;
 use App\Repositories\PostRepository;
 
 class PostService
 {
 
-    static public function getAllWithCategories()
+    static public function getAll()
     {
-        $data = PostRepository::allWithCategory();
+        $data['posts'] = PostRepository::all();
+        $data['users'] = UserService::getAll();
 
-        $items['all'] = $data;
-        $items['main'] = $data->take(4);
-
-        return (object) $items;
+        return (object) $data;
     }
 
     static public function getById($id)
     {
         return PostRepository::findById($id);
+    }
+
+    static public function getByCategoryName($name)
+    {
+        $categoryId = CategoryService::getByName($name);
+
+        $data['posts'] = PostRepository::findByCategory($categoryId);
+        $data['users'] = UserService::getAll();
+
+        return (object) $data;
     }
 }
