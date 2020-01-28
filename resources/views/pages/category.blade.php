@@ -143,7 +143,18 @@
                                 </div>
 
                                 <div class="newsletter-form">
-                                    <form action="#" method="post">
+                                    @if (\Session::has('success'))
+                                        <div class="alert alert-success">
+                                            <p>{{ \Session::get('success') }}</p>
+                                        </div><br />
+                                    @endif
+                                    @if (\Session::has('failure'))
+                                        <div class="alert alert-danger">
+                                            <p>{{ \Session::get('failure') }}</p>
+                                        </div><br />
+                                    @endif
+                                    <form action="{{route('newsletter.store')}}" method="POST">
+                                        @csrf
                                         <div class="form-group">
                                             <input type="email" name="email" id="newsletter-form-email" class="form-control form-control-lg" placeholder="E-mail" autocomplete="off">
                                             <button class="btn btn-primary">Subscribe</button>
