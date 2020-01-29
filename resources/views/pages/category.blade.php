@@ -141,11 +141,25 @@
                                     <h4>Get Updates</h4>
                                     <p>Subscribe our newsletter to get the best stories into your inbox!</p>
                                 </div>
-
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                                @if(session('success'))
+                                    <div class="alert alert-success">
+                                        {{session('success')}}
+                                    </div>
+                                @endif
                                 <div class="newsletter-form">
-                                    <form action="#" method="post">
+                                    <form action="{{route('subscription.store')}}" method="post">
+                                        @csrf
                                         <div class="form-group">
-                                            <input type="email" name="email" id="newsletter-form-email" class="form-control form-control-lg" placeholder="E-mail" autocomplete="off">
+                                            <input type="text" name="email" id="newsletter-form-email" class="form-control form-control-lg" placeholder="E-mail" autocomplete="off">
                                             <button class="btn btn-primary">Subscribe</button>
                                         </div>
                                     </form>

@@ -1879,6 +1879,13 @@ a.post-category.absolute {
     margin-top: 0;
 }
 
+.ts-newsletter .alert-danger ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+    margin-bottom: 0;
+}
+
 /* 8. SIDEBAR
 ================================================== */
 .sidebar .widget.mb-0 {
