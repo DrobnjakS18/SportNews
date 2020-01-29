@@ -2,7 +2,6 @@
 @section('title', 'Sport News - Category')
 
 @section('content')
-{{--    {{dd($$category)}}--}}
     <div class="breadcrumb-wrapper">
         <div class="container">
             <div class="row">
@@ -11,7 +10,7 @@
                         <li>
                             <a href="{{route('home')}}">Home</a>
                         </li>
-                        <li>{{$name}}</li>
+                        <li>{{ucfirst($name)}}</li>
                     </ol>
                 </div>
             </div>

@@ -27,4 +27,5 @@ class UserRepository extends BaseRepository
     {
         return User::where('role_id',$id)->get();
     }
+
 }

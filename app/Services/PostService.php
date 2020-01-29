@@ -32,4 +32,9 @@ class PostService
 
         return (object) $data;
     }
+
+    static public function getByUser($id)
+    {
+        return PostRepository::findByUser($id);
+    }
 }

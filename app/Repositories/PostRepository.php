@@ -38,6 +38,11 @@ class PostRepository extends BaseRepository
         return Post::where('category_id',$id)->simplePaginate(4) ;
     }
 
+    static public function findByUser($id)
+    {
+        return Post::where('user_id',$id)->simplePaginate(4);
+    }
+
 
 
 }

@@ -23,4 +23,13 @@ class UserService
     {
         return UserRepository::findByRole($id);
     }
+
+    static public function getByNamePostsPaginate($name)
+    {
+        $data['users'] = UserRepository::all();
+        $data['user'] = UserRepository::findByName($name);
+        $data['posts'] = PostService::getByUser($data['user']->id);
+
+        return (object) $data;
+    }
 }

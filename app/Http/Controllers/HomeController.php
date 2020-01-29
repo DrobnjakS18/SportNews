@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\CategoryService;
 use App\Services\PostService;
+use App\Services\UserService;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,8 +25,6 @@ class HomeController extends Controller
 
         $items = $postService::getAll();
 
-//        dd($items);
-
         return view('pages.home')->with(compact('items'));
     }
 
@@ -45,8 +44,11 @@ class HomeController extends Controller
 
     public function author($name)
     {
+        $userService = new UserService();
 
-        return view('pages.author');
+        $items = $userService::getByNamePostsPaginate($name);
+
+        return view('pages.author')->with(compact('items'));
     }
 
     public function about()

@@ -2,7 +2,23 @@
 @section('title', 'Sport News - Single post')
 
 @section('content')
-
+    <div class="breadcrumb-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="{{route('home')}}">Home</a>
+                        </li>
+                        <li>
+                            <a href="{{route('category',ucfirst($item->category->name))}}">{{ucfirst($item->category->name)}}</a>
+                        </li>
+                        <li>{{ucfirst($item->title)}}</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="single-block-wrapper section-padding">
         <div class="container">
             <div class="row">
