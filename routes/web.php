@@ -19,8 +19,10 @@ Route::get('/single', 'HomeController@single')->name('single');
 
 Route::get('/post/{id}', 'PostController@show')->name('post');
 Route::get('/categories/{name}', 'HomeController@category')->name('category');
-//Route::get('newsletter','NewsletterController@create');
-Route::post('newsletter','NewsletterController@store')->name('newsletter.store');
+
+Route::post('/newsletter','SubscriptionController@store')->name('subscription.store');
+
+//Route::get('/html-email','NewsletterController@htmlEmail')->name('newsletter.html');
 
 Route::get('/author/{name}', 'HomeController@author')->name('author');
 

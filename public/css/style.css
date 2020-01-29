@@ -1879,13 +1879,10 @@ a.post-category.absolute {
     margin-top: 0;
 }
 
-.newsletter-form .alert {
-    text-align: center;
-    margin-bottom: 0;
-    padding: .75rem;
-}
-
-.newsletter-form .alert p {
+.ts-newsletter .alert-danger ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
     margin-bottom: 0;
 }
 
