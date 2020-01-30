@@ -1,5 +1,5 @@
 @extends('app')
-@section('title', 'Sport News - Single post')
+@section('title', $items->post->title .' | Single post')
 
 @section('content')
     <div class="breadcrumb-wrapper">
@@ -11,9 +11,9 @@
                             <a href="{{route('home')}}">Home</a>
                         </li>
                         <li>
-                            <a href="{{route('category',ucfirst($item->category->name))}}">{{ucfirst($item->category->name)}}</a>
+                            <a href="{{route('category',ucfirst($items->post->category->name))}}">{{ucfirst($items->post->category->name)}}</a>
                         </li>
-                        <li>{{ucfirst($item->title)}}</li>
+                        <li>{{ucfirst($items->post->title)}}</li>
                     </ol>
                 </div>
             </div>
@@ -25,11 +25,11 @@
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                     <div class="single-post">
                         <div class="post-header mb-5">
-                            <a class="post-category" href="#">{{$item->category->name}}</a>
+                            <a class="post-category" style="background:{{$items->post->category->color}}" href="{{route('category',$items->post->category->name)}}">{{$items->post->category->name}}</a>
                             <h2 class="post-title">
-                                {{$item->title}}
+                                {{$items->post->title}}
                             </h2>
-                            <p>{{$item->content}}</p>
+                            <p>{{$items->post->content}}</p>
                         </div>
 
 
@@ -65,7 +65,7 @@
 {{--                                </p>--}}
 {{--                            </div>--}}
 
-{{--                            <div class="share-block  d-flex justify-content-between align-items-center border-top border-bottom mt-5">--}}
+{{--                            <div class="share-block  d-flex justify-content-between align-itemss-center border-top border-bottom mt-5">--}}
 {{--                                <div class="post-tags">--}}
 {{--                                    <span>Tags</span>--}}
 {{--                                    <a href="post-category-2.html">Health</a>--}}
@@ -103,38 +103,56 @@
 {{--                            </div>--}}
 {{--                        </div>--}}
 
-
                     </div>
 
                     <nav class="post-navigation clearfix">
-                        <div class="previous-post">
-                            <a href="single-post.html">
-                                <h6 class="text-uppercase">Next</h6>
-                                <h3>
-                                    Intel’s new smart glasses actually look good
-                                </h3>
-                            </a>
-                        </div>
-                        <div class="next-post">
-                            <a href="single-post.html">
-                                <h6 class="text-uppercase">Previous</h6>
+{{--                        @foreach($items->posts as $post)--}}
+                            <div class="previous-post">
+                                @if($items->previous)
+                                    <a href="{{route('post',$items->previous->id)}}">
+                                        <h6 class="text-uppercase">Previous</h6>
+                                        <h3>
+                                            {{$items->previous->title}}
+                                        </h3>
+                                     </a>
+                                @else
+                                    @if($items->posts->last())
+                                        <a href="{{route('post',$items->posts->last()->max('id'))}}">
+                                            <h6 class="text-uppercase">Previous</h6>
+                                            <h3>
+                                                {{$items->posts->last()->title}}
+                                            </h3>
+                                        </a>
+                                    @endif
+                                @endif
+                            </div>
+                            <div class="next-post">
+                                @if($items->next)
+                                    <a href="{{route('post',$items->next->id)}}">
+                                        <h6 class="text-uppercase">Next</h6>
+                                        <h3>
+                                            {{$items->next->title}}
+                                        </h3>
+                                    </a>
+                                @else
+                                    <a href="{{route('post',$items->posts->first()->min('id'))}}">
+                                        <h6 class="text-uppercase">Next</h6>
+                                        <h3>
+                                            {{$items->posts->first()->title}}
+                                        </h3>
+                                    </a>
+                                @endif
+                            </div>
 
-                                <h3>
-                                    Free Two-Hour Delivery From Whole Foods
-                                </h3>
-                            </a>
-                        </div>
+{{--                        @endforeach--}}
                     </nav>
                     <div class="author-block">
                         <div class="author-thumb">
-                            <img src="{{asset('images/news/author-02.jpg')}}" alt="author-image">
+                            <img src="{{asset('images/'.$items->post->user->profile_picture)}}" alt="author-image">
                         </div>
                         <div class="author-content">
-                            <h3><a href="author.html">{{$item->user->name}}</a></h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quod molestias delectus illum quisquam.
-                                Quasi iure perferendis suscipit officiis dicta!
-                            </p>
-
+                            <h3><a href="{{route('author',$items->post->user->name)}}">{{$items->post->user->name}}</a></h3>
+                            <p>{{$items->post->user->about}}</p>
                             <div class="authors-social">
                                 <a href="#">
                                     <i class="fa fa-facebook"></i>
@@ -154,76 +172,83 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="related-posts-block">
                         <h3 class="news-title">
                             <span>Related Posts</span>
                         </h3>
                         <div class="news-style-two-slide">
-                            <div class="item">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail mb-0">
-                                        <a href="single-post.html">
-                                            <img class="img-fluid" src="{{asset('images/news/news-04.jpg')}}" alt="post-thumbnail"/>
-                                        </a>
-                                    </div>
-                                    <a class="post-category" href="post-category-1.html">Tech</a>
-                                    <div class="post-content">
-                                        <h2 class="post-title title-sm">
-                                            <a href="single-post.html">Intel’s new smart glasses actually look good</a>
-                                        </h2>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail mb-0">
-                                        <a href="single-post.html">
-                                            <img class="img-fluid" src="{{asset('images/news/news-10.jpg')}}" alt="post-thumbnail"/>
-                                        </a>
-                                    </div>
-                                    <a class="post-category" href="post-category-1.html">Food</a>
-                                    <div class="post-content">
-                                        <h2 class="post-title title-sm">
-                                            <a href="single-post.html">Free Two-Hour Delivery From Whole Foods</a>
-                                        </h2>
-
+{{--                            TREBA VISE OD 3 DA BI SLAJDER RADIO--}}
+                            @foreach($items->posts->where('category_id',$items->post->category->id) as $post)
+                                <div class="items">
+                                    <div class="post-block-wrapper clearfix">
+                                        <div class="post-thumbnail mb-0">
+                                            <a href="{{route('post',$post->id)}}">
+                                                <img class="img-fluid" src="{{asset('images/news/'.$post->picture)}}" alt="post-thumbnail"/>
+                                            </a>
+                                        </div>
+                                        <a class="post-category" href="{{route('category',$post->category->name)}}"  style="background:{{$post->category->color}}">{{$post->category->name}}</a>
+                                        <div class="post-content">
+                                            <h2 class="post-title title-sm">
+                                                <a href="{{route('post',$post->id)}}">{{$post->title}}</a>
+                                            </h2>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="item">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail mb-0">
-                                        <a href="single-post.html">
-                                            <img class="img-fluid" src="{{asset('images/news/news-11.jpg')}}" alt="post-thumbnail"/>
-                                        </a>
-                                    </div>
-                                    <a class="post-category" href="post-category-1.html">Tour</a>
-                                    <div class="post-content">
-                                        <h2 class="post-title title-sm">
-                                            <a href="single-post.html">Snow and Freezing Rain in Paris Forces the</a>
-                                        </h2>
+                            @endforeach
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail mb-0">
-                                        <a href="single-post.html">
-                                            <img class="img-fluid" src="{{asset('images/news/news-18.jpg')}}" alt="post-thumbnail"/>
-                                        </a>
-                                    </div>
-                                    <a class="post-category" href="post-category-1.html">Beauty</a>
-                                    <div class="post-content">
-                                        <h2 class="post-title title-sm">
-                                            <a href="single-post.html">The Best Eye Makeup Tutorials for all</a>
-                                        </h2>
 
-                                    </div>
-                                </div>
-                            </div>
+
+{{--                            <div class="items">--}}
+{{--                                <div class="post-block-wrapper clearfix">--}}
+{{--                                    <div class="post-thumbnail mb-0">--}}
+{{--                                        <a href="single-post.html">--}}
+{{--                                            <img class="img-fluid" src="{{asset('images/news/news-10.jpg')}}" alt="post-thumbnail"/>--}}
+{{--                                        </a>--}}
+{{--                                    </div>--}}
+{{--                                    <a class="post-category" href="post-category-1.html">Food</a>--}}
+{{--                                    <div class="post-content">--}}
+{{--                                        <h2 class="post-title title-sm">--}}
+{{--                                            <a href="single-post.html">Free Two-Hour Delivery From Whole Foods</a>--}}
+{{--                                        </h2>--}}
+
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="items">--}}
+{{--                                <div class="post-block-wrapper clearfix">--}}
+{{--                                    <div class="post-thumbnail mb-0">--}}
+{{--                                        <a href="single-post.html">--}}
+{{--                                            <img class="img-fluid" src="{{asset('images/news/news-11.jpg')}}" alt="post-thumbnail"/>--}}
+{{--                                        </a>--}}
+{{--                                    </div>--}}
+{{--                                    <a class="post-category" href="post-category-1.html">Tour</a>--}}
+{{--                                    <div class="post-content">--}}
+{{--                                        <h2 class="post-title title-sm">--}}
+{{--                                            <a href="single-post.html">Snow and Freezing Rain in Paris Forces the</a>--}}
+{{--                                        </h2>--}}
+
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="items">--}}
+{{--                                <div class="post-block-wrapper clearfix">--}}
+{{--                                    <div class="post-thumbnail mb-0">--}}
+{{--                                        <a href="single-post.html">--}}
+{{--                                            <img class="img-fluid" src="{{asset('images/news/news-18.jpg')}}" alt="post-thumbnail"/>--}}
+{{--                                        </a>--}}
+{{--                                    </div>--}}
+{{--                                    <a class="post-category" href="post-category-1.html">Beauty</a>--}}
+{{--                                    <div class="post-content">--}}
+{{--                                        <h2 class="post-title title-sm">--}}
+{{--                                            <a href="single-post.html">The Best Eye Makeup Tutorials for all</a>--}}
+{{--                                        </h2>--}}
+
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+
+
                         </div>
                     </div>
 

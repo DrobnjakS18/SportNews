@@ -1,5 +1,5 @@
 @extends('app')
-@section('title', 'Sport News - Search')
+@section('title', 'Search | Sport News')
 
 @section('content')
     <section class="error-404 section-padding bg-white">

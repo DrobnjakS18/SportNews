@@ -910,7 +910,7 @@ a.post-category {
     font-weight: 600;
     letter-spacing: 1px;
     background: #eee;
-    padding: 4px 8px;
+    /*padding: 4px 8px;*/
     margin-top: 10px;
     margin-bottom: 10px;
     display: inline-block;

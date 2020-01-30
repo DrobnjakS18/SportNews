@@ -1,5 +1,5 @@
 @extends('app')
-@section('title', 'Sport News - Author')
+@section('title', $items->user->name.'| Sport News')
 
 @section('content')
 

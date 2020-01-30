@@ -11,9 +11,8 @@ class PostController extends Controller
     {
         $postService = new PostService();
 
-        $item = $postService::getById($id);
+        $items = $postService::getAllAboutSinglePost($id);
 
-
-        return view('pages.single_post')->with(compact('item'));
+        return view('pages.single_post')->with(compact('items'));
     }
 }

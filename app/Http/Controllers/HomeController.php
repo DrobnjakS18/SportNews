@@ -23,14 +23,9 @@ class HomeController extends Controller
     {
         $postService = new PostService();
 
-        $items = $postService::getAll();
+        $items = $postService::getAllWithUsers();
 
         return view('pages.home')->with(compact('items'));
-    }
-
-    public function single()
-    {
-        return view('pages.single_post');
     }
 
     public function category($name)
@@ -38,7 +33,7 @@ class HomeController extends Controller
         $postService = new PostService();
 
         $items = $postService::getByCategoryName($name);
-
+        
         return view('pages.category')->with(compact('items','name'));
     }
 

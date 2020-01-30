@@ -43,6 +43,15 @@ class PostRepository extends BaseRepository
         return Post::where('user_id',$id)->simplePaginate(4);
     }
 
+    static public function findPreviousPost($currentPostId)
+    {
+        return Post::where('id','<',$currentPostId)->max('id');
+    }
+
+    static public function findNextPost($currentPostId)
+    {
+        return Post::where('id','>',$currentPostId)->min('id');
+    }
 
 
 }

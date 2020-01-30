@@ -1,5 +1,5 @@
 @extends('app')
-@section('title', 'Sport News - Home')
+@section('title', 'Home | Sport News')
 
 @section('content')
 <div class="py-30"></div>

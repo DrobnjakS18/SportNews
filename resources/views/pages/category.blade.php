@@ -1,5 +1,5 @@
 @extends('app')
-@section('title', 'Sport News - Category')
+@section('title',  $name.' | Sport News')
 
 @section('content')
     <div class="breadcrumb-wrapper">
