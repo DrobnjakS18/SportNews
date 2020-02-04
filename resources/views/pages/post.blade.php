@@ -109,7 +109,7 @@
 {{--                        @foreach($items->posts as $post)--}}
                             <div class="previous-post">
                                 @if($items->previous)
-                                    <a href="{{route('post',$items->previous->id)}}">
+                                    <a href="{{route('post',[ucfirst($items->previous->category->name),$items->slug.'-'.$item->id])}}">
                                         <h6 class="text-uppercase">Previous</h6>
                                         <h3>
                                             {{$items->previous->title}}
@@ -117,7 +117,7 @@
                                      </a>
                                 @else
                                     @if($items->posts->last())
-                                        <a href="{{route('post',$items->posts->last()->max('id'))}}">
+                                        <a href="{{route('post',[ucfirst($items->posts->last()->category->name),$items->posts->last()->slug.'-'.$items->posts->last()->max('id')])}}">
                                             <h6 class="text-uppercase">Previous</h6>
                                             <h3>
                                                 {{$items->posts->last()->title}}
@@ -128,14 +128,14 @@
                             </div>
                             <div class="next-post">
                                 @if($items->next)
-                                    <a href="{{route('post',$items->next->id)}}">
+                                    <a href="{{route('post',[ucfirst($items->next->category->name),$items->next->slug.'-'.$items->next->id])}}">
                                         <h6 class="text-uppercase">Next</h6>
                                         <h3>
                                             {{$items->next->title}}
                                         </h3>
                                     </a>
                                 @else
-                                    <a href="{{route('post',$items->posts->first()->min('id'))}}">
+                                    <a href="{{route('post',[ucfirst($items->category->name),$items->slug.'-'.$items->posts->first()->min('id')])}}">
                                         <h6 class="text-uppercase">Next</h6>
                                         <h3>
                                             {{$items->posts->first()->title}}
@@ -183,14 +183,14 @@
                                 <div class="items">
                                     <div class="post-block-wrapper clearfix">
                                         <div class="post-thumbnail mb-0">
-                                            <a href="{{route('post',$post->id)}}">
+                                            <a href="{{route('post',[ucfirst($post->category->name),$post->slug.'-'.$post->id])}}">
                                                 <img class="img-fluid" src="{{asset('images/news/'.$post->picture)}}" alt="post-thumbnail"/>
                                             </a>
                                         </div>
                                         <a class="post-category" href="{{route('category',$post->category->name)}}"  style="background:{{$post->category->color}}">{{$post->category->name}}</a>
                                         <div class="post-content">
                                             <h2 class="post-title title-sm">
-                                                <a href="{{route('post',$post->id)}}">{{$post->title}}</a>
+                                                <a href="{{route('post',[ucfirst($post->category->name),$post->slug.'-'.$post->id])}}">{{$post->title}}</a>
                                             </h2>
                                         </div>
                                     </div>
@@ -365,7 +365,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+{{--        </div>--}}
     </section>
 
     @endsection

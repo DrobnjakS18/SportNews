@@ -33,7 +33,9 @@ class HomeController extends Controller
         $postService = new PostService();
 
         $items = $postService::getByCategoryName($name);
-        
+
+//        dd($items);
+
         return view('pages.category')->with(compact('items','name'));
     }
 

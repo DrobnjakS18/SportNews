@@ -13,9 +13,9 @@
                     <div class="featured-slider mr-md-3 mr-lg-3">
                         <div class="item" style="background-image:url({{asset('images/news/'.$item->picture)}})">
                             <div class="post-content">
-                                <a href="{{route('category',$item->category->name)}}" class="post-cat" style="background:{{$item->category->color}}">{{$item->category->name}}</a>
+                                <a href="{{route('category',ucfirst($item->category->name))}}" class="post-cat" style="background:{{$item->category->color}}">{{$item->category->name}}</a>
                                 <h2 class="slider-post-title">
-                                    <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                    <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
                                 </h2>
                                 <div class="post-meta mt-2">
                                     <span class="posted-time"><i class="fa fa-clock-o mr-2 text-danger"></i>{{$item->created_at->diffForHumans()}}</span>
@@ -39,7 +39,7 @@
                                 <div class="post-content">
                                     <a href="#" class="post-cat" style="background:{{$item->category->color}}">{{$item->category->name}}</a>
                                     <h2 class="post-title">
-                                        <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
                                     </h2>
                                     <div class="post-meta mt-2">
                                         <span class="posted-time"><i class="fa fa-clock-o mr-2 text-danger"></i>{{$item->created_at->diffForHumans()}}</span>
@@ -73,13 +73,13 @@
                              @foreach($items->posts->whereIn('id', [1,2]) as $item)
                                 <div class="post-block-wrapper clearfix @if($loop->first) mb-5 @endif">
                                     <div class="post-thumbnail">
-                                        <a href="{{route('post',$item->id)}}">
+                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
                                             <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-image"/>
                                         </a>
                                     </div>
                                     <div class="post-content">
                                         <h2 class="post-title mt-3">
-                                            <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
                                         </h2>
                                         <div class="post-meta mb-2">
                                             <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>{{$item->created_at->diffForHumans()}}</span>
@@ -98,13 +98,13 @@
                             @foreach($items->posts->whereIn('id', [3,4]) as $item)
                                 <div class="post-block-wrapper clearfix @if($loop->first) mb-5 @endif">
                                     <div class="post-thumbnail">
-                                        <a href="{{route('post',$item->id)}}">
+                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
                                             <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-image"/>
                                         </a>
                                     </div>
                                     <div class="post-content">
                                         <h2 class="post-title mt-3">
-                                            <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
                                         </h2>
                                         <div class="post-meta mb-2">
                                             <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>{{$item->created_at->diffForHumans()}}</span>
@@ -123,13 +123,13 @@
                             @foreach($items->posts->whereIn('id', [5,6]) as $item)
                                 <div class="post-block-wrapper clearfix @if($loop->first) mb-5 @endif">
                                     <div class="post-thumbnail">
-                                        <a href="{{route('post',$item->id)}}">
+                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
                                             <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-image"/>
                                         </a>
                                     </div>
                                     <div class="post-content">
                                         <h2 class="post-title mt-3">
-                                            <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
                                         </h2>
                                         <div class="post-meta mb-2">
                                             <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>{{$item->created_at->diffForHumans()}}</span>
@@ -149,13 +149,13 @@
                             @foreach($items->posts->whereIn('id', [7,8]) as $item)
                                 <div class="post-block-wrapper clearfix @if($loop->first) mb-5 @endif">
                                     <div class="post-thumbnail">
-                                        <a href="{{route('post',$item->id)}}">
+                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
                                             <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-image"/>
                                         </a>
                                     </div>
                                     <div class="post-content">
                                         <h2 class="post-title mt-3">
-                                            <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
                                         </h2>
                                         <div class="post-meta mb-2">
                                             <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>{{$item->created_at->diffForHumans()}}</span>
@@ -184,11 +184,11 @@
                                     @if($item->category_id === 1 && $item->select === "1")
                                         <div class="post-block-wrapper clearfix">
                                             <div class="post-thumbnail">
-                                                <a href="{{route('post',$item->id)}}">
+                                                <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
                                                     <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-thumbnail"/>
                                                 </a>
                                             </div>
-                                            <a class="post-category" href="categoty-style1.html" style="background:{{$item->category->color}}">{{$item->category->name}}</a>
+                                            <a class="post-category" href="{{route('category',ucfirst($item->category->name))}}" style="background:{{$item->category->color}}">{{$item->category->name}}</a>
                                             <div class="post-content">
                                                 <h2 class="post-title mt-3">
                                                     <a href="single-post.html">{{$item->title}}</a>
@@ -212,14 +212,14 @@
                                     @if($item->category_id === 1 && $item->select === "0")
                                         <div class="post-block-wrapper post-float clearfix">
                                             <div class="post-thumbnail">
-                                                <a href="{{route('post',$item->id)}}">
+                                                <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
                                                     <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-thumbnail"/>
                                                 </a>
                                             </div>
 
                                             <div class="post-content">
                                                 <h2 class="post-title title-sm">
-                                                    <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                                    <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
                                                 </h2>
                                                 <div class="post-meta">
                                                     <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>{{$item->created_at->diffForHumans()}}</span>
@@ -357,7 +357,7 @@
 
                                 <div class="post-content">
                                     <h2 class="post-title ">
-                                        <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
                                     </h2>
                                     <div class="post-meta white">
                                         <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
@@ -384,7 +384,7 @@
                                     </div>
                                     <div class="post-content">
                                         <h2 class="post-title title-sm">
-                                            <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
                                         </h2>
                                         <div class="post-meta">
                                             <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
@@ -412,7 +412,7 @@
 
                                 <div class="post-content">
                                     <h2 class="post-title ">
-                                        <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
                                     </h2>
                                     <div class="post-meta white">
                                         <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
@@ -439,7 +439,7 @@
                                     </div>
                                     <div class="post-content">
                                         <h2 class="post-title title-sm">
-                                            <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
                                         </h2>
                                         <div class="post-meta">
                                             <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
@@ -466,7 +466,7 @@
                                 </div>
                                 <div class="post-content">
                                     <h2 class="post-title ">
-                                        <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
                                     </h2>
                                     <div class="post-meta white">
                                         <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
@@ -493,7 +493,7 @@
                                     </div>
                                     <div class="post-content">
                                         <h2 class="post-title title-sm">
-                                            <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
                                         </h2>
                                         <div class="post-meta">
                                             <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
@@ -523,14 +523,14 @@
                                 <div class="col-lg-6 col-md-6">
                                     <div class="post-block-wrapper post-float-half clearfix">
                                         <div class="post-thumbnail">
-                                            <a href="{{route('post',$item->id)}}">
+                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
                                                 <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-thumbnail"/>
                                             </a>
                                         </div>
                                         <div class="post-content">
-                                            <a class="post-category" href="post-category-2.html" style="background:{{$item->category->color}}">{{$item->category->name}}</a>
+                                            <a class="post-category" href="{{route('category',ucfirst($item->category->name))}}" style="background:{{$item->category->color}}">{{$item->category->name}}</a>
                                             <h2 class="post-title mt-3">
-                                                <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                                <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
                                             </h2>
                                             <div class="post-meta">
                                                 <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
@@ -546,25 +546,6 @@
                         </div>
                     </div>
                 </div>
-{{--                <nav aria-label="pagination-wrapper" class="pagination-wrapper">--}}
-{{--                    <ul class="pagination justify-content-center">--}}
-{{--                        <li class="page-item active">--}}
-{{--                            <a class="page-link" href="#" aria-label="Previous">--}}
-{{--                                <span aria-hidden="true"><i class="fa fa-angle-double-left mr-2"></i></span>--}}
-{{--                                <span class="">Previous</span>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                        <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
-{{--                        <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
-{{--                        <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
-{{--                        <li class="page-item">--}}
-{{--                            <a class="page-link" href="#" aria-label="Next">--}}
-{{--                                <span class="">Next</span>--}}
-{{--                                <span aria-hidden="true"><i class="fa fa-angle-double-right ml-2"></i></span>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </nav>--}}
             </div>
             <div class="col-lg-4 col-md-8 col-sm-12 col-xs-12">
                 <div class="sidebar sidebar-right">

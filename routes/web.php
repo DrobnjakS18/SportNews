@@ -12,13 +12,16 @@
 */
 
 
+
 Auth::routes(['verify' => true]);
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/single', 'HomeController@single')->name('single');
 
-Route::get('/post/{id}', 'PostController@show')->name('post');
-Route::get('/categories/{name}', 'HomeController@category')->name('category');
+Route::get('/{category}', 'HomeController@category')->name('category');
+Route::get('/{category}/{slug}', 'PostController@show')->name('post');
+Route::get('/post/create', 'PostController@create')->name('post.create')->middleware('auth');
+Route::post('/post/store', 'PostController@store')->name('post.store')->middleware('auth');
 
 Route::post('/newsletter','SubscriptionController@store')->name('subscription.store');
 

@@ -30,7 +30,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Route::pattern('category', 'Football|Basketball|Tenis|AUTOMOTO|ESPORTS');
 
         parent::boot();
     }

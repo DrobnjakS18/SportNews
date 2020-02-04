@@ -40,6 +40,8 @@
 
 7. POST CATEGORY STYLES
 
+7a. POST CREATE STYLES
+
 8. SIDEBAR
 
   8.1. Social Pages
@@ -1891,8 +1893,54 @@ a.post-category.absolute {
     margin-bottom: 0;
 }
 
-/* 8. SIDEBAR
+
+
+/* 7a. POST CREATE STYLES
 ================================================== */
+
+.post-container {
+    height: 85vh;
+}
+
+.post-header {
+    margin: 50px 0 30px 0;
+}
+
+.post-container form {
+    margin-bottom: 30px;
+}
+
+.post-container label {
+    font-size: 25px;
+}
+
+.post-container .ql-editor {
+    height: 400px;
+}
+
+.post-container .tagsinput .tag {
+    background: #6c757d;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 14px;
+    padding: 9px
+}
+
+.post-container .tagsinput .tag a {
+    color: white;
+    font-size: 16px;
+}
+
+.post-container div.tagsinput input {
+    font-size: 1rem;
+    color: rgb(73, 80, 87);
+}
+
+
+
+    /* 8. SIDEBAR
+    ================================================== */
 .sidebar .widget.mb-0 {
     margin-bottom: 0;
 }

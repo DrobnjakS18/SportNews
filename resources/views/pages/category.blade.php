@@ -29,7 +29,7 @@
                                 <div class="row">
                                     <div class="col-md-5 col-sm-6">
                                         <div class="post-thumbnail thumb-float-style">
-                                            <a href="{{route('post',$item->id)}}">
+                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
                                                 <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="" />
                                             </a>
                                         </div>
@@ -41,13 +41,12 @@
                                                 <i class="fa fa-clock-o"></i>
                                                 <a>{{$item->created_at}}</a>
                                             </span>
-
                                                                     <span class="post-author">
                                                 <a href="{{route('author',$item->user->name)}}" class="text-dark">by {{$item->user->name}}</a>
                                             </span>
                                             </div>
                                             <h2 class="post-title title-large ">
-                                                <a href="{{route('post',$item->id)}}">{{$item->title}}</a>
+                                                <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
                                             </h2>
                                             <p>{{substr($item->content,0,100).'...'}}</p>
                                         </div>
@@ -158,7 +157,7 @@
                                     <form action="{{route('subscription.store')}}" method="post">
                                         @csrf
                                         <div class="form-group">
-                                            <input type="text" name="email" id="newsletter-form-email" class="form-control form-control-lg" placeholder="E-mail" autocomplete="off">
+                                            <input type="email" name="email" id="newsletter-form-email" class="form-control form-control-lg" placeholder="E-mail" autocomplete="off">
                                             <button class="btn btn-primary">Subscribe</button>
                                         </div>
                                     </form>

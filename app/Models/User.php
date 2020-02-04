@@ -52,4 +52,12 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->belongsTo(Role::class,'role_id','id');
     }
+
+    /**
+     *  Gets all tags by post
+     */
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }

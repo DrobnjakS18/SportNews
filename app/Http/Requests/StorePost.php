@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreSubscription extends FormRequest
+class StorePost extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class StoreSubscription extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,20 +24,8 @@ class StoreSubscription extends FormRequest
     public function rules()
     {
         return [
-            'email' => [ 'bail','required', 'email'],
-        ];
-    }
-
-    /**
-     * Get the validation messages.
-     *
-     * @return array
-     */
-    public function messages()
-    {
-        return [
-            'email.required' => 'A email is required.',
-            'email.email' => 'Must be a verified email',
+            'title' => ['bail','text','required'],
+            'content' => ['bail','required'],
         ];
     }
 }

@@ -46,8 +46,11 @@ class PostService
         return  PostRepository::findById($nextId);
     }
 
-    static public function getAllAboutSinglePost($id)
+    static public function getAllAboutSinglePost($slug)
     {
+
+        $id = extract_id_from_slug($slug);
+
         $data['post'] = self::getById($id);
         $data['posts'] = self::getAll();
         $data['previous'] = self::getPreviousPost($id);
