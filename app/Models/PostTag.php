@@ -6,8 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class PostTag extends Model
 {
-
+    /**
+     * Name of the table
+     */
     protected $table = 'post_tag';
+
 
     /**
      * Get tags of post tags

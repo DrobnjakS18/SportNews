@@ -20,7 +20,7 @@
             </div>
 
             <div class="scroll-to-top">
-                <button class="btn btn-primary" title="Back to Top">
+                <button class="btn btn-secondary btn-lg" title="Back to Top">
                     <i class="fa fa-angle-up"></i>
                 </button>
             </div>

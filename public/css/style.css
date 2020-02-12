@@ -1383,6 +1383,10 @@ a.post-category.absolute {
     background: #fff;
 }
 
+.single-block-wrapper .post-navigation {
+    width: 100%;
+}
+
 .single-post .post-title {
     font-size: 48px;
     line-height: 58px;
@@ -1394,6 +1398,7 @@ a.post-category.absolute {
 .single-post p {
     margin-bottom: 15px;
     color: #000;
+    word-break: break-all;
 }
 
 .post-body {
@@ -1408,6 +1413,10 @@ a.post-category.absolute {
 
 .post-ad-holder {
     margin: 20px 0;
+}
+
+.post-block-wrapper {
+    padding: 0 5px 0 5px;
 }
 
 @media (max-width: 767px) {
@@ -1766,6 +1775,10 @@ a.post-category.absolute {
     padding: 20px 0;
 }
 
+.post-content {
+    word-break: break-all;
+}
+
 .featured-posts .second-post {
     margin-top: 10px;
 }
@@ -1838,6 +1851,7 @@ a.post-category.absolute {
 ================================================== */
 .category-listing .post-block-wrapper .post-content p {
     font-size: 14px;
+    word-break: break-all;
 }
 
 .subCategory > li {
@@ -1899,7 +1913,7 @@ a.post-category.absolute {
 ================================================== */
 
 .post-container {
-    height: 85vh;
+    height: 110vh;
 }
 
 .post-header {
@@ -1914,6 +1928,10 @@ a.post-category.absolute {
     font-size: 25px;
 }
 
+.custom-file label{
+    font-size: 20px;
+}
+
 .post-container .ql-editor {
     height: 400px;
 }
@@ -1924,7 +1942,7 @@ a.post-category.absolute {
     border: none;
     font-size: 16px;
     border-radius: 14px;
-    padding: 9px
+    padding: 6px
 }
 
 .post-container .tagsinput .tag a {
@@ -1937,7 +1955,10 @@ a.post-category.absolute {
     color: rgb(73, 80, 87);
 }
 
-
+.error-custom {
+    color: red;
+    font-weight: 700;
+}
 
     /* 8. SIDEBAR
     ================================================== */

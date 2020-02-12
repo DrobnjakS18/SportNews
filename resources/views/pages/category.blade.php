@@ -30,7 +30,7 @@
                                     <div class="col-md-5 col-sm-6">
                                         <div class="post-thumbnail thumb-float-style">
                                             <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
-                                                <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="" />
+                                                <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="" />
                                             </a>
                                         </div>
                                     </div>
@@ -62,22 +62,6 @@
 
                         <ul class="pagination justify-content-center">
                             {{$items->posts->links()}}
-{{--                            <li class="page-item active">--}}
-{{--                                <a class="page-link" href="#" aria-label="Previous">--}}
-{{--                                    <span aria-hidden="true"><i class="fa fa-angle-double-left mr-2"></i></span>--}}
-{{--                                    <span class="">Previous</span>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                            <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
-{{--                            <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
-{{--                            <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
-{{--                            <li class="page-item">--}}
-{{--                                <a class="page-link" href="#" aria-label="Next">--}}
-{{--                                    <span class="">Next</span>--}}
-{{--                                    <span aria-hidden="true"><i class="fa fa-angle-double-right ml-2"></i></span>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-
                         </ul>
                     </nav>
 

@@ -91,7 +91,7 @@
                 <!-- Logo -->
                 <div class="logo">
                     <a href="{{route('home')}}">
-                        <img src="{{asset('images/logos/logo.png')}}" alt="logo"> <!-- Replace Logo Here -->
+                        <img src="{{asset('storage/images/logo.png')}}" alt="logo"> <!-- Replace Logo Here -->
                     </a>
                 </div>
                 <!-- End Logo -->

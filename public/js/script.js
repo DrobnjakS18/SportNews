@@ -1,4 +1,3 @@
-
 jQuery(function($) {
     'use strict';
     /* ----------------------------------------------------------- */
@@ -35,9 +34,6 @@ jQuery(function($) {
         verticalSwiping:true
 
     });
-
-
-
 
     //Latest news slide
     $('.news-style-one-slide').slick({
@@ -147,4 +143,5 @@ jQuery(function($) {
         }, 500);
         return false;
     });
+
 });

@@ -22,6 +22,7 @@ Route::get('/{category}', 'HomeController@category')->name('category');
 Route::get('/{category}/{slug}', 'PostController@show')->name('post');
 Route::get('/post/create', 'PostController@create')->name('post.create')->middleware('auth');
 Route::post('/post/store', 'PostController@store')->name('post.store')->middleware('auth');
+Route::post('/image/upload','PostController@upload')->name('image');
 
 Route::post('/newsletter','SubscriptionController@store')->name('subscription.store');
 

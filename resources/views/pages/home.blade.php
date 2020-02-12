@@ -11,11 +11,11 @@
             @foreach($items->posts->whereIn('id', [1,2]) as $item)
                 <div class="col-md-6 col-xs-12 col-lg-4">
                     <div class="featured-slider mr-md-3 mr-lg-3">
-                        <div class="item" style="background-image:url({{asset('images/news/'.$item->picture)}})">
+                        <div class="item" style="background-image:url({{asset('storage/images/'.$item->picture)}})">
                             <div class="post-content">
                                 <a href="{{route('category',ucfirst($item->category->name))}}" class="post-cat" style="background:{{$item->category->color}}">{{$item->category->name}}</a>
                                 <h2 class="slider-post-title">
-                                    <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
+                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
                                 </h2>
                                 <div class="post-meta mt-2">
                                     <span class="posted-time"><i class="fa fa-clock-o mr-2 text-danger"></i>{{$item->created_at->diffForHumans()}}</span>
@@ -35,7 +35,7 @@
                     {{--TAKES LAST TWO ITEMS--}}
                     @foreach($items->posts->whereIn('id', [3,4]) as $item)
                         <div class="col-lg-12 col-xs-12 col-sm-6 col-md-6">
-                            <div class="post-featured-style" style="background-image:url({{asset('images/news/news-02.jpg')}})">
+                            <div class="post-featured-style" style="background-image:url({{asset('storage/images/news-02.jpg')}})">
                                 <div class="post-content">
                                     <a href="#" class="post-cat" style="background:{{$item->category->color}}">{{$item->category->name}}</a>
                                     <h2 class="post-title">
@@ -74,7 +74,7 @@
                                 <div class="post-block-wrapper clearfix @if($loop->first) mb-5 @endif">
                                     <div class="post-thumbnail">
                                         <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
-                                            <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-image"/>
+                                            <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-image"/>
                                         </a>
                                     </div>
                                     <div class="post-content">
@@ -99,7 +99,7 @@
                                 <div class="post-block-wrapper clearfix @if($loop->first) mb-5 @endif">
                                     <div class="post-thumbnail">
                                         <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
-                                            <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-image"/>
+                                            <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-image"/>
                                         </a>
                                     </div>
                                     <div class="post-content">
@@ -124,7 +124,7 @@
                                 <div class="post-block-wrapper clearfix @if($loop->first) mb-5 @endif">
                                     <div class="post-thumbnail">
                                         <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
-                                            <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-image"/>
+                                            <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-image"/>
                                         </a>
                                     </div>
                                     <div class="post-content">
@@ -150,7 +150,7 @@
                                 <div class="post-block-wrapper clearfix @if($loop->first) mb-5 @endif">
                                     <div class="post-thumbnail">
                                         <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
-                                            <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-image"/>
+                                            <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-image"/>
                                         </a>
                                     </div>
                                     <div class="post-content">
@@ -185,7 +185,7 @@
                                         <div class="post-block-wrapper clearfix">
                                             <div class="post-thumbnail">
                                                 <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
-                                                    <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-thumbnail"/>
+                                                    <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-thumbnail"/>
                                                 </a>
                                             </div>
                                             <a class="post-category" href="{{route('category',ucfirst($item->category->name))}}" style="background:{{$item->category->color}}">{{$item->category->name}}</a>
@@ -208,24 +208,33 @@
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="post-list-block m-top-0">
+{{--                                NACI BOLJE RESENJE--}}
+                                @php
+                                    $count = 0;
+                                @endphp
                                 @foreach($items->posts as $item)
                                     @if($item->category_id === 1 && $item->select === "0")
-                                        <div class="post-block-wrapper post-float clearfix">
-                                            <div class="post-thumbnail">
-                                                <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
-                                                    <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-thumbnail"/>
-                                                </a>
-                                            </div>
+                                        @php
+                                            $count++;
+                                        @endphp
+                                        @if($count <= 4)
+                                            <div class="post-block-wrapper post-float clearfix">
+                                                <div class="post-thumbnail">
+                                                    <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
+                                                        <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-thumbnail"/>
+                                                    </a>
+                                                </div>
 
-                                            <div class="post-content">
-                                                <h2 class="post-title title-sm">
-                                                    <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
-                                                </h2>
-                                                <div class="post-meta">
-                                                    <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>{{$item->created_at->diffForHumans()}}</span>
+                                                <div class="post-content">
+                                                    <h2 class="post-title title-sm">
+                                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
+                                                    </h2>
+                                                    <div class="post-meta">
+                                                        <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>{{$item->created_at->diffForHumans()}}</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        @endif
                                     @endif
                                 @endforeach
                             </div>
@@ -248,7 +257,7 @@
                                 <div class="post-overlay-wrapper clearfix">
                                     <div class="post-thumbnail">
                                         <a href="single-post.html">
-                                            <img class="img-fluid" src="{{asset('images/news/news-16.jpg')}}" alt="post-thumbnail"/>
+                                            <img class="img-fluid" src="{{asset('storage/images/news-16.jpg')}}" alt="post-thumbnail"/>
                                         </a>
                                     </div>
                                     <div class="post-content">
@@ -269,7 +278,7 @@
                                 <div class="post-overlay-wrapper clearfix mt-3">
                                     <div class="post-thumbnail">
                                         <a href="single-post.html">
-                                            <img class="img-fluid" src="{{asset('images/news/news-18.jpg')}}" alt="post-thumbnail"/>
+                                            <img class="img-fluid" src="{{asset('storage/images/news-18.jpg')}}" alt="post-thumbnail"/>
                                         </a>
                                     </div>
                                     <div class="post-content">
@@ -292,7 +301,7 @@
                                 <div class="post-overlay-wrapper clearfix">
                                     <div class="post-thumbnail">
                                         <a href="single-post.html">
-                                            <img class="img-fluid" src="{{asset('images/news/news-17.jpg')}}" alt="post-thumbnail"/>
+                                            <img class="img-fluid" src="{{asset('storage/images/news-17.jpg')}}" alt="post-thumbnail"/>
                                         </a>
                                     </div>
 
@@ -313,7 +322,7 @@
                                 <div class="post-overlay-wrapper mt-3 clearfix">
                                     <div class="post-thumbnail">
                                         <a href="single-post.html">
-                                            <img class="img-fluid" src="{{asset('images/news/news-19.jpg')}}" alt="post-thumbnail"/>
+                                            <img class="img-fluid" src="{{asset('storage/images/news-19.jpg')}}" alt="post-thumbnail"/>
                                         </a>
                                     </div>
                                     <div class="post-content">
@@ -352,7 +361,7 @@
                         @foreach($items->posts as $item)
                             @if($item->category_id === 2 && $item->select === "1")
                                 <div class="post-thumbnail">
-                                    <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-thumbnail"/>
+                                    <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-thumbnail"/>
                                 </div>
 
                                 <div class="post-content">
@@ -380,7 +389,7 @@
                             @if($item->category_id === 2 && $item->select === "0")
                                 <div class="post-block-wrapper post-float clearfix">
                                     <div class="post-thumbnail">
-                                        <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-thumbnail"/>
+                                        <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-thumbnail"/>
                                     </div>
                                     <div class="post-content">
                                         <h2 class="post-title title-sm">
@@ -407,7 +416,7 @@
                         @foreach($items->posts as $item)
                             @if($item->category_id === 3 && $item->select === "1")
                                 <div class="post-thumbnail">
-                                    <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-thumbnail"/>
+                                    <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-thumbnail"/>
                                 </div>
 
                                 <div class="post-content">
@@ -435,7 +444,7 @@
                             @if($item->category_id === 3 && $item->select === "0")
                                 <div class="post-block-wrapper post-float clearfix">
                                     <div class="post-thumbnail">
-                                        <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-thumbnail"/>
+                                        <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-thumbnail"/>
                                     </div>
                                     <div class="post-content">
                                         <h2 class="post-title title-sm">
@@ -462,7 +471,7 @@
                         @foreach($items->posts as $item)
                             @if($item->category_id === 4 && $item->select === "1")
                                 <div class="post-thumbnail">
-                                    <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-thumbnail"/>
+                                    <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-thumbnail"/>
                                 </div>
                                 <div class="post-content">
                                     <h2 class="post-title ">
@@ -489,7 +498,7 @@
                             @if($item->category_id === 4 && $item->select === "0")
                                 <div class="post-block-wrapper post-float clearfix">
                                     <div class="post-thumbnail">
-                                        <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-thumbnail"/>
+                                        <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-thumbnail"/>
                                     </div>
                                     <div class="post-content">
                                         <h2 class="post-title title-sm">
@@ -524,7 +533,7 @@
                                     <div class="post-block-wrapper post-float-half clearfix">
                                         <div class="post-thumbnail">
                                             <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
-                                                <img class="img-fluid" src="{{asset('images/news/'.$item->picture)}}" alt="post-thumbnail"/>
+                                                <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-thumbnail"/>
                                             </a>
                                         </div>
                                         <div class="post-content">
@@ -538,7 +547,8 @@
                                               <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
                                                 </span>
                                             </div>
-                                            <p>{{substr($item->content,0,100).'...'}}</p>
+{{--                                            <p>{{substr($item->content,0,100).'...'}}</p>--}}
+                                            {!! substr($item->content,0,100).'...' !!}
                                         </div>
                                     </div>
                                 </div>

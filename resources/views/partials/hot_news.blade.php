@@ -5,7 +5,7 @@
 
     <div class="post-overlay-wrapper">
         <div class="post-thumbnail">
-            <img class="img-fluid" src="{{asset('images/news/news-15.jpg')}}" alt="post-thumbnail"/>
+            <img class="img-fluid" src="{{asset('storage/images/news-15.jpg')}}" alt="post-thumbnail"/>
         </div>
         <div class="post-content">
             <a class="post-category white" href="post-category-1.html">Fashion</a>
@@ -25,7 +25,7 @@
         <div class="post-block-wrapper post-float ">
             <div class="post-thumbnail">
                 <a href="single-post.html">
-                    <img class="img-fluid" src="{{asset('images/news/news-03.jpg')}}" alt="post-thumbnail"/>
+                    <img class="img-fluid" src="{{asset('storage/images/news-03.jpg')}}" alt="post-thumbnail"/>
                 </a>
             </div>
             <div class="post-content">
@@ -40,7 +40,7 @@
         <div class="post-block-wrapper post-float">
             <div class="post-thumbnail">
                 <a href="single-post.html">
-                    <img class="img-fluid" src="{{asset('images/news/news-05.jpg')}}" alt="post-thumbnail"/>
+                    <img class="img-fluid" src="{{asset('storage/images/news-05.jpg')}}" alt="post-thumbnail"/>
                 </a>
             </div>
             <div class="post-content">
@@ -55,7 +55,7 @@
         <div class="post-block-wrapper post-float">
             <div class="post-thumbnail">
                 <a href="single-post.html">
-                    <img class="img-fluid" src="{{asset('images/news/news-11.jpg')}}" alt="post-thumbnail"/>
+                    <img class="img-fluid" src="{{asset('storage/images/news-11.jpg')}}" alt="post-thumbnail"/>
                 </a>
             </div>
 
@@ -71,7 +71,7 @@
         <div class="post-block-wrapper post-float">
             <div class="post-thumbnail">
                 <a href="single-post.html">
-                    <img class="img-fluid" src="{{asset('images/news/news-06.jpg')}}" alt="post-thumbnail"/>
+                    <img class="img-fluid" src="{{asset('storage/images/news-06.jpg')}}" alt="post-thumbnail"/>
                 </a>
             </div>
 

@@ -25,91 +25,18 @@
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                     <div class="single-post">
                         <div class="post-header mb-5">
-                            <a class="post-category" style="background:{{$items->post->category->color}}" href="{{route('category',$items->post->category->name)}}">{{$items->post->category->name}}</a>
+                            <a class="post-category" style="background:{{$items->post->category->color}}" href="{{route('category',ucfirst($items->post->category->name))}}">{{$items->post->category->name}}</a>
                             <h2 class="post-title">
                                 {{$items->post->title}}
                             </h2>
-                            <p>{{$items->post->content}}</p>
+                            {!! $items->post->content !!}
                         </div>
-
-
-{{--                        <div class="post-body">--}}
-{{--                            <div class="post-featured-image">--}}
-{{--                                <img src="{{asset('images/news/img-2.jpg')}}" class="img-fluid" alt="featured-image">--}}
-{{--                            </div>--}}
-{{--                            <div class="entry-content">--}}
-{{--                                <p>--}}
-{{--                                    It was a cheerful prospect. I asked Perry what he thought about it; but he only shrugged his shoulders and continued a longwinded prayer he had been at for some time. He was wont to say that the only redeeming feature of our captivity was the ample time it gave him for the improvisation of prayers—it was becoming an obsession with him. The Sagoths had begun to take notice of his habit of declaiming throughout entire marches. One of them asked him what he was saying—to whom he was talking. The question gave me an idea, so I answered quickly before Perry could say anything.--}}
-{{--                                </p>--}}
-{{--                                <h2>Perfect design & code delivered to you</h2>--}}
-{{--                                <p>--}}
-{{--                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.--}}
-{{--                                    Repellat sapiente neque iusto praesentium adipisci itaque error, commodi laborum doloremque. Esse?--}}
-{{--                                </p>--}}
-{{--                                <div class="media mb-4 single-media">--}}
-{{--                                    <img src="{{asset('images/news/img-1.jpg')}}" alt="post-ads" class="img-fluid mr-4">--}}
-{{--                                    <div class="media-body">--}}
-{{--                                        <p>--}}
-{{--                                            Oblique facilisi vix ei, quo ignota appetere lucilius at. Apeirian voluptatibus ius ei, an periculis imperdiet consequat sea. His ea everti placerat. Ad mea utroque convenire, an quo reque aperiam, has et unum cibo adipiscing. Brute instructior te vix, consequat definitiones conclusionemque et usu, et per idque quaerendum. Id pro ridens appareat, vim in verear pertinacia.--}}
-{{--                                        </p>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <p>--}}
-{{--                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde cum delectus exercitationem--}}
-{{--                                    natus quidem enim error suscipit. Iure cupiditate nobis quaerat consectetur! Vero aliquam,--}}
-{{--                                    amet ipsum ullam reiciendis nostrum voluptate accusantium provident ut blanditiis incidunt.--}}
-{{--                                </p>--}}
-{{--                                <p>--}}
-{{--                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ab ratione animi nobis in et consequatur--}}
-{{--                                    earum modi repellendus, qui, non debitis pariatur tempora consequuntur!--}}
-{{--                                </p>--}}
-{{--                            </div>--}}
-
-{{--                            <div class="share-block  d-flex justify-content-between align-itemss-center border-top border-bottom mt-5">--}}
-{{--                                <div class="post-tags">--}}
-{{--                                    <span>Tags</span>--}}
-{{--                                    <a href="post-category-2.html">Health</a>--}}
-{{--                                    <a href="post-category-2.html">Game</a>--}}
-{{--                                    <a href="post-category-2.html">Tour</a>--}}
-{{--                                </div>--}}
-
-{{--                                <ul class="share-icons list-unstyled ">--}}
-{{--                                    <li class="facebook">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-facebook"></i>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                    <li class="twitter">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-twitter"></i>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                    <li class="gplus">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-google-plus"></i>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                    <li class="pinterest">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-pinterest"></i>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                    <li class="reddit">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-reddit-alien"></i>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                </ul>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
                     </div>
 
                     <nav class="post-navigation clearfix">
-{{--                        @foreach($items->posts as $post)--}}
                             <div class="previous-post">
                                 @if($items->previous)
-                                    <a href="{{route('post',[ucfirst($items->previous->category->name),$items->slug.'-'.$item->id])}}">
+                                    <a href="{{route('post',[ucfirst($items->previous->category->name),$items->previous->slug.'-'.$items->previous->id])}}">
                                         <h6 class="text-uppercase">Previous</h6>
                                         <h3>
                                             {{$items->previous->title}}
@@ -135,20 +62,18 @@
                                         </h3>
                                     </a>
                                 @else
-                                    <a href="{{route('post',[ucfirst($items->category->name),$items->slug.'-'.$items->posts->first()->min('id')])}}">
-                                        <h6 class="text-uppercase">Next</h6>
-                                        <h3>
-                                            {{$items->posts->first()->title}}
-                                        </h3>
-                                    </a>
+                                        <a href="{{route('post',[ucfirst($items->posts->first()->category->name),$items->posts->first()->slug.'-'.$items->posts->first()->min('id')])}}">
+                                            <h6 class="text-uppercase">Next</h6>
+                                            <h3>
+                                                {{$items->posts->first()->title}}
+                                            </h3>
+                                        </a>
                                 @endif
                             </div>
-
-{{--                        @endforeach--}}
                     </nav>
                     <div class="author-block">
                         <div class="author-thumb">
-                            <img src="{{asset('images/'.$items->post->user->profile_picture)}}" alt="author-image">
+                            <img src="{{asset('storage/images/'.$items->post->user->profile_picture)}}" alt="author-image">
                         </div>
                         <div class="author-content">
                             <h3><a href="{{route('author',$items->post->user->name)}}">{{$items->post->user->name}}</a></h3>
@@ -184,10 +109,10 @@
                                     <div class="post-block-wrapper clearfix">
                                         <div class="post-thumbnail mb-0">
                                             <a href="{{route('post',[ucfirst($post->category->name),$post->slug.'-'.$post->id])}}">
-                                                <img class="img-fluid" src="{{asset('images/news/'.$post->picture)}}" alt="post-thumbnail"/>
+                                                <img class="img-fluid" src="{{asset('storage/images/'.$post->picture)}}" alt="post-thumbnail"/>
                                             </a>
                                         </div>
-                                        <a class="post-category" href="{{route('category',$post->category->name)}}"  style="background:{{$post->category->color}}">{{$post->category->name}}</a>
+                                        <a class="post-category" href="{{route('category',ucfirst($post->category->name))}}"  style="background:{{$post->category->color}}">{{$post->category->name}}</a>
                                         <div class="post-content">
                                             <h2 class="post-title title-sm">
                                                 <a href="{{route('post',[ucfirst($post->category->name),$post->slug.'-'.$post->id])}}">{{$post->title}}</a>
@@ -196,59 +121,6 @@
                                     </div>
                                 </div>
                             @endforeach
-
-
-
-{{--                            <div class="items">--}}
-{{--                                <div class="post-block-wrapper clearfix">--}}
-{{--                                    <div class="post-thumbnail mb-0">--}}
-{{--                                        <a href="single-post.html">--}}
-{{--                                            <img class="img-fluid" src="{{asset('images/news/news-10.jpg')}}" alt="post-thumbnail"/>--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <a class="post-category" href="post-category-1.html">Food</a>--}}
-{{--                                    <div class="post-content">--}}
-{{--                                        <h2 class="post-title title-sm">--}}
-{{--                                            <a href="single-post.html">Free Two-Hour Delivery From Whole Foods</a>--}}
-{{--                                        </h2>--}}
-
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="items">--}}
-{{--                                <div class="post-block-wrapper clearfix">--}}
-{{--                                    <div class="post-thumbnail mb-0">--}}
-{{--                                        <a href="single-post.html">--}}
-{{--                                            <img class="img-fluid" src="{{asset('images/news/news-11.jpg')}}" alt="post-thumbnail"/>--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <a class="post-category" href="post-category-1.html">Tour</a>--}}
-{{--                                    <div class="post-content">--}}
-{{--                                        <h2 class="post-title title-sm">--}}
-{{--                                            <a href="single-post.html">Snow and Freezing Rain in Paris Forces the</a>--}}
-{{--                                        </h2>--}}
-
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="items">--}}
-{{--                                <div class="post-block-wrapper clearfix">--}}
-{{--                                    <div class="post-thumbnail mb-0">--}}
-{{--                                        <a href="single-post.html">--}}
-{{--                                            <img class="img-fluid" src="{{asset('images/news/news-18.jpg')}}" alt="post-thumbnail"/>--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <a class="post-category" href="post-category-1.html">Beauty</a>--}}
-{{--                                    <div class="post-content">--}}
-{{--                                        <h2 class="post-title title-sm">--}}
-{{--                                            <a href="single-post.html">The Best Eye Makeup Tutorials for all</a>--}}
-{{--                                        </h2>--}}
-
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-
-
                         </div>
                     </div>
 
@@ -259,7 +131,7 @@
                         <ul class="all-comments">
                             <li>
                                 <div class="comment">
-                                    <img class="commented-person" alt="" src="{{asset('images/news/author-01.jpg')}}">
+                                    <img class="commented-person" alt="" src="{{asset('storage/images/author-01.jpg')}}">
                                     <div class="comment-body">
                                         <div class="meta-data">
                                             <span class="commented-person-name">Jack Anderson</span>
@@ -280,7 +152,7 @@
                                 <ul class="comments-reply">
                                     <li>
                                         <div class="comment">
-                                            <img class="commented-person" alt="" src="{{asset('images/news/author-02.jpg')}}">
+                                            <img class="commented-person" alt="" src="{{asset('storage/images/author-02.jpg')}}">
                                             <div class="comment-body">
                                                 <div class="meta-data">
                                                     <span class="commented-person-name">Jhonny American</span>
@@ -300,7 +172,7 @@
                                     </li>
                                 </ul>
                                 <div class="comment last">
-                                    <img class="commented-person" alt="" src="{{asset('images/news/author-03.jp')}}g">
+                                    <img class="commented-person" alt="" src="{{asset('storage/images/author-03.jp')}}g">
                                     <div class="comment-body">
                                         <div class="meta-data">
                                             <span class="commented-person-name">Vicky Fong</span>
@@ -360,7 +232,7 @@
                         @include('partials.social')
                         @include('partials.hot_news')
                         <div class="widget">
-                            <img class="banner img-fluid" src="{{asset('images/banner-ads/ad-sidebar.png')}}" alt="300x300 ads"/>
+                            <img class="banner img-fluid" src="{{asset('storage/images/banner-ads/ad-sidebar.png')}}" alt="300x300 ads"/>
                         </div>
                     </div>
                 </div>
