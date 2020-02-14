@@ -48,7 +48,7 @@
                                             <h2 class="post-title title-large ">
                                                 <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
                                             </h2>
-                                            <p>{{substr($item->content,0,100).'...'}}</p>
+                                            {!! substr($item->content,0,100) !!}
                                         </div>
                                     </div>
                                 </div>

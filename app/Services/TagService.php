@@ -10,8 +10,6 @@ class TagService
 {
     /**
      * Store new tag
-     * @param $tag
-     * @return \App\Models\Tag
      */
     static public function store($tag)
     {
@@ -20,8 +18,6 @@ class TagService
 
     /**
      * Find tag by name if exists
-     * @param $name
-     * @return bool
      */
     static public function getIfExists($name)
     {
@@ -30,12 +26,24 @@ class TagService
 
     /**
      * Find tag by name
-     * @param $name
-     * @return App\Models\Tag
      */
     static public function getByName($name)
     {
         return TagRepository::findByName($name);
+    }
+
+    /**
+     * Get All posts by tag via pivot table post_tag
+     */
+    static public function getAllPostsByTag($tag)
+    {
+        $tag = self::getByName($tag);
+
+        $posts = PostTagService::getByTagId($tag->id);
+
+//        dd($posts);
+
+        return $posts;
     }
 
 }

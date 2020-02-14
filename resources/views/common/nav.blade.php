@@ -132,7 +132,7 @@
             <div class="col-lg-12">
                 <nav class="navbar navbar-expand-lg site-main-nav navigation">
                     <a class="navbar-brand d-lg-none" href="{{route('home')}}">
-                        <img src="{{asset('images/logos/footer-logo.png')}}" alt="logo">
+                        <img src="{{asset('storage/images/footer-logo.png')}}" alt="logo">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="fa fa-bars"></span>
@@ -154,10 +154,7 @@
                                 <a class="nav-link" href="{{route('category','Tenis')}}">Tenis</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link" href="{{route('category','Automoto')}}">Automoto</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" href="{{route('category', 'Esports')}}">ESPORTS</a>
+                                <a class="nav-link" href="{{route('category','Esports')}}">ESPORTS</a>
                             </li>
 
                             <li class="nav-item dropdown">
@@ -165,41 +162,14 @@
                                     Post
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{{route('single')}}">Single Post</a>
                                     <a class="dropdown-item" href="{{route('post.create')}}">Create Post</a>
                                 </div>
                             </li>
-{{--                            <li class="nav-item dropdown">--}}
-{{--                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                                    Account--}}
-{{--                                </a>--}}
-{{--                                <div class="dropdown-menu">--}}
-{{--                                    <a class="dropdown-item" href="{{ route('login') }}">Log In</a>--}}
-{{--                                    <a class="dropdown-item" href="{{route('register')}}">Register</a>--}}
-{{--                                </div>--}}
-{{--                            </li>--}}
-
                             <li class="nav-item dropdown">
                                 <a class="nav-link" href="{{route('about')}}">
                                     About
                                 </a>
-{{--                                <div class="dropdown-menu">--}}
-{{--                                    <a class="dropdown-item" href="about.html">About</a>--}}
-{{--                                    <a class="dropdown-item" href="terms.html">Terms</a>--}}
-{{--                                    <a class="dropdown-item" href="privacy.html">Privacy Policy</a>--}}
-{{--                                    <a class="dropdown-item" href="job.html">Career</a>--}}
-{{--                                </div>--}}
                             </li>
-{{--                            <li class="nav-item dropdown">--}}
-{{--                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                                    Pages--}}
-{{--                                </a>--}}
-{{--                                <div class="dropdown-menu">--}}
-{{--                                    <a class="dropdown-item" href="404.html">404 Page</a>--}}
-{{--                                    <a class="dropdown-item" href="search.html">Search Page</a>--}}
-{{--                                </div>--}}
-{{--                            </li>--}}
-
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('contact')}}">Contact</a>
                             </li>

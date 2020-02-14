@@ -18,11 +18,19 @@ class PostService
     const STATUS_EROR = "error";
     const STATUS_CODE_ERROR = 500;
 
-
+    /**
+     * Gets all posts
+     * @return \App\Models\Post[]|\Illuminate\Database\Eloquent\Collection
+     */
     static public function getAll()
     {
        return PostRepository::all();
     }
+
+    /**
+     * Gets all posts with users
+     * @return object
+     */
     static public function getAllWithUsers()
     {
         $data['posts'] = PostRepository::all();
@@ -53,16 +61,28 @@ class PostService
 
     }
 
+    /**
+     * Get post id
+     * @return \App\Repositories\PostRepository
+     */
     static public function getById($id)
     {
         return PostRepository::findById($id);
     }
 
+    /**
+     * Get post by users id
+     * @return \App\Repositories\PostRepository
+     */
     static public function getByUser($id)
     {
         return PostRepository::findByUser($id);
     }
 
+    /**
+     * Get previous post of the current sent post id
+     * @return \App\Repositories\PostRepository
+     */
     static public function getPreviousPost($id)
     {
         $previousId = PostRepository::findPreviousPost($id);
@@ -70,6 +90,10 @@ class PostService
         return PostRepository::findById($previousId);
     }
 
+    /**
+     * Get next post of the current sent post id
+     * @return \App\Repositories\PostRepository
+     */
     static public function getNextPost($id)
     {
         $nextId = PostRepository::findNextPost($id);
@@ -77,6 +101,10 @@ class PostService
         return  PostRepository::findById($nextId);
     }
 
+    /**
+     * Get all data for single page post
+     * @return object
+     */
     static public function getAllAboutSinglePost($slug)
     {
 
@@ -90,9 +118,14 @@ class PostService
         return (object) $data;
     }
 
+    /**
+     * Get posts and users by category name
+     * @param $name
+     * @return object
+     */
     static public function getByCategoryName($name)
     {
-        $categoryId = CategoryService::getByName($name);
+        $categoryId = CategoryService::getByName(strtolower($name));
 
         $data['posts'] = PostRepository::findByCategory($categoryId);
         $data['users'] = UserService::getAll();
@@ -116,6 +149,7 @@ class PostService
         //Get filename to store
         $fileNameToStore = $fileName.'_'.time().'.'.$extension;
 
+        //Storage image
         $file->storeAs('public/images',$fileNameToStore);
 
         return $fileNameToStore;
@@ -153,7 +187,6 @@ class PostService
                     PostTagService::store($postId->id,$tagId->id);
                 }
             }
-
             DB::commit();
         } catch (\Exception $exception) {
 
@@ -165,7 +198,7 @@ class PostService
     }
 
     /**
-     * Display selected image in text editor via ajax
+     * Store text editor upload image
      * @param $file
      * @return object
      */

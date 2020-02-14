@@ -31,4 +31,12 @@ class Post extends Model
     {
         return $this->belongsTo('App\Models\Category');
     }
+
+    /**
+     *  Get all tags by post
+     */
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }

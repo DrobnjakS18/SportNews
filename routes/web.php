@@ -23,8 +23,9 @@ Route::get('/{category}/{slug}', 'PostController@show')->name('post');
 Route::get('/post/create', 'PostController@create')->name('post.create')->middleware('auth');
 Route::post('/post/store', 'PostController@store')->name('post.store')->middleware('auth');
 Route::post('/image/upload','PostController@upload')->name('image');
-
 Route::post('/newsletter','SubscriptionController@store')->name('subscription.store');
+
+Route::get('/tag/{tag}','TagController@show')->name('tag');
 
 //Route::get('/html-email','NewsletterController@htmlEmail')->name('newsletter.html');
 

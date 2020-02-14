@@ -16,9 +16,6 @@ class PostTagRepository extends BaseRepository
 
     /**
      * Store forgein keys into pivot table
-     * @param $post_id
-     * @param $tag_id
-     * @return PostTag
      */
     static public function create($post_id,$tag_id)
     {
@@ -36,5 +33,13 @@ class PostTagRepository extends BaseRepository
 
         return $postTag;
 
+    }
+
+    /**
+     * Finds all by tag id
+     */
+    static public function findByTag($id)
+    {
+        return PostTag::where('tag_id',$id)->get();
     }
 }

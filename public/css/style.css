@@ -52,7 +52,7 @@
   8.6. Review Post
   8.7. Top Authors
 
-9. VIDEO GALLERY
+9. TAG PAGE STYLE
 
 10. CONTACT
 
@@ -153,7 +153,7 @@ a.read-more:hover {
 }
 
 .section-padding {
-    padding: 70px 0;
+    padding: 10px 0 70px 0;
     position: relative;
 }
 
@@ -499,11 +499,11 @@ a[href^=tel] {
 .news-title span:after {
     content: '';
     position: absolute;
-    width: 30px;
+    width: 100%;
     height: 2px;
     background: #dc3545;
-    left: 0px;
-    bottom: 0px;
+    left: 0;
+    bottom: 0;
 }
 
 .block {
@@ -544,6 +544,10 @@ a[href^=tel] {
 ================================================== */
 .navigation {
     padding: 10px 0;
+}
+
+.username-button {
+    font-weight: 600;
 }
 
 .header-navigation {
@@ -1387,6 +1391,11 @@ a.post-category.absolute {
     width: 100%;
 }
 
+.post-image {
+    width: 100%;
+    margin-bottom: 60px;
+}
+
 .single-post .post-title {
     font-size: 48px;
     line-height: 58px;
@@ -1464,6 +1473,19 @@ a.post-category.absolute {
     border-radius: 2px;
     margin-right: 5px;
     font-size: 12px;
+}
+
+.post-show-tags a{
+    color: white;
+    background: #6c757d;
+    padding: 5px 25px;
+    border-radius: 10px;
+    font-size: 17px;
+}
+
+.post-show-tags a:hover {
+    color: white;
+    text-decoration: none;
 }
 
 .post-source a, .post-tags a {
@@ -1917,7 +1939,13 @@ a.post-category.absolute {
 }
 
 .post-header {
-    margin: 50px 0 30px 0;
+    /*margin: 50px 0 30px 0;*/
+    margin: 0 0 30px 0;
+}
+
+.post-header img {
+    width: 100%;
+    height: auto;
 }
 
 .post-container form {
@@ -2229,6 +2257,19 @@ a.post-category.absolute {
     height: 100%;
     width: 100%;
 }
+
+/* 9. TAG PAGE STYLE
+================================================== */
+
+.tag-big-name {
+    font-size: 30px;
+    text-transform:none;
+}
+
+.tag-big-name::after {
+    display: none;
+}
+
 
 /* 10. CONTACT
 ================================================== */

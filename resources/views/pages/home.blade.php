@@ -7,8 +7,8 @@
 <section class="featured-posts">
     <div class="container">
         <div class="row no-gutters">
-            {{--TAKES FIRST TWO ITEMS--}}
-            @foreach($items->posts->whereIn('id', [1,2]) as $item)
+            {{--TAKES ONE FOOTBALL ONE BASKETBALL--}}
+            @foreach($items->posts->whereIn('id', [2,8]) as $item)
                 <div class="col-md-6 col-xs-12 col-lg-4">
                     <div class="featured-slider mr-md-3 mr-lg-3">
                         <div class="item" style="background-image:url({{asset('storage/images/'.$item->picture)}})">
@@ -32,10 +32,10 @@
 
             <div class="col-md-12 col-xs-12 col-sm-12 col-lg-4">
                 <div class="row mt-3 mt-lg-0">
-                    {{--TAKES LAST TWO ITEMS--}}
-                    @foreach($items->posts->whereIn('id', [3,4]) as $item)
+                    {{--TAKES ONE TENIS ONE ESPORTS--}}
+                    @foreach($items->posts->whereIn('id', [10,13]) as $item)
                         <div class="col-lg-12 col-xs-12 col-sm-6 col-md-6">
-                            <div class="post-featured-style" style="background-image:url({{asset('storage/images/news-02.jpg')}})">
+                            <div class="post-featured-style" style="background-image:url({{asset('storage/images/'.$item->picture)}})">
                                 <div class="post-content">
                                     <a href="#" class="post-cat" style="background:{{$item->category->color}}">{{$item->category->name}}</a>
                                     <h2 class="post-title">
@@ -70,7 +70,7 @@
                     <div class="news-style-one-slide">
                     {{--SHOWS TWO IN A SINGLE ROW--}}
                         <div class="item">
-                             @foreach($items->posts->whereIn('id', [1,2]) as $item)
+                             @foreach($items->posts->whereIn('id', [3,4]) as $item)
                                 <div class="post-block-wrapper clearfix @if($loop->first) mb-5 @endif">
                                     <div class="post-thumbnail">
                                         <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
@@ -88,14 +88,14 @@
                                                 <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
                                             </span>
                                         </div>
-                                        <p>{{substr($item->content,0,100).'...'}}</p>
+                                        {!! substr($item->content,0,100) !!}
                                     </div>
                                 </div>
                             @endforeach
                         </div>
                         {{--SHOWS TWO IN A SINGLE ROW--}}
                         <div class="item">
-                            @foreach($items->posts->whereIn('id', [3,4]) as $item)
+                            @foreach($items->posts->whereIn('id', [8,7]) as $item)
                                 <div class="post-block-wrapper clearfix @if($loop->first) mb-5 @endif">
                                     <div class="post-thumbnail">
                                         <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
@@ -113,14 +113,14 @@
                                                 <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
                                             </span>
                                         </div>
-                                        <p>{{substr($item->content,0,100).'...'}}</p>
+                                        {!! substr($item->content,0,100) !!}
                                     </div>
                                 </div>
                             @endforeach
                         </div>
 
                         <div class="item">
-                            @foreach($items->posts->whereIn('id', [5,6]) as $item)
+                            @foreach($items->posts->whereIn('id', [11,9]) as $item)
                                 <div class="post-block-wrapper clearfix @if($loop->first) mb-5 @endif">
                                     <div class="post-thumbnail">
                                         <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
@@ -138,7 +138,7 @@
                                                 <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
                                             </span>
                                         </div>
-                                        <p>{{substr($item->content,0,100).'...'}}</p>
+                                        {!! substr($item->content,0,100) !!}
                                     </div>
                                 </div>
                             @endforeach
@@ -146,7 +146,7 @@
 
 
                         <div class="item">
-                            @foreach($items->posts->whereIn('id', [7,8]) as $item)
+                            @foreach($items->posts->whereIn('id', [14,12]) as $item)
                                 <div class="post-block-wrapper clearfix @if($loop->first) mb-5 @endif">
                                     <div class="post-thumbnail">
                                         <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
@@ -164,7 +164,7 @@
                                                 <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
                                             </span>
                                         </div>
-                                        <p>{{substr($item->content,0,100).'...'}}</p>
+                                        {!! substr($item->content,0,100) !!}
                                     </div>
                                 </div>
                             @endforeach
@@ -200,7 +200,7 @@
                                                       <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
                                                     </span>
                                                 </div>
-                                                <p>{{substr($item->content,0,100).'...'}}</p>
+                                                {!! substr($item->content,0,100) !!}
                                             </div>
                                         </div>
                                     @endif
@@ -359,7 +359,7 @@
 
                     <div class="post-overlay-wrapper clearfix">
                         @foreach($items->posts as $item)
-                            @if($item->category_id === 2 && $item->select === "1")
+                            @if($item->category_id === 3 && $item->select === "1")
                                 <div class="post-thumbnail">
                                     <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-thumbnail"/>
                                 </div>
@@ -374,61 +374,6 @@
                                        <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
                                         </span>
 {{--                                        KASNIJE DODATI BROJAC ZA KOMENTARE--}}
-                                        <span class="pull-right">
-                                            <i class="fa fa-comments"></i>
-                                            <a href="single-post.html#comments">05</a>
-                                        </span>
-                                    </div>
-                                </div>
-                            @endif
-                        @endforeach
-                    </div>
-
-                    <div class="post-list-block">
-                        @foreach($items->posts as $item)
-                            @if($item->category_id === 2 && $item->select === "0")
-                                <div class="post-block-wrapper post-float clearfix">
-                                    <div class="post-thumbnail">
-                                        <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-thumbnail"/>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title title-sm">
-                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
-                                        </h2>
-                                        <div class="post-meta">
-                                            <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-
-                                     {{--ESPORTS--}}
-            <div class="col-lg-4 col-md-6">
-                <div class="block">
-                    <h3 class="news-title">
-                        <span>ESPORTS</span>
-                    </h3>
-                    <div class="post-overlay-wrapper clearfix">
-                        @foreach($items->posts as $item)
-                            @if($item->category_id === 3 && $item->select === "1")
-                                <div class="post-thumbnail">
-                                    <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-thumbnail"/>
-                                </div>
-
-                                <div class="post-content">
-                                    <h2 class="post-title ">
-                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
-                                    </h2>
-                                    <div class="post-meta white">
-                                        <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
-                                        <span class="post-author">by
-                           <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
-                                        </span>
-                                        {{--                                        KASNIJE DODATI BROJAC ZA KOMENTARE--}}
                                         <span class="pull-right">
                                             <i class="fa fa-comments"></i>
                                             <a href="single-post.html#comments">05</a>
@@ -461,6 +406,61 @@
                 </div>
             </div>
 
+                                     {{--ESPORTS--}}
+            <div class="col-lg-4 col-md-6">
+                <div class="block">
+                    <h3 class="news-title">
+                        <span>ESPORTS</span>
+                    </h3>
+                    <div class="post-overlay-wrapper clearfix">
+                        @foreach($items->posts as $item)
+                            @if($item->category_id === 4 && $item->select === "1")
+                                <div class="post-thumbnail">
+                                    <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-thumbnail"/>
+                                </div>
+
+                                <div class="post-content">
+                                    <h2 class="post-title ">
+                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
+                                    </h2>
+                                    <div class="post-meta white">
+                                        <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
+                                        <span class="post-author">by
+                           <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
+                                        </span>
+                                        {{--                                        KASNIJE DODATI BROJAC ZA KOMENTARE--}}
+                                        <span class="pull-right">
+                                            <i class="fa fa-comments"></i>
+                                            <a href="single-post.html#comments">05</a>
+                                        </span>
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+
+                    <div class="post-list-block">
+                        @foreach($items->posts as $item)
+                            @if($item->category_id === 4 && $item->select === "0")
+                                <div class="post-block-wrapper post-float clearfix">
+                                    <div class="post-thumbnail">
+                                        <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-thumbnail"/>
+                                    </div>
+                                    <div class="post-content">
+                                        <h2 class="post-title title-sm">
+                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
+                                        </h2>
+                                        <div class="post-meta">
+                                            <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
                         {{--BASKETBALL--}}
             <div class="col-lg-4 col-md-6">
                 <div class="block">
@@ -469,7 +469,7 @@
                     </h3>
                     <div class="post-overlay-wrapper clearfix">
                         @foreach($items->posts as $item)
-                            @if($item->category_id === 4 && $item->select === "1")
+                            @if($item->category_id === 2 && $item->select === "1")
                                 <div class="post-thumbnail">
                                     <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-thumbnail"/>
                                 </div>
@@ -495,7 +495,7 @@
 
                     <div class="post-list-block">
                         @foreach($items->posts as $item)
-                            @if($item->category_id === 4 && $item->select === "0")
+                            @if($item->category_id === 2 && $item->select === "0")
                                 <div class="post-block-wrapper post-float clearfix">
                                     <div class="post-thumbnail">
                                         <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-thumbnail"/>

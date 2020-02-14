@@ -13,7 +13,6 @@ class PostRepository extends BaseRepository
         $this->className = 'App\Models\Post';
     }
 
-
     /**
      * All posts
      */
@@ -31,7 +30,7 @@ class PostRepository extends BaseRepository
     }
 
     /**
-     * Single post by category
+     * Single post by category pagination 4
      */
     static public function findByCategory($id)
     {
@@ -39,7 +38,7 @@ class PostRepository extends BaseRepository
     }
 
     /**
-     * Find post by user id
+     * Find post by user id pagination 4
      */
     static public function findByUser($id)
     {
@@ -61,7 +60,6 @@ class PostRepository extends BaseRepository
     {
         return Post::where('id','>',$currentPostId)->min('id');
     }
-
 
     /**
      * Insert new post

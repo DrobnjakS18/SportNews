@@ -91,7 +91,7 @@ if ($('.tags-add').length) {
 }
 
 
-//   Post Submit
+// Submit post on click
 $('#post-submit').on('click',function (e) {
     e.preventDefault();
     var formData = new FormData();
@@ -111,7 +111,6 @@ $('#post-submit').on('click',function (e) {
 
     var tags = $('#post-tags').val();
     formData.append('tags',tags);
-
 
     $.ajax({
         type:"POST",

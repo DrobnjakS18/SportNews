@@ -29,11 +29,20 @@ class TagRepository extends BaseRepository
         $tags->save();
 
         return $tags;
-
     }
 
     /**
-     * Find tag ig exists
+     * Find tag by name
+     * @param $name
+     * @return Tag
+     */
+    static public function findByName($name)
+    {
+        return Tag::where('name',$name)->first();
+    }
+
+    /**
+     * Find tag by name if exists
      * @param $name
      * @return boolean
      */
@@ -42,10 +51,6 @@ class TagRepository extends BaseRepository
         return Tag::where('name',$name)->exists();
     }
 
-    static public function findByName($name)
-    {
-        return Tag::where('name',$name)->first();
-    }
 
 
 }

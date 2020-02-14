@@ -24,12 +24,19 @@
             <div class="row">
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                     <div class="single-post">
-                        <div class="post-header mb-5">
+                        <div class="post-header mb-5 ">
                             <a class="post-category" style="background:{{$items->post->category->color}}" href="{{route('category',ucfirst($items->post->category->name))}}">{{$items->post->category->name}}</a>
+                            <span class="float-right mt-2">{{$items->post->created_at}}</span>
                             <h2 class="post-title">
                                 {{$items->post->title}}
                             </h2>
+                            <img class="post-image img-fluid" src="{{asset('storage/images/'.$items->post->picture)}}" alt="{{$items->post->picture}}">
                             {!! $items->post->content !!}
+                        </div>
+                        <div class="post-show-tags mb-4">
+                            @foreach ($items->post->tags as $tag)
+                                <a href="{{route('tag',$tag->name)}}">{{$tag->name}}</a>
+                                @endforeach
                         </div>
                     </div>
 
@@ -103,16 +110,17 @@
                             <span>Related Posts</span>
                         </h3>
                         <div class="news-style-two-slide">
-{{--                            TREBA VISE OD 3 DA BI SLAJDER RADIO--}}
-                            @foreach($items->posts->where('category_id',$items->post->category->id) as $post)
+{{--                            TREBA VISE OD 3 DA BI SLAJDER RADIO --}}
+{{--                            PRIKAZ SVIH POSTOVA ISTE KATEGORIJE BEZ TRENUTNOG--}}
+                            @foreach($items->posts->where('category_id',$items->post->category->id)->except(['id' => $items->post->id]) as $post)
                                 <div class="items">
                                     <div class="post-block-wrapper clearfix">
-                                        <div class="post-thumbnail mb-0">
+                                        <div class="post-thumbnail mb-3">
                                             <a href="{{route('post',[ucfirst($post->category->name),$post->slug.'-'.$post->id])}}">
                                                 <img class="img-fluid" src="{{asset('storage/images/'.$post->picture)}}" alt="post-thumbnail"/>
                                             </a>
                                         </div>
-                                        <a class="post-category" href="{{route('category',ucfirst($post->category->name))}}"  style="background:{{$post->category->color}}">{{$post->category->name}}</a>
+{{--                                        <a class="post-category" href="{{route('category',ucfirst($post->category->name))}}"  style="background:{{$post->category->color}}">{{$post->category->name}}</a>--}}
                                         <div class="post-content">
                                             <h2 class="post-title title-sm">
                                                 <a href="{{route('post',[ucfirst($post->category->name),$post->slug.'-'.$post->id])}}">{{$post->title}}</a>

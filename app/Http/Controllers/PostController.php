@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+
     /**
      * Display single post page.
      * @param $slug

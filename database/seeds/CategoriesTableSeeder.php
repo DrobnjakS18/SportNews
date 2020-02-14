@@ -31,12 +31,6 @@ class CategoriesTableSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [
-                'name' => 'automoto',
-                'color' => 'gray',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
-            ],
-            [
                 'name' => 'esports',
                 'color' => 'black',
                 'created_at' => date('Y-m-d H:i:s'),
