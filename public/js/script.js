@@ -26,7 +26,7 @@ jQuery(function($) {
     // trending bar slide
     $('.trending-news-slider').slick({
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 2000,
         infinite: true,
         arrows:false,
         fade: false,

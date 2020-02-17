@@ -4,27 +4,17 @@
             <div class="col-lg-6">
                 <h3 class="trending-bar-title">Breaking Sports News</h3>
                 <div class="trending-news-slider">
-                    <div class="item">
-                        <div class="post-content">
-                            <h2 class="post-title title-sm">
-                                <a href="{{route('single')}}">Ex-Googler warns coding bootcamps are lacking</a>
-                            </h2>
+                    @if($nav->count() > 0 )
+                        @foreach($nav->sortBy('created_at')->take(5) as $post)
+                        <div class="item">
+                            <div class="post-content">
+                                <h2 class="post-title title-sm">
+                                    <a href="{{route('post',[ucfirst($post->category->name),$post->slug.'-'.$post->id])}}">{{substr($post->title,0,50).'...'}}</a>
+                                </h2>
+                            </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="post-content">
-                            <h2 class="post-title title-sm">
-                                <a href="{{route('single')}}">Intel’s new smart glasses actually look good</a>
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="post-content">
-                            <h2 class="post-title title-sm">
-                                <a href="{{route('single')}}" >Here's How To Get Free Pizza On 2 hour</a>
-                            </h2>
-                        </div>
-                    </div>
+                        @endforeach
+                    @endif
                 </div>
             </div>
 

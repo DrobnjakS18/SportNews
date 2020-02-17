@@ -5,7 +5,7 @@
     <div class="post-container container">
         <div class="row">
             <div class="col-12">
-                <h1 class="post-header">Create your post</h1>
+                <h1 class="post-header mt-3">Create your post</h1>
 
                 <form id="post-form-submit" enctype="multipart/form-data">
                     <div class="form-group">

@@ -260,6 +260,40 @@ class PostTableSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [
+                'title' => 'Sources: Cavaliers and coach John Beilein have discussed possibility of him stepping down',
+                'slug' => 'sources-cavaliers-and-coach-john-beilein-have-discussed-possibility-of-him-stepping-down',
+                'content' => '<p>Cleveland hired associate head coach J.B. Bickerstaff with the expectation that he would eventually replace Beilein as part of a succession plan, but no one -- not the organization nor Bickerstaff -- imagined it would be inside one of season.</p>
+
+<p>Cleveland is 14-40, the worst record in the Eastern Conference and behind only that of <a href="https://www.espn.com/nba/team/_/name/gs/golden-state-warriors">Golden State</a> (12-43) for the worst in the NBA. Management expected the team to lose a significant number of games as it turned toward rebuilding its roster around a younger core, but Beilein has struggled to connect with NBA players and has had several missteps along the way that have shaken the players\' confidence in his leadership, league sources said.</p>
+
+<p><br></p>
+
+<p>Altman hired Beilein with the hope that his illustrious history as a teacher on the college level would infuse the Cavaliers with a strong program for player development and his storied offensive sets. However, opposing teams realized early that Beilein had scrapped his offense shortly into the season and retreated to more traditional NBA sets.</p>
+
+<p>Beilein has also dealt with some personal and family turmoil, as his son Patrick was dismissed before the start of his first season as head coach at <a href="https://www.espn.com/mens-college-basketball/team/_/id/315/niagara-purple-eagles">Niagara University</a>. Personal issues were cited.</p>',
+                'picture' => 'cleveland_1581945330.jpg',
+                'select' => "0",
+                'user_id' => 1,
+                'category_id' => 2,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [
+                'title' => 'The Elam Ending led to an INTENSE All-Star fourth quarter',
+                'slug' => 'the-elam-ending-led-to-an-intense-all-star-fourth-quarter',
+                'content' => '<p>New changes to the format of a game constantly wrought with questionable defense and effort would ensure a unique experience, and those changes were made in honor of the late Kobe Bryant.</p>
+
+<p>The new format featured a revamped fourth quarter in which the teams play to a final target score, <a href="https://www.espn.com/nba/story/_/id/23825970/zach-lowe-basketball-tournament-nba-crunch">first introduced in The Basketball Tournament as the Elam Ending</a>. The final target score was determined by taking the leading team\'s total cumulative score through three quarters and adding 24 points -- the 24 representing Bryant\'s jersey number. The first team to reach the final target score during the untimed fourth quarter wins the game.</p>
+
+<p>That number was 157 after Team Giannis led Team LeBron 133-124 at the end of three quarters. Fifty-one minutes of commercial-free chaos ensued in the form of charges, coach\'s challenges, fouls and defense -- and the people ate it all up:</p>',
+                'picture' => 'lebron_1581945606.jpg',
+                'select' => "0",
+                'user_id' => 1,
+                'category_id' => 2,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [
                 'title' => 'Australian Open winner Sofia Kenin comes up big again to lead U.S. to Fed Cup finals',
                 'slug' => 'australian-open-winner-sofia-kenin-comes-up-big-again-to-lead-us-to-fed-cup-finalsC',
                 'content' => '<p>"It\'s really such a unique experience," Mattek-Sands told reporters at the team\'s post-event news conference.</p>
@@ -344,6 +378,44 @@ class PostTableSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [
+                'title' => 'Donation, donation, donation',
+                'slug' => 'donation-donation-donation',
+                'content' => '<p>With bushfires ravaging Australia, a tennis tournament was the last thing on everyone\'s mind. However, that didn\'t mean the tennis community wouldn\'t unite and raise much-needed funds for those in need.</p>
+
+<p>Before the Australian Open even began, a number of the game\'s top players came together for what was dubbed the Rally for Relief. The tennis exhibition, staged at Rod Laver Arena, raised a staggering AU$4.8 million</p>
+
+<p><br></p>
+
+<p>Australian star <a href="http://www.espn.com/tennis/player/_/id/1984/nick-kyrgios">Nick Kyrgios</a>, who was the catalyst in organizing the Rally for Relief, then pledged an AU$200 donation for every ace he hit across the summer of tennis.</p>
+
+<p>Further creative donations came in thick and fast, in the end over AU$6 million was raised to help with bushfire recovery efforts.</p>',
+                'picture' => 'donation_1581945916.jpg',
+                'select' => "0",
+                'user_id' => 1,
+                'category_id' => 3,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [
+                'title' => 'New Nick and awesome Ash',
+                'slug' => 'new-nick-and-awesome-ash',
+                'content' => '<p>The 42-year drought between homegrown Australian Open singles champions might still remain, but local stars Kyrgios and Barty won millions of admirers Down Under this past fortnight.</p>
+
+<p>As mentioned, Kyrgios, the world No. 26, inspired dozens of other professional players to make donations towards the bushfire appeal, but it was his gritty performances against 16th seed <a href="http://www.espn.com/tennis/player/_/id/2367/karen-khachanov">Karen Khachanov</a> in the third round and Nadal in the fourth round that showed why many have been tipping him to soon breakthrough for a major title.</p>
+
+<p><br></p>
+
+<p>Meanwhile, world No. 1 Barty excited Australians with a glorious run to the semifinals at Melbourne Park -- the first homegrown player to reach the final four at the Australian Open since <a href="http://www.espn.com/tennis/player/_/id/306/lleyton-hewitt">Lleyton Hewitt</a> in 2005.</p>
+
+<p>The 23-year-old and reigning French Open champion fell to eventual champion Kenin in the semis, but what a memorable run it was.</p>',
+                'picture' => 'nick_1581946053.jpg',
+                'select' => "0",
+                'user_id' => 1,
+                'category_id' => 3,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [
                 'title' => 'CSGO: 4 things we learned from Week 2 of BLAST Premier Spring Series',
                 'slug' => 'csgo-4-things-we-learned-from-week-2-of-blast-premier-spring-series',
                 'content' => '<p>We\'re over halfway through the BLAST Premier Spring Series, and, after an incredibly eventful opening weekend, it was difficult to imagine anything that could top FaZe Clan\'s dominant run in Group A.</p>
@@ -418,6 +490,44 @@ class PostTableSeeder extends Seeder
 
 <p>Here\'s how our staff voted to rank the 12 teams after London. Each participating staff member ranked the CDL teams from No. 1 to No. 12, and the results were aggregated to determine the list below. All player stats are courtesy of Atlanta FaZe stat analyst Austin O\'Neil.</p>',
                 'picture' => 'cod_1581593541.jpg',
+                'select' => "0",
+                'user_id' => 1,
+                'category_id' => 4,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [
+                'title' => 'From Europe to America, G2 Esports\' brash frontman Ocelote is building an empire',
+                'slug' => 'from-europe-to-america-g2-esports-brash-frontman-ocelote-is-building-an-empire',
+                'content' => '<p>NEW YORK -- As Carlos Rodríguez Santiago walks down the busy streets of Manhattan, he takes in an empire that he hopes will soon be his.</p>
+
+<p>The center of the business world, but far from it in gaming, New York provides a new opportunity for the 29-year-old CEO, who in the past six years has built Europe\'s most popular esports franchise.</p>
+
+<p>Throughout the years, Santiago has taken over Spain, then Germany, then the entire continent, building championship-winning franchises -- most notably in League of Legends, the game that he once played professionally. Mostly forgotten as a pro, Santiago\'s profile as a front-facing, comedic yet competitive executive of G2 Esports has increased his stardom significantly compared to his glory days using a keyboard and mouse.</p>
+
+<p><br></p>
+
+<p>Santiago now holds the keys to a $165 million business, one he founded after a train of thought that occurred to him randomly while in the back of a cab more than a half decade ago. In November, G2 nearly completed the League of Legends grand slam -- winning two domestic titles, a Mid-Season Invitational title and a League of Legends World Championship -- but finished as the runner-up to FunPlus Phoenix at worlds in front of thousands of their fans in Paris. Santiago is now looking forward from that heartbreaking moment, focusing on the positives and the things within his control presently.</p>
+
+<p>For now, that\'s New York.</p>',
+                'picture' => 'ocelote_1581946218.jpg',
+                'select' => "0",
+                'user_id' => 1,
+                'category_id' => 4,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [
+                'title' => 'How the meta shook out in Overwatch League Week 1',
+                'slug' => 'how-the-meta-shook-out-in-overwatch-league-week-1',
+                'content' => '<p><span style="color:rgb(72,73,74);">The third season of the Overwatch League kicked off this past weekend. Amid rumors of where and when the Chinese homestands would be rescheduled and a more general unease around hero pools in competitive play, the weekend also gave the community actual games to analyze. With hero pools on the horizon, here is a look at general hero usage during Stage 4 and playoffs of last year compared with hero usage in the first week, and a few slightly-too-early predictions about which heroes will be off the table for teams first come Week 4.</span></p>
+
+<p><br></p>
+
+<p>Looking at last year, Orisa was the dominant hero picked in the <a href="https://public.tableau.com/shared/B6K453NWM?:display_count=y&amp;:origin=viz_share_link&amp;:embed=y">majority of compositions</a>, followed by Mei, Lúcio, Ana, and D.Va. After that, compositions diverged regarding flex supports in Moira and Baptiste, flex tanks in Roadhog and Sigma, and a variety of DPS heroes including Reaper and Hanzo. These statistics back up the idea that tanks and supports are far more static than DPS heroes, where the usage rate drops significantly after Mei, by nearly 20 percent.</p>
+
+<p>This year, Mei is once again <a href="https://public.tableau.com/shared/RJQ3D6NDZ?:display_count=y&amp;:origin=viz_share_link&amp;:embed=y">toward the top of the list</a> with an 83.3 percent usage rate. The only heroes above her are Reinhardt (88.94 percent) and Lúcio (a whopping 91.83 percent). If hero pools were to begin next week, the heroes most likely to be at risk of a ban would be Reinhardt, Lúcio, Mei, and McCree (41.94 percent usage rate), eliminating the popular Mei/McCree combo of obnoxious slows that allow McCree to shoot freely at his opponents.</p>',
+                'picture' => 'overwatch_1581946566.jpg',
                 'select' => "0",
                 'user_id' => 1,
                 'category_id' => 4,

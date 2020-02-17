@@ -14,6 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+
 //        $this->middleware('guest');
     }
 
@@ -34,7 +35,6 @@ class HomeController extends Controller
      */
     public function category($name)
     {
-//                dd($name);
         $postService = new PostService();
 
         $items = $postService::getByCategoryName($name);
