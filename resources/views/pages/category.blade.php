@@ -111,9 +111,6 @@
 
                         </div>
                         @include('partials.top_authors')
-                        <div class="widget">
-                            <img class="banner img-fluid" src="{{asset('images/banner-ads/ad-sidebar.png')}}" alt="300x300 ads"/>
-                        </div>
                         <div class="widget mb-0">
                             <h3 class="news-title">
                                 <span>Newsletter</span>

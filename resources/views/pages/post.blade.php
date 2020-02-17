@@ -239,9 +239,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         @include('partials.social')
                         @include('partials.hot_news')
-                        <div class="widget">
-                            <img class="banner img-fluid" src="{{asset('storage/images/banner-ads/ad-sidebar.png')}}" alt="300x300 ads"/>
-                        </div>
+
                     </div>
                 </div>
             </div>
