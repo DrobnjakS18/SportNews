@@ -62,6 +62,16 @@ class PostRepository extends BaseRepository
     }
 
     /**
+     * Search post by title
+     * @param $search
+     * @return Post
+     */
+    static public function searchPost($search)
+    {
+        return Post::where('title','like','%'.$search."%")->get();
+    }
+
+    /**
      * Insert new post
      */
     static public function create($data){

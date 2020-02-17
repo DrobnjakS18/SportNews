@@ -9,6 +9,7 @@ use App\Repositories\PostRepository;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use phpDocumentor\Reflection\Types\Collection;
 
 class PostService
 {
@@ -63,6 +64,7 @@ class PostService
 
     /**
      * Get post id
+     * @param $id
      * @return \App\Repositories\PostRepository
      */
     static public function getById($id)
@@ -72,6 +74,7 @@ class PostService
 
     /**
      * Get post by users id
+     * @param $id
      * @return \App\Repositories\PostRepository
      */
     static public function getByUser($id)
@@ -81,6 +84,7 @@ class PostService
 
     /**
      * Get previous post of the current sent post id
+     * @param $id
      * @return \App\Repositories\PostRepository
      */
     static public function getPreviousPost($id)
@@ -92,6 +96,7 @@ class PostService
 
     /**
      * Get next post of the current sent post id
+     * @param $id
      * @return \App\Repositories\PostRepository
      */
     static public function getNextPost($id)
@@ -103,6 +108,7 @@ class PostService
 
     /**
      * Get all data for single page post
+     * @param $slug
      * @return object
      */
     static public function getAllAboutSinglePost($slug)
@@ -131,6 +137,17 @@ class PostService
         $data['users'] = UserService::getAll();
 
         return (object) $data;
+    }
+
+
+    /**
+     * Search post by title
+     * @param $search
+     * @return \App\Models\Post | \Illuminate\Database\Eloquent\Collection
+     */
+    static public function getPostBySearch($search)
+    {
+        return PostRepository::searchPost($search);
     }
 
     /**

@@ -613,6 +613,7 @@ a[href^=tel] {
 .main-navbar {
     position: relative;
     border-bottom: 3px solid #dc3545;
+    background: #505254;
 }
 
 .main-navbar .dropdown:hover .dropdown-menu {

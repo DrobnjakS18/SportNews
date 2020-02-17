@@ -68,9 +68,17 @@ class HomeController extends Controller
     /**
      * Display seached results page.
      */
-    public function search()
+    public function search(Request $request)
     {
-        return view('pages.search');
+
+        $search = $request->search;
+        $post = new PostService();
+
+        $items = $post::getPostBySearch($search);
+
+//        dd($items);
+
+        return view('pages.search')->with(compact('items','search'));
     }
 
     /**

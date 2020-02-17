@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="trending-bar-title">Trending News</h3>
+                <h3 class="trending-bar-title">Breaking Sports News</h3>
                 <div class="trending-news-slider">
                     <div class="item">
                         <div class="post-content">
@@ -126,7 +126,7 @@
 </header>
 
 
-<div class="main-navbar clearfix bg-dark ">
+<div class="main-navbar clearfix">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -186,8 +186,9 @@
             </div>
         </div>
     </div>
-    <form class="site-search" method="get">
-        <input type="text" id="searchInput" name="site_search" placeholder="Enter Keyword Here..." autofocus="">
+    <form action="{{route('search')}}" class="site-search" method="POST">
+        @csrf
+        <input type="text" id="searchInput" name="search" placeholder="Enter Keyword Here..." autofocus="">
         <div class="search-close">
             <span class="close-search">
                 <i class="fa fa-times"></i>
