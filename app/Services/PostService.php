@@ -121,6 +121,8 @@ class PostService
         $data['previous'] = self::getPreviousPost($id);
         $data['next'] = self::getNextPost($id);
 
+        session()->put('post_id',$data['post']->id);
+
         return (object) $data;
     }
 

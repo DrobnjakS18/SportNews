@@ -144,4 +144,52 @@ jQuery(function($) {
         return false;
     });
 
+    $('#comment-submit').on('click',function (e) {
+        e.preventDefault();
+
+        var message = $('#message').val();
+        var post = $('#comment_post').val();
+
+        //Check if checkbox is clicked
+        if (grecaptcha.getResponse().length !== 0){
+            var reCAPTCHA = $('.g-recaptcha').data('sitekey');
+
+        }
+        $.ajax({
+            method: "POST",
+            url: "/comment",
+            data: {
+                _token : $('meta[name="csrf-token"]').attr('content'),
+                message : message,
+                post : post,
+                recaptcha : reCAPTCHA
+            },
+            dataType: 'json',
+        })
+            .fail(function(jqxhr, textStatus, errorThrown) {
+                var message = 'An error occured! Please try againg later.';
+                $('.comment-ajax-message_error').html(message);
+
+                setTimeout(function () {
+                    $('.comment-ajax-message_error').slideDown('slow');
+                },200)
+
+                $('.comment-ajax-message_error').slideUp('slow');
+                $('.comment-ajax-message_success').slideUp('fast');
+            })
+            .done(function(data) {
+                $('.comment-ajax-message_success').html(data.message);
+
+                setTimeout(function () {
+                    $('.comment-ajax-message_success').slideDown('slow');
+                },200);
+
+                $('.comment-ajax-message_success').slideUp('slow');
+                $('.comment-ajax-message_error').slideUp('fast');
+
+                message = $('#message').val('');
+                grecaptcha.reset();
+            });
+    });
+
 });

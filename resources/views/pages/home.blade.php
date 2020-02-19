@@ -33,7 +33,7 @@
             <div class="col-md-12 col-xs-12 col-sm-12 col-lg-4">
                 <div class="row mt-3 mt-lg-0">
                     {{--TAKES ONE TENIS ONE ESPORTS--}}
-                    @foreach($items->posts->whereIn('id', [10,13]) as $item)
+                    @foreach($items->posts->whereIn('id', [11,13]) as $item)
                         <div class="col-lg-12 col-xs-12 col-sm-6 col-md-6">
                             <div class="post-featured-style" style="background-image:url({{asset('storage/images/'.$item->picture)}})">
                                 <div class="post-content">
@@ -113,7 +113,7 @@
                                                 <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
                                             </span>
                                         </div>
-                                        {!! substr($item->content,0,100) !!}
+                                        {!! substr($item->content,0,100).'...' !!}
                                     </div>
                                 </div>
                             @endforeach
@@ -138,7 +138,7 @@
                                                 <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
                                             </span>
                                         </div>
-                                        {!! substr($item->content,0,100) !!}
+                                        {!! substr($item->content,0,100).'...' !!}
                                     </div>
                                 </div>
                             @endforeach
@@ -164,7 +164,7 @@
                                                 <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
                                             </span>
                                         </div>
-                                        {!! substr($item->content,0,100) !!}
+                                        {!! substr($item->content,0,100).'...' !!}
                                     </div>
                                 </div>
                             @endforeach
@@ -200,7 +200,7 @@
                                                       <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
                                                     </span>
                                                 </div>
-                                                {!! substr($item->content,0,100) !!}
+                                                {!! substr($item->content,0,100)."..." !!}
                                             </div>
                                         </div>
                                     @endif
@@ -227,7 +227,7 @@
 
                                                 <div class="post-content">
                                                     <h2 class="post-title title-sm">
-                                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
+                                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{substr($item->title,0,50).'...'}}</a>
                                                     </h2>
                                                     <div class="post-meta">
                                                         <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>{{$item->created_at->diffForHumans()}}</span>
@@ -366,7 +366,7 @@
 
                                 <div class="post-content">
                                     <h2 class="post-title ">
-                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
+                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{substr($item->title,0,50).'...'}}</a>
                                     </h2>
                                     <div class="post-meta white">
                                         <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
@@ -384,7 +384,7 @@
                         @endforeach
                     </div>
 
-                    <div class="post-list-block">
+                    <div class="post-list-block ">
                         @foreach($items->posts as $item)
                             @if($item->category_id === 3 && $item->select === "0")
                                 <div class="post-block-wrapper post-float clearfix">
@@ -393,7 +393,7 @@
                                     </div>
                                     <div class="post-content">
                                         <h2 class="post-title title-sm">
-                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
+                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{substr($item->title,0,50).'...'}}</a>
                                         </h2>
                                         <div class="post-meta">
                                             <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
@@ -421,7 +421,7 @@
 
                                 <div class="post-content">
                                     <h2 class="post-title ">
-                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
+                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{substr($item->title,0,50).'...'}}</a>
                                     </h2>
                                     <div class="post-meta white">
                                         <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
@@ -448,7 +448,7 @@
                                     </div>
                                     <div class="post-content">
                                         <h2 class="post-title title-sm">
-                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
+                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{substr($item->title,0,50).'...'}}</a>
                                         </h2>
                                         <div class="post-meta">
                                             <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
@@ -475,7 +475,7 @@
                                 </div>
                                 <div class="post-content">
                                     <h2 class="post-title ">
-                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
+                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{substr($item->title,0,50).'...'}}</a>
                                     </h2>
                                     <div class="post-meta white">
                                         <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
@@ -502,7 +502,7 @@
                                     </div>
                                     <div class="post-content">
                                         <h2 class="post-title title-sm">
-                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
+                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{substr($item->title,0,50).'...'}}</a>
                                         </h2>
                                         <div class="post-meta">
                                             <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
@@ -547,7 +547,6 @@
                                               <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
                                                 </span>
                                             </div>
-{{--                                            <p>{{substr($item->content,0,100).'...'}}</p>--}}
                                             {!! substr($item->content,0,100).'...' !!}
                                         </div>
                                     </div>

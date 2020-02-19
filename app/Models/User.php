@@ -42,7 +42,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     public function posts()
     {
-       return $this->hasMany('App\Models\Post','user_id');
+       return $this->hasMany(Post::class);
     }
 
     /**
@@ -59,5 +59,13 @@ class User extends Authenticatable implements MustVerifyEmail
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
+    }
+
+    /**
+     *  Get all comments by user
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }

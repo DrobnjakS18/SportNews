@@ -123,7 +123,7 @@
 {{--                                        <a class="post-category" href="{{route('category',ucfirst($post->category->name))}}"  style="background:{{$post->category->color}}">{{$post->category->name}}</a>--}}
                                         <div class="post-content">
                                             <h2 class="post-title title-sm">
-                                                <a href="{{route('post',[ucfirst($post->category->name),$post->slug.'-'.$post->id])}}">{{$post->title}}</a>
+                                                <a href="{{route('post',[ucfirst($post->category->name),$post->slug.'-'.$post->id])}}">{{substr($post->title,0,50)."..."}}</a>
                                             </h2>
                                         </div>
                                     </div>
@@ -134,112 +134,90 @@
 
                     <div id="comments" class="comments-block block">
                         <h3 class="news-title">
-                            <span>02 Comments</span>
+                            <span>Comments</span>
                         </h3>
                         <ul class="all-comments">
                             <li>
-                                <div class="comment">
-                                    <img class="commented-person" alt="" src="{{asset('storage/images/author-01.jpg')}}">
-                                    <div class="comment-body">
-                                        <div class="meta-data">
-                                            <span class="commented-person-name">Jack Anderson</span>
-                                            <span class="comment-hour d-block"><i class="fa fa-clock-o mr-2"></i>February 6, 2019 at 12:20 pm</span>
-                                        </div>
-                                        <div class="comment-content">
-                                            <p>
-                                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta perferendis asperiores
-                                                voluptatum saepe repellat atque obcaecati dolores nulla, explicabo harum inventore
-                                                sed corrupti molestiae aspernatur.
-                                            </p>
-                                        </div>
-                                        <div class="text-left">
-                                            <a class="comment-reply" href="#"><i class="fa fa-reply"></i> Reply</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <ul class="comments-reply">
-                                    <li>
-                                        <div class="comment">
-                                            <img class="commented-person" alt="" src="{{asset('storage/images/author-02.jpg')}}">
-                                            <div class="comment-body">
-                                                <div class="meta-data">
-                                                    <span class="commented-person-name">Jhonny American</span>
-                                                    <span class="comment-hour d-block"><i class="fa fa-clock-o mr-2"></i>March 9, 2019 at 12:20 pm</span>
-                                                </div>
-                                                <div class="comment-content">
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui expedita magnam ea
-                                                        tempora consectetur fugit dolorum numquam at obcaecati voluptatibus.
-                                                    </p>
-                                                </div>
-                                                <div class="text-left">
-                                                    <a class="comment-reply" href="#"><i class="fa fa-reply"></i> Reply</a>
-                                                </div>
+
+                                @foreach($items->post->comments as $comment)
+                                    <div class="comment">
+                                        <img class="commented-person" alt="" src="{{asset('storage/images/'.$comment->user->profile_picture)}}">
+                                        <div class="comment-body">
+                                            <div class="meta-data">
+                                                <span class="commented-person-name">{{$comment->user->name}}</span>
+                                                <span class="comment-hour d-block"><i class="fa fa-clock-o mr-2"></i>{{$comment->created_at->diffForHumans()}}</span>
+                                            </div>
+                                            <div class="comment-content">
+                                                <p>{{$comment->text}}
+                                                </p>
+                                            </div>
+                                            <div class="text-left">
+                                                <a class="comment-reply" href="#"><i class="fa fa-reply"></i> Reply</a>
                                             </div>
                                         </div>
-                                    </li>
-                                </ul>
-                                <div class="comment last">
-                                    <img class="commented-person" alt="" src="{{asset('storage/images/author-03.jp')}}g">
-                                    <div class="comment-body">
-                                        <div class="meta-data">
-                                            <span class="commented-person-name">Vicky Fong</span>
-                                            <span class="comment-hour d-block"><i class="fa fa-clock-o mr-2"></i>June 6, 2019 at 12:20 pm</span>
-                                        </div>
-                                        <div class="comment-content">
-                                            <p>
-                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, ipsa dolor exercitationem
-                                                culpa obcaecati illo veniam voluptatem perferendis hic nisi tempora omnis, mollitia unde doloribus.
-                                            </p>
-                                        </div>
-                                        <div class="text-left">
-                                            <a class="comment-reply" href="#"><i class="fa fa-reply"></i> Reply</a>
-                                        </div>
                                     </div>
-                                </div>
+                                @endforeach
+{{--                                REPLY ON COMMENT--}}
+
+
+{{--                                <ul class="comments-reply border border-primary">--}}
+{{--                                    <li>--}}
+{{--                                        <div class="comment border border-primary">--}}
+{{--                                            <img class="commented-person" alt="" src="{{asset('storage/images/author-02.jpg')}}">--}}
+{{--                                            <div class="comment-body">--}}
+{{--                                                <div class="meta-data">--}}
+{{--                                                    <span class="commented-person-name">Jhonny American</span>--}}
+{{--                                                    <span class="comment-hour d-block"><i class="fa fa-clock-o mr-2"></i>March 9, 2019 at 12:20 pm</span>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="comment-content">--}}
+{{--                                                    <p>--}}
+{{--                                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui expedita magnam ea--}}
+{{--                                                        tempora consectetur fugit dolorum numquam at obcaecati voluptatibus.--}}
+{{--                                                    </p>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="text-left">--}}
+{{--                                                    <a class="comment-reply" href="#"><i class="fa fa-reply"></i> Reply</a>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+
                             </li>
                         </ul>
                     </div>
 
-                    <div class="comment-form ">
-                        <h3 class="title-normal">Leave a Reply </h3>
-                        <p class="mb-4">Your email address will not be published. Required fields are marked *</p>
-                        <form role="form">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <textarea class="form-control required-field" id="message" placeholder="Messege" rows="8" required></textarea>
+                    @if(Auth::check())
+                        <div class="comment-form">
+                            <p class="comment-ajax-message_success"></p>
+                            <p class="comment-ajax-message_error"></p>
+                            <h3 class="title-normal">Leave a Comment</h3>
+                            <form role="form">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <textarea class="form-control required-field" id="message" name="message" placeholder="Messege" rows="8" required></textarea>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <input class="form-control" name="name" id="name" placeholder="Name" type="text" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <input class="form-control" name="email" id="email" placeholder="Email" type="email" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" placeholder="Website" required>
-                                    </div>
-                                </div>
+                                    <div class="g-recaptcha pl-3" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
 
-                                <div class="col-md-12">
-                                    <button class="comments-btn btn btn-primary " type="submit">Post Comment</button>
+                                    <div class="form-group">
+                                        <input type="hidden" name="comment_post" id="comment_post" value="{{$items->post->id}}">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button class="comments-btn btn btn-primary" type="submit" id="comment-submit">Post Comment</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
-                    </div>
+                            </form>
+                        </div>
+                    @endif
 
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         @include('partials.social')
                         @include('partials.hot_news')
-
                     </div>
                 </div>
             </div>

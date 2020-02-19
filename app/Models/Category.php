@@ -21,7 +21,7 @@ class Category extends Model
      */
     public function posts()
     {
-        $this->hasMany('App\Models\Post','category_id');
+        $this->hasMany(Post::class);
     }
 
 }
