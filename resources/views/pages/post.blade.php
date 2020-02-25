@@ -139,10 +139,10 @@
                             <span>Comments</span>
                         </h3>
                         <ul class="all-comments">
-                            <li>
-
+                            @if($items->post->comments->count() > 0)
                                 @foreach($items->post->comments as $comment)
                                     @if($comment->comment_id == null)
+                                    <li>
                                         <div class="comment">
                                             <img class="commented-person" alt="" src="{{asset('storage/images/'.$comment->user->profile_picture)}}">
                                             <div class="comment-body">
@@ -192,32 +192,39 @@
                                                 </form>
                                             </div>
                                         @endif
-{{--                                            <ul class="comments-reply">--}}
-{{--                                                <li>--}}
-{{--                                                    <div class="comment">--}}
-{{--                                                        <img class="commented-person" alt="" src="{{asset('storage/images/author-02.jpg')}}">--}}
-{{--                                                        <div class="comment-body">--}}
-{{--                                                            <div class="meta-data">--}}
-{{--                                                                <span class="commented-person-name">Jhonny American</span>--}}
-{{--                                                                <span class="comment-hour d-block"><i class="fa fa-clock-o mr-2"></i>March 9, 2019 at 12:20 pm</span>--}}
-{{--                                                            </div>--}}
-{{--                                                            <div class="comment-content">--}}
-{{--                                                                <p>--}}
-{{--                                                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui expedita magnam ea--}}
-{{--                                                                    tempora consectetur fugit dolorum numquam at obcaecati voluptatibus.--}}
-{{--                                                                </p>--}}
-{{--                                                            </div>--}}
-{{--                                                            <div class="text-left">--}}
-{{--                                                                <a class="comment-reply" href="#"><i class="fa fa-reply"></i> Reply</a>--}}
+
+
+{{--                                        @foreach($items->post->comments as $reply)--}}
+{{--                                            @if($reply->comment_id == $comment->comment_id)--}}
+{{--                                                {{dd($reply)}}--}}
+{{--                                                <ul class="comments-reply">--}}
+{{--                                                    <li>--}}
+{{--                                                        <div class="comment">--}}
+{{--                                                            <img class="commented-person" alt="" src="{{asset('storage/images/author-02.jpg')}}">--}}
+{{--                                                            <div class="comment-body">--}}
+{{--                                                                <div class="meta-data">--}}
+{{--                                                                    <span class="commented-person-name">Jhonny American</span>--}}
+{{--                                                                    <span class="comment-hour d-block"><i class="fa fa-clock-o mr-2"></i>March 9, 2019 at 12:20 pm</span>--}}
+{{--                                                                </div>--}}
+{{--                                                                <div class="comment-content">--}}
+{{--                                                                    <p>--}}
+{{--                                                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui expedita magnam ea--}}
+{{--                                                                        tempora consectetur fugit dolorum numquam at obcaecati voluptatibus.--}}
+{{--                                                                    </p>--}}
+{{--                                                                </div>--}}
 {{--                                                            </div>--}}
 {{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                </li>--}}
-{{--                                            </ul>--}}
-
+{{--                                                    </li>--}}
+{{--                                                </ul>--}}
+{{--                                            @endif--}}
+{{--                                        @endforeach--}}
+                                        </li>
                                     @endif
                                 @endforeach
-                            </li>
+                               @else
+                                <h2 class="text-center">No comments for this post!</h2>
+                               @endif
+
                         </ul>
                     </div>
                     @if(Auth::check())

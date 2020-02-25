@@ -146,40 +146,6 @@ jQuery(function($) {
 
 });
 
-
-
-// $('.comment-reply').on('click',function() {
-//     //$(this) = dugme Reply
-//     $(this).addClass('selected');
-//
-//     var replyForm = $('.reply-form');
-//
-//     if ($(this).hasClass('selected')) {
-//         //Reply forma
-//         replyForm.insertAfter($(this).closest('.comment')).show();
-//
-//         if ($(this).hasClass('comment-toggle-button')) {
-//             replyForm.find('form').removeClass('reply-submit').addClass('comment-submit');
-//
-//             if($('.reply-comment')) {
-//                 $('.reply-comment').remove();
-//             }
-//         } else {
-//             replyForm.find('form').removeClass('comment-submit').addClass('reply-submit');
-//             $("<input>").attr("type", "hidden").appendTo(replyForm.find('form')).addClass('reply-comment').val('123');
-//
-//         }
-//
-//     } else {
-//         $('.comment-reply').removeClass('selected');
-//         replyForm.hide();
-//     }
-// });
-//
-// $('.comments-btn-cancel').on('click',function () {
-//     $(this).closest('.reply-form').hide();
-// });
-
 //Get recaptcha and put in a new variable
 var siteKey;
 function storeSiteKey(result) {
