@@ -1393,26 +1393,24 @@ a.post-category.absolute {
 }
 
 .comment-ajax-message_success,
-.comment-ajax-message_error {
+.comment-ajax-message_error,
+.reply-ajax-message_success,
+.reply-ajax-message_error{
     width: 100%;
     padding: 10px;
     color: white;
     display: none;
     text-align: center;
 }
-
+.reply-ajax-message_success,
 .comment-ajax-message_success {
     background: #1d643b;
 }
 
-.comment-ajax-message_error {
+.comment-ajax-message_error,
+.reply-ajax-message_error{
     background: #90111A;
 }
-
-.g-recaptcha {
-
-}
-
 
 .post-image {
     width: 100%;
@@ -1709,20 +1707,29 @@ a.post-category.absolute {
     margin: 15px 0;
 }
 
-.all-comments .comment-reply {
+.all-comments .comment-reply,
+.comment-toggle-button {
     font-weight: 400;
     color: #777;
     font-size: 13px;
     border: 1px solid #dadada;
     padding: 5px 10px;
     border-radius: 3px;
+    background: white;
 }
 
-.all-comments .comment-reply:hover {
+.all-comments .comment-reply:hover,
+.comment-toggle-button:hover {
     background: #dc3545;
     color: #fff;
     border-color: #dc3545;
 }
+
+.comment-toggle-button {
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
 
 .comments-counter {
     font-size: 18px;
@@ -1776,6 +1783,11 @@ a.post-category.absolute {
     margin: 0 0 0 70px;
 }
 
+.reply-form,
+.comment-form {
+    display: none;
+}
+
 .comment-form {
     margin-bottom: 0;
 }
@@ -1784,10 +1796,10 @@ a.post-category.absolute {
     font-size: 22px;
 }
 
-.comment-form .comments-btn {
-    margin-top: 10px;
-    font-size: 12px;
-}
+/*.comment-form .comments-btn {*/
+/*    margin-top: 10px;*/
+/*    font-size: 12px;*/
+/*}*/
 
 .newsletter-form .btn-primary {
     padding: 10px 25px;

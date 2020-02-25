@@ -18,7 +18,7 @@ class CommentRepository extends BaseRepository
      * @param $message
      * @return Comment
      */
-    static public function create($message,$post,$user)
+    static public function create($message,$post,$user,$comment_id = null)
     {
         $comment = new Comment();
 
@@ -33,6 +33,9 @@ class CommentRepository extends BaseRepository
         if (isset($user)) {
             $comment->user_id = $user;
         }
+
+        $comment->comment_id = $comment_id;
+
 
         $comment->save();
 

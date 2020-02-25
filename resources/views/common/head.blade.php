@@ -28,5 +28,5 @@
     <!-- Quill Snow Theme included stylesheets -->
     <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{{--    <script src="https://www.google.com/recaptcha/api.js" async defer></script>--}}
 </head>

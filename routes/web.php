@@ -25,9 +25,9 @@ Route::post('/post/store', 'PostController@store')->name('post.store')->middlewa
 Route::post('/image/upload','PostController@upload')->name('image')->middleware('auth');
 Route::get('/tag/{tag}','TagController@show')->name('tag');
 Route::post('/comment','CommentController@store')->name('comment.store')->middleware('post','auth');
+Route::post('/reply','CommentController@reply')->name('comment.reply')->middleware('post','auth');
 
 Route::post('/newsletter','SubscriptionController@store')->name('subscription.store');
-
 
 //Route::get('/html-email','NewsletterController@htmlEmail')->name('newsletter.html');
 

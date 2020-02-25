@@ -194,9 +194,9 @@ class PostService
 
             $postId = PostRepository::create($post);
 
-            $tagArray = explode(',',$tags);
+            ($tags !== null) ? $tagArray = explode(',',$tags) : $tagArray = null;
 
-            if (!empty($tagArray)) {
+            if ($tagArray !== null) {
 
                 foreach ($tagArray as $tag) {
                     $tagExists = TagService::getIfExists($tag);

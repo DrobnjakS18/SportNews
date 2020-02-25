@@ -13,6 +13,7 @@
 
 <script src="{{asset('plugins/slick-carousel/slick.min.js')}}"></script>
 
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 {{--<!-- Google Map -->--}}
 {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>--}}
 {{--<script src="plugins/google-map/gmap.js"></script>--}}

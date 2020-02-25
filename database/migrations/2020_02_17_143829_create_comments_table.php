@@ -16,6 +16,7 @@ class CreateCommentsTable extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('text');
+            $table->enum('verifird',[1,0])->default(0);
             $table->timestamps();
 
             $table->unsignedBigInteger('user_id');
@@ -23,6 +24,8 @@ class CreateCommentsTable extends Migration
 
             $table->unsignedBigInteger('post_id');
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+
+            $table->unsignedBigInteger('comment_id')->nullable();
 
         });
     }
