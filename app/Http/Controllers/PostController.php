@@ -21,7 +21,7 @@ class PostController extends Controller
 
         $items = $postService::getAllAboutSinglePost($slug);
 
-//        dd($items->post->comments);
+//        dd($items);
 
         return view('pages.post')->with(compact('items'));
     }

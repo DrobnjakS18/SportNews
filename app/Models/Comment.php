@@ -32,4 +32,15 @@ class Comment extends Model
     {
         return $this->belongsTo(Post::class,'post_id','id');
     }
+
+    /**
+     * Get replies of current comment
+     *
+     */
+    public function replies()
+    {
+        return $this->hasMany(Comment::class)->where('comment_id','<>',null);
+    }
+
+
 }

@@ -139,85 +139,8 @@
                             <span>Comments</span>
                         </h3>
                         <ul class="all-comments">
-                            <li>
-
-                                @foreach($items->post->comments as $comment)
-                                    @if($comment->comment_id == null)
-                                        <div class="comment">
-                                            <img class="commented-person" alt="" src="{{asset('storage/images/'.$comment->user->profile_picture)}}">
-                                            <div class="comment-body">
-                                                <div class="meta-data">
-                                                    <span class="commented-person-name">{{$comment->user->name}}</span>
-                                                    <span class="comment-hour d-block"><i class="fa fa-clock-o mr-2"></i>{{$comment->created_at->diffForHumans()}}</span>
-                                                </div>
-                                                <div class="comment-content">
-                                                    <p>{{$comment->text}}
-                                                    </p>
-                                                </div>
-                                                <div class="text-left">
-                                                    @if(Auth::check())
-{{--                                                        <button class="comment-reply" onclick="ToggleReplyForm({{$comment->id}})"><i class="fa fa-reply"></i>Reply</button>--}}
-                                                        <button class="comment-reply" onclick="ToggleReplyForm({{$comment->id}})"><i class="fa fa-reply"></i>  Reply</button>
-                                                    @endif
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        @if(Auth::check())
-                                            <div class="reply-form mb-5 form-{{$comment->id}}">
-                                                <p class="reply-ajax-message_success succes-id-{{$comment->id}}"></p>
-                                                <p class="reply-ajax-message_error error-id-{{$comment->id}}"></p>
-                                                <form role="form" class="reply-submit">
-                                                    @csrf
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                <textarea class="form-control required-field  reply-message" id="reply-message" name="reply-message" placeholder="Message" rows="8"></textarea>
-                                                            </div>
-                                                        </div>
-                                                        <div id="recaptcha-{{$loop->iteration}}" class="recaptcha-class pl-3"></div>
-
-                                                        <div class="form-group">
-                                                            <input type="hidden" name="reply-post" id="reply-post" class="reply-post" value="{{$items->post->id}}">
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <input type="hidden" name="reply-comment" id="reply-comment" class="reply-comment" value="{{$comment->id}}">
-                                                        </div>
-
-                                                        <div class="col-md-12">
-                                                            <button class="comments-btn btn btn-success mt-3" type="submit">Submit</button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        @endif
-{{--                                            <ul class="comments-reply">--}}
-{{--                                                <li>--}}
-{{--                                                    <div class="comment">--}}
-{{--                                                        <img class="commented-person" alt="" src="{{asset('storage/images/author-02.jpg')}}">--}}
-{{--                                                        <div class="comment-body">--}}
-{{--                                                            <div class="meta-data">--}}
-{{--                                                                <span class="commented-person-name">Jhonny American</span>--}}
-{{--                                                                <span class="comment-hour d-block"><i class="fa fa-clock-o mr-2"></i>March 9, 2019 at 12:20 pm</span>--}}
-{{--                                                            </div>--}}
-{{--                                                            <div class="comment-content">--}}
-{{--                                                                <p>--}}
-{{--                                                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui expedita magnam ea--}}
-{{--                                                                    tempora consectetur fugit dolorum numquam at obcaecati voluptatibus.--}}
-{{--                                                                </p>--}}
-{{--                                                            </div>--}}
-{{--                                                            <div class="text-left">--}}
-{{--                                                                <a class="comment-reply" href="#"><i class="fa fa-reply"></i> Reply</a>--}}
-{{--                                                            </div>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                </li>--}}
-{{--                                            </ul>--}}
-
-                                    @endif
-                                @endforeach
-                            </li>
+                            @include('partials.comments',['comments' => $items->comments])
+{{--                            @each('partials.comments', $items->post->comments, 'comment')--}}
                         </ul>
                     </div>
                     @if(Auth::check())
@@ -239,7 +162,7 @@
                                         <input type="hidden" name="comment_post" id="comment_post" value="{{$items->post->id}}">
                                     </div>
                                     <div class="col-md-12">
-                                        <button class="comments-btn btn btn-primary mt-3" type="submit" id="comment-submit">Submit</button>
+                                        <button class="comments-btn btn btn-success mt-3" type="submit" id="comment-submit">Submit</button>
                                     </div>
                                 </div>
                             </form>

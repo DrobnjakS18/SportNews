@@ -113,13 +113,14 @@ class PostService
      */
     static public function getAllAboutSinglePost($slug)
     {
-
         $id = extract_id_from_slug($slug);
 
         $data['post'] = self::getById($id);
         $data['posts'] = self::getAll();
         $data['previous'] = self::getPreviousPost($id);
         $data['next'] = self::getNextPost($id);
+        $data['comments'] = $data['post']->comments->where('comment_id','=',null);
+
 
         session()->put('post_id',$data['post']->id);
 

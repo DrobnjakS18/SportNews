@@ -181,36 +181,39 @@ jQuery(function($) {
 // });
 
 //Get recaptcha and put in a new variable
-var siteKey;
+let siteKey;
 function storeSiteKey(result) {
     siteKey = result;
 }
 
 var replyForms = document.getElementsByClassName('reply-form');
-var recapchaCount = 0;
 var widgetCommentId;
+let widgetIdArray = [];
 
 
 var onloadCallback = function() {
-
-    for (let reply in replyForms) {
-        recapchaCount++;
-        let replyRecaptcha = 'recaptcha-' + recapchaCount;
-
-        if($('#'+replyRecaptcha).length) {
-            grecaptcha.render(replyRecaptcha, {
-                'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI',
-                'callback' : storeSiteKey
-            });
-
-        }
-    }
 
     widgetCommentId =  grecaptcha.render('comment-recaptcha', {
         'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI',
         'callback' : storeSiteKey
     });
+
+    if(replyForms.length > 0) {
+
+        for (let i = 0; i <= replyForms.length;i++ ) {
+            let replyRecaptcha = 'recaptcha-' +  i;
+
+            widgetIdArray.push(
+                grecaptcha.render(replyRecaptcha, {
+                    'sitekey': '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI',
+                    'callback': storeSiteKey
+                })
+            );
+        }
+    }
+
 };
+
 
 //Reset check
 function resetReCaptcha(id) {
@@ -224,17 +227,17 @@ function ToggleReplyForm(comment_id)
 
     let reply = 'form-'+comment_id;
     for (var i in replyForms) {
-        let widgetId = 0;
         if(replyForms[i].classList) {
-            widgetId++;
             if (reply === replyForms[i].classList[2]) {
-                $('.'+reply).toggle('slow','swing',resetReCaptcha(widgetId));
+                $('.'+reply).toggle('slow','swing',resetReCaptcha(widgetIdArray[i]));
             } else {
-                $('.'+replyForms[i].classList[2]).slideUp('slow','swing',resetReCaptcha(widgetId));
+                $('.'+replyForms[i].classList[2]).slideUp('slow','swing',resetReCaptcha(widgetIdArray[i]));
             }
         }
     }
 }
+
+
 
 //Leave comment toggle form
 $('.comment-toggle-button').click(function () {
@@ -280,6 +283,11 @@ $('.reply-submit').on('submit',function (e) {
         .done(function(data) {
             $(successClass).html(data.message);
 
+            //Reset checkbox on success to empty
+            for (let successWidgetId = 1;successWidgetId <= widgetIdArray.length; successWidgetId++) {
+                resetReCaptcha(successWidgetId);
+            }
+
             $(errorClass).slideUp('slow','swing',function () {
                 $(successClass).slideDown('slow','swing',function () {
                     setTimeout(function () {
@@ -287,8 +295,10 @@ $('.reply-submit').on('submit',function (e) {
                     },1000)
                 });
             });
-            grecaptcha.reset();
-            message = $('#reply-message').val('');
+            //Reset message on success to empty
+            $('.reply-submit').find('textarea.reply-message').val('');
+            //Empty recaptcha site key
+            siteKey = '';
         });
 });
 
@@ -337,6 +347,7 @@ $('#comment-submit').on('click',function (e) {
 
             $('#message').val('');
             grecaptcha.reset(widgetCommentId);
+            siteKey = '';
         });
 });
 
