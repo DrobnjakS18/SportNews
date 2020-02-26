@@ -1704,7 +1704,21 @@ a.post-category.absolute {
 }
 
 .all-comments .comment-content {
-    margin: 15px 0;
+    margin: 5px 0 15px 0;
+}
+
+.comment-content p {
+    word-break: break-word;
+    padding-right: 10px;
+}
+
+.comment-likes {
+    font-size: 25px;
+    padding-right: 10px;
+}
+
+.likes-count {
+    padding-right: 10px;
 }
 
 .all-comments .comment-reply,
