@@ -26,6 +26,7 @@ Route::post('/image/upload','PostController@upload')->name('image')->middleware(
 Route::get('/tag/{tag}','TagController@show')->name('tag');
 Route::post('/comment','CommentController@store')->name('comment.store')->middleware('post','auth');
 Route::post('/reply','CommentController@reply')->name('comment.reply')->middleware('post','auth');
+Route::post('/vote','CommentController@vote')->name('comment.vote')->middleware('auth');
 
 Route::post('/newsletter','SubscriptionController@store')->name('subscription.store');
 

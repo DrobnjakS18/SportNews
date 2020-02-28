@@ -1712,13 +1712,33 @@ a.post-category.absolute {
     padding-right: 10px;
 }
 
-.comment-likes {
+.comment-likes,
+.reply-likes {
     font-size: 25px;
     padding-right: 10px;
 }
 
-.likes-count {
+.comment-like:hover,
+.comment-dislike:hover,
+.reply-like:hover,
+.reply-dislike:hover {
+    text-decoration: none;
+}
+
+.likes-count,
+.dislikes-count,
+.reply-like-count,
+.reply-dislike-count
+{
     padding-right: 10px;
+}
+
+.like-after-click {
+    opacity: 0.5;
+    border: none;
+    background: white;
+    outline-color: white;
+    cursor: not-allowed;
 }
 
 .all-comments .comment-reply,

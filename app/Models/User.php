@@ -68,4 +68,12 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Comment::class);
     }
+
+    /**
+     *  Get all user by voted likes
+     */
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
 }

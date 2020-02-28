@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreComment;
 use App\Services\CommentService;
+use App\Services\LikeService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -37,4 +38,19 @@ class CommentController extends Controller
 
         return json_encode($response);
     }
+
+    /**
+     * Store like
+     * @param Request $request
+     * @return false|string
+     */
+    public function vote(Request $request)
+    {
+        $likeService = new LikeService();
+
+        $response = $likeService::store($request->postId,$request->commentId,$request->action);
+
+        return json_encode($response);
+    }
+
 }

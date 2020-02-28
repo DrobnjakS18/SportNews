@@ -211,7 +211,9 @@ $('.comment-toggle-button').click(function () {
     $('.comment-form').toggle('slow','swing',resetReCaptcha(widgetCommentId));
 });
 
-$('.reply-submit').on('submit',function (e) {
+
+
+$('.reply-submit').on('submit ',function (e) {
     e.preventDefault();
 
     var message = $(this).find('textarea.reply-message').val();
@@ -268,7 +270,9 @@ $('.reply-submit').on('submit',function (e) {
         });
 });
 
-$('#comment-submit').on('click',function (e) {
+
+
+$('#comment-submit').on('click touchstart',function (e) {
     e.preventDefault();
 
     let comment = $('#message').val();
@@ -314,6 +318,96 @@ $('#comment-submit').on('click',function (e) {
             $('#message').val('');
             grecaptcha.reset(widgetCommentId);
             siteKey = '';
+        });
+});
+
+
+//Votes for comments
+let commentVotes = $('.comment-like, .comment-dislike');
+
+commentVotes.on('click touchstart',function (e) {
+    e.preventDefault();
+
+    let element =  $(this);
+    let votePostId = element.data('post-id');
+    let voteCommentId = element.data('comment-id');
+    let voteAction = element.data('action');
+
+    if(element.hasClass('like-after-click')) {
+        return false;
+    }
+
+    $.ajax({
+        method: 'POST',
+        url: '/vote',
+        data: {
+            _token : $('meta[name="csrf-token"]').attr('content'),
+            postId : votePostId,
+            commentId : voteCommentId,
+            action : voteAction
+        },
+        dataType: 'json',
+        custom: element
+    })
+        .fail(function (jqxhr, textStatus, errorThrown) {
+            alert('An error occured!Please try again later');
+    })
+        .done(function (data) {
+
+            //Delete href tag so it doesnt to the top of the page
+            element.parent().find('.comment-like, .comment-dislike').removeAttr('href');
+            //Adds opacity class
+            element.off('click').parent().find('.comment-like, .comment-dislike').addClass('like-after-click');
+            //Displays votes for that single comment
+            element.parent().find('.likes-count').html(data.votesLike);
+            element.parent().find('.dislikes-count').html(data.votesDislike);
+
+    });
+
+
+});
+
+
+//Votes for reply
+let replyVotes = $('.reply-like, .reply-dislike');
+
+replyVotes.on('click touchstart',function (e) {
+    e.preventDefault();
+
+    let element =  $(this);
+    let votePostId = element.data('post-id');
+    let voteCommentId = element.data('comment-id');
+    let voteAction = element.data('action');
+
+    if(element.hasClass('like-after-click')) {
+        return false;
+    }
+
+    $.ajax({
+        method: 'POST',
+        url: '/vote',
+        data: {
+            _token : $('meta[name="csrf-token"]').attr('content'),
+            postId : votePostId,
+            commentId : voteCommentId,
+            action : voteAction
+        },
+        dataType: 'json',
+        custom: element
+    })
+        .fail(function (jqxhr, textStatus, errorThrown) {
+            alert('An error occured!Please try again later');
+        })
+        .done(function (data) {
+
+            //Delete href tag so it doesnt to the top of the page
+            element.parent().find('.reply-like, .reply-dislike').removeAttr('href');
+            //Adds opacity class
+            element.off('click').parent().find('.reply-like, .reply-dislike').addClass('like-after-click');
+            //Displays votes for that single comment
+            element.parent().find('.reply-like-count').html(data.votesLike);
+            element.parent().find('.reply-dislike-count').html(data.votesDislike);
+
         });
 });
 

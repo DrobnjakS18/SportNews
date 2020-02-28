@@ -42,5 +42,13 @@ class Comment extends Model
         return $this->hasMany(Comment::class)->where('comment_id','<>',null);
     }
 
+    /**
+     *  Get all like by coment
+     */
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
 
 }
