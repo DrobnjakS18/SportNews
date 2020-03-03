@@ -494,9 +494,19 @@ a[href^=tel] {
     line-height: 28px;
     padding-bottom: 14px;
     position: relative;
+    cursor: pointer;
 }
 
-.news-title span:after {
+.news-title .newest,
+.news-title .liked,
+.news-title .disliked {
+    float: right;
+    margin:0 5px;
+}
+
+.news-title .newest:hover:after,
+.news-title .liked:hover:after,
+.news-title .disliked:hover:after {
     content: '';
     position: absolute;
     width: 100%;
@@ -902,7 +912,7 @@ a[href^=tel] {
 .post-title.title-sm {
     font-weight: 600;
     font-size: 18px;
-    line-height: 24px;
+    line-height: 21px;
 }
 
 .title-large {
@@ -1017,6 +1027,10 @@ a.post-category.absolute {
     width: 100%;
     z-index: 9;
 }
+
+/*.hot-news-main .post-content{*/
+/*    position: relative;*/
+/*}*/
 
 @media (max-width: 991px) {
     .post-overlay-wrapper .post-content {

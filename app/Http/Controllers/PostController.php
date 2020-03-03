@@ -21,7 +21,7 @@ class PostController extends Controller
 
         $items = $postService::getAllAboutSinglePost($slug);
 
-//        dd($items->post->comments[0]->likes->where('vote','like')->count());
+//        dd($items->post->comments);
 
         return view('pages.post')->with(compact('items'));
     }

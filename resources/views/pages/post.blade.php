@@ -1,4 +1,4 @@
-@extends('app')
+ @extends('app')
 @section('title', $items->post->title .' | Single post')
 
 @section('content')
@@ -26,7 +26,7 @@
                     <div class="single-post">
                         <div class="post-header mb-5 ">
                             <a class="post-category" style="background:{{$items->post->category->color}}" href="{{route('category',ucfirst($items->post->category->name))}}">{{$items->post->category->name}}</a>
-                            <span class="float-right mt-2">{{$items->post->created_at}}</span>
+                            <span class="float-right mt-2">{{$items->post->created_at->format('d M Y H:i')}}</span>
                             <h2 class="post-title">
                                 {{$items->post->title}}
                             </h2>
@@ -134,9 +134,12 @@
                         </div>
                     </div>
 
-                    <div id="comments" class="comments-block block">
-                        <h3 class="news-title">
-                            <span>Comments</span>
+                    <div id="comments" class="comments-block">
+                        <h3 class="news-title ">
+                            <span>Comments ( {{$items->post->comments->where('comment_id',null)->count()}} )</span>
+                            <span class="disliked">Most Disliked</span>
+                            <span class="liked">Most Liked</span>
+                            <span class="newest">Newest</span>
                         </h3>
                         <ul class="all-comments">
                             @include('partials.comments',['comments' => $items->comments])
@@ -168,7 +171,7 @@
                         </div>
                     @endif
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="col-lg-4 col-md-12">
                         @include('partials.social')
                         @include('partials.hot_news')
                     </div>

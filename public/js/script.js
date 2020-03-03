@@ -412,3 +412,20 @@ replyVotes.on('click touchstart',function (e) {
 });
 
 
+// $('.newest').on('click touchstart',function () {
+//
+//     var type = $(this).attr('class');
+//
+//    $.ajax({
+//        method: 'POST',
+//        url: '/comments-sort',
+//        data: {
+//            _token : $('meta[name="csrf-token"]').attr('content'),
+//            type: type
+//        },
+//        dataType: 'json'
+//    })
+//
+// });
+
+

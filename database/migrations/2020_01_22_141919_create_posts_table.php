@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->text('content');
             $table->string('picture');
             $table->enum('select', ["1","0"]);
+            $table->bigInteger('views')->default(0);
             $table->timestamps();
 
             $table->unsignedBigInteger('user_id');

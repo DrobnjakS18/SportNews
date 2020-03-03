@@ -373,10 +373,9 @@
                                         <span class="post-author">by
                                        <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
                                         </span>
-{{--                                        KASNIJE DODATI BROJAC ZA KOMENTARE--}}
                                         <span class="pull-right">
                                             <i class="fa fa-comments"></i>
-                                            <a href="single-post.html#comments">05</a>
+                                          <span>{{$item->comments->where('comment_id',null)->count()}}</span>
                                         </span>
                                     </div>
                                 </div>
@@ -428,10 +427,9 @@
                                         <span class="post-author">by
                            <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
                                         </span>
-                                        {{--                                        KASNIJE DODATI BROJAC ZA KOMENTARE--}}
                                         <span class="pull-right">
                                             <i class="fa fa-comments"></i>
-                                            <a href="single-post.html#comments">05</a>
+                                        <span>{{$item->comments->count()}}</span>
                                         </span>
                                     </div>
                                 </div>
@@ -482,10 +480,9 @@
                                         <span class="post-author">by
                                             <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
                                         </span>
-                                        {{--                                        KASNIJE DODATI BROJAC ZA KOMENTARE--}}
                                         <span class="pull-right">
                                             <i class="fa fa-comments"></i>
-                                            <a href="single-post.html#comments">05</a>
+                                               <span>{{$item->comments->count()}}</span>
                                         </span>
                                     </div>
                                 </div>
@@ -524,7 +521,7 @@
             <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                 <div class="all-news-block">
                     <h3 class="news-title">
-                        <span>Latest Articles</span>
+                        <span>Latest News</span>
                     </h3>
                     <div class="all-news">
                         <div class="row">

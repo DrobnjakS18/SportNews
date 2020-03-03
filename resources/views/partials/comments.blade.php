@@ -8,7 +8,7 @@
                     <div class="comment-body">
                         <div class="meta-data">
                             <span class="commented-person-name">{{$comment->user->name}}</span>
-                            <span class="comment-hour d-block"><i class="fa fa-clock-o mr-2"></i>{{$comment->created_at->diffForHumans()}}</span>
+                            <span class="comment-hour d-block"><i class="fa fa-clock-o mr-2"></i>{{$comment->post->created_at->format('d M Y H:i')}}</span>
                         </div>
                         <div class="comment-content">
                             <p>{{$comment->text}}
@@ -66,7 +66,7 @@
                                             <div class="comment-body">
                                                 <div class="meta-data">
                                                     <span class="commented-person-name">{{$reply->user->name}}</span>
-                                                    <span class="comment-hour d-block"><i class="fa fa-clock-o mr-2"></i>{{$reply->created_at->diffForHumans()}}</span>
+                                                    <span class="comment-hour d-block"><i class="fa fa-clock-o mr-2"></i>{{$reply->post->created_at->format('d M Y H:i')}}</span>
                                                 </div>
                                                 <div class="comment-content">
                                                     <p>

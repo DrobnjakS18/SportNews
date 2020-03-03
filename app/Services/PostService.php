@@ -107,6 +107,16 @@ class PostService
     }
 
     /**
+     * Increment post view by 1
+     * @param $post
+     * @return mixed
+     */
+    static public function incrementViews($post)
+    {
+       return $post->increment('views',1);
+    }
+
+    /**
      * Get all data for single page post
      * @param $slug
      * @return object
@@ -116,11 +126,11 @@ class PostService
         $id = extract_id_from_slug($slug);
 
         $data['post'] = self::getById($id);
+        $data['views'] = self::incrementViews($data['post']);
         $data['posts'] = self::getAll();
         $data['previous'] = self::getPreviousPost($id);
         $data['next'] = self::getNextPost($id);
         $data['comments'] = $data['post']->comments->where('comment_id','=',null);
-
 
         session()->put('post_id',$data['post']->id);
 

@@ -27,6 +27,7 @@ class GlobalSettingsProvider extends ServiceProvider
     {
         $postService = new PostService();
         $nav = $postService::getAll();
+
         View::share('nav', $nav);
     }
 }
