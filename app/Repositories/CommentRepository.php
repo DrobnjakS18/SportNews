@@ -41,4 +41,14 @@ class CommentRepository extends BaseRepository
 
         return $comment;
     }
+
+    /**
+     * Find all comments by post pagenate per page 10
+     * @param $id
+     * @return Comment
+     */
+    static public function allCommentsByPost($id)
+    {
+        return Comment::wherePost_idAndComment_id($id,null)->orderBy('created_at','DESC')->simplePaginate(10);
+    }
 }

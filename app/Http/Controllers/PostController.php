@@ -21,7 +21,7 @@ class PostController extends Controller
 
         $items = $postService::getAllAboutSinglePost($slug);
 
-//        dd($items->post->comments);
+//        dd($items->comments->take(2));
 
         return view('pages.post')->with(compact('items'));
     }
@@ -45,8 +45,6 @@ class PostController extends Controller
      */
     public function store(StorePost $request)
     {
-
-        dd($request->all());
        $post = new PostService();
 
        $response = $post::store(clean($request->title,'title'),$request->file('file'),clean($request->category,'p'),clean($request->content),$request->tags);

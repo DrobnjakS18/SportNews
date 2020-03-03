@@ -27,6 +27,7 @@ Route::get('/tag/{tag}','TagController@show')->name('tag');
 Route::post('/comment','CommentController@store')->name('comment.store')->middleware('post','auth');
 Route::post('/reply','CommentController@reply')->name('comment.reply')->middleware('post','auth');
 Route::post('/vote','CommentController@vote')->name('comment.vote')->middleware('auth');
+Route::get('/comments/{slug}','CommentController@comments')->name('comments.all');
 
 Route::post('/newsletter','SubscriptionController@store')->name('subscription.store');
 

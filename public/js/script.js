@@ -203,12 +203,10 @@ function ToggleReplyForm(comment_id)
     }
 }
 
-
-
 //Leave comment toggle form
 $('.comment-toggle-button').click(function () {
     $('.reply-form').slideUp('slow');
-    $('.comment-form').toggle('slow','swing',resetReCaptcha(widgetCommentId));
+    $('.comment-form').toggle('slow',resetReCaptcha(widgetCommentId));
 });
 
 
@@ -410,22 +408,5 @@ replyVotes.on('click touchstart',function (e) {
 
         });
 });
-
-
-// $('.newest').on('click touchstart',function () {
-//
-//     var type = $(this).attr('class');
-//
-//    $.ajax({
-//        method: 'POST',
-//        url: '/comments-sort',
-//        data: {
-//            _token : $('meta[name="csrf-token"]').attr('content'),
-//            type: type
-//        },
-//        dataType: 'json'
-//    })
-//
-// });
 
 

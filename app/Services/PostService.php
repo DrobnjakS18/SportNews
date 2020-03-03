@@ -73,6 +73,16 @@ class PostService
     }
 
     /**
+     * Get post slug id
+     * @param $slug
+     * @return PostRepository
+     */
+    static public function getBySlug($slug)
+    {
+        return PostRepository::findBySlug($slug);
+    }
+
+    /**
      * Get post by users id
      * @param $id
      * @return \App\Repositories\PostRepository

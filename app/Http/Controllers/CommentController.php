@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreComment;
 use App\Services\CommentService;
 use App\Services\LikeService;
+use App\Services\PostService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -51,6 +52,22 @@ class CommentController extends Controller
         $response = $likeService::store($request->postId,$request->commentId,$request->action);
 
         return json_encode($response);
+    }
+
+    /**
+     * Show all comments for post
+     * @param $slug
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function comments($slug)
+    {
+        $commentsService = new CommentService();
+
+        $items = $commentsService::getCommentsByPost($slug);
+
+//        dd($items);
+
+        return view('pages.all_comments')->with(compact('items'));
     }
 
 }

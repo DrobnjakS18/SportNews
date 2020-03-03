@@ -42,6 +42,8 @@
 
 7a. POST CREATE STYLES
 
+7b. POST COMMENTS
+
 8. SIDEBAR
 
   8.1. Social Pages
@@ -494,19 +496,9 @@ a[href^=tel] {
     line-height: 28px;
     padding-bottom: 14px;
     position: relative;
-    cursor: pointer;
 }
 
-.news-title .newest,
-.news-title .liked,
-.news-title .disliked {
-    float: right;
-    margin:0 5px;
-}
-
-.news-title .newest:hover:after,
-.news-title .liked:hover:after,
-.news-title .disliked:hover:after {
+.news-title span:after {
     content: '';
     position: absolute;
     width: 100%;
@@ -515,6 +507,7 @@ a[href^=tel] {
     left: 0;
     bottom: 0;
 }
+
 
 .block {
     position: relative;
@@ -1756,7 +1749,8 @@ a.post-category.absolute {
 }
 
 .all-comments .comment-reply,
-.comment-toggle-button {
+.comment-toggle-button,
+.all-comments-button  {
     font-weight: 400;
     color: #777;
     font-size: 13px;
@@ -1767,17 +1761,19 @@ a.post-category.absolute {
 }
 
 .all-comments .comment-reply:hover,
-.comment-toggle-button:hover {
+.comment-toggle-button:hover,
+.all-comments-button:hover {
     background: #dc3545;
     color: #fff;
     border-color: #dc3545;
+    text-decoration: none;
 }
 
-.comment-toggle-button {
+.comment-toggle-button,
+.all-comment-toggle-button {
     font-size: 18px;
     padding: 10px 20px;
 }
-
 
 .comments-counter {
     font-size: 18px;
@@ -2070,6 +2066,19 @@ a.post-category.absolute {
     color: red;
     font-weight: 700;
 }
+
+
+/* 7b. POST COMMENTS
+================================================== */
+
+.comments-post-title:hover {
+    text-decoration: none;
+}
+
+.comments-post-title h2:hover {
+    color: #90111A;
+}
+
 
     /* 8. SIDEBAR
     ================================================== */

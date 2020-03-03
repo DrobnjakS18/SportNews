@@ -30,6 +30,14 @@ class PostRepository extends BaseRepository
     }
 
     /**
+     * Single post by slug
+     */
+    static public function findBySlug($slug)
+    {
+        return Post::where('slug',$slug)->first();
+    }
+
+    /**
      * Single post by category pagination 4
      */
     static public function findByCategory($id)

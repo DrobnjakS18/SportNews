@@ -1,6 +1,6 @@
 
 @if($comments->count() > 0)
-    @foreach($comments as $comment)
+    @foreach($comments->sortByDesc('created_at')->take(3) as $comment)
         @if($comment->comment_id == null)
             <li>
                 <div class="comment">
@@ -8,7 +8,7 @@
                     <div class="comment-body">
                         <div class="meta-data">
                             <span class="commented-person-name">{{$comment->user->name}}</span>
-                            <span class="comment-hour d-block"><i class="fa fa-clock-o mr-2"></i>{{$comment->post->created_at->format('d M Y H:i')}}</span>
+                            <span class="comment-hour d-block"><i class="fa fa-clock-o mr-2"></i>{{$comment->created_at->format('d M Y H:i')}}</span>
                         </div>
                         <div class="comment-content">
                             <p>{{$comment->text}}
@@ -27,7 +27,6 @@
                         @endif
                     </div>
                 </div>
-
                 @if(Auth::check())
                     <div class="reply-form mb-5 form-{{$comment->id}}">
                         <p class="reply-ajax-message_success succes-id-{{$comment->id}}"></p>

@@ -5,7 +5,7 @@
     <div class="breadcrumb-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-12">
                     <ol class="breadcrumb">
                         <li>
                             <a href="{{route('home')}}">Home</a>
@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                     <div class="single-post">
-                        <div class="post-header mb-5 ">
+                        <div class="post-header mb-5">
                             <a class="post-category" style="background:{{$items->post->category->color}}" href="{{route('category',ucfirst($items->post->category->name))}}">{{$items->post->category->name}}</a>
                             <span class="float-right mt-2">{{$items->post->created_at->format('d M Y H:i')}}</span>
                             <h2 class="post-title">
@@ -133,20 +133,8 @@
                             @endforeach
                         </div>
                     </div>
-
-                    <div id="comments" class="comments-block">
-                        <h3 class="news-title ">
-                            <span>Comments ( {{$items->post->comments->where('comment_id',null)->count()}} )</span>
-                            <span class="disliked">Most Disliked</span>
-                            <span class="liked">Most Liked</span>
-                            <span class="newest">Newest</span>
-                        </h3>
-                        <ul class="all-comments">
-                            @include('partials.comments',['comments' => $items->comments])
-                        </ul>
-                    </div>
                     @if(Auth::check())
-                        <div class="text-center"><button class="comment-toggle-button ">Leave a Comment</button></div>
+                        <div class="text-center mt-5"><button class="comment-toggle-button ">Leave a Comment</button></div>
                         <div class="comment-form mt-4">
                             <p class="comment-ajax-message_success"></p>
                             <p class="comment-ajax-message_error"></p>
@@ -170,6 +158,17 @@
                             </form>
                         </div>
                     @endif
+                    <div id="comments" class="comments-block">
+                        <h3 class="news-title ">
+                            <span>Comments ( {{$items->post->comments->where('comment_id',null)->count()}} )</span>
+                        </h3>
+                        <ul class="all-comments">
+                            @include('partials.comments',['comments' => $items->comments])
+                            <div class="text-center mt-5">
+                                <a href="{{route('comments.all',['slug' => $items->post->slug])}}" class="all-comments-button all-comment-toggle-button">All Comments</a>
+                            </div>
+                        </ul>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-md-12">
                         @include('partials.social')
@@ -179,5 +178,4 @@
             </div>
 {{--        </div>--}}
     </section>
-
     @endsection
