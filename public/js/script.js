@@ -409,4 +409,21 @@ replyVotes.on('click touchstart',function (e) {
         });
 });
 
+// $('.title-sort').on('click touchstart',function () {
+//
+//     let type = $(this).data('type');
+//     let postId = $(this).data('post-id');
+//
+//     $.ajax({
+//         method:'POST',
+//         url:'/comments/sort',
+//         data: {
+//             _token : $('meta[name="csrf-token"]').attr('content'),
+//             type : type,
+//             postId: postId
+//         },
+//         dataType: 'json'
+//     })
+// });
+
 

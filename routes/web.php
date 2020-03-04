@@ -28,6 +28,11 @@ Route::post('/comment','CommentController@store')->name('comment.store')->middle
 Route::post('/reply','CommentController@reply')->name('comment.reply')->middleware('post','auth');
 Route::post('/vote','CommentController@vote')->name('comment.vote')->middleware('auth');
 Route::get('/comments/{slug}','CommentController@comments')->name('comments.all');
+Route::get('/comments/{slug}/{type}','CommentController@sort')->name('comments.sort')->where('type','newest|liked|disliked');
+
+
+
+//Route::post('/comments/sort','CommentController@sort')->name('comments.sort');
 
 Route::post('/newsletter','SubscriptionController@store')->name('subscription.store');
 

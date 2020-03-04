@@ -45,9 +45,9 @@ class PostController extends Controller
      */
     public function store(StorePost $request)
     {
-       $post = new PostService();
+       $postService = new PostService();
 
-       $response = $post::store(clean($request->title,'title'),$request->file('file'),clean($request->category,'p'),clean($request->content),$request->tags);
+       $response = $postService::store(clean($request->title,'title'),$request->file('file'),clean($request->category,'p'),clean($request->content),$request->tags);
 
        return json_encode($response);
     }

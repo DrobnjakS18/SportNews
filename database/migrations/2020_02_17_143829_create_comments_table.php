@@ -17,6 +17,8 @@ class CreateCommentsTable extends Migration
             $table->bigIncrements('id');
             $table->text('text');
             $table->enum('verifird',[1,0])->default(0);
+            $table->bigInteger('like')->default(0);
+            $table->bigInteger('dislike')->default(0);
             $table->timestamps();
 
             $table->unsignedBigInteger('user_id');

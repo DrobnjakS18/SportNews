@@ -14,6 +14,27 @@ class CommentRepository extends BaseRepository
     }
 
     /**
+     * Find all comments by post pagenate per page 10
+     * @param $id
+     * @return Comment
+     */
+    static public function allCommentsByPost($id)
+    {
+        return Comment::wherePost_idAndComment_id($id,null)->orderBy('created_at','DESC')->simplePaginate(10);
+    }
+
+    /**
+     * Find all comments by post pagenate per page 10
+     * @param $postId
+     * @param $sortBy
+     * @return Comment
+     */
+    static public function sortedComments($postId,$sortBy)
+    {
+        return Comment::wherePost_idAndComment_id($postId,null)->orderBy($sortBy,'DESC')->simplePaginate(10);
+    }
+
+    /**
      * Store comment
      * @param $message
      * @return Comment
@@ -43,12 +64,27 @@ class CommentRepository extends BaseRepository
     }
 
     /**
-     * Find all comments by post pagenate per page 10
-     * @param $id
+     * Update votes
+     * @param $commentId
+     * @param $likes
+     * @param $dislikes
      * @return Comment
      */
-    static public function allCommentsByPost($id)
+    static public function updateVotes($commentId,$likes,$dislikes)
     {
-        return Comment::wherePost_idAndComment_id($id,null)->orderBy('created_at','DESC')->simplePaginate(10);
+        $comment = Comment::find($commentId);
+
+        if (isset($likes)) {
+           $comment->like = $likes;
+        }
+
+        if (isset($dislikes)) {
+            $comment->dislike = $dislikes;
+        }
+
+        $comment->save();
+
+        return  $comment;
     }
+
 }

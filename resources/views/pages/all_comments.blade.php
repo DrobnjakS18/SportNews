@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-12 col-md-10">
                     @if(Auth::check())
-                        <div class="text-center mt-5"><button class="comment-toggle-button ">Leave a Comment</button></div>
+                        <div class="text-center mt-5"><button class="comment-toggle-button w-100">Leave a Comment</button></div>
                         <div class="comment-form mt-4">
                             <p class="comment-ajax-message_success"></p>
                             <p class="comment-ajax-message_error"></p>
@@ -41,8 +41,11 @@
                         </div>
                     @endif
                     <div id="comments" class="comments-block">
-                        <h3 class="news-title ">
+                        <h3 class="news-title">
                             <span>Comments ( {{$items->post->comments->where('comment_id',null)->count()}} )</span>
+                            <span class="title-sort" data-type="disliked"><a href="{{route('comments.sort',['slug' => $items->post->slug, 'type' => 'disliked'])}}">Most Disliked</a></span>
+                            <span class="title-sort" data-type="liked"><a href="{{route('comments.sort',['slug' => $items->post->slug, 'type' => 'liked'])}}">Most Liked</a></span>
+                            <span class="title-sort" data-type="newest"><a href="{{route('comments.sort',['slug' => $items->post->slug, 'type' => 'newest'])}}">Newest</a></span>
                         </h3>
                         <ul class="all-comments">
                             @if($items->comments->count() > 0)
@@ -61,14 +64,14 @@
                                                         </p>
                                                     </div>
                                                     @if(Auth::check())
-                                                        <a href="#" class="comment-like @if($comment->likes->where('user_id','=',Auth::user()->id)->where('comment_id','=',$comment->id)->count() > 0) like-after-click @endif" data-post-id="{{$comment->post->id}}" data-comment-id="{{$comment->id}}" data-action="like">
+                                                        <a href="#" class="comment-like @if($comment->likes->where('user_id','=',Auth::id())->where('comment_id','=',$comment->id)->count() > 0) like-after-click @endif" data-post-id="{{$comment->post->id}}" data-comment-id="{{$comment->id}}" data-action="like">
                                                             <i class="fa fa-thumbs-up text-success comment-likes" aria-hidden="true"></i>
                                                         </a>
-                                                        <span class="likes-count">{{$comment->likes->where('vote','like')->count()}}</span>
-                                                        <a href="#" class="comment-dislike @if($comment->likes->where('user_id','=',Auth::user()->id)->where('comment_id','=',$comment->id)->count() > 0) like-after-click @endif" data-post-id="{{$comment->post->id}}" data-comment-id="{{$comment->id}}" data-action="dislike">
+                                                        <span class="likes-count">{{$comment->like}}</span>
+                                                        <a href="#" class="comment-dislike @if($comment->likes->where('user_id','=',Auth::id())->where('comment_id','=',$comment->id)->count() > 0)like-after-click @endif" data-post-id="{{$comment->post->id}}" data-comment-id="{{$comment->id}}" data-action="dislike">
                                                             <i class="fa fa-thumbs-down text-danger comment-likes" aria-hidden="true"></i>
                                                         </a>
-                                                        <span class="dislikes-count">{{$comment->likes->where('vote','dislike')->count()}}</span>
+                                                        <span class="dislikes-count">{{$comment->dislike}}</span>
                                                         <button class="comment-reply ml-3" onclick="ToggleReplyForm({{$comment->id}})"><i class="fa fa-reply"></i>  Reply</button>
                                                     @endif
                                                 </div>
@@ -119,14 +122,14 @@
                                                                         </p>
                                                                     </div>
                                                                     @if(Auth::check())
-                                                                        <a href="#" class="reply-like @if($reply->likes->where('user_id','=',Auth::user()->id)->where('comment_id','=',$reply->id)->count() > 0) like-after-click @endif" data-post-id="{{$reply->post->id}}" data-comment-id="{{$reply->id}}" data-action="like">
+                                                                        <a href="#" class="reply-like @if($comment->likes->where('user_id','=',Auth::id())->where('comment_id','=',$comment->id)->count() > 0) like-after-click @endif" data-post-id="{{$reply->post->id}}" data-comment-id="{{$reply->id}}" data-action="like">
                                                                             <i class="fa fa-thumbs-up text-success reply-likes" aria-hidden="true"></i>
                                                                         </a>
-                                                                        <span class="reply-like-count">{{$reply->likes->where('vote','like')->count()}}</span>
-                                                                        <a href="#" class="reply-dislike @if($reply->likes->where('user_id','=',Auth::user()->id)->where('comment_id','=',$reply->id)->count() > 0) like-after-click @endif" data-post-id="{{$reply->post->id}}" data-comment-id="{{$reply->id}}" data-action="dislike">
+                                                                        <span class="reply-like-count">{{$reply->like}}</span>
+                                                                        <a href="#" class="reply-dislike @if($comment->likes->where('user_id','=',Auth::id())->where('comment_id','=',$comment->id)->count() > 0)like-after-click @endif" data-post-id="{{$reply->post->id}}" data-comment-id="{{$reply->id}}" data-action="dislike">
                                                                             <i class="fa fa-thumbs-down text-danger reply-likes" aria-hidden="true"></i>
                                                                         </a>
-                                                                        <span class="reply-dislike-count">{{$reply->likes->where('vote','dislike')->count()}}</span>
+                                                                        <span class="reply-dislike-count">{{$reply->dislike}}</span>
                                                                     @endif
                                                                 </div>
                                                             </div>

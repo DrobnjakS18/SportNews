@@ -498,15 +498,15 @@ a[href^=tel] {
     position: relative;
 }
 
-.news-title span:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: #dc3545;
-    left: 0;
-    bottom: 0;
-}
+/*.news-title span:after {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    width: 100%;*/
+/*    height: 2px;*/
+/*    background: #dc3545;*/
+/*    left: 0;*/
+/*    bottom: 0;*/
+/*}*/
 
 
 .block {
@@ -2068,7 +2068,7 @@ a.post-category.absolute {
 }
 
 
-/* 7b. POST COMMENTS
+/* 7b. POST COMMENTS(all_comments.blade.php)
 ================================================== */
 
 .comments-post-title:hover {
@@ -2077,6 +2077,30 @@ a.post-category.absolute {
 
 .comments-post-title h2:hover {
     color: #90111A;
+}
+
+.title-sort {
+    float: right;
+    padding-right: 10px;
+}
+
+.title-sort a {
+    color: black;
+}
+
+.title-sort a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.title-sort:hover:after {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 2px;
+    background: #dc3545;
+    left: 0;
+    bottom: 0;
 }
 
 

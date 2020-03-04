@@ -1,4 +1,4 @@
- @extends('app')
+@extends('app')
 @section('title', $items->post->title .' | Single post')
 
 @section('content')
@@ -134,7 +134,7 @@
                         </div>
                     </div>
                     @if(Auth::check())
-                        <div class="text-center mt-5"><button class="comment-toggle-button ">Leave a Comment</button></div>
+                        <div class="text-center mt-5"><button class="comment-toggle-button w-100">Leave a Comment</button></div>
                         <div class="comment-form mt-4">
                             <p class="comment-ajax-message_success"></p>
                             <p class="comment-ajax-message_error"></p>
@@ -164,9 +164,7 @@
                         </h3>
                         <ul class="all-comments">
                             @include('partials.comments',['comments' => $items->comments])
-                            <div class="text-center mt-5">
-                                <a href="{{route('comments.all',['slug' => $items->post->slug])}}" class="all-comments-button all-comment-toggle-button">All Comments</a>
-                            </div>
+
                         </ul>
                     </div>
                 </div>

@@ -51,4 +51,77 @@ class CommentService
         ];
 
     }
+
+    /**
+     * Update comment likes and dislikes
+     * @param $commentId
+     * @param $likes
+     * @param $dislikes
+     * @return object
+     */
+    static public function updateCommentVotes($commentId,$likes,$dislikes)
+    {
+        return CommentRepository::updateVotes($commentId,$likes,$dislikes);
+    }
+
+    /**
+     * Get all sorted comments by post slug
+     * @param $slug
+     * @return object
+     */
+    static public function getSortedComments($slug,$type)
+    {
+        $post = PostService::getBySlug($slug);
+
+            switch ($type) {
+                case 'newest':
+                    $comments = CommentRepository::sortedComments($post->id,'created_at');
+                    break;
+                case 'liked':
+                    $comments = CommentRepository::sortedComments($post->id,'like');
+                    break;
+                case 'disliked':
+                    $comments = CommentRepository::sortedComments($post->id,'dislike');
+                    break;
+                default:
+                    $comments = CommentRepository::sortedComments($post->id,'created_at');
+                    break;
+            }
+
+            return (object) [
+                'post' => $post,
+                'comments' => $comments
+            ];
+
+    }
+
+
+
+
+
+
+//    /**
+////     * Get all comments by post slug
+////     * @param $slug
+////     * @return object
+////     */
+////    static public function getSortedComments($postId,$type)
+////    {
+////        switch ($type) {
+////            case 'newest':
+////                $comments = CommentRepository::sortedComments($postId,'created_at');
+////                break;
+////            case 'liked':
+////                $comments = CommentRepository::sortedComments($postId,'like');
+////                break;
+////            case 'disliked':
+////                break;
+////            default:
+////                $comments = CommentRepository::sortedComments($postId,'dislike');
+////                break;
+////        }
+////
+////        return $comments;
+////
+////    }
 }

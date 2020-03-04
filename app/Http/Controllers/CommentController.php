@@ -65,7 +65,20 @@ class CommentController extends Controller
 
         $items = $commentsService::getCommentsByPost($slug);
 
-//        dd($items);
+        return view('pages.all_comments')->with(compact('items'));
+    }
+
+    /**
+     * Display sorted comments
+     * @param $slug
+     * @param $type
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function sort($slug,$type)
+    {
+        $commentsService = new CommentService();
+
+        $items = $commentsService::getSortedComments($slug,$type);
 
         return view('pages.all_comments')->with(compact('items'));
     }
