@@ -47,7 +47,7 @@ class PostController extends Controller
     {
        $postService = new PostService();
 
-       $response = $postService::store(clean($request->title,'title'),$request->file('file'),clean($request->category,'p'),clean($request->content),$request->tags);
+       $response = $postService::store(clean($request->title,'title'),$request->file('file'),clean($request->category,'p'),clean($request['content']),$request->tags);
 
        return json_encode($response);
     }
@@ -59,9 +59,9 @@ class PostController extends Controller
      */
     public function upload(Request $request)
     {
-        $post = new PostService();
+        $postService = new PostService();
 
-       $response = $post::uploadImage($request->file('file'));
+       $response = $postService::uploadImage($request->file('file'));
 
        return json_encode($response);
     }

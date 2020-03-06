@@ -34,7 +34,7 @@ class PostRepository extends BaseRepository
      */
     static public function findBySlug($slug)
     {
-        return Post::where('slug',$slug)->first();
+        return Post::where('slug',$slug)->firstOrFail();
     }
 
     /**

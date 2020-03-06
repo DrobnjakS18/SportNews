@@ -38,6 +38,8 @@ Route::post('/newsletter','SubscriptionController@store')->name('subscription.st
 
 //Route::get('/html-email','NewsletterController@htmlEmail')->name('newsletter.html');
 
+
+Route::post('/user-image/upload','ProfileController@uploadImage')->name('user.image');
 Route::get('/author/{name}', 'HomeController@author')->name('author');
 
 Route::get('/about', 'HomeController@about')->name('about');

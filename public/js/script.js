@@ -409,6 +409,96 @@ replyVotes.on('click touchstart',function (e) {
         });
 });
 
+
+let modalUserName = $('#modalUpdateName');
+let modalUserPassNew = $('#modalUpdatePassNew');
+let modalUserPassConfirm = $('#modalUpdatePassConfirm');
+
+$('.modal-name').on('click touchstart',function (e) {
+    e.preventDefault();
+    modalUserName.attr('readonly',false).removeClass( "text-right" ).focus();
+
+});
+
+$('.modal-pass').on('click touchstart', function () {
+    $('.modal-update-password').toggleClass('d-none');
+});
+
+
+$('#modalUserAccount').on('hide.bs.modal',function () {
+    modalUserName.attr('readonly',true).addClass( "text-right" );
+    location.reload();
+});
+
+$('.modal-update-image').on('click touchstart',function (e) {
+    e.preventDefault();
+    selectLocalProfileImage();
+
+    // $.ajax({
+    //     method:'POST',
+    //     url:'/comments/sort',
+    //     data: {
+    //         _token : $('meta[name="csrf-token"]').attr('content'),
+    //         type : type,
+    //         postId: postId
+    //     },
+    //     dataType: 'json'
+    // })
+});
+
+function selectLocalProfileImage() {
+
+    const input = document.createElement('input');
+
+    input.setAttribute('type', 'file');
+    input.setAttribute('accept', 'image/*');
+    input.click();
+
+
+    // // Listen upload local image and save storage
+    input.onchange = () => {
+        const file = input.files[0];
+
+        if (file.type.startsWith("image/")) {
+            saveUpdatedProfileImage(file)
+        } else {
+            alert('Only images are allowed for upload.');
+        }
+
+    };
+}
+
+function saveUpdatedProfileImage(file) {
+
+    const formData = new FormData();
+
+    let userId = $('.user-profile-image').data('user-id');
+
+    formData.append('user',userId);
+
+    formData.append('file', file);
+
+    $.ajax({
+        method: "POST",
+        url: "/user-image/upload",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        data: formData,
+        dataType: 'json',
+        contentType: false,
+        processData: false
+    })
+        .fail(function(jqxhr, textStatus, errorThrown, data) {
+            alert('An error occured! Please try againg later.');
+        })
+        .done(function(data) {
+         $('.user-profile-image').attr('src',data.image_name);
+        });
+}
+
+
+
 // $('.title-sort').on('click touchstart',function () {
 //
 //     let type = $(this).data('type');
@@ -425,5 +515,4 @@ replyVotes.on('click touchstart',function (e) {
 //         dataType: 'json'
 //     })
 // });
-
 

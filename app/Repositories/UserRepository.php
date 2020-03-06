@@ -28,4 +28,23 @@ class UserRepository extends BaseRepository
         return User::where('role_id',$id)->get();
     }
 
+    /**
+     * Update user profile image
+     * @param $id
+     * @param $image
+     * @return string
+     */
+    static public function updateUserImage($id,$image)
+    {
+        $user = User::findOrFail($id);
+
+        if (isset($image)) {
+           $user->profile_picture = $image;
+        }
+
+        $user->save();
+
+        return $user;
+    }
+
 }

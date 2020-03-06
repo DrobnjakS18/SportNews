@@ -29,7 +29,7 @@
                                 <div class="row">
                                     <div class="col-md-5 col-sm-6">
                                         <div class="post-thumbnail thumb-float-style">
-                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
+                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug])}}">
                                                 <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="" />
                                             </a>
                                         </div>
@@ -46,7 +46,7 @@
                                             </span>
                                             </div>
                                             <h2 class="post-title title-large ">
-                                                <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
+                                                <a href="{{route('post',[ucfirst($item->category->name),$item->slug])}}">{{$item->title}}</a>
                                             </h2>
                                             {!! substr($item->content,0,100) !!}
                                         </div>

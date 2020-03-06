@@ -133,13 +133,12 @@ class PostService
      */
     static public function getAllAboutSinglePost($slug)
     {
-        $id = extract_id_from_slug($slug);
 
-        $data['post'] = self::getById($id);
+        $data['post'] = self::getBySlug($slug);
         $data['views'] = self::incrementViews($data['post']);
         $data['posts'] = self::getAll();
-        $data['previous'] = self::getPreviousPost($id);
-        $data['next'] = self::getNextPost($id);
+        $data['previous'] = self::getPreviousPost($data['post']->id);
+        $data['next'] = self::getNextPost($data['post']->id);
         $data['comments'] = $data['post']->comments->where('comment_id','=',null);
 
         session()->put('post_id',$data['post']->id);

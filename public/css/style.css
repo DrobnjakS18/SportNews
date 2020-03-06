@@ -12,7 +12,7 @@
   2.2. Site Search
   2.3. Top Navigation
 
-3. TRANDING NEWS
+3. TRENDING NEWS
 
 4. POST STYLES
 
@@ -66,6 +66,8 @@
   11.4. Copyright
   11.5. Footer Menu
   11.6. Scroll to Top
+
+11a. MODALS
 
 12. RESPONSIVE STYLES
 
@@ -134,7 +136,7 @@ a:link, a:visited {
 }
 
 a:hover {
-    text-decoration: none;
+    text-decoration: none !important;
     color: #000;
 }
 
@@ -214,6 +216,12 @@ img.banner {
 
 .top-ad-banner .username-button {
     color: #292931;
+}
+
+.username-button img {
+    width: 38px;
+    border-radius: 50%;
+    margin-right: 5px;
 }
 
 .register-button {
@@ -485,7 +493,6 @@ a[href^=tel] {
 .news-title {
     font-size: 18px;
     line-height: 28px;
-    line-height: 100%;
     text-transform: uppercase;
     margin: 0 0 20px;
     padding-bottom: 10px;
@@ -552,6 +559,8 @@ a[href^=tel] {
 .username-button {
     font-weight: 600;
 }
+
+
 
 .header-navigation {
     padding: 10px 0;
@@ -1080,6 +1089,10 @@ a.post-category.absolute {
 
 .post-block-wrapper {
     position: relative;
+}
+
+.editors-block {
+    height: 400px;
 }
 
 .post-block-wrapper .post-thumbnail {
@@ -2104,8 +2117,8 @@ a.post-category.absolute {
 }
 
 
-    /* 8. SIDEBAR
-    ================================================== */
+/* 8. SIDEBAR
+================================================== */
 .sidebar .widget.mb-0 {
     margin-bottom: 0;
 }
@@ -2149,7 +2162,7 @@ a.post-category.absolute {
 }
 
 .sidebar .widget {
-    margin-bottom: 50px;
+    margin-bottom: 43px;
 }
 
 @media (max-width: 991px) {
@@ -2537,6 +2550,80 @@ a {
     transition: all .35s ease;
 }
 
+/* 12. MODALS
+================================================== */
+
+#modalUserAccount {
+    padding-right: 0 !important;
+}
+
+#modalUserAccount .modal-header {
+    text-align: center;
+    background: #f6f6f6;
+}
+
+#modalUserAccount .modal-header img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+#modalUserAccount .modal-footer {
+    border-top: none;
+}
+
+#modalUserAccount .fa {
+    font-size: 20px;
+}
+
+#modalUserAccount .fa-camera {
+    position: absolute;
+    right: 60px;
+    top: 130px;
+}
+
+#modalUserAccount .modal-image {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 10%);
+}
+
+#modalUserAccount .form-control {
+    border:none;
+    border-bottom: 1px solid black;
+}
+
+#modalUserAccount .form-control:disabled, .form-control[readonly] {
+    background: white !important;
+}
+
+#modalUserAccount .form-control:focus {
+    box-shadow: none;
+    border-color: black;
+}
+
+#modalUserAccount .modal-update-button {
+    border: none;
+    background: none;
+    width: 30px;
+}
+
+#modalUserAccount .modal-update-button:focus {
+    outline: none;
+}
+
+#modalUserAccount .modal-user-save {
+    color: white;
+    background: #dc3545;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    display: block;
+    padding: .5rem 4rem;
+}
+
+#modalUserAccount .modal-user-save:hover {
+    background: #c93e4b;
+}
+
+
 /* 12. RESPONSIVE STYLES
 ================================================== */
 /* Medium Devices, Desktops */
@@ -2578,6 +2665,15 @@ a {
         max-width: 940px;
     }
 }
+
+/* Small Devices, Tablets  and larger*/
+@media (min-width: 767px) {
+    .modal .modal-dialog {
+        max-width: 600px;
+        margin: 8rem auto;
+    }
+}
+
 
 /* Small Devices, Tablets */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -2703,6 +2799,11 @@ a {
 
 /* Small Devices Potrait */
 @media (max-width: 767px) {
+
+    .username-button span {
+        font-size: 12px;
+    }
+
     .boxed-layout .body-inner {
         margin: 0 auto;
     }
@@ -2811,5 +2912,14 @@ a {
         margin-bottom: 20px;
     }
 }
+
+/* Mobile */
+@media (max-width: 575px) {
+    .username-button {
+        padding: 0.5rem 1rem !important;
+    }
+}
+
+
 
 /*# sourceMappingURL=maps/style.css.map */

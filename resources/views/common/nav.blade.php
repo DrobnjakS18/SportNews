@@ -88,14 +88,26 @@
             </div>
             <div class="col-12 col-lg-9">
                 <div class="top-ad-banner d-flex justify-content-center justify-content-lg-end ">
-{{--                    <a href="#">--}}
-{{--                        <img src="{{asset('images/news/ad-pro.png')}}" class="img-fluid" alt="banner-ads">--}}
-{{--                    </a>--}}
                     @if(Auth::check())
-
-                        <a class="nav-link username-button" href="{{route('author',Auth::user()->name)}}">
-                            {{ Auth::user()->name }}
-                        </a>
+                        @switch(Auth::user()->role->name)
+                            @case("author")
+                                <a class="username-button mt-n2" href="{{route('author',Auth::user()->name)}}">
+                                    <img class="img-fluid user-profile-image-small" src="{{asset('storage/images/'.Auth::user()->profile_picture)}}" alt="profile">
+                                    <span class="pl-2">{{ Auth::user()->name }}</span>
+                                </a>
+                                @break
+                            @case("user")
+                                <a class="username-button mt-n2" href="" data-toggle="modal" data-target="#modalUserAccount">
+                                    <img class="img-fluid" src="{{asset('storage/images/'.Auth::user()->profile_picture)}}" alt="profile">
+                                    <span class="pl-2">{{ Auth::user()->name }}</span>
+                                </a>
+                                @break
+                            @case("admin")
+                                NAPRAVITI LINK ZA ADMINA
+                                @break
+                            @default
+                                @break;
+                            @endswitch
                         <a class="nav-link register-button" href="#"
                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Logout</a>

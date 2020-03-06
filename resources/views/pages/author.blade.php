@@ -22,14 +22,14 @@
                                 <div class="col-md-6 col-sm-6 ">
                                     <div class="post-block-wrapper post-grid-view clearfix">
                                         <div class="post-thumbnail">
-                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
+                                            <a href="{{route('post',[ucfirst($item->category->name),$item->slug])}}">
                                                 <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-thumbnail"/>
                                             </a>
                                         </div>
                                         <div class="post-content">
                                             <a class="post-category" style="background:{{$item->category->color}}" href="{{route('category',ucfirst($item->category->name))}}">{{$item->category->name}}</a>
                                             <h2 class="post-title mt-3">
-                                                <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
+                                                <a href="{{route('post',[ucfirst($item->category->name),$item->slug])}}">{{$item->title}}</a>
                                             </h2>
                                             <div class="post-meta">
                                                 <span class="posted-time">{{$item->created_at}}</span>

@@ -45,7 +45,7 @@
                     <nav class="post-navigation clearfix">
                             <div class="previous-post">
                                 @if($items->previous)
-                                    <a href="{{route('post',[ucfirst($items->previous->category->name),$items->previous->slug.'-'.$items->previous->id])}}">
+                                    <a href="{{route('post',[ucfirst($items->previous->category->name),$items->previous->slug])}}">
                                         <h6 class="text-uppercase">Previous</h6>
                                         <h3>
                                             {{$items->previous->title}}
@@ -53,7 +53,7 @@
                                      </a>
                                 @else
                                     @if($items->posts->last())
-                                        <a href="{{route('post',[ucfirst($items->posts->last()->category->name),$items->posts->last()->slug.'-'.$items->posts->last()->max('id')])}}">
+                                        <a href="{{route('post',[ucfirst($items->posts->last()->category->name),$items->posts->last()->slug])}}">
                                             <h6 class="text-uppercase">Previous</h6>
                                             <h3>
                                                 {{$items->posts->last()->title}}
@@ -64,14 +64,14 @@
                             </div>
                             <div class="next-post">
                                 @if($items->next)
-                                    <a href="{{route('post',[ucfirst($items->next->category->name),$items->next->slug.'-'.$items->next->id])}}">
+                                    <a href="{{route('post',[ucfirst($items->next->category->name),$items->next->slug])}}">
                                         <h6 class="text-uppercase">Next</h6>
                                         <h3>
                                             {{$items->next->title}}
                                         </h3>
                                     </a>
                                 @else
-                                        <a href="{{route('post',[ucfirst($items->posts->first()->category->name),$items->posts->first()->slug.'-'.$items->posts->first()->min('id')])}}">
+                                        <a href="{{route('post',[ucfirst($items->posts->first()->category->name),$items->posts->first()->slug])}}">
                                             <h6 class="text-uppercase">Next</h6>
                                             <h3>
                                                 {{$items->posts->first()->title}}
@@ -82,7 +82,7 @@
                     </nav>
                     <div class="author-block">
                         <div class="author-thumb">
-                            <img src="{{asset('storage/images/'.$items->post->user->profile_picture)}}" alt="author-image">
+                            <a href="{{route('author',$items->post->user->name)}}"><img src="{{asset('storage/images/'.$items->post->user->profile_picture)}}" alt="author-image"></a>
                         </div>
                         <div class="author-content">
                             <h3><a href="{{route('author',$items->post->user->name)}}">{{$items->post->user->name}}</a></h3>
@@ -118,14 +118,14 @@
                                 <div class="items">
                                     <div class="post-block-wrapper clearfix">
                                         <div class="post-thumbnail mb-3">
-                                            <a href="{{route('post',[ucfirst($post->category->name),$post->slug.'-'.$post->id])}}">
+                                            <a href="{{route('post',[ucfirst($post->category->name),$post->slug])}}">
                                                 <img class="img-fluid" src="{{asset('storage/images/'.$post->picture)}}" alt="post-thumbnail"/>
                                             </a>
                                         </div>
 {{--                                        <a class="post-category" href="{{route('category',ucfirst($post->category->name))}}"  style="background:{{$post->category->color}}">{{$post->category->name}}</a>--}}
                                         <div class="post-content">
                                             <h2 class="post-title title-sm">
-                                                <a href="{{route('post',[ucfirst($post->category->name),$post->slug.'-'.$post->id])}}">{{substr($post->title,0,50)."..."}}</a>
+                                                <a href="{{route('post',[ucfirst($post->category->name),$post->slug])}}">{{substr($post->title,0,50)."..."}}</a>
                                             </h2>
                                         </div>
                                     </div>

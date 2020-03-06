@@ -20,13 +20,13 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="post-block-wrapper clearfix mb-5 mb-lg-0">
                                 <div class="post-thumbnail">
-                                    <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">
+                                    <a href="{{route('post',[ucfirst($item->category->name),$item->slug])}}">
                                         <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-image"/>
                                     </a>
                                 </div>
                                 <div class="post-content">
                                     <h2 class="post-title mt-3">
-                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug.'-'.$item->id])}}">{{$item->title}}</a>
+                                        <a href="{{route('post',[ucfirst($item->category->name),$item->slug])}}">{{$item->title}}</a>
                                     </h2>
                                     <div class="post-meta mb-2">
                                         <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>{{$item->created_at->diffForHumans()}}</span>
