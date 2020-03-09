@@ -32,7 +32,7 @@
                                         <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>{{$item->created_at->diffForHumans()}}</span>
                                         <span class="post-author">
                                         by
-                                        <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
+                                        <a href="{{route('author',$item->user->slug)}}">{{$item->user->name}}</a>
                                     </span>
                                     </div>
                                     {!! substr($item->content,0,100) !!}

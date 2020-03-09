@@ -7,42 +7,59 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <div class="modal-image">
-                                <img class="img-fluid user-profile-image" src="{{asset('storage/images/'.Auth::user()->profile_picture)}}"  data-user-id="{{Auth::id()}}"  alt="profile">
-                                <h4 class="pt-3 text-dark font-weight-bold">{{Auth::user()->name}}</h4>
-                                <p >{{Auth::user()->email}}</p>
-                                <a href="#" class="text-dark modal-update-image"><i class="fa fa-camera"></i></a>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <img class="img-fluid user-profile-image ml-4" src="{{asset('storage/images/'.Auth::user()->profile_picture)}}"  data-user-id="{{Auth::id()}}"  alt="profile">
+                                        <a href="#" class="text-dark modal-update-image"><i class="fa fa-camera"></i></a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="modal-text">
+                                            <h4 class="pt-3 text-dark font-weight-bold user-modal-name">{{Auth::user()->name}}</h4>
+                                            <p>{{Auth::user()->email}}</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
                         </div>
                         <div class="modal-body mx-3">
-                            <form action="#">
+                            <form id="modalUserForm">
                                 <div class="input-group mb-5">
                                     <label class="w-100" data-error="wrong" data-success="right" for="modalUpdateName">Your Name</label>
-                                    <input type="text" id="modalUpdateName" class="form-control validate text-right" value="{{Auth::user()->name}}" readonly>
+                                    <input type="text" id="modalUpdateName" class="form-control validate text-right" value="{{Auth::user()->name}}" readonly autocomplete="on">
                                     <button class="modal-update-button modal-name"><span class="input-group-addon"><i class="fa fa-edit"></i></span></button>
+                                    <div class="modal-error error-name"></div>
                                 </div>
                                 <div class="input-group mb-4">
                                     <label class="w-100" data-error="wrong" data-success="right" for="modalUpdatePassClick">Your password</label>
-                                    <input type="password" id="modalUpdatePassClick" class="form-control validate text-right" value="..........." readonly>
+                                    <input type="password" id="modalUpdatePassClick" class="form-control validate text-right" value="..........." readonly autocomplete="off">
                                     <button class="modal-update-button modal-pass"><span class="input-group-addon"><i class="fa fa-edit"></i></span></button>
                                 </div>
                                 <div class="input-group  modal-update-password mb-4 d-none">
                                     <label class="w-100" data-error="wrong" data-success="right" for="modalUpdatePassNew">New Password</label>
-                                    <input type="password" id="modalUpdatePassNew" class="form-control validate" placeholder="Insert new password">
+                                    <input type="password" id="modalUpdatePassNew" class="form-control validate" placeholder="Insert new password" autocomplete="off">
                                     <button class="modal-update-button modal-pass" disabled><span class="input-group-addon"></span></button>
                                 </div>
                                 <div class="input-group modal-update-password mb-4 d-none">
                                     <label class="w-100" data-error="wrong" data-success="right" for="modalUpdatePassConfirm">Confirm password</label>
-                                    <input type="password" id="modalUpdatePassConfirm" class="form-control validate" placeholder="Confirm new password">
+                                    <input type="password" id="modalUpdatePassConfirm" class="form-control validate" placeholder="Confirm new password" autocomplete="off">
                                     <button class="modal-update-button modal-pass" disabled><span class="input-group-addon"></span></button>
+                                    <div class="modal-error error-password"></div>
                                 </div>
+                                <input type="hidden" id="userModalId" value="{{Auth::id()}}">
+                                <input type="hidden" id="userModalRoleId" value="{{Auth::user()->role_id}}">
                             </form>
                         </div>
                         <div class="modal-footer d-flex justify-content-center">
-                            <button class="btn modal-user-save">Save</button>
+                            <button class="btn modal-user-save" id="modalUserSave">Save</button>
+                        </div>
+                        <div class="mx-auto">
+                            <p class="modal-update-success"></p>
                         </div>
                     </div>
                 </div>

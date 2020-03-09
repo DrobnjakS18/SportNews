@@ -2577,7 +2577,7 @@ a {
 
 #modalUserAccount .fa-camera {
     position: absolute;
-    right: 60px;
+    left: 55%;
     top: 130px;
 }
 
@@ -2621,6 +2621,19 @@ a {
 
 #modalUserAccount .modal-user-save:hover {
     background: #c93e4b;
+}
+
+.modal-update-success {
+    display: none;
+    text-align: center;
+    color: green;
+    padding: 10px 50px;
+    background: #f3e2b3;
+}
+
+.modal-error {
+    width: 100%;
+    color: red;
 }
 
 
@@ -2670,7 +2683,7 @@ a {
 @media (min-width: 767px) {
     .modal .modal-dialog {
         max-width: 600px;
-        margin: 8rem auto;
+        margin: 5rem auto;
     }
 }
 

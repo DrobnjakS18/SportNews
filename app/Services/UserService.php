@@ -46,7 +46,7 @@ class UserService
     static public function getByNamePostsPaginate($name)
     {
         $data['users'] = UserRepository::all();
-        $data['user'] = UserRepository::findByName($name);
+        $data['user'] = UserRepository::findBySlug($name);
         $data['posts'] = PostService::getByUser($data['user']->id);
 
         return (object)$data;
@@ -70,7 +70,6 @@ class UserService
         ];
     }
 
-
     /**
      * Update user profile image
      * @param $userId
@@ -79,7 +78,25 @@ class UserService
      */
     static public function updateProfileImage($userId,$image)
     {
-        return UserRepository::updateUserImage($userId,$image);
+        return UserRepository::updateUserAccountImage($userId,$image);
+    }
+
+    /**
+     * Update profile
+     * @param $name
+     * @param $password
+     * @param $userId
+     * @return string
+     */
+    static public function updateAccount($name,$password,$userId,$roleId)
+    {
+        $user = UserRepository::updatAccount($name,$password,$userId,$roleId);
+
+        return (object) [
+            'status' => 200,
+            'user' => $user,
+            'message' => 'You have successfully updated you profile'
+        ];
     }
 
 }

@@ -40,6 +40,7 @@ Route::post('/newsletter','SubscriptionController@store')->name('subscription.st
 
 
 Route::post('/user-image/upload','ProfileController@uploadImage')->name('user.image');
+Route::post('/user/update','ProfileController@update')->name('user.update');
 Route::get('/author/{name}', 'HomeController@author')->name('author');
 
 Route::get('/about', 'HomeController@about')->name('about');

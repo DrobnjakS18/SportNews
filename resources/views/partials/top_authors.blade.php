@@ -8,7 +8,7 @@
             <div class="top-author">
                 <img class="img-fluid" src="{{asset('storage/images/'.$user->profile_picture)}}" alt="author-thumb">
                 <div class="info">
-                    <h4 class="name"><a href="{{route('author',$user->name)}}">{{$user->name}}</a></h4>
+                    <h4 class="name"><a href="{{route('author',$user->slug)}}">{{$user->name}}</a></h4>
                     <ul class="list-unstyled">
                         <li>{{$user->posts->count()}} Posts</li>
                     </ul>

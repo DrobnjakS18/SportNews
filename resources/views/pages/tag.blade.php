@@ -27,7 +27,7 @@
                                                 <a>{{$item->created_at}}</a>
                                             </span>
                                                 <span class="post-author">
-                                                <a href="{{route('author',$item->user->name)}}" class="text-dark">by {{$item->user->name}}</a>
+                                                <a href="{{route('author',$item->user->slug)}}" class="text-dark">by {{$item->user->name}}</a>
                                             </span>
                                             </div>
                                             <h2 class="post-title title-large ">

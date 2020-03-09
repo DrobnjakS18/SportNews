@@ -420,30 +420,15 @@ $('.modal-name').on('click touchstart',function (e) {
 
 });
 
-$('.modal-pass').on('click touchstart', function () {
+$('.modal-pass').on('click touchstart', function (e) {
+    e.preventDefault();
     $('.modal-update-password').toggleClass('d-none');
 });
 
 
-$('#modalUserAccount').on('hide.bs.modal',function () {
-    modalUserName.attr('readonly',true).addClass( "text-right" );
-    location.reload();
-});
-
 $('.modal-update-image').on('click touchstart',function (e) {
     e.preventDefault();
     selectLocalProfileImage();
-
-    // $.ajax({
-    //     method:'POST',
-    //     url:'/comments/sort',
-    //     data: {
-    //         _token : $('meta[name="csrf-token"]').attr('content'),
-    //         type : type,
-    //         postId: postId
-    //     },
-    //     dataType: 'json'
-    // })
 });
 
 function selectLocalProfileImage() {
@@ -467,6 +452,8 @@ function selectLocalProfileImage() {
 
     };
 }
+
+var imageUploadFlag = false;
 
 function saveUpdatedProfileImage(file) {
 
@@ -493,26 +480,82 @@ function saveUpdatedProfileImage(file) {
             alert('An error occured! Please try againg later.');
         })
         .done(function(data) {
-         $('.user-profile-image').attr('src',data.image_name);
+         if(data.image_name) {
+             $('.user-profile-image').attr('src',data.image_name);
+             imageUploadFlag = true;
+         }
         });
 }
 
 
+$('#modalUserSave').on('click touchstart',function (e) {
+    e.preventDefault();
 
-// $('.title-sort').on('click touchstart',function () {
-//
-//     let type = $(this).data('type');
-//     let postId = $(this).data('post-id');
-//
-//     $.ajax({
-//         method:'POST',
-//         url:'/comments/sort',
-//         data: {
-//             _token : $('meta[name="csrf-token"]').attr('content'),
-//             type : type,
-//             postId: postId
-//         },
-//         dataType: 'json'
-//     })
-// });
+    let updateUserName = $("#modalUpdateName").val();
+    let updateUserPassNew = $('#modalUpdatePassNew').val();
+    let updateUserPassConfirm = $('#modalUpdatePassConfirm').val();
+    let userModalId = $("#userModalId").val();
+    let userModalRoleId = $('#userModalRoleId').val();
+
+    let data = {
+        _token : $('meta[name="csrf-token"]').attr('content'),
+        name: updateUserName,
+        password: updateUserPassNew,
+        password_confirmation : updateUserPassConfirm,
+        userId : userModalId,
+        roleId : userModalRoleId
+    };
+
+    if (!updateUserPassNew) {
+        delete data.password;
+        delete data.password_confirmation;
+    }
+
+    // //On every save the span tags disappear and appear again
+    $('.modal-error').hide();
+
+    $.ajax({
+        method:'POST',
+        url: '/user/update',
+        data: data,
+        dataType: "json"
+    })
+        .fail(function(jqxhr, textStatus, errorThrown, data) {
+
+            let status = jqxhr.status;
+            let response = JSON.parse(jqxhr.responseText);
+
+            switch (status) {
+                case 404:
+                    alert('User update error');
+                    break;
+                case 422:
+                    $.each(response.errors, function(key, value) {
+                        $('.error-' + key).html(value).show();
+                    });
+                    break;
+                default:
+                    alert("An error occured! Please try againg later.");
+                    break;
+            }
+
+    })
+        .done(function(data) {
+           $('.user-modal-name, .account-name').html(data.user.name);
+           $(".modal-update-success").html(data.message).show();
+           setTimeout(function () {
+               location.reload();
+           },1000);
+        });
+
+});
+
+
+$('#modalUserAccount').on('hide.bs.modal',function () {
+    modalUserName.attr('readonly',true).addClass( "text-right" );
+    if(imageUploadFlag) {
+        location.reload();
+    }
+});
+
 

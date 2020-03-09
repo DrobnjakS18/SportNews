@@ -17,7 +17,7 @@
                     <span class="posted-time"><i class="fa fa-clock-o mr-1"></i>{{$item->created_at->format('d M Y')}}</span>
                     <span> by </span>
                     <span class="post-author">
-                              <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
+                              <a href="{{route('author',$item->user->slug)}}">{{$item->user->name}}</a>
                     </span>
                 </div>
             </div>

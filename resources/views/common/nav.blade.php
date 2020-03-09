@@ -91,15 +91,15 @@
                     @if(Auth::check())
                         @switch(Auth::user()->role->name)
                             @case("author")
-                                <a class="username-button mt-n2" href="{{route('author',Auth::user()->name)}}">
+                                <a class="username-button mt-n2" href="{{route('author',Auth::user()->slug)}}">
                                     <img class="img-fluid user-profile-image-small" src="{{asset('storage/images/'.Auth::user()->profile_picture)}}" alt="profile">
-                                    <span class="pl-2">{{ Auth::user()->name }}</span>
+                                    <span class="pl-2 account-name">{{ Auth::user()->name }}</span>
                                 </a>
                                 @break
                             @case("user")
                                 <a class="username-button mt-n2" href="" data-toggle="modal" data-target="#modalUserAccount">
                                     <img class="img-fluid" src="{{asset('storage/images/'.Auth::user()->profile_picture)}}" alt="profile">
-                                    <span class="pl-2">{{ Auth::user()->name }}</span>
+                                    <span class="pl-2 account-name">{{ Auth::user()->name }}</span>
                                 </a>
                                 @break
                             @case("admin")

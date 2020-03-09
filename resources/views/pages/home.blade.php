@@ -21,7 +21,7 @@
                                     <span class="posted-time"><i class="fa fa-clock-o mr-2 text-danger"></i>{{$item->created_at->diffForHumans()}}</span>
                                     <span class="post-author">
                                         by
-                                        <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
+                                        <a href="{{route('author',$item->user->slug)}}">{{$item->user->slug}}</a>
                                     </span>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                                         <span class="posted-time"><i class="fa fa-clock-o mr-2 text-danger"></i>{{$item->created_at->diffForHumans()}}</span>
                                         <span class="post-author">
                                             <span> by </span>
-                                                     <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
+                                                     <a href="{{route('author',$item->user->slug)}}">{{$item->user->name}}</a>
                                         </span>
                                     </div>
                                 </div>
@@ -85,7 +85,7 @@
                                             <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>{{$item->created_at->diffForHumans()}}</span>
                                             <span class="post-author">
                                                 by
-                                                <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
+                                                <a href="{{route('author',$item->user->slug)}}">{{$item->user->name}}</a>
                                             </span>
                                         </div>
                                         {!! substr($item->content,0,100).'...' !!}
@@ -110,7 +110,7 @@
                                             <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>{{$item->created_at->diffForHumans()}}</span>
                                             <span class="post-author">
                                                 by
-                                                <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
+                                                <a href="{{route('author',$item->user->slug)}}">{{$item->user->name}}</a>
                                             </span>
                                         </div>
                                         {!! substr($item->content,0,100).'...' !!}
@@ -135,7 +135,7 @@
                                             <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>{{$item->created_at->diffForHumans()}}</span>
                                             <span class="post-author">
                                                 by
-                                                <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
+                                                <a href="{{route('author',$item->user->slug)}}">{{$item->user->name}}</a>
                                             </span>
                                         </div>
                                         {!! substr($item->content,0,100).'...' !!}
@@ -161,7 +161,7 @@
                                             <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>{{$item->created_at->diffForHumans()}}</span>
                                             <span class="post-author">
                                                 by
-                                                <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
+                                                <a href="{{route('author',$item->user->slug)}}">{{$item->user->name}}</a>
                                             </span>
                                         </div>
                                         {!! substr($item->content,0,100).'...' !!}
@@ -197,7 +197,7 @@
                                                     <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>{{$item->created_at->diffForHumans()}}</span>
                                                     <span class="post-author">
                                                         by
-                                                      <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
+                                                      <a href="{{route('author',$item->user->slug)}}">{{$item->user->name}}</a>
                                                     </span>
                                                 </div>
                                                 {!! substr($item->content,0,100)."..." !!}
@@ -278,7 +278,7 @@
                                     <div class="post-meta white">
                                         <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
                                         <span class="post-author">by
-                                       <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
+                                       <a href="{{route('author',$item->user->slug)}}">{{$item->user->name}}</a>
                                         </span>
                                         <span class="pull-right">
                                             <i class="fa fa-comments"></i>
@@ -332,7 +332,7 @@
                                     <div class="post-meta white">
                                         <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
                                         <span class="post-author">by
-                           <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
+                                       <a href="{{route('author',$item->user->slug)}}">{{$item->user->name}}</a>
                                         </span>
                                         <span class="pull-right">
                                             <i class="fa fa-comments"></i>
@@ -385,7 +385,7 @@
                                     <div class="post-meta white">
                                         <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
                                         <span class="post-author">by
-                                            <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
+                                            <a href="{{route('author',$item->user->slug)}}">{{$item->user->name}}</a>
                                         </span>
                                         <span class="pull-right">
                                             <i class="fa fa-comments"></i>
@@ -438,7 +438,7 @@
                                     <div class="post-meta white">
                                         <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
                                         <span class="post-author">by
-                                            <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
+                                            <a href="{{route('author',$item->user->slug)}}">{{$item->user->name}}</a>
                                         </span>
                                         <span class="pull-right">
                                             <i class="fa fa-comments"></i>
@@ -503,7 +503,7 @@
                                             <div class="post-meta">
                                                 <span class="posted-time">{{$item->created_at->diffForHumans()}}</span>
                                                 <span class="post-author">by
-                                              <a href="{{route('author',$item->user->name)}}">{{$item->user->name}}</a>
+                                                <a href="{{route('author',$item->user->slug)}}">{{$item->user->name}}</a>
                                                 </span>
                                             </div>
                                             {!! substr($item->content,0,100).'...' !!}

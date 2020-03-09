@@ -27,9 +27,6 @@ class HomeController extends Controller
 
         $items = $postService::getAllWithUsers();
 
-
-
-
         return view('pages.home')->with(compact('items'));
     }
 
