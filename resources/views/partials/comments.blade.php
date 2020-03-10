@@ -13,7 +13,7 @@
                             <p>{{$comment->text}}
                             </p>
                         </div>
-                        @if(Auth::check())
+{{--                        @if(Auth::check())--}}
                             <a href="#" class="comment-like @if($comment->likes->where('user_id','=',Auth::id())->where('comment_id','=',$comment->id)->count() > 0) like-after-click @endif" data-post-id="{{$comment->post->id}}" data-comment-id="{{$comment->id}}" data-action="like">
                             <i class="fa fa-thumbs-up text-success comment-likes" aria-hidden="true"></i>
                             </a>
@@ -23,7 +23,7 @@
                             </a>
                                 <span class="dislikes-count">{{$comment->dislike}}</span>
                             <button class="comment-reply ml-3" onclick="ToggleReplyForm({{$comment->id}})"><i class="fa fa-reply"></i>  Reply</button>
-                        @endif
+{{--                        @endif--}}
                     </div>
                 </div>
                 @if(Auth::check())

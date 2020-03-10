@@ -31,14 +31,40 @@ class PostRepository extends BaseRepository
 
     /**
      * Single post by slug
+     * @param $category_id
+     * @param $slug
+     * @return
      */
-    static public function findBySlug($slug)
+    static public function findBySlug($category_id,$slug)
     {
-        return Post::where('slug',$slug)->firstOrFail();
+        return Post::whereCategory_idAndSlug($category_id,$slug)->firstOrFail();
+    }
+
+    /**
+     * Find previous post by current id parameter sent
+     * @param $currentPostId
+     * @return
+     */
+    static public function findPreviousPost($currentPostId)
+    {
+        return Post::where('id','<',$currentPostId)->max('id');
+    }
+
+
+    /**
+     * Find next post by current id parameter sent
+     * @param $currentPostId
+     * @return
+     */
+    static public function findNextPost($currentPostId)
+    {
+        return Post::where('id','>',$currentPostId)->min('id');
     }
 
     /**
      * Single post by category pagination 4
+     * @param $id
+     * @return
      */
     static public function findByCategory($id)
     {
@@ -47,26 +73,12 @@ class PostRepository extends BaseRepository
 
     /**
      * Find post by user id pagination 4
+     * @param $id
+     * @return
      */
     static public function findByUser($id)
     {
         return Post::where('user_id',$id)->simplePaginate(4);
-    }
-
-    /**
-     * Find previous post by current id parameter sent
-     */
-    static public function findPreviousPost($currentPostId)
-    {
-        return Post::where('id','<',$currentPostId)->max('id');
-    }
-
-    /**
-     * Find next post by current id parameter sent
-     */
-    static public function findNextPost($currentPostId)
-    {
-        return Post::where('id','>',$currentPostId)->min('id');
     }
 
     /**
@@ -76,7 +88,7 @@ class PostRepository extends BaseRepository
      */
     static public function searchPost($search)
     {
-        return Post::where('title','like','%'.$search."%")->get();
+        return Post::where('title','like','%'.$search."%")->simplePaginate(9);
     }
 
     /**

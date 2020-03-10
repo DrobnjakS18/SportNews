@@ -1,6 +1,6 @@
 <div class="widget">
     <h3 class="news-title">
-        <span>Stay in touch</span>
+        <span>Share this aritcle</span>
     </h3>
 
     <ul class="list-inline social-widget">

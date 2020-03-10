@@ -44,6 +44,8 @@ class HomeController extends Controller
 
     /**
      * Display author page
+     * @param $name
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function author($name)
     {

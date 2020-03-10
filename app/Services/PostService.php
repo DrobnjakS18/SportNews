@@ -62,6 +62,7 @@ class PostService
 
     }
 
+
     /**
      * Get post id
      * @param $id
@@ -77,9 +78,9 @@ class PostService
      * @param $slug
      * @return PostRepository
      */
-    static public function getBySlug($slug)
+    static public function getBySlug($category_id,$slug)
     {
-        return PostRepository::findBySlug($slug);
+        return PostRepository::findBySlug($category_id,$slug);
     }
 
     /**
@@ -123,22 +124,24 @@ class PostService
      */
     static public function incrementViews($post)
     {
-       return $post->increment('views',1);
+        return $post->increment('views',1);
     }
 
     /**
      * Get all data for single page post
+     * @param $category
      * @param $slug
      * @return object
      */
-    static public function getAllAboutSinglePost($slug)
+    static public function getAllAboutPost($category,$slug)
     {
-
-        $data['post'] = self::getBySlug($slug);
-        $data['views'] = self::incrementViews($data['post']);
-        $data['posts'] = self::getAll();
+        $categoryLowerCase = lcfirst($category);
+        $category_id = CategoryService::getByName($categoryLowerCase);
+        $data['post'] = self::getBySlug($category_id, $slug);
+        self::incrementViews($data['post']);
         $data['previous'] = self::getPreviousPost($data['post']->id);
         $data['next'] = self::getNextPost($data['post']->id);
+        $data['posts'] = self::getAll();
         $data['comments'] = $data['post']->comments->where('comment_id','=',null);
 
         session()->put('post_id',$data['post']->id);

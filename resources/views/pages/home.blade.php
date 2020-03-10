@@ -37,7 +37,7 @@
                         <div class="col-lg-12 col-xs-12 col-sm-6 col-md-6">
                             <div class="post-featured-style" style="background-image:url({{asset('storage/images/'.$item->picture)}})">
                                 <div class="post-content">
-                                    <a href="#" class="post-cat" style="background:{{$item->category->color}}">{{$item->category->name}}</a>
+                                    <a href="{{route('category',ucfirst($item->category->name))}}" class="post-cat" style="background:{{$item->category->color}}">{{$item->category->name}}</a>
                                     <h2 class="post-title">
                                         <a href="{{route('post',[ucfirst($item->category->name),$item->slug])}}">{{$item->title}}</a>
                                     </h2>

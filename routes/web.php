@@ -46,7 +46,7 @@ Route::get('/author/{name}', 'HomeController@author')->name('author');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 
-Route::POST('/search', 'HomeController@search')->name('search');
+Route::GET('/search', 'HomeController@search')->name('search');
 
 Route::get('/profile', 'ProfileController@index')->name('profile');
 

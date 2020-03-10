@@ -599,6 +599,10 @@ a[href^=tel] {
     transition: 350ms;
 }
 
+.search-pagination-links ul{
+    justify-content: center;
+}
+
 @media (max-width: 767px) {
     .navbar-nav .nav-item .nav-link {
         display: block;

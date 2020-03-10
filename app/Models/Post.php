@@ -56,4 +56,21 @@ class Post extends Model
         return $this->hasMany(Like::class);
     }
 
+//    /**
+//     *  Get next post
+//     */
+//    public function nextPost()
+//    {
+//        return  Post::where('id','>',$this->id)->first();
+//    }
+//
+//    /**
+//     *  Get previous post
+//     */
+//    public function previousPost()
+//    {
+//        return Post::where('id','<',$this->id)->orderByDesc('id')->first();
+//    }
+
+
 }

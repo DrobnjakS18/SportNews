@@ -9,7 +9,7 @@
                         <div class="item">
                             <div class="post-content">
                                 <h2 class="post-title title-sm">
-                                    <a href="{{route('post',[ucfirst($post->category->name),$post->slug.'-'.$post->id])}}">{{substr($post->title,0,50).'...'}}</a>
+                                    <a href="{{route('post',[ucfirst($post->category->name),$post->slug])}}">{{substr($post->title,0,50).'...'}}</a>
                                 </h2>
                             </div>
                         </div>
@@ -188,7 +188,7 @@
             </div>
         </div>
     </div>
-    <form action="{{route('search')}}" class="site-search" method="POST">
+    <form action="{{route('search')}}" class="site-search" method="GET">
         @csrf
         <input type="text" id="searchInput" name="search" placeholder="Enter Keyword Here..." autofocus="">
         <div class="search-close">

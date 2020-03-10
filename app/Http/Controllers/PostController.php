@@ -12,6 +12,7 @@ class PostController extends Controller
 
     /**
      * Display single post page.
+     * @param $category
      * @param $slug
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -19,9 +20,7 @@ class PostController extends Controller
     {
         $postService = new PostService();
 
-        $items = $postService::getAllAboutSinglePost($slug);
-
-//        dd($items->comments->take(2));
+        $items = $postService::getAllAboutPost($category,$slug);
 
         return view('pages.post')->with(compact('items'));
     }
