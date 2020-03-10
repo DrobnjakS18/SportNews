@@ -9,7 +9,7 @@
                         <div class="item">
                             <div class="post-content">
                                 <h2 class="post-title title-sm">
-                                    <a href="{{route('post',[ucfirst($post->category->name),$post->slug.'-'.$post->id])}}">{{substr($post->title,0,50).'...'}}</a>
+                                    <a href="{{route('post',[ucfirst($post->category->name),$post->slug])}}">{{substr($post->title,0,50).'...'}}</a>
                                 </h2>
                             </div>
                         </div>

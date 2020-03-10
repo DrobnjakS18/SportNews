@@ -12,7 +12,7 @@ jQuery(function($) {
     /*  Site search
     /* ----------------------------------------------------------- */
 
-    $('#search').on('click', function () {
+    $('#search, .fa-search').on('click', function () {
         $('.site-search').addClass('visible');
         $('#searchInput').focus();
     });

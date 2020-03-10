@@ -76,7 +76,7 @@ class PostRepository extends BaseRepository
      */
     static public function searchPost($search)
     {
-        return Post::where('title','like','%'.$search."%")->get();
+        return Post::where('title','like','%'.$search."%")->simplePaginate(9);
     }
 
     /**

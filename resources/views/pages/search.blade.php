@@ -40,6 +40,9 @@
                             </div>
                         </div>
                     @endforeach
+                            <div class="mx-auto pt-5">
+                                {{$items->links()}}
+                            </div>
                 @else
                             <div class="col-lg-4 offset-lg-4 text-center">
                                 <h2>No results</h2>

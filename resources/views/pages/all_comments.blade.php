@@ -9,7 +9,7 @@
                    <div class="single-post">
                        <a class="post-category" style="background:{{$items->post->category->color}}" href="{{route('category',ucfirst($items->post->category->name))}}">{{$items->post->category->name}}</a>
                        <span class="float-right mt-2">{{$items->post->created_at->format('d M Y H:i')}}</span>
-                       <a href="{{route('post',[ucfirst($items->post->category->name),$items->post->slug.'-'.$items->post->id])}}" class="comments-post-title"><h2 class=" post-title">{{$items->post->title}}</h2></a>
+                       <a href="{{route('post',[ucfirst($items->post->category->name),$items->post->slug])}}" class="comments-post-title"><h2 class=" post-title">{{$items->post->title}}</h2></a>
                    </div>
                 </div>
             </div>
