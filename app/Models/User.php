@@ -37,6 +37,19 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
+
+    /**
+     * New Attributes added
+     *
+     * @var array
+     */
+    protected $appends = ['post_count'];
+
+    public function getPostCountAttribute()
+    {
+        return $this->attributes['post_count'] = $this->posts()->count();
+    }
+
     /**
      *  Get all posts from user
      */

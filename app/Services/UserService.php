@@ -31,7 +31,7 @@ class UserService
     /**
      * Get user by role
      * @param $id
-     * @return \App\Models\User[]|\Illuminate\Database\Eloquent\Collection
+     * @return string
      */
     static public function getByRole($id)
     {
