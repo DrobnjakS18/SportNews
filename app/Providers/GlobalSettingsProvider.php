@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Services\PostService;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -25,9 +26,12 @@ class GlobalSettingsProvider extends ServiceProvider
      */
     public function boot()
     {
-        $postService = new PostService();
-        $nav = $postService::getAll();
 
-        View::share('nav', $nav);
+        if (Schema::hasTable('posts')) {
+            $postService = new PostService();
+            $nav = $postService::getAll();
+
+            View::share('nav', $nav);
+        }
     }
 }

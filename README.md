@@ -3,6 +3,7 @@
     <li>Otvoriti XAMPP i pokrenuti Apache i MySQL</li>
     <li>Napraviti .env file i prebaciti sve iz .env.example</li>
     <li>Otvoriti phpMyAdmin i napraviti bazu sports_news</li>
+    <li>Izvrisiti komandu composer install</li>
     <li>Izvrisiti komandu php artisan migrate:fresh --seed</li>
     <li>Izvrisiti komandu php artisan key:generate</li>
 </ol>
