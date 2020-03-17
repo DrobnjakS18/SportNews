@@ -91,8 +91,8 @@
                     @if(Auth::check())
                         @switch(Auth::user()->role->name)
                             @case("author")
-                                <a class="username-button mt-n2" href="{{route('author',Auth::user()->slug)}}">
-                                    <img class="img-fluid user-profile-image-small" src="{{asset('storage/images/'.Auth::user()->profile_picture)}}" alt="profile">
+                                <a class="username-button mt-n2" href="{{route('profile',Auth::user()->slug)}}">
+                                    <img class="img-fluid user-profile-image-small" src="{{asset('images/'.Auth::user()->profile_picture)}}" alt="profile">
                                     <span class="pl-2 account-name">{{ Auth::user()->name }}</span>
                                 </a>
                                 @break
@@ -159,14 +159,14 @@
                                 <a class="nav-link" href="{{route('category','Esports')}}">ESPORTS</a>
                             </li>
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Post
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{{route('post.create')}}">Create Post</a>
-                                </div>
-                            </li>
+{{--                            <li class="nav-item dropdown">--}}
+{{--                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                                    Post--}}
+{{--                                </a>--}}
+{{--                                <div class="dropdown-menu">--}}
+{{--                                    <a class="dropdown-item" href="{{route('post.create')}}">Create Post</a>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
                             <li class="nav-item dropdown">
                                 <a class="nav-link" href="{{route('about')}}">
                                     About

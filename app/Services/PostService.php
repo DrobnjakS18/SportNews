@@ -84,7 +84,7 @@ class PostService
     }
 
     /**
-     * Get post by users id
+     * Get post by users id paginated
      * @param $id
      * @return \App\Repositories\PostRepository
      */

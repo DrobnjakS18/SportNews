@@ -36,6 +36,8 @@
   5.7. Author Box
   5.8. Comment Styles
 
+5a. AUTHOR PROFILE
+
 6. FEATURE POST STYLES
 
 7. POST CATEGORY STYLES
@@ -1383,11 +1385,15 @@ a.post-category.absolute {
     color: #fff;
 }
 
+.post-featured-style .post-meta a:hover {
+    color: #dc3545;
+}
+
 .post-featured-style:after {
     position: absolute;
     content: "";
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     border-radius: 4px;
@@ -1886,6 +1892,49 @@ a.post-category.absolute {
         margin-bottom: 20px;
     }
 }
+
+
+ /* 5a. AUTHOR PROFILE
+ ================================================== */
+
+.author-options a{
+    padding: 10px 20px;
+    color: white;
+}
+
+.author-options a:hover {
+    color: white;
+}
+
+.author-create-post {
+    background: #dc3545;
+}
+
+.author-create-post:hover {
+    background: #c93e4b;
+
+}
+
+.author-edit-post {
+    background: #505254;
+}
+
+.author-edit-post:hover {
+    background: #292931;
+}
+
+.author-post-options a{
+    /*padding: 5px 10px;*/
+    font-size: 14px;
+}
+
+ .author-post-options a:hover {
+    text-decoration: underline !important;
+}
+
+
+
+
 
 /* 6. FEATURE POST STYLES
 ================================================== */

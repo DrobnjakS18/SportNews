@@ -6,7 +6,7 @@
         <div class="review-post-list">
             @foreach($items->users->where('role_id',2)->sortByDesc('post_count')->take(4) as $user)
             <div class="top-author">
-                <img class="img-fluid" src="{{asset('storage/images/'.$user->profile_picture)}}" alt="author-thumb">
+                <img class="img-fluid" src="{{asset('images/'.$user->profile_picture)}}" alt="author-thumb">
                 <div class="info">
                     <h4 class="name"><a href="{{route('author',$user->slug)}}">{{$user->name}}</a></h4>
                     <ul class="list-unstyled">

@@ -14,11 +14,6 @@ class ProfileController extends Controller
         $this->middleware(['auth','verified']);
     }
 
-    public function index()
-    {
-        return view('pages.profile');
-    }
-
     /**
      * Update user profile image
      * @param Request $request
@@ -48,4 +43,21 @@ class ProfileController extends Controller
         return json_encode($response);
 
     }
+
+    /**
+     * Display author profile page
+     * @param $name
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function authorIndex($name)
+    {
+        $userService = new UserService();
+
+        $items = $userService::getByNamePostsPaginate($name);
+
+//        dd($items->posts);
+
+        return view('pages.author_profile')->with(compact('items'));
+    }
+
 }

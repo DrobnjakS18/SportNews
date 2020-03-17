@@ -20,9 +20,13 @@ Route::get('/single', 'HomeController@single')->name('single');
 
 Route::get('/{category}', 'HomeController@category')->name('category');
 Route::get('/{category}/{slug}', 'PostController@show')->name('post');
-Route::get('/post/create', 'PostController@create')->name('post.create')->middleware('auth');
-Route::post('/post/store', 'PostController@store')->name('post.store')->middleware('auth');
-Route::post('/image/upload','PostController@upload')->name('image')->middleware('auth');
+
+Route::get('/profile/{name}', 'ProfileController@authorIndex')->name('profile')->middleware('author');;
+Route::get('/post/create', 'PostController@create')->name('post.create')->middleware('auth','author');
+Route::post('/post/store', 'PostController@store')->name('post.store')->middleware('auth','author');
+Route::post('/image/upload','PostController@upload')->name('image')->middleware('auth','author');
+
+
 Route::get('/tag/{tag}','TagController@show')->name('tag');
 Route::post('/comment','CommentController@store')->name('comment.store')->middleware('post','auth');
 Route::post('/reply','CommentController@reply')->name('comment.reply')->middleware('post','auth');
@@ -41,13 +45,14 @@ Route::post('/newsletter','SubscriptionController@store')->name('subscription.st
 
 Route::post('/user-image/upload','ProfileController@uploadImage')->name('user.image');
 Route::post('/user/update','ProfileController@update')->name('user.update');
-Route::get('/author/{name}', 'HomeController@author')->name('author');
 
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/contact', 'HomeController@contact')->name('contact');
+Route::get('/author/{name}', 'HomeController@author')->name('author');
 
-Route::GET('/search', 'HomeController@search')->name('search');
+Route::get('/search', 'HomeController@search')->name('search');
 
-Route::get('/profile', 'ProfileController@index')->name('profile');
+
+
 
 

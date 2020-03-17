@@ -9,7 +9,7 @@
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="author-block">
                         <div class="author-thumb">
-                            <img src="{{asset('storage/images/'.$items->user->profile_picture)}}" alt="author-image">
+                            <img src="{{asset('images/'.$items->user->profile_picture)}}" alt="author-image">
                         </div>
                         <div class="author-content">
                             <h3>{{$items->user->name}}</h3>
@@ -23,7 +23,7 @@
                                     <div class="post-block-wrapper post-grid-view clearfix">
                                         <div class="post-thumbnail">
                                             <a href="{{route('post',[ucfirst($item->category->name),$item->slug])}}">
-                                                <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-thumbnail"/>
+                                                <img class="img-fluid" src="{{asset('images/'.$item->picture)}}" alt="post-thumbnail"/>
                                             </a>
                                         </div>
                                         <div class="post-content">
@@ -37,15 +37,12 @@
 {{--                                                    <a href="author.html">John Snow</a>--}}
 {{--                                                </span>--}}
                                             </div>
-                                            {!! substr($item->content,0,100) !!}
+                                            {!! substr($item->content,0,100).'...' !!}
                                         </div>
                                     </div>
                                 </div>
                             @endforeach
-
-
                         </div>
-
                     </div>
                     <nav aria-label="pagination-wrapper" class="pagination-wrapper">
                         <ul class="pagination justify-content-center">
@@ -56,7 +53,6 @@
 
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="sidebar sidebar-right">
-                        @include('partials.social')
                         @include('partials.top_authors')
                     </div>
                 </div>
