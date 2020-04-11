@@ -28,7 +28,7 @@ class StorePost extends FormRequest
             'title' => ['bail','required','unique:posts,title'],
             'category' => ['bail','required','exists:categories,name'],
             'content' => ['bail','required', new NotEmptyHtml],
-            'file' => ['bail','max:1999','required','image','dimensions:width=570,height=321']
+            'file' => ['bail','max:1999','required','image']
         ];
     }
 
@@ -49,7 +49,10 @@ class StorePost extends FormRequest
 
             'content.required' => 'Content is required',
 
-            'file.dimensions' => 'File dimensions must be 570x321px'
+            'file.required' => 'Image is required',
+            'file.max' => 'Max image size 2MB',
+            'File.image' => 'File must be a image'
+
         ];
     }
 

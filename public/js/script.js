@@ -567,4 +567,8 @@ $('#modalUserAccount').on('hide.bs.modal',function () {
     }
 });
 
+$('.author-change-email').click(function () {
+    $('.author-email-form').slideToggle();
+});
+
 

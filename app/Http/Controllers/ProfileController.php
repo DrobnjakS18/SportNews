@@ -60,4 +60,22 @@ class ProfileController extends Controller
         return view('pages.author_profile')->with(compact('items'));
     }
 
+    /**
+     * Display author edit profile page
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function authorEdit($name)
+    {
+        return view('pages.author_edit');
+    }
+
+    /**
+     * Display author edit password form
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function editPassword($name)
+    {
+        return view('pages.author_password');
+    }
+
 }

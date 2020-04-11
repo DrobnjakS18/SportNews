@@ -21,7 +21,10 @@ Route::get('/single', 'HomeController@single')->name('single');
 Route::get('/{category}', 'HomeController@category')->name('category');
 Route::get('/{category}/{slug}', 'PostController@show')->name('post');
 
-Route::get('/profile/{name}', 'ProfileController@authorIndex')->name('profile')->middleware('author');;
+Route::get('/profile/{name}', 'ProfileController@authorIndex')->name('author.profile')->middleware('author');
+Route::get('/profile/{name}/edit','ProfileController@authorEdit')->name('author.edit')->middleware('author');
+Route::get('/profile/{name}/edit/password','ProfileController@editPassword')->name('author.edit.password')->middleware('author');
+
 Route::get('/post/create', 'PostController@create')->name('post.create')->middleware('auth','author');
 Route::post('/post/store', 'PostController@store')->name('post.store')->middleware('auth','author');
 Route::post('/image/upload','PostController@upload')->name('image')->middleware('auth','author');

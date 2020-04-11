@@ -1,15 +1,16 @@
 @extends('app')
-@section('title', 'Create post')
+@section('title', 'Create post | Sport News')
 
 @section('content')
     <div class="post-container container">
         <div class="row">
             <div class="col-12">
+                <a class="back-arrow" href="{{route('author.profile',Auth::user()->slug)}}">Back <i class="fa fa-arrow-right"></i></a>
                 <h1 class="post-header mt-3">Create your post</h1>
 
                 <form id="post-form-submit" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="subject">Subject</label>
+                        <label for="subject">Subject <span class="post-subject-additional text-secondary"> *preferred image size 570x321px</span></label>
                         <input type="text" class="form-control form-control-lg" name="subject" id="subject" required>
                         <span class="error-custom error-title"></span>
                     </div>

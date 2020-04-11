@@ -91,7 +91,7 @@
                     @if(Auth::check())
                         @switch(Auth::user()->role->name)
                             @case("author")
-                                <a class="username-button mt-n2" href="{{route('profile',Auth::user()->slug)}}">
+                                <a class="username-button mt-n2" href="{{route('author.profile',Auth::user()->slug)}}">
                                     <img class="img-fluid user-profile-image-small" src="{{asset('images/'.Auth::user()->profile_picture)}}" alt="profile">
                                     <span class="pl-2 account-name">{{ Auth::user()->name }}</span>
                                 </a>

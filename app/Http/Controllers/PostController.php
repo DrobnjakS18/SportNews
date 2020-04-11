@@ -34,7 +34,7 @@ class PostController extends Controller
         $categoryService = new CategoryService();
 
         $categories = $categoryService::getAll();
-        return view('pages.postCreate')->with(compact('categories'));
+        return view('pages.post_create')->with(compact('categories'));
     }
 
     /**

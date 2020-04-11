@@ -1932,9 +1932,58 @@ a.post-category.absolute {
     text-decoration: underline !important;
 }
 
+.author-update-image {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+}
 
+.fix-height-test {
+    height: 500px;
+}
 
+.author-image-form label {
+    background: #dc3545;
+    font-size: 16px;
+    color: white;
+    padding: 10px 30px;
+}
 
+.author-image-form label:hover {
+    background: #c93e4b;
+    cursor: pointer;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: red;
+}
+
+.inputfile + label {
+    cursor: pointer; /* "hand" cursor */
+}
+
+.author-change-email {
+    cursor: pointer;
+}
+
+.author-change-email:active {
+    text-decoration: underline;
+    color: black;
+}
+
+.author-email-form {
+    display: none;
+}
 
 /* 6. FEATURE POST STYLES
 ================================================== */
@@ -2088,6 +2137,10 @@ a.post-category.absolute {
     margin: 0 0 30px 0;
 }
 
+.post-subject-additional {
+    font-size: 18px;
+}
+
 .post-header img {
     width: 100%;
     height: auto;
@@ -2131,6 +2184,18 @@ a.post-category.absolute {
 .error-custom {
     color: red;
     font-weight: 700;
+}
+
+.back-arrow {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    font-size: 20px;
+    color: #505254;
+}
+
+.back-arrow:hover {
+    color:black;
 }
 
 
@@ -2986,6 +3051,17 @@ a {
     }
 }
 
-
-
 /*# sourceMappingURL=maps/style.css.map */
+
+/* || MY MEDIA QUERY*/
+@media (min-width: 767px) {
+
+
+    /*.author-update-div {*/
+    /*     position: relative;*/
+    /*     left: 50%;*/
+    /*     transform: translate(-50%, 50%);*/
+    /*}*/
+
+
+}

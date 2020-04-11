@@ -29,6 +29,16 @@ class UserService
     }
 
     /**
+     * Get user by name
+     * @param $slug
+     * @return string
+     */
+    static public function getBySlug($slug)
+    {
+        return UserRepository::findBySlug($slug);
+    }
+
+    /**
      * Get user by role
      * @param $id
      * @return string
@@ -46,7 +56,7 @@ class UserService
     static public function getByNamePostsPaginate($name)
     {
         $data['users'] = UserRepository::all();
-        $data['user'] = UserRepository::findBySlug($name);
+        $data['user'] = self::getBySlug($name);
         $data['posts'] = PostService::getByUser($data['user']->id);
 
         return (object)$data;
