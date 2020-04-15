@@ -23,6 +23,8 @@ Route::get('/{category}/{slug}', 'PostController@show')->name('post');
 
 Route::get('/profile/{name}', 'ProfileController@authorIndex')->name('author.profile')->middleware('author');
 Route::get('/profile/{name}/edit','ProfileController@authorEdit')->name('author.edit')->middleware('author');
+Route::post('/profile/update','ProfileController@authorUpdate')->name('author.email')->middleware('author');
+Route::post('/profile/update/password','ProfileController@passwordUpdate')->name('author.password')->middleware('author');
 Route::get('/profile/{name}/edit/password','ProfileController@editPassword')->name('author.edit.password')->middleware('author');
 
 Route::get('/post/create', 'PostController@create')->name('post.create')->middleware('auth','author');

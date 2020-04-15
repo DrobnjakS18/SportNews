@@ -34,7 +34,17 @@ class UserRepository extends BaseRepository
     }
 
     /**
-     * Find user by his slug
+     * Find user by id
+     * @param $slug
+     * @return string
+     */
+    static public function findById($id)
+    {
+        return User::findOrFail($id);
+    }
+
+    /**
+     * Find user by slug
      * @param $slug
      * @return string
      */
@@ -99,5 +109,38 @@ class UserRepository extends BaseRepository
     }
 
 
+    /**
+     * Update author email
+     * @param $id
+     * @param $name
+     * @param $slug
+     * @param $email
+     * @param $about
+     * @return
+     */
+    static public function updateAuthor($id, $name, $slug, $email, $about)
+    {
+        $user = User::findOrFail($id);
+
+        if(isset($name)) {
+            $user->name = $name;
+        }
+
+        if(isset($slug)) {
+            $user->slug = $slug;
+        }
+
+        if(isset($email)) {
+            $user->email = $email;
+        }
+
+        if(isset($about)) {
+            $user->about = $about;
+        }
+
+        $user->save();
+
+        return $user;
+    }
 
 }

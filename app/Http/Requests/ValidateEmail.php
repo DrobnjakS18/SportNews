@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateUser extends FormRequest
+class ValidateEmail extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,8 @@ class UpdateUser extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['bail','required', 'string', 'max:32'],
-            'password' => ['bail','min:8','sometimes', 'confirmed'],
+            'email' => ['bail','required','email','unique:users,email'],
+            'password' => ['bail','required','min:8']
         ];
     }
 
@@ -37,12 +37,12 @@ class UpdateUser extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'The name is required',
-            'name.string' => 'The name must be string',
+            'email.required' => 'Email is required.',
+            'email.email' => 'Must be a verified email',
+            'email.unique' => 'Email already take',
 
-            'password.confirmed' => 'Confirmed and new password do not match',
+            'password.required' => 'Password is required',
             'password.min' => 'Min password length 8 characters'
         ];
     }
-
 }

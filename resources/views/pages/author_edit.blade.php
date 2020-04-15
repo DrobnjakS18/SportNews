@@ -16,17 +16,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-12  col-md-6 col-lg-5 offset-lg-1 order-2 order-md-1">
-                    <form>
+                    <form method="POST">
                         <div class="form-group col-md-12">
                             <label for="AuthorName">Name</label>
-                            <input type="email" class="form-control" id="AuthorName" value="{{Auth::user()->name}}">
+                            <input type="text" class="form-control" id="AuthorName" value="{{Auth::user()->name}}">
+                            <span class="error-custom error-name"></span>
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="exampleFormControlTextarea1">About</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5">{{Auth::user()->about}}</textarea>
+                            <label for="AuthorEmail">Email</label>
+                            <input type="email" class="form-control" id="AuthorEmail" value="{{Auth::user()->email}}">
+                            <span class="error-custom error-email"></span>
                         </div>
-                        <button type="submit" class="btn btn-primary ml-3">Submit</button>
+                        <div class="form-group col-md-12">
+                            <label for="AuthorAbout">About</label>
+                            <textarea class="form-control" id="AuthorAbout" rows="5">{{Auth::user()->about}}</textarea>
+                            <span class="error-custom error-about"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary ml-3" id="submitAuthorUpdate">Submit</button>
                     </form>
+                    <p class="reply-ajax-message_success mt-4"></p>
                 </div>
                 <div class="col-12 col-md-4 order-1 order-md-2">
                     <div class="author-update-div text-center">
@@ -38,19 +46,23 @@
                     </div>
                     <div class="text-center my-4">
                         <a href="{{route('author.edit.password',Auth::user()->slug)}}">Change password</a>
-                        <p class="pt-3 author-change-email">Change Email</p>
 
-                        <form action="" method="POST" class="text-left author-email-form">
-                            <div class="form-group col-md-12">
-                                <label for="authorNeWEmail">New Email Address</label>
-                                <input type="email" class="form-control" id="authorNeWEmail">
-                            </div>
-                            <div class="form-group col-md-12">
-                                <label for="authorConfirmPass">Confirmation Password</label>
-                                <input type="password" class="form-control" id="authorConfirmPass">
-                            </div>
-                            <button type="submit" class="btn btn btn-secondary ml-3">Submit</button>
-                        </form>
+{{--                        <p class="pt-3 mb-0"><strong>{{Auth::user()->email}}</strong></p>--}}
+{{--                        <p class="author-change-email">Change Email</p>--}}
+
+{{--                        <form method="POST" class="text-left author-email-form">--}}
+{{--                            <div class="form-group col-md-12">--}}
+{{--                                <label for="authorNeWEmail">New Email Address</label>--}}
+{{--                                <input type="email" class="form-control" id="authorNeWEmail" required>--}}
+{{--                                <span class="error-custom error-email"></span>--}}
+{{--                            </div>--}}
+{{--                            <div class="form-group col-md-12">--}}
+{{--                                <label for="authorConfirmPass">Confirmation Password</label>--}}
+{{--                                <input type="password" class="form-control" id="authorConfirmPass">--}}
+{{--                                <span class="error-custom error-password"></span>--}}
+{{--                            </div>--}}
+{{--                            <button type="submit" class="btn btn btn-secondary ml-3" id="authorChangeEmail">Submit</button>--}}
+{{--                        </form>--}}
                     </div>
                 </div>
             </div>

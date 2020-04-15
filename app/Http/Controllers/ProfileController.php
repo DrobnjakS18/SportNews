@@ -3,15 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateUser;
+use App\Http\Requests\ValidateAuthor;
+use App\Http\Requests\ValidateEmail;
+use App\Http\Requests\ValidatePassword;
 use App\Services\UserService;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class ProfileController extends Controller
 {
+    private $userService;
     public function __construct()
     {
         $this->middleware(['auth','verified']);
+        $this->userService = new UserService();
     }
 
     /**
@@ -21,10 +27,7 @@ class ProfileController extends Controller
      */
     public function uploadImage(Request $request)
     {
-
-        $userService = new UserService();
-
-        $response = $userService::uploadProfileImage($request->user,$request->file('file'));
+        $response = $this->userService::uploadProfileImage($request->user,$request->file('file'));
 
         return json_encode($response);
     }
@@ -36,33 +39,26 @@ class ProfileController extends Controller
      */
     public function update(UpdateUser $request)
     {
-        $userService = new UserService();
-
-        $response = $userService::updateAccount(clean($request->name,'p'),clean($request->password,'p'),$request->userId,$request->roleId);
+        $response = $this->userService::updateAccount(clean($request->name,'p'),clean($request->password,'p'),$request->userId,$request->roleId);
 
         return json_encode($response);
-
     }
 
     /**
      * Display author profile page
      * @param $name
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Factory|\Illuminate\View\View
      */
     public function authorIndex($name)
     {
-        $userService = new UserService();
-
-        $items = $userService::getByNamePostsPaginate($name);
-
-//        dd($items->posts);
+        $items = $this->userService::getByNamePostsPaginate($name);
 
         return view('pages.author_profile')->with(compact('items'));
     }
 
     /**
      * Display author edit profile page
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Factory|\Illuminate\View\View
      */
     public function authorEdit($name)
     {
@@ -70,12 +66,38 @@ class ProfileController extends Controller
     }
 
     /**
+     * Update author profile
+     * @param ValidateAuthor $request
+     * @return void
+     */
+    public function authorUpdate(ValidateAuthor $request)
+    {
+        $respone = $this->userService::updateAuthor($request->user()->id,clean($request->name,'p'),clean($request->email,'p'),clean($request->about,'p'));
+
+        return json_encode($respone);
+    }
+
+    /**
      * Display author edit password form
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Factory|\Illuminate\View\View
      */
     public function editPassword($name)
     {
         return view('pages.author_password');
     }
+
+    /**
+     * Update author password
+     * @param Request $request
+     * @return void
+     * @throws \Exception
+     */
+    public function passwordUpdate(ValidatePassword $request)
+    {
+        $response = $this->userService::updatePassword($request);
+
+        return json_encode($response);
+    }
+
 
 }

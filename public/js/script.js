@@ -146,6 +146,15 @@ jQuery(function($) {
 
 });
 
+
+function startLoading() {
+    $('.loading').show();
+}
+
+function stopLoading() {
+    $('.loading').hide();
+}
+
 //Get recaptcha and put in a new variable
 let siteKey;
 function storeSiteKey(result) {
@@ -535,7 +544,7 @@ $('#modalUserSave').on('click touchstart',function (e) {
             let response = JSON.parse(jqxhr.responseText);
 
             switch (status) {
-                case 404:
+                case 403:
                     alert('User update error');
                     break;
                 case 422:
@@ -567,8 +576,96 @@ $('#modalUserAccount').on('hide.bs.modal',function () {
     }
 });
 
-$('.author-change-email').click(function () {
-    $('.author-email-form').slideToggle();
+// Update author profile form
+$('#submitAuthorUpdate').on('click touchstart',function (e) {
+    e.preventDefault();
+
+    let authorName = $('#AuthorName').val();
+    let authorEmail = $('#AuthorEmail').val();
+    let authorAbout = $('#AuthorAbout').val();
+
+
+    $.ajax({
+        method:'POST',
+        url: '/profile/update',
+        data: {
+            _token : $('meta[name="csrf-token"]').attr('content'),
+            name : authorName,
+            email : authorEmail,
+            about : authorAbout,
+        },
+        dataType: "json"
+    })
+        .fail(function (jqxhr, textStatus, errorThrown, data) {
+
+            let status = jqxhr.status;
+            let response = JSON.parse(jqxhr.responseText);
+
+            switch (status) {
+                case 403:
+                    alert("An error occured! Please try againg later.");
+                    break;
+                case 422:
+                    $.each(response.errors, function(key, value) {
+                        $('.error-' + key).html(value).show();
+                    });
+                    break;
+                default:
+                    alert("An error occured! Please try againg later.");
+                    break;
+            }
+
+        })
+        .done(function (data) {
+            $('.error-custom').hide();
+            $('.reply-ajax-message_success').html(data.message).slideDown(400,function () {
+                setTimeout(function () {
+                    $('.reply-ajax-message_success').slideUp();
+                },2000)
+            });
+        });
 });
 
+// Update author password form
 
+$('#chagenAuthorPassword').on('click touchstart',function (e) {
+    e.preventDefault();
+    let currentPassword = $('#editCurrentPass').val();
+    let newPassword = $('#editNewPass').val();
+    let confirmPassword = $('#editConfrimNewPass').val();
+
+    $.ajax({
+        method:'POST',
+        url: '/profile/update/password',
+        data: {
+            _token : $('meta[name="csrf-token"]').attr('content'),
+            current : currentPassword,
+            password: newPassword,
+            password_confirmation : confirmPassword,
+        },
+        dataType: "json"
+    })
+        .fail(function (jqxhr, textStatus, errorThrown, data) {
+            let status = jqxhr.status;
+            let response = JSON.parse(jqxhr.responseText);
+
+            switch (status) {
+                case 404:
+                    $('.error-current').html(response.message).show();
+                    break;
+                case 422:
+                    $.each(response.errors, function(key, value) {
+                        $('.error-' + key).html(value).show();
+                    });
+                    break;
+                default:
+                    alert("An error occured! Please try againg later.");
+                    break;
+            }
+
+        })
+        .done(function (data) {
+            alert(data.message);
+            window.location = data.url;
+        });
+});

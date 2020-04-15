@@ -5,9 +5,15 @@ namespace App\Services;
 
 
 use App\Repositories\UserRepository;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Hash;
+use \Illuminate\Support\Str;
+use Exception;
+
 
 class UserService
 {
+
 
     /**
      * Get all users
@@ -18,14 +24,10 @@ class UserService
         return UserRepository::all();
     }
 
-    /**
-     * Get user by name
-     * @param $name
-     * @return \App\Models\User[]|\Illuminate\Database\Eloquent\Collection
-     */
-    static public function getByName($name)
+
+    static public function getById($id)
     {
-        return UserRepository::findByName($name);
+        return UserRepository::findById($id);
     }
 
     /**
@@ -96,6 +98,7 @@ class UserService
      * @param $name
      * @param $password
      * @param $userId
+     * @param $roleId
      * @return string
      */
     static public function updateAccount($name,$password,$userId,$roleId)
@@ -107,6 +110,47 @@ class UserService
             'user' => $user,
             'message' => 'You have successfully updated you profile'
         ];
+    }
+
+    /**
+     * Update author profile
+     * @param $id
+     * @param $name
+     * @param $email
+     * @param $about
+     * @return string
+     */
+    static public function updateAuthor($id, $name, $email, $about)
+    {
+
+        $slug = Str::slug($name,'-');
+
+        $user = UserRepository::updateAuthor($id,$name,$slug,$email,$about);
+
+        return (object) [
+            'message' =>  'You have successfully updated you profile'
+        ];
+    }
+
+    /**
+     * Update password
+     * @param $request
+     * @return string
+     * @throws Exception
+     */
+    static public function updatePassword($request)
+    {
+        if(Hash::check(clean($request->current,'p'), $request->user()->password)) {
+
+          $request->user()->update(['password' => Hash::make(clean($request->password,'p'))]);
+
+          return (object) [
+              'url' => route('author.edit',[$request->user()->slug]),
+              'message' => 'Password successfully changed'
+          ];
+        } else {
+            throw new ModelNotFoundException('Wrong password');
+        }
     }
 
 }
