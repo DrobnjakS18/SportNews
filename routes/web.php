@@ -21,24 +21,27 @@ Route::get('/single', 'HomeController@single')->name('single');
 Route::get('/{category}', 'HomeController@category')->name('category');
 Route::get('/{category}/{slug}', 'PostController@show')->name('post');
 
-Route::get('/profile/{name}', 'ProfileController@authorIndex')->name('author.profile')->middleware('author');
-Route::get('/profile/{name}/edit','ProfileController@authorEdit')->name('author.edit')->middleware('author');
-Route::post('/profile/update','ProfileController@authorUpdate')->name('author.email')->middleware('author');
-Route::post('/profile/update/password','ProfileController@passwordUpdate')->name('author.password')->middleware('author');
-Route::get('/profile/{name}/edit/password','ProfileController@editPassword')->name('author.edit.password')->middleware('author');
-
-Route::get('/post/create', 'PostController@create')->name('post.create')->middleware('auth','author');
-Route::post('/post/store', 'PostController@store')->name('post.store')->middleware('auth','author');
-Route::post('/image/upload','PostController@upload')->name('image')->middleware('auth','author');
+Route::group(['middleware' => ['auth','verified']],function () {
 
 
-Route::get('/tag/{tag}','TagController@show')->name('tag');
-Route::post('/comment','CommentController@store')->name('comment.store')->middleware('post','auth');
-Route::post('/reply','CommentController@reply')->name('comment.reply')->middleware('post','auth');
-Route::post('/vote','CommentController@vote')->name('comment.vote')->middleware('auth');
-Route::get('/comments/{slug}','CommentController@comments')->name('comments.all');
-Route::get('/comments/{slug}/{type}','CommentController@sort')->name('comments.sort')->where('type','newest|liked|disliked');
+    Route::post('/comment','CommentController@store')->name('comment.store')->middleware('post');
+    Route::post('/reply','CommentController@reply')->name('comment.reply')->middleware('post');
+    Route::post('/vote','CommentController@vote')->name('comment.vote');
 
+    Route::group(['middleware' => ['author']],function () {
+
+        Route::get('/profile/{name}', 'ProfileController@authorIndex')->name('author.profile');
+        Route::get('/profile/{name}/edit','ProfileController@authorEdit')->name('author.edit');
+        Route::post('/profile/update','ProfileController@authorUpdate')->name('author.email');
+        Route::post('/profile/update/password','ProfileController@passwordUpdate')->name('author.password');
+        Route::get('/profile/{name}/edit/password','ProfileController@editPassword')->name('author.edit.password');
+
+        Route::get('/post/create', 'PostController@create')->name('post.create');
+        Route::post('/post/store', 'PostController@store')->name('post.store');
+        Route::post('/image/upload','PostController@upload')->name('image');
+    });
+
+});
 
 
 //Route::post('/comments/sort','CommentController@sort')->name('comments.sort');
@@ -50,6 +53,10 @@ Route::post('/newsletter','SubscriptionController@store')->name('subscription.st
 
 Route::post('/user-image/upload','ProfileController@uploadImage')->name('user.image');
 Route::post('/user/update','ProfileController@update')->name('user.update');
+Route::get('/comments/{slug}','CommentController@comments')->name('comments.all');
+Route::get('/comments/{slug}/{type}','CommentController@sort')->name('comments.sort')->where('type','newest|liked|disliked');
+Route::get('/tag/{tag}','TagController@show')->name('tag');
+
 
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/contact', 'HomeController@contact')->name('contact');

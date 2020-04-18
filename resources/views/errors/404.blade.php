@@ -6,8 +6,8 @@
     <section class="error-404 section-padding">
         <div class="container">
             <div class="row justify-content-center align-items-center">
-                <div class="col-lg-6">
-                    <div class="error-block ">
+                <div class="col-12">
+                    <div class="error-block">
                         <div class="throw-code">
                             <h2>
                                 404
