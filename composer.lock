@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3508e812096654c1a2afb81d08665f5",
+    "content-hash": "56bb6a3b11355872a1c55d8d45ac8317",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1336,6 +1336,42 @@
                 "php"
             ],
             "time": "2020-04-10T16:34:50+00:00"
+        },
+        {
+            "name": "oleics/ac-minimist",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oleics/php-ac-minimist.git",
+                "reference": "2bbf2f54811cd50031d45ce4fdc80c039416fcb3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oleics/php-ac-minimist/zipball/2bbf2f54811cd50031d45ce4fdc80c039416fcb3",
+                "reference": "2bbf2f54811cd50031d45ce4fdc80c039416fcb3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=4.0.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ac\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Leics",
+                    "email": "oliver.leics@gmail.com"
+                }
+            ],
+            "description": "Light-weight argument option parsing for PHP.",
+            "time": "2016-08-03T09:10:18+00:00"
         },
         {
             "name": "opis/closure",
