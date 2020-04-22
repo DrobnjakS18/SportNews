@@ -11,7 +11,7 @@ class TagService
     /**
      * Store new tag
      */
-    static public function store($tag)
+    public static function store($tag)
     {
         return TagRepository::create($tag);
     }
@@ -19,7 +19,7 @@ class TagService
     /**
      * Find tag by name if exists
      */
-    static public function getIfExists($name)
+    public static function getIfExists($name)
     {
         return TagRepository::findIfExists($name);
     }
@@ -27,7 +27,7 @@ class TagService
     /**
      * Find tag by name
      */
-    static public function getByName($name)
+    public static function getByName($name)
     {
         return TagRepository::findByName($name);
     }
@@ -35,7 +35,7 @@ class TagService
     /**
      * Get All posts by tag via pivot table post_tag
      */
-    static public function getAllPostsByTag($tag)
+    public static function getAllPostsByTag($tag)
     {
         $tag = self::getByName($tag);
 

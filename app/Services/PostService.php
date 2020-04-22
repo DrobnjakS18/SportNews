@@ -23,7 +23,7 @@ class PostService
      * Gets all posts
      * @return \App\Models\Post[]|\Illuminate\Database\Eloquent\Collection
      */
-    static public function getAll()
+    public static function getAll()
     {
        return PostRepository::all();
     }
@@ -32,7 +32,7 @@ class PostService
      * Gets all posts with users
      * @return object
      */
-    static public function getAllWithUsers()
+    public static function getAllWithUsers()
     {
         $data['posts'] = PostRepository::all();
         $data['users'] = UserService::getAll();
@@ -48,7 +48,7 @@ class PostService
      * @param $content
      * @return array
      */
-    static public function setData($title, $file,$category, $content)
+    public static function setData($title, $file,$category, $content)
     {
         return [
             'title' => $title,
@@ -68,7 +68,7 @@ class PostService
      * @param $id
      * @return \App\Repositories\PostRepository
      */
-    static public function getById($id)
+    public static function getById($id)
     {
         return PostRepository::findById($id);
     }
@@ -78,7 +78,7 @@ class PostService
      * @param $slug
      * @return PostRepository
      */
-    static public function getBySlug($category_id,$slug)
+    public static function getBySlug($category_id,$slug)
     {
         return PostRepository::findBySlug($category_id,$slug);
     }
@@ -88,7 +88,7 @@ class PostService
      * @param $id
      * @return \App\Repositories\PostRepository
      */
-    static public function getByUser($id)
+    public static function getByUser($id)
     {
         return PostRepository::findByUser($id);
     }
@@ -98,7 +98,7 @@ class PostService
      * @param $id
      * @return \App\Repositories\PostRepository
      */
-    static public function getPreviousPost($id)
+    public static function getPreviousPost($id)
     {
         $previousId = PostRepository::findPreviousPost($id);
 
@@ -110,7 +110,7 @@ class PostService
      * @param $id
      * @return \App\Repositories\PostRepository
      */
-    static public function getNextPost($id)
+    public static function getNextPost($id)
     {
         $nextId = PostRepository::findNextPost($id);
 
@@ -122,7 +122,7 @@ class PostService
      * @param $post
      * @return mixed
      */
-    static public function incrementViews($post)
+    public static function incrementViews($post)
     {
         return $post->increment('views',1);
     }
@@ -133,7 +133,7 @@ class PostService
      * @param $slug
      * @return object
      */
-    static public function getAllAboutPost($category,$slug)
+    public static function getAllAboutPost($category,$slug)
     {
         $categoryLowerCase = lcfirst($category);
         $category_id = CategoryService::getByName($categoryLowerCase);
@@ -154,7 +154,7 @@ class PostService
      * @param $name
      * @return object
      */
-    static public function getByCategoryName($name)
+    public static function getByCategoryName($name)
     {
         $categoryId = CategoryService::getByName(strtolower($name));
 
@@ -170,7 +170,7 @@ class PostService
      * @param $search
      * @return \App\Models\Post | \Illuminate\Database\Eloquent\Collection
      */
-    static public function getPostBySearch($search)
+    public static function getPostBySearch($search)
     {
         return PostRepository::searchPost($search);
     }
@@ -180,7 +180,7 @@ class PostService
      * @param $file
      * @return string
      */
-    static public function storeUploadedImage($file)
+    public static function storeUploadedImage($file)
     {
         //Get filename with extension
         $fileNameWithExtension = $file->getClientOriginalName();
@@ -206,7 +206,7 @@ class PostService
      * @param null $tags
      * @return object
      */
-    static public function store($title,$file,$category,$content,$tags = null)
+    public static function store($title,$file,$category,$content,$tags = null)
     {
         DB::beginTransaction();
 
@@ -244,7 +244,7 @@ class PostService
      * @param $file
      * @return object
      */
-    static public function uploadImage($file)
+    public static function uploadImage($file)
     {
         $uploadedFile = self::storeUploadedImage($file);
 

@@ -40,7 +40,7 @@ class HomeController extends Controller
 
         $items = $postService::getByCategoryName($name);
 
-        return view('pages.category')->with(compact('items','name'));
+        return view('pages.category')->with(compact('items', 'name'));
     }
 
     /**
@@ -81,7 +81,7 @@ class HomeController extends Controller
 
 //        dd($items);
 
-        return view('pages.search')->with(compact('items','search'));
+        return view('pages.search')->with(compact('items', 'search'));
     }
 
     /**

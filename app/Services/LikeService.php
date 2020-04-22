@@ -18,7 +18,7 @@ class LikeService
      * @param $action
      * @return object
      */
-    static  public function store($postId,$commentId,$action)
+    public static function store($postId,$commentId,$action)
     {
         $vote = LikeRepository::create(Auth::user()->id,$postId,$commentId,$action);
 
@@ -37,7 +37,7 @@ class LikeService
     /**
      * Get sorted votes
      */
-    static public function getSortedVotes($commentId,$vote)
+    public static function getSortedVotes($commentId,$vote)
     {
         return LikeRepository::sortedByVotes($commentId,$vote);
     }

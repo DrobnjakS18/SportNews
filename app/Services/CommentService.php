@@ -17,7 +17,7 @@ class CommentService
      * @param null $comment_id
      * @return object
      */
-    static public function store($message,$post,$user,$recaptcha,$comment_id = null)
+    public static function store($message,$post,$user,$recaptcha,$comment_id = null)
     {
         $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe&response=".$recaptcha);
 
@@ -40,7 +40,7 @@ class CommentService
      * @param $slug
      * @return object
      */
-    static public function getCommentsByPost($slug)
+    public static function getCommentsByPost($slug)
     {
         $post = PostService::getBySlug($slug);
 
@@ -59,7 +59,7 @@ class CommentService
      * @param $dislikes
      * @return object
      */
-    static public function updateCommentVotes($commentId,$likes,$dislikes)
+    public static function updateCommentVotes($commentId,$likes,$dislikes)
     {
         return CommentRepository::updateVotes($commentId,$likes,$dislikes);
     }
@@ -69,7 +69,7 @@ class CommentService
      * @param $slug
      * @return object
      */
-    static public function getSortedComments($slug,$type)
+    public static function getSortedComments($slug,$type)
     {
         $post = PostService::getBySlug($slug);
 

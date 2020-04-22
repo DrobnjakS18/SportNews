@@ -19,13 +19,13 @@ class UserService
      * Get all users
      * @return \App\Models\User[]|\Illuminate\Database\Eloquent\Collection
      */
-    static public function getAll()
+    public static function getAll()
     {
         return UserRepository::all();
     }
 
 
-    static public function getById($id)
+    public static function getById($id)
     {
         return UserRepository::findById($id);
     }
@@ -35,7 +35,7 @@ class UserService
      * @param $slug
      * @return string
      */
-    static public function getBySlug($slug)
+    public static function getBySlug($slug)
     {
         return UserRepository::findBySlug($slug);
     }
@@ -45,7 +45,7 @@ class UserService
      * @param $id
      * @return string
      */
-    static public function getByRole($id)
+    public static function getByRole($id)
     {
         return UserRepository::findByRole($id);
     }
@@ -55,7 +55,7 @@ class UserService
      * @param $name
      * @return object
      */
-    static public function getByNamePostsPaginate($name)
+    public static function getByNamePostsPaginate($name)
     {
         $data['users'] = UserRepository::all();
         $data['user'] = self::getBySlug($name);
@@ -70,7 +70,7 @@ class UserService
      * @param $file
      * @return object
      */
-    static public function uploadProfileImage($userId,$file)
+    public static function uploadProfileImage($userId,$file)
     {
         $uploadedFile = PostService::storeUploadedImage($file);
 
@@ -88,7 +88,7 @@ class UserService
      * @param $image
      * @return string
      */
-    static public function updateProfileImage($userId,$image)
+    public static function updateProfileImage($userId,$image)
     {
         return UserRepository::updateUserAccountImage($userId,$image);
     }
@@ -101,7 +101,7 @@ class UserService
      * @param $roleId
      * @return string
      */
-    static public function updateAccount($name,$password,$userId,$roleId)
+    public static function updateAccount($name,$password,$userId,$roleId)
     {
         $user = UserRepository::updatAccount($name,$password,$userId,$roleId);
 
@@ -120,7 +120,7 @@ class UserService
      * @param $about
      * @return string
      */
-    static public function updateAuthor($id, $name, $email, $about)
+    public static function updateAuthor($id, $name, $email, $about)
     {
 
         $slug = Str::slug($name,'-');
@@ -138,7 +138,7 @@ class UserService
      * @return string
      * @throws Exception
      */
-    static public function updatePassword($request)
+    public static function updatePassword($request)
     {
         if(Hash::check(clean($request->current,'p'), $request->user()->password)) {
 
