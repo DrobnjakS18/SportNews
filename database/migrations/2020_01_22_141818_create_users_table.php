@@ -23,7 +23,8 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
 
             $table->unsignedBigInteger('role_id')->default(3);
             $table->foreign('role_id')->references('id')->on('roles');

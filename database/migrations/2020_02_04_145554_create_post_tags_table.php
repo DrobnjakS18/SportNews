@@ -15,7 +15,8 @@ class CreatePostTagsTable extends Migration
     {
         Schema::create('post_tag', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
 
             $table->unsignedBigInteger('post_id');
             $table->foreign('post_id')->references('id')->on('posts');

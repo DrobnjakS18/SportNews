@@ -13,9 +13,7 @@ class SubscriptionTableSeeder extends Seeder
     {
         DB::table('subscriptions')->insert([
             [
-                'email' => 'stefi@gmail.com',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'email' => 'stefi@gmail.com'
             ],
         ]);
     }

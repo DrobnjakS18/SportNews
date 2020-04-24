@@ -20,8 +20,6 @@ class UsersTableSeeder extends Seeder
                 'email_verified_at' => '2020-03-05 18:08:19',
                 'about' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quod molestias delectus illum quisquam. Quasi iure perferendis suscipit officiis dicta!',
                 'password' => Hash::make('123123123'),
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
                 'role_id' => 2,
             ],
             [
@@ -31,8 +29,6 @@ class UsersTableSeeder extends Seeder
                 'email_verified_at' => '2020-03-05 18:08:19',
                 'about' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quod molestias delectus illum quisquam. Quasi iure perferendis suscipit officiis dicta!',
                 'password' => Hash::make('123123123'),
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
                 'role_id' => 2,
             ],
             [
@@ -42,8 +38,6 @@ class UsersTableSeeder extends Seeder
                 'email_verified_at' => '2020-03-05 18:08:19',
                 'about' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quod molestias delectus illum quisquam. Quasi iure perferendis suscipit officiis dicta!',
                 'password' => Hash::make('123123123'),
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
                 'role_id' => 2,
             ],
             [
@@ -53,8 +47,6 @@ class UsersTableSeeder extends Seeder
                 'email_verified_at' => '2020-03-05 18:08:19',
                 'about' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quod molestias delectus illum quisquam. Quasi iure perferendis suscipit officiis dicta!',
                 'password' => Hash::make('123123123'),
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
                 'role_id' => 2,
             ],
             [
@@ -64,8 +56,6 @@ class UsersTableSeeder extends Seeder
                 'email_verified_at' => '2020-03-05 18:08:19',
                 'about' => null,
                 'password' => Hash::make('123123123'),
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
                 'role_id' => 3,
             ],
         ]);

@@ -19,7 +19,8 @@ class CreateCommentsTable extends Migration
             $table->enum('verifird',[1,0])->default(0);
             $table->bigInteger('like')->default(0);
             $table->bigInteger('dislike')->default(0);
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

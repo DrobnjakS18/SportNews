@@ -31,9 +31,7 @@ class PostTableSeeder extends Seeder
                 'picture' => 'i_1581585212.jpg',
                 'select' => "1",
                 'user_id' => 1,
-                'category_id' => 1,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'category_id' => 1
             ],
             [
                 'title' => 'Ronaldo and Zlatan clash for the first time since 2015. Are you ready?',
@@ -58,9 +56,7 @@ class PostTableSeeder extends Seeder
                 'picture' => 'ronaldo_ibra_1581588318.jpg',
                 'select' => "0",
                 'user_id' => 2,
-                'category_id' => 1,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'category_id' => 1
             ],
             [
                 'title' => 'Ajax defender Daley Blind makes first appearance since heart procedure',
@@ -79,9 +75,7 @@ class PostTableSeeder extends Seeder
                 'picture' => 'ajax_1581588851.jpg',
                 'select' => "0",
                 'user_id' => 3,
-                'category_id' => 1,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'category_id' => 1
             ],
             [
                 'title' => 'ESPN FC 100: Liverpool, Man City dominate our ranking of world\'s best soccer players',
@@ -102,9 +96,7 @@ class PostTableSeeder extends Seeder
                 'picture' => 'world_1581589191.jpg',
                 'select' => "0",
                 'user_id' => 1,
-                'category_id' => 1,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'category_id' => 1
             ],
             [
                 'title' => 'At Barcelona it\'s Lionel Messi, Pique and the players who hold the power, not the manager',
@@ -129,9 +121,7 @@ class PostTableSeeder extends Seeder
                 'picture' => 'barselona_1581589486.jpg',
                 'select' => "0",
                 'user_id' => 2,
-                'category_id' => 1,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'category_id' => 1
             ],
             [
                 'title' => 'Luka Doncic, Kristaps Porzingis shine as a duo in Doncic\'s return from injury',
@@ -161,9 +151,7 @@ class PostTableSeeder extends Seeder
                 'picture' => 'doncic_1581589947.jpg',
                 'select' => "1",
                 'user_id' => 3,
-                'category_id' => 2,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'category_id' => 2
             ],
             [
                 'title' => 'Karl-Anthony Towns out vs. Hornets with injured wrist',
@@ -188,9 +176,7 @@ class PostTableSeeder extends Seeder
                 'picture' => 'towns_1581682412.jpg',
                 'select' => "0",
                 'user_id' => 1,
-                'category_id' => 2,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'category_id' => 2
             ],
             [
                 'title' => 'NBA All-Star Game 2020: Draft results, news, rosters, schedules and how to watch',
@@ -255,9 +241,7 @@ class PostTableSeeder extends Seeder
                 'picture' => 'NBA-All-Star-2020_1581682602.jpg',
                 'select' => "0",
                 'user_id' => 1,
-                'category_id' => 2,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'category_id' => 2
             ],
             [
                 'title' => 'Sources: Cavaliers and coach John Beilein have discussed possibility of him stepping down',
@@ -274,9 +258,7 @@ class PostTableSeeder extends Seeder
                 'picture' => 'cleveland_1581945330.jpg',
                 'select' => "0",
                 'user_id' => 2,
-                'category_id' => 2,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'category_id' => 2
             ],
             [
                 'title' => 'The Elam Ending led to an INTENSE All-Star fourth quarter',
@@ -289,9 +271,7 @@ class PostTableSeeder extends Seeder
                 'picture' => 'lebron_1581945606.jpg',
                 'select' => "0",
                 'user_id' => 3,
-                'category_id' => 2,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'category_id' => 2
             ],
             [
                 'title' => 'Australian Open winner Sofia Kenin comes up big again to lead U.S. to Fed Cup finals',
@@ -316,9 +296,7 @@ class PostTableSeeder extends Seeder
                 'picture' => 'tenis_1581592368.jpg',
                 'select' => "1",
                 'user_id' => 1,
-                'category_id' => 3,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'category_id' => 3
             ],
             [
                 'title' => 'Match in Africa: Highlights from Roger Federer, Rafael Nadal charity event',
@@ -337,9 +315,7 @@ class PostTableSeeder extends Seeder
                 'picture' => 'feder_nadal_1581592577.jpg',
                 'select' => "0",
                 'user_id' => 2,
-                'category_id' => 3,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'category_id' => 3
             ],
             [
                 'title' => 'Medvedev crashes out in Rotterdam while Evans eases through',
@@ -373,9 +349,7 @@ class PostTableSeeder extends Seeder
                 'picture' => 'medvedev_1581592762.jpg',
                 'select' => "0",
                 'user_id' => 2,
-                'category_id' => 3,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'category_id' => 3
             ],
             [
                 'title' => 'Donation, donation, donation',
@@ -392,9 +366,7 @@ class PostTableSeeder extends Seeder
                 'picture' => 'donation_1581945916.jpg',
                 'select' => "0",
                 'user_id' => 2,
-                'category_id' => 3,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'category_id' => 3
             ],
             [
                 'title' => 'New Nick and awesome Ash',
@@ -411,9 +383,7 @@ class PostTableSeeder extends Seeder
                 'picture' => 'nick_1581946053.jpg',
                 'select' => "0",
                 'user_id' => 3,
-                'category_id' => 3,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'category_id' => 3
             ],
             [
                 'title' => 'CSGO: 4 things we learned from Week 2 of BLAST Premier Spring Series',
@@ -452,9 +422,7 @@ class PostTableSeeder extends Seeder
                 'picture' => 'csgo-new_1581682725.jpg',
                 'select' => "0",
                 'user_id' => 1,
-                'category_id' =>4,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'category_id' =>4
             ],
             [
                 'title' => 'Sp9rk1e and Hanbin are ready to prove they\'re Overwatch League material',
@@ -475,9 +443,7 @@ class PostTableSeeder extends Seeder
                 'picture' => 'overwatch_1581593171.jpg',
                 'select' => "1",
                 'user_id' => 2,
-                'category_id' => 4,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'category_id' => 4
             ],
             [
                 'title' => 'Call of Duty Power Rankings: Crowning the best players after London homestand',
@@ -492,9 +458,7 @@ class PostTableSeeder extends Seeder
                 'picture' => 'cod_1581593541.jpg',
                 'select' => "0",
                 'user_id' => 3,
-                'category_id' => 4,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'category_id' => 4
             ],
             [
                 'title' => 'From Europe to America, G2 Esports\' brash frontman Ocelote is building an empire',
@@ -513,9 +477,7 @@ class PostTableSeeder extends Seeder
                 'picture' => 'ocelote_1581946218.jpg',
                 'select' => "0",
                 'user_id' => 4,
-                'category_id' => 4,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'category_id' => 4
             ],
             [
                 'title' => 'How the meta shook out in Overwatch League Week 1',
@@ -530,9 +492,7 @@ class PostTableSeeder extends Seeder
                 'picture' => 'overwatch_1581946566.jpg',
                 'select' => "0",
                 'user_id' => 4,
-                'category_id' => 4,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'category_id' => 4
             ]
         ]);
     }

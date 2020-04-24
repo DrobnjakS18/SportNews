@@ -14,27 +14,19 @@ class CategoriesTableSeeder extends Seeder
         DB::table('categories')->insert([
             [
                 'name' => 'football',
-                'color' => 'red',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'color' => 'red'
             ],
             [
                 'name' => 'basketball',
-                'color' => 'green',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'color' => 'green'
             ],
             [
                 'name' => 'tenis',
-                'color' => 'blue',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'color' => 'blue'
             ],
             [
                 'name' => 'esports',
-                'color' => 'black',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'color' => 'black'
             ],
         ]);
     }

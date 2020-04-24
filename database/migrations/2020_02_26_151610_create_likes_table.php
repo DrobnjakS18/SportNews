@@ -16,7 +16,8 @@ class CreateLikesTable extends Migration
         Schema::create('likes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->enum('vote',['like','dislike']);
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_Id')->references('id')->on('users')->onDelete('cascade');
