@@ -7,6 +7,8 @@ use App\Services\CategoryService;
 use App\Services\PostService;
 use Illuminate\Http\Request;
 
+
+
 class PostController extends Controller
 {
 
@@ -58,7 +60,8 @@ class PostController extends Controller
      */
     public function upload(Request $request)
     {
-        $postService = new PostService();
+
+       $postService = new PostService();
 
        $response = $postService::uploadImage($request->file('file'));
 

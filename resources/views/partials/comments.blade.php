@@ -3,7 +3,7 @@
         @if($comment->comment_id == null)
             <li>
                 <div class="comment">
-                    <img class="commented-person" alt="" src="{{asset('storage/images/'.$comment->user->profile_picture)}}">
+                    <img class="commented-person" alt="" src="{{$comment->user->profile_picture}}">
                     <div class="comment-body">
                         <div class="meta-data">
                             <span class="commented-person-name">{{$comment->user->name}}</span>
@@ -60,7 +60,7 @@
                             <ul class="comments-reply">
                                 <li>
                                     <div class="comment">
-                                            <img class="commented-person img-fluid" alt="" src="{{asset('storage/images/'.$reply->user->profile_picture)}}">
+                                            <img class="commented-person img-fluid" alt="" src="{{$reply->user->profile_picture}}">
                                             <div class="comment-body">
                                                 <div class="meta-data">
                                                     <span class="commented-person-name">{{$reply->user->name}}</span>

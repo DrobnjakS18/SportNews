@@ -82,7 +82,7 @@
                     </nav>
                     <div class="author-block">
                         <div class="author-thumb">
-                            <a href="{{route('author',$items->post->user->slug)}}"><img src="{{asset('storage/images/'.$items->post->user->profile_picture)}}" alt="author-image"></a>
+                            <a href="{{route('author',$items->post->user->slug)}}"><img src="{{$items->post->user->profile_picture}}" alt="author-image"></a>
                         </div>
                         <div class="author-content">
                             <h3><a href="{{route('author',$items->post->user->slug)}}">{{$items->post->user->name}}</a></h3>

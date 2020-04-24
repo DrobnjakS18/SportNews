@@ -4,10 +4,12 @@
 namespace App\Services;
 
 
+use App\Libraries\StorageManager;
 use App\Repositories\CategoryRepository;
 use App\Repositories\PostRepository;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use phpDocumentor\Reflection\Types\Collection;
 
@@ -182,19 +184,26 @@ class PostService
      */
     public static function storeUploadedImage($file)
     {
+//        //Get filename with extension
+//        $fileNameWithExtension = $file->getClientOriginalName();
+//        //Get only filename
+//        $fileName = pathinfo($fileNameWithExtension,PATHINFO_FILENAME);
+//        //Get only extension
+//        $extension = $file->getClientOriginalExtension();
+//        //Get filename to store
+//        $fileNameToStore = $fileName.'_'.time().'.'.$extension;
+
+
         //Get filename with extension
-        $fileNameWithExtension = $file->getClientOriginalName();
-        //Get only filename
-        $fileName = pathinfo($fileNameWithExtension,PATHINFO_FILENAME);
-        //Get only extension
-        $extension = $file->getClientOriginalExtension();
-        //Get filename to store
-        $fileNameToStore = $fileName.'_'.time().'.'.$extension;
+        $fileName = $file->getClientOriginalName();
 
-        //Storage image
-        $file->storeAs('public/images',$fileNameToStore);
+        $filePath = StorageManager::putToFile('images', $file,$fileName);
 
-        return $fileNameToStore;
+        $url = StorageManager::getUrl($filePath);
+
+        return  (object) [
+            'url' => $url
+        ];
     }
 
     /**
@@ -246,13 +255,14 @@ class PostService
      */
     public static function uploadImage($file)
     {
-        $uploadedFile = self::storeUploadedImage($file);
 
-        return (object) [
-            'status' => 200,
-            'image_name' => asset('storage/images/'.$uploadedFile)
+        $filePath = StorageManager::putToFile('images', $file);
+
+        $url = StorageManager::getUrl($filePath);
+
+        return  (object) [
+            'url' => $url
         ];
-
     }
 
 }

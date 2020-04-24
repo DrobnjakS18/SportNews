@@ -9,7 +9,7 @@
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="author-block">
                         <div class="author-thumb">
-                            <img src="{{asset('images/'.$items->user->profile_picture)}}" alt="author-image">
+                            <img src="{{$items->user->profile_picture}}" alt="author-image">
                         </div>
                         <div class="author-content">
                             <h3>{{$items->user->name}}</h3>

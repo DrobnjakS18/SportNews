@@ -45,11 +45,11 @@ function saveToStorage(file) {
         processData: false
     })
         .fail(function(jqxhr, textStatus, errorThrown, data) {
-            alert('An error occured! Please try againg later.');
+            // alert('An error occured! Please try againg later.');
         })
         .done(function(data) {
             if (data) {
-                insertToEditor(data.image_name);
+                insertToEditor(data.url);
             }
         });
 }

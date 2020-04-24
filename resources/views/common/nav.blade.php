@@ -92,13 +92,13 @@
                         @switch(Auth::user()->role->name)
                             @case("author")
                                 <a class="username-button mt-n2" href="{{route('author.profile',Auth::user()->slug)}}">
-                                    <img class="img-fluid user-profile-image-small" src="{{asset('images/'.Auth::user()->profile_picture)}}" alt="profile">
+                                    <img class="img-fluid user-profile-image-small" src="{{Auth::user()->profile_picture}}" alt="profile">
                                     <span class="pl-2 account-name">{{ Auth::user()->name }}</span>
                                 </a>
                                 @break
                             @case("user")
                                 <a class="username-button mt-n2" href="" data-toggle="modal" data-target="#modalUserAccount">
-                                    <img class="img-fluid" src="{{asset('storage/images/'.Auth::user()->profile_picture)}}" alt="profile">
+                                    <img class="img-fluid" src="{{Auth::user()->profile_picture}}" alt="profile">
                                     <span class="pl-2 account-name">{{ Auth::user()->name }}</span>
                                 </a>
                                 @break
