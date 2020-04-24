@@ -26,7 +26,7 @@
 {{--                        @endif--}}
                     </div>
                 </div>
-                @if(Auth::check())
+                @auth
                     <div class="reply-form mb-5 form-{{$comment->id}}">
                         <p class="reply-ajax-message_success succes-id-{{$comment->id}}"></p>
                         <p class="reply-ajax-message_error error-id-{{$comment->id}}"></p>
@@ -54,7 +54,7 @@
                             </div>
                         </form>
                     </div>
-                @endif
+                @endauth
                     @foreach($comment->replies as $reply)
                         @if($reply->comment_id !== null && $reply->comment_id === $comment->id)
                             <ul class="comments-reply">
@@ -71,7 +71,7 @@
                                                         {{$reply->text}}
                                                     </p>
                                                 </div>
-                                                @if(Auth::check())
+                                                @auth
                                                     <a href="#" class="reply-like @if($comment->likes->where('user_id','=',Auth::id())->where('comment_id','=',$comment->id)->count() > 0) like-after-click @endif" data-post-id="{{$reply->post->id}}" data-comment-id="{{$reply->id}}" data-action="like">
                                                         <i class="fa fa-thumbs-up text-success reply-likes" aria-hidden="true"></i>
                                                     </a>
@@ -80,7 +80,7 @@
                                                         <i class="fa fa-thumbs-down text-danger reply-likes" aria-hidden="true"></i>
                                                     </a>
                                                     <span class="reply-dislike-count">{{$reply->dislike}}</span>
-                                                @endif
+                                                @endauth
                                             </div>
                                     </div>
                                 </li>

@@ -15,7 +15,7 @@
             </div>
             <div class="row">
                 <div class="col-12 col-md-10">
-                    @if(Auth::check())
+                    @auth
                         <div class="text-center mt-5"><button class="comment-toggle-button w-100">Leave a Comment</button></div>
                         <div class="comment-form mt-4">
                             <p class="comment-ajax-message_success"></p>
@@ -39,7 +39,7 @@
                                 </div>
                             </form>
                         </div>
-                    @endif
+                    @endauth
                     <div id="comments" class="comments-block">
                         <h3 class="news-title">
                             <span>Comments ( {{$items->post->comments->where('comment_id',null)->count()}} )</span>
@@ -63,7 +63,7 @@
                                                         <p>{{$comment->text}}
                                                         </p>
                                                     </div>
-                                                    @if(Auth::check())
+                                                    @auth
                                                         <a href="#" class="comment-like @if($comment->likes->where('user_id','=',Auth::id())->where('comment_id','=',$comment->id)->count() > 0) like-after-click @endif" data-post-id="{{$comment->post->id}}" data-comment-id="{{$comment->id}}" data-action="like">
                                                             <i class="fa fa-thumbs-up text-success comment-likes" aria-hidden="true"></i>
                                                         </a>
@@ -73,10 +73,10 @@
                                                         </a>
                                                         <span class="dislikes-count">{{$comment->dislike}}</span>
                                                         <button class="comment-reply ml-3" onclick="ToggleReplyForm({{$comment->id}})"><i class="fa fa-reply"></i>  Reply</button>
-                                                    @endif
+                                                    @endauth
                                                 </div>
                                             </div>
-                                            @if(Auth::check())
+                                            @auth
                                                 <div class="reply-form mb-5 form-{{$comment->id}}">
                                                     <p class="reply-ajax-message_success succes-id-{{$comment->id}}"></p>
                                                     <p class="reply-ajax-message_error error-id-{{$comment->id}}"></p>
@@ -104,7 +104,7 @@
                                                         </div>
                                                     </form>
                                                 </div>
-                                            @endif
+                                            @endauth
                                             @foreach($comment->replies as $reply)
                                                 @if($reply->comment_id !== null && $reply->comment_id === $comment->id)
                                                     <ul class="comments-reply">
@@ -121,7 +121,7 @@
                                                                             {{$reply->text}}
                                                                         </p>
                                                                     </div>
-                                                                    @if(Auth::check())
+                                                                    @auth
                                                                         <a href="#" class="reply-like @if($comment->likes->where('user_id','=',Auth::id())->where('comment_id','=',$comment->id)->count() > 0) like-after-click @endif" data-post-id="{{$reply->post->id}}" data-comment-id="{{$reply->id}}" data-action="like">
                                                                             <i class="fa fa-thumbs-up text-success reply-likes" aria-hidden="true"></i>
                                                                         </a>
@@ -130,7 +130,7 @@
                                                                             <i class="fa fa-thumbs-down text-danger reply-likes" aria-hidden="true"></i>
                                                                         </a>
                                                                         <span class="reply-dislike-count">{{$reply->dislike}}</span>
-                                                                    @endif
+                                                                    @endauth
                                                                 </div>
                                                             </div>
                                                         </li>

@@ -1,6 +1,6 @@
 <footer class="footer footer-main ">
 
-  @if(Auth::check())
+  @auth
         @if(Auth::user()->role->name === "user")
             <div class="modal fade" id="modalUserAccount" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                  aria-hidden="true">
@@ -65,7 +65,7 @@
                 </div>
             </div>
         @endif
-      @endif
+      @endauth
 
     <div class="container">
         <div class="row justify-content-center">

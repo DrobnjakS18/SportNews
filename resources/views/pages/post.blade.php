@@ -133,7 +133,7 @@
                             @endforeach
                         </div>
                     </div>
-                    @if(Auth::check())
+                    @auth
                         <div class="text-center mt-5"><button class="comment-toggle-button w-100">Leave a Comment</button></div>
                         <div class="comment-form mt-4">
                             <p class="comment-ajax-message_success"></p>
@@ -157,7 +157,7 @@
                                 </div>
                             </form>
                         </div>
-                    @endif
+                    @endauth
                     <div id="comments" class="comments-block">
                         <h3 class="news-title ">
                             <span>Comments ( {{$items->post->comments->where('comment_id',null)->count()}} )</span>

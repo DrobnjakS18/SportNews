@@ -88,7 +88,7 @@
             </div>
             <div class="col-12 col-lg-9">
                 <div class="top-ad-banner d-flex justify-content-center justify-content-lg-end ">
-                    @if(Auth::check())
+                    @auth
                         @switch(Auth::user()->role->name)
                             @case("author")
                                 <a class="username-button mt-n2" href="{{route('author.profile',Auth::user()->slug)}}">
@@ -116,11 +116,11 @@
                             @csrf
                         </form>
                     @else
-                        <a class="nav-link login-button mr-5 mr-lg-4" href="{{ route('login') }}">Log in</a>
+                        <a class="nav-link login-b  utton mr-5 mr-lg-4" href="{{ route('login') }}">Log in</a>
                         @if (Route::has('register'))
                             <a class="nav-link register-button" href="{{route('register')}}">Sign up</a>
                         @endif
-                    @endif
+                    @endauth
                 </div>
             </div>
         </div>
