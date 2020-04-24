@@ -29,13 +29,18 @@ class PostRepository extends BaseRepository
         return Post::find($id);
     }
 
+    public static function findBySlug($slug)
+    {
+        return Post::where('slug',$slug)->firstOrFail();
+    }
+
     /**
      * Single post by slug
      * @param $category_id
      * @param $slug
      * @return
      */
-    static public function findBySlug($category_id,$slug)
+    static public function findBySlugAndCategory($category_id,$slug)
     {
         return Post::whereCategory_idAndSlug($category_id,$slug)->firstOrFail();
     }

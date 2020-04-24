@@ -81,7 +81,7 @@
                 <!-- Logo -->
                 <div class="logo">
                     <a href="{{route('home')}}">
-                        <img src="{{asset('storage/images/logo.png')}}" alt="logo"> <!-- Replace Logo Here -->
+                        <img src="{{asset('storage/images/logo.png')}}" alt="Sports News logo"> <!-- Replace Logo Here -->
                     </a>
                 </div>
                 <!-- End Logo -->
@@ -92,13 +92,13 @@
                         @switch(Auth::user()->role->name)
                             @case("author")
                                 <a class="username-button mt-n2" href="{{route('author.profile',Auth::user()->slug)}}">
-                                    <img class="img-fluid user-profile-image-small" src="{{Auth::user()->profile_picture}}" alt="profile">
+                                    <img class="img-fluid user-profile-image-small" src="{{Auth::user()->profile_picture}}" alt="Sports News profile image">
                                     <span class="pl-2 account-name">{{ Auth::user()->name }}</span>
                                 </a>
                                 @break
                             @case("user")
                                 <a class="username-button mt-n2" href="" data-toggle="modal" data-target="#modalUserAccount">
-                                    <img class="img-fluid" src="{{Auth::user()->profile_picture}}" alt="profile">
+                                    <img class="img-fluid" src="{{Auth::user()->profile_picture}}" alt="Sports News profile image">
                                     <span class="pl-2 account-name">{{ Auth::user()->name }}</span>
                                 </a>
                                 @break
@@ -134,7 +134,7 @@
             <div class="col-lg-12">
                 <nav class="navbar navbar-expand-lg site-main-nav navigation">
                     <a class="navbar-brand d-lg-none" href="{{route('home')}}">
-                        <img src="{{asset('storage/images/footer-logo.png')}}" alt="logo">
+                        <img src="{{asset('storage/images/footer-logo.png')}}" alt="Sport News logo">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="fa fa-bars"></span>

@@ -6,7 +6,7 @@
         <div class="row align-items-center justify-content-center">
             <div class="col-lg-7">
                 <div class="login">
-                    <div class="text-center"><a href="{{route('home')}}"><img src="{{asset('images/logos/logo.png')}}" alt="" class="img-fluid"></a></div>
+                    <div class="text-center"><a href="{{route('home')}}"><img src="{{asset('images/logos/logo.png')}}" alt="" class="Sport News logo"></a></div>
 
                     <h3 class="mt-4">Email Address Verification</h3>
                     <p class="mb-5">Verify Your Email Address</p>

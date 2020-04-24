@@ -30,7 +30,7 @@
                                     <div class="col-md-5 col-sm-6">
                                         <div class="post-thumbnail thumb-float-style">
                                             <a href="{{route('post',[ucfirst($item->category->name),$item->slug])}}">
-                                                <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="" />
+                                                <img class="img-fluid" src="{{$item->picture}}" alt="{{$item->title}}" />
                                             </a>
                                         </div>
                                     </div>

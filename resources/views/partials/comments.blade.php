@@ -90,9 +90,9 @@
             </li>
         @endif
     @endforeach
-    <div class="text-center mt-5">
-        <a href="{{route('comments.all',['slug' => $items->post->slug])}}" class="all-comments-button all-comment-toggle-button">All Comments</a>
-    </div>
+        <div class="text-center mt-5">
+            <a href="{{route('comments.all',['slug' => $items->post->slug])}}" class="all-comments-button all-comment-toggle-button">All Comments</a>
+        </div>
 @else
     <h2 class="text-center">No Comments on this post!</h2>
 @endif

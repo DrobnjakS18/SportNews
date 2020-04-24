@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="broken-img mt-5 mt-lg-0">
-                        <img src="{{asset('images/broken.png')}}" alt="" class="img-fluid">
+                        <img class="img-fluid" src="{{asset('images/broken.png')}}" alt="404 error">
                     </div>
                 </div>
             </div>

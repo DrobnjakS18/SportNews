@@ -6,7 +6,7 @@
     @foreach($items->posts->sortByDesc('views')->take(1) as $item)
         <div class="post-overlay-wrapper hot-news-main">
             <div class="post-thumbnail">
-                <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-thumbnail"/>
+                <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="{{$item->title}}"/>
             </div>
             <div class="post-content">
     {{--            <a class="post-category white" href="post-category-1.html">Fashion</a>--}}
@@ -28,7 +28,7 @@
             <div class="post-block-wrapper post-float">
                 <div class="post-thumbnail">
                     <a href="{{route('post',[ucfirst($item->category->name),$item->slug])}}">
-                        <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-thumbnail"/>
+                        <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="{{$item->title}}"/>
                     </a>
                 </div>
                 <div class="post-content">

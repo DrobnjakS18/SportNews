@@ -21,7 +21,7 @@
                             <div class="post-block-wrapper clearfix mb-5 mb-lg-0">
                                 <div class="post-thumbnail">
                                     <a href="{{route('post',[ucfirst($item->category->name),$item->slug])}}">
-                                        <img class="img-fluid" src="{{asset('storage/images/'.$item->picture)}}" alt="post-image"/>
+                                        <img class="img-fluid" src="{{$item->picture}}" alt="{{$item->title}}"/>
                                     </a>
                                 </div>
                                 <div class="post-content">

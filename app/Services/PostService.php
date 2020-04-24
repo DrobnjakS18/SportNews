@@ -76,13 +76,25 @@ class PostService
     }
 
     /**
-     * Get post slug id
+     * Get post slug
+     * @param $category_id
      * @param $slug
      * @return PostRepository
      */
-    public static function getBySlug($category_id,$slug)
+    public static function getBySlug($slug)
     {
-        return PostRepository::findBySlug($category_id,$slug);
+        return PostRepository::findBySlug($slug);
+    }
+
+    /**
+     * Get post slug id and categories
+     * @param $category_id
+     * @param $slug
+     * @return PostRepository
+     */
+    public static function getBySlugWithCategories($category_id,$slug)
+    {
+        return PostRepository::findBySlugAndCategory($category_id,$slug);
     }
 
     /**
@@ -139,7 +151,7 @@ class PostService
     {
         $categoryLowerCase = lcfirst($category);
         $category_id = CategoryService::getByName($categoryLowerCase);
-        $data['post'] = self::getBySlug($category_id, $slug);
+        $data['post'] = self::getBySlugWithCategories($category_id, $slug);
         self::incrementViews($data['post']);
         $data['previous'] = self::getPreviousPost($data['post']->id);
         $data['next'] = self::getNextPost($data['post']->id);
@@ -184,16 +196,6 @@ class PostService
      */
     public static function storeUploadedImage($file)
     {
-//        //Get filename with extension
-//        $fileNameWithExtension = $file->getClientOriginalName();
-//        //Get only filename
-//        $fileName = pathinfo($fileNameWithExtension,PATHINFO_FILENAME);
-//        //Get only extension
-//        $extension = $file->getClientOriginalExtension();
-//        //Get filename to store
-//        $fileNameToStore = $fileName.'_'.time().'.'.$extension;
-
-
         //Get filename with extension
         $fileName = $file->getClientOriginalName();
 

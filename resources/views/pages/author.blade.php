@@ -23,7 +23,7 @@
                                     <div class="post-block-wrapper post-grid-view clearfix">
                                         <div class="post-thumbnail">
                                             <a href="{{route('post',[ucfirst($item->category->name),$item->slug])}}">
-                                                <img class="img-fluid" src="{{asset('images/'.$item->picture)}}" alt="post-thumbnail"/>
+                                                <img class="img-fluid" src="{{asset('images/'.$item->picture)}}" alt="{{$items->title}}"/>
                                             </a>
                                         </div>
                                         <div class="post-content">

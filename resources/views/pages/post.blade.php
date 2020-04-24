@@ -30,7 +30,7 @@
                             <h2 class="post-title">
                                 {{$items->post->title}}
                             </h2>
-                            <img class="post-image img-fluid" src="{{asset('storage/images/'.$items->post->picture)}}" alt="{{$items->post->picture}}">
+                            <img class="post-image img-fluid" src="{{asset('storage/images/'.$items->post->picture)}}" alt="{{$items->post->picture}}" alt="{{$items->post->title}}">
                             {!! $items->post->content !!}
                         </div>
                         @if($items->post->tags->count() > 0)
@@ -82,7 +82,7 @@
                     </nav>
                     <div class="author-block">
                         <div class="author-thumb">
-                            <a href="{{route('author',$items->post->user->slug)}}"><img src="{{$items->post->user->profile_picture}}" alt="author-image"></a>
+                            <a href="{{route('author',$items->post->user->slug)}}"><img src="{{$items->post->user->profile_picture}}" alt="Sport News profile image"></a>
                         </div>
                         <div class="author-content">
                             <h3><a href="{{route('author',$items->post->user->slug)}}">{{$items->post->user->name}}</a></h3>
@@ -119,7 +119,7 @@
                                     <div class="post-block-wrapper clearfix">
                                         <div class="post-thumbnail mb-3">
                                             <a href="{{route('post',[ucfirst($post->category->name),$post->slug])}}">
-                                                <img class="img-fluid" src="{{asset('storage/images/'.$post->picture)}}" alt="post-thumbnail"/>
+                                                <img class="img-fluid" src="{{asset('storage/images/'.$post->picture)}}" alt="{{$post->title}}"/>
                                             </a>
                                         </div>
 {{--                                        <a class="post-category" href="{{route('category',ucfirst($post->category->name))}}"  style="background:{{$post->category->color}}">{{$post->category->name}}</a>--}}

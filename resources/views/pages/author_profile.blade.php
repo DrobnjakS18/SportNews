@@ -28,7 +28,7 @@
                             <div class="row d-flex align-items-center pb-4">
                                 <div class="col-4 col-lg-2 my-4">
     {{--                                PROMENITI PROFILNU SLIKU U SLIKU POSTA--}}
-                                    <img class="img-fluid" src="{{asset('images/'.$item->picture)}}" alt="post-thumbnail">
+                                    <img class="img-fluid" src="{{asset('images/'.$item->picture)}}" alt="{{$item->title}}">
                                 </div>
                                 <div class="col-8 col-lg-4">
                                    <h5>

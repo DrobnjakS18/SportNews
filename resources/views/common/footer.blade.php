@@ -13,7 +13,7 @@
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
-                                        <img class="img-fluid user-profile-image ml-4" src="{{asset('storage/images/'.Auth::user()->profile_picture)}}"  data-user-id="{{Auth::id()}}"  alt="profile">
+                                        <img class="img-fluid user-profile-image ml-4" src="{{Auth::user()->profile_picture}}"  data-user-id="{{Auth::id()}}"  alt="profile">
                                         <a href="#" class="text-dark modal-update-image"><i class="fa fa-camera"></i></a>
                                     </div>
                                 </div>
@@ -70,7 +70,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 col-sm-12 col-lg-6 text-center">
-                <a href="{{route('home')}}"><img src="{{asset('storage/images/footer-logo.png')}}" alt="" class="img-fluid"></a>
+                <a href="{{route('home')}}"><img src="{{asset('storage/images/footer-logo.png')}}" alt="" class="Sport News logo"></a>
                 <p class="mt-4">We perfectly balances the simplicity of a clean, eye-catching blog with the flexibility to create unique page layouts.</p>
 
                 <ul class="list-inline footer-social">
