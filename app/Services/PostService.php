@@ -255,8 +255,10 @@ class PostService
      */
     public static function uploadImage($file)
     {
+        //Get filename with extension
+        $fileName = $file->getClientOriginalName();
 
-        $filePath = StorageManager::putToFile('images', $file);
+        $filePath = StorageManager::putToFile('images', $file, $fileName);
 
         $url = StorageManager::getUrl($filePath);
 

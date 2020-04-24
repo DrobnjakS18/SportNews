@@ -60,7 +60,6 @@ class PostController extends Controller
      */
     public function upload(Request $request)
     {
-
        $postService = new PostService();
 
        $response = $postService::uploadImage($request->file('file'));

@@ -173,10 +173,24 @@ class StorageManager
 
 
 
-    public static function putToFile($pathToFile, $fileContents)
+    public static function putToFile($pathToFile, $fileContents,$fileName)
     {
+        $fullPathFilename = $pathToFile.'/'.$fileName;
 
-        $path = $fileContents->store($pathToFile, 's3');
+        $exists = Storage::disk('s3')->exists($fullPathFilename);
+
+        if ($exists) {
+
+            //Get only filename
+            $onlyFileName = pathinfo($fileName,PATHINFO_FILENAME);
+            //Get only extension
+            $extension = $fileContents->getClientOriginalExtension();
+            //Get filename to store
+            $fileName = $onlyFileName.'_'.rand(1,100).'.'.$extension;
+        }
+
+
+        $path = $fileContents->storeAs($pathToFile,$fileName, 's3');
 
         Storage::disk('s3')->setVisibility($path, 'public');
 
