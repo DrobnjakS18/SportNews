@@ -1,5 +1,7 @@
 @extends('app')
 @section('title', $items->user->name . ' | Sport News')
+@section('description', 'Authorized author profile page')
+@section('og-image', asset('storage/images/logo.png'))
 
 @section('content')
     <section class="block-wrapper author-profile">

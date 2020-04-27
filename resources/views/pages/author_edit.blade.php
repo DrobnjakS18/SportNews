@@ -1,5 +1,7 @@
 @extends('app')
 @section('title', Auth::user()->name . " Edit | Sport News")
+@section('description', 'Form to edit author profile')
+@section('og-image', asset('storage/images/logo.png'))
 
 @section('content')
     <section id="returnButton">
@@ -38,7 +40,7 @@
                 </div>
                 <div class="col-12 col-md-4 order-1 order-md-2">
                     <div class="author-update-div text-center">
-                        <img class="author-update-image img-fluid" src="{{asset('images/'.Auth::user()->profile_picture)}}" alt="SportNews Profile image">
+                        <img class="author-update-image img-fluid" src="{{Auth::user()->profile_picture}}" alt="SportNews Profile image">
                         <form method="POST" class="author-image-form mt-2" enctype="multipart/form-data">
                             <label for="authorImageUpload">Choose a file <i class="fa fa-upload"></i></label>
                             <input type="file" name="author-image-upload" id="authorImageUpload" class="inputfile"/>

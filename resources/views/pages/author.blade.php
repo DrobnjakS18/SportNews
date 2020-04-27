@@ -1,5 +1,7 @@
 @extends('app')
 @section('title', $items->user->name.'| Sport News')
+@section('description', 'All information about author')
+@section('og-image', asset('storage/images/logo.png'))
 
 @section('content')
 

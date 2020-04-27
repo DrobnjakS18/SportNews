@@ -1,5 +1,7 @@
 @extends('app')
 @section('title', $items->post->title)
+@section('description', 'All comments about' . $items->post->title ."news")
+@section('og-image', $items->post->picture)
 
 @section('content')
     <section class="all-comments section-padding mt-5">

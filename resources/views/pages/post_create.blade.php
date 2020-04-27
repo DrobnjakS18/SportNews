@@ -1,5 +1,7 @@
 @extends('app')
 @section('title', 'Create post | Sport News')
+@section('description', 'Form for creating your on post')
+@section('og-image', asset('storage/images/logo.png'))
 
 @section('content')
     <div class="post-container container">

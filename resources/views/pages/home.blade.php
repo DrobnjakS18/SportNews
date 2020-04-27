@@ -1,5 +1,7 @@
 @extends('app')
 @section('title', 'Home | Sport News')
+@section('description', 'Latest sports news from all over the world')
+@section('og-image', asset('storage/images/logo.png'))
 
 @section('content')
 <div class="py-30"></div>

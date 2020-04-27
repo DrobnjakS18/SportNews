@@ -1,5 +1,7 @@
 @extends('app')
 @section('title',  $name.' | Sport News')
+@section('description', 'All news about associated with' .$name .'category')
+@section('og-image', asset('storage/images/logo.png'))
 
 @section('content')
     <div class="breadcrumb-wrapper">

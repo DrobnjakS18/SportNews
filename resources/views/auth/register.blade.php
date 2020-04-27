@@ -1,3 +1,7 @@
+@section('title', 'Registration | Sport News')
+@section('description', 'Registter your account so you can have accesss to SportNews additional features')
+@section('og-image', asset('storage/images/logo.png'))
+
 @include('common.head')
 
 <section class="login-signup section-padding">

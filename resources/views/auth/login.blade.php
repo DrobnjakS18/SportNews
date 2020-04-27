@@ -1,3 +1,7 @@
+@section('title', 'Login | Sport News')
+@section('description', 'Login form to access the website')
+@section('og-image', asset('storage/images/logo.png'))
+
 @include('common.head')
 <section class="login-signup section-padding">
     <div class="container">

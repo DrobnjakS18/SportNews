@@ -1,5 +1,7 @@
 @extends('app')
 @section('title', 'Sport News - 404')
+@section('description', 'The page is you are looking for is not available')
+@section('og-image', asset('storage/images/logo.png'))
 
 @section('content')
 

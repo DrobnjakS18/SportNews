@@ -1,5 +1,8 @@
-@include('common.head')
+@section('title', 'Verify Email | Sport News')
+@section('description', 'Verify you email so we can proceed to create you account')
+@section('og-image', asset('storage/images/logo.png'))
 
+@include('common.head')
 
 <section class="login-signup section-padding">
     <div class="container">

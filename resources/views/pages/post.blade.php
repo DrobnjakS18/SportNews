@@ -1,5 +1,7 @@
 @extends('app')
 @section('title', $items->post->title .' | Single post')
+@section('description', $items->post->title)
+@section('og-image', asset('storage/images/logo.png'))
 
 @section('content')
     <div class="breadcrumb-wrapper">

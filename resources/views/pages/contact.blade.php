@@ -1,5 +1,7 @@
 @extends('app')
 @section('title', 'Contact | Sport News')
+@section('description', 'Get in touch with us if you have any problem, suggestions. We want to hear from you.')
+@section('og-image', asset('storage/images/logo.png'))
 
 @section('content')
 <div class="breadcrumb-wrapper">
