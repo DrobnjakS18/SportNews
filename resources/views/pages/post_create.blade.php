@@ -12,16 +12,18 @@
 
                 <form id="post-form-submit" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="subject">Subject <span class="post-subject-additional text-secondary"> *preferred image size 570x321px</span></label>
+                        <label for="subject">Subject </label>
                         <input type="text" class="form-control form-control-lg" name="subject" id="subject" required>
                         <span class="error-custom error-title"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="subject">Select Headline image</label>
+                        <label for="subject">Select Headline image<span><i class="fa fa-check"></i></span><i class="fa fa-times"></i>
+                            <span class="post-subject-additional text-secondary"> *preferred image size 570x321px</span> </label>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="imageFile" required>
                             <label class="custom-file-label" for="imageFile">Choose file...</label>
+                            <input type="hidden" id="headline-image-url" value="">
                             <span class="error-custom error-file"></span>
                         </div>
                     </div>

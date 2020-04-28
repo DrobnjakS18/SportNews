@@ -6,6 +6,7 @@ use App\Http\Requests\UpdateUser;
 use App\Http\Requests\ValidateAuthor;
 use App\Http\Requests\ValidateEmail;
 use App\Http\Requests\ValidatePassword;
+use App\Services\PostService;
 use App\Services\UserService;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
@@ -27,7 +28,9 @@ class ProfileController extends Controller
      */
     public function uploadImage(Request $request)
     {
-        $response = $this->userService::uploadProfileImage($request->user,$request->file('file'));
+        $postService = new PostService();
+
+        $response = $postService::uploadImage('profile/images',$request->file('file'),$request->user()->id);
 
         return json_encode($response);
     }

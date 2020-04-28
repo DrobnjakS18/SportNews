@@ -48,7 +48,6 @@
                     </div>
                     <div class="text-center my-4">
                         <a href="{{route('author.edit.password',Auth::user()->slug)}}">Change password</a>
-
 {{--                        <p class="pt-3 mb-0"><strong>{{Auth::user()->email}}</strong></p>--}}
 {{--                        <p class="author-change-email">Change Email</p>--}}
 

@@ -156,6 +156,29 @@ html, body {
     animation: loading 2s infinite;
 }
 
+.fa-check,
+.fa-times {
+    font-size: 16px;
+    padding-left: 10px;
+    display: none;
+}
+
+.fa-check {
+    color: #26B99A;
+}
+
+.fa-times {
+    color: #c30d00;
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+}
 a {
     color: #dc3545;
 }
@@ -2720,10 +2743,11 @@ a {
     font-size: 20px;
 }
 
-#modalUserAccount .fa-camera {
+#modalUserAccount .modal-update-image {
     position: absolute;
     left: 55%;
     top: 130px;
+    z-index: 1;
 }
 
 #modalUserAccount .modal-image {

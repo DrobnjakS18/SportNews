@@ -1,3 +1,5 @@
+
+
 jQuery(function($) {
     'use strict';
     /* ----------------------------------------------------------- */
@@ -383,7 +385,6 @@ commentVotes.on('click touchstart',function (e) {
 
 });
 
-
 //Votes for reply
 let replyVotes = $('.reply-like, .reply-dislike');
 
@@ -427,7 +428,6 @@ replyVotes.on('click touchstart',function (e) {
         });
 });
 
-
 let modalUserName = $('#modalUpdateName');
 let modalUserPassNew = $('#modalUpdatePassNew');
 let modalUserPassConfirm = $('#modalUpdatePassConfirm');
@@ -449,7 +449,20 @@ $('.modal-update-image').on('click touchstart',function (e) {
     selectLocalProfileImage();
 });
 
+
+$('#authorImageUpload').change(function () {
+    const file = this.files[0];
+
+    if (file.type.startsWith("image/")) {
+        saveUpdatedProfileImage('author',file);
+    } else {
+        alert('Only images are allowed for upload.');
+    }
+});
+
 function selectLocalProfileImage() {
+
+    alert('Preferred profile image size to upload is 150x150px');
 
     const input = document.createElement('input');
 
@@ -463,7 +476,7 @@ function selectLocalProfileImage() {
         const file = input.files[0];
 
         if (file.type.startsWith("image/")) {
-            saveUpdatedProfileImage(file)
+            saveUpdatedProfileImage('user',file)
         } else {
             alert('Only images are allowed for upload.');
         }
@@ -473,13 +486,9 @@ function selectLocalProfileImage() {
 
 var imageUploadFlag = false;
 
-function saveUpdatedProfileImage(file) {
-
+function saveUpdatedProfileImage(type,file) {
+    startLoading();
     const formData = new FormData();
-
-    let userId = $('.user-profile-image').data('user-id');
-
-    formData.append('user',userId);
 
     formData.append('file', file);
 
@@ -495,15 +504,35 @@ function saveUpdatedProfileImage(file) {
         processData: false
     })
         .fail(function(jqxhr, textStatus, errorThrown, data) {
+            stopLoading();
             alert('An error occured! Please try againg later.');
         })
         .done(function(data) {
-         if(data.image_name) {
-             $('.user-profile-image').attr('src',data.image_name);
-             imageUploadFlag = true;
-         }
+            stopLoading();
+            switch(type) {
+                case 'user':
+                    $('.user-profile-image').attr('src',data.url);
+                    $('.user-profile-image-small').attr('src',data.url);
+                    imageUploadFlag = true;
+                    break;
+                case 'author':
+                    $('.author-update-image').attr('src',data.url);
+                    $('.user-profile-image-small').attr('src',data.url);
+                    break;
+                default:
+                    alert('An error occured! Please try againg later.');
+                    break;
+            }
+
         });
 }
+
+$('#modalUserAccount').on('hide.bs.modal',function () {
+    modalUserName.attr('readonly',true).addClass( "text-right" );
+    if(imageUploadFlag) {
+        location.reload();
+    }
+});
 
 
 $('#modalUserSave').on('click touchstart',function (e) {
@@ -569,12 +598,6 @@ $('#modalUserSave').on('click touchstart',function (e) {
 });
 
 
-$('#modalUserAccount').on('hide.bs.modal',function () {
-    modalUserName.attr('readonly',true).addClass( "text-right" );
-    if(imageUploadFlag) {
-        location.reload();
-    }
-});
 
 // Update author profile form
 $('#submitAuthorUpdate').on('click touchstart',function (e) {
@@ -669,3 +692,243 @@ $('#chagenAuthorPassword').on('click touchstart',function (e) {
             window.location = data.url;
         });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// QUILL
+
+var toolbarOptions = [
+    'bold',
+    'underline',
+    'italic',
+    'link',
+    { align: [] },
+    { header: [1,2,3,4,5,6,false]},
+    {'color': []}, {'background': []},
+    'image'
+];
+
+var editorOptions = {
+    modules: {
+        toolbar: toolbarOptions
+    },
+    placeholder: 'Type text...',
+    theme: 'snow'
+};
+
+var editor = new Quill('#editor',editorOptions);
+var toolbar = editor.getModule('toolbar');
+
+//Inserts image src path into editor and displays the image
+function insertToEditor(image) {
+    const range = editor.getSelection();
+
+    editor.insertEmbed(range.index, 'image', image);
+}
+
+function saveToStorage(type,file) {
+    startLoading();
+    var formData = new FormData();
+
+    //Sets the data to be sent by form i can be caught as request in the backend
+    formData.append('file', file);
+
+    $.ajax({
+        method: "POST",
+        url: "/image/upload",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        data: formData,
+        dataType: 'json',
+        contentType: false,
+        processData: false
+    })
+        .fail(function(jqxhr, textStatus, errorThrown, data) {
+            stopLoading();
+            $('.fa-check').hide();
+            $('.fa-times').show(100,function () {
+                alert('An error occured! Please try againg later.');
+            });
+        })
+        .done(function(data) {
+            stopLoading();
+            $('.fa-times').hide();
+            $('.fa-check').show(100);
+            switch(type) {
+                case 'editor':
+                    insertToEditor(data.url);
+                    break;
+                case 'headline':
+                    $('#headline-image-url').val(data.url);
+                    break;
+                default:
+                    alert('An error occured! Please try againg later.');
+                    break;
+            }
+        });
+}
+
+// Creates input file in the background and catches selected file
+function selectLocalImage() {
+    const input = document.createElement('input');
+
+    input.setAttribute('type', 'file');
+    input.setAttribute('accept', 'image/*');
+    input.click();
+
+    // Listen upload local image and save storage
+    input.onchange = () => {
+        const file = input.files[0];
+
+        if (file.type.startsWith("image/")) {
+            saveToStorage('editor',file);
+        } else {
+            alert('Only images are allowed for upload.');
+        }
+
+    };
+}
+
+// Add image handler
+toolbar.addHandler('image', () => {
+    selectLocalImage()
+});
+
+// Add tag to post Initial
+
+if ($('.tags-add').length) {
+    $('#post-tags').tagsInput({
+        'height': '100%',
+        'width': 'inherit',
+        'defaultText': '',
+    });
+}
+
+$('#imageFile').change(function (e) {
+    const file = this.files[0];
+
+    if (file.type.startsWith("image/")) {
+        saveToStorage('headline',file);
+    } else {
+        alert('Only images are allowed for upload.');
+    }
+});
+
+
+// Submit post on click
+$('#post-submit').on('click',function (e) {
+    e.preventDefault();
+
+    startLoading();
+    var formData = new FormData();
+
+    var url = $("#headline-image-url").val();
+    formData.append('url', url);
+
+    var subject = $('#subject').val();
+    formData.append('title',subject);
+
+    var category = $('#post-category').val();
+    formData.append('category',category);
+
+    var myEditor = document.querySelector('#editor');
+    var content = myEditor.children[0].innerHTML;
+    formData.append('content',content);
+
+    var tags = $('#post-tags').val();
+    formData.append('tags',tags);
+
+    $.ajax({
+        type:"POST",
+        url:'/post/store',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        data: formData,
+        dataType: 'json',
+        processData: false,
+        contentType: false
+    })
+        .fail(function (jqxhr, textStatus, errorThrown) {
+            stopLoading();
+            var response = JSON.parse(jqxhr.responseText);
+            var statusCode = jqxhr.status;
+
+            //On every submit the span tags disappear and appear again
+            $('.error-custom').hide();
+
+            switch(statusCode) {
+                case 403:
+                    // user is not logged in
+                    alert(response.message);
+                    break;
+                case 422:
+                    // input fields validation failed
+                    $.each(response.errors, function(key, value) {
+                        $('.error-' + key).html(value).show();
+                    });
+                    break;
+                default:
+                    alert("Application isn't currently working.Please come back later.");
+            }
+
+        })
+        .done(function (data) {
+            if (data.status === 'success') {
+                stopLoading();
+                window.location = data.url;
+            }
+        });
+
+    // Add tag to post on Submit
+
+    if ($('.tags-add').length) {
+        $('#post-tags').tagsInput({
+            'height': '100%',
+            'width': 'inherit',
+            'defaultText': '',
+        });
+    }
+
+});
+

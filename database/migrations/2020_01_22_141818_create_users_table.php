@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->text('about')->nullable();
-            $table->string('profile_picture')->default('https://sport-news.s3.amazonaws.com/images/Pjpl1QJHh0jxlZL877DH89W9SKYdqeQM8MgFY2EP.jpeg');
+            $table->string('profile_picture')->default('https://sport-news.s3.amazonaws.com/profile/images/blue-profile-image.jpg');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

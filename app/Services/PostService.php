@@ -7,6 +7,7 @@ namespace App\Services;
 use App\Libraries\StorageManager;
 use App\Repositories\CategoryRepository;
 use App\Repositories\PostRepository;
+use App\Repositories\UserRepository;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -222,11 +223,10 @@ class PostService
         DB::beginTransaction();
 
         try {
-            $uploadedFile = self::storeUploadedImage($file);
 
-            $post = self::setData($title,$uploadedFile,$category,$content);
+            $postArray = self::setData($title,$file,$category,$content);
 
-            $postId = PostRepository::create($post);
+            $post = PostRepository::create($postArray);
 
             ($tags !== null) ? $tagArray = explode(',',$tags) : $tagArray = null;
 
@@ -237,7 +237,7 @@ class PostService
 
                     ($tagExists) ? $tagId = TagService::getByName($tag) : $tagId = TagService::store($tag);
 
-                    PostTagService::store($postId->id,$tagId->id);
+                    PostTagService::store($post->id,$tagId->id);
                 }
             }
             DB::commit();
@@ -247,22 +247,29 @@ class PostService
             return set_ajax_reponse_object(self::STATUS_EROR, self::STATUS_CODE_ERROR, null, $exception->getMessage());
         }
 
-       return set_ajax_reponse_object(self::STATUS_SUCCESS, self::STATUS_CODE_OK, route('home'), null);
+       return set_ajax_reponse_object(self::STATUS_SUCCESS, self::STATUS_CODE_OK, route('post',['category' => ucfirst($post->category->name), 'slug' => $post->slug]), null);
     }
 
     /**
      * Store text editor upload image
+     * @param $path
      * @param $file
+     * @param null $id
      * @return object
      */
-    public static function uploadImage($file)
+    public static function uploadImage($path,$file,$id = null)
     {
         //Get filename with extension
         $fileName = $file->getClientOriginalName();
 
-        $filePath = StorageManager::putToFile('images', $file, $fileName);
+        $filePath = StorageManager::putToFile($path, $file, $fileName);
 
         $url = StorageManager::getUrl($filePath);
+
+        if($path === "profile/images")
+        {
+            UserService::updateProfileImage($id,$url);
+        }
 
         return  (object) [
             'url' => $url

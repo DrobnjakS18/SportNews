@@ -9,7 +9,6 @@
 
 <script src="{{ asset('tags-input/dist/jquery.tagsinput.min.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
-<script src="{{ asset('js/quill.js') }}"></script>
 
 <script src="{{asset('plugins/slick-carousel/slick.min.js')}}"></script>
 
