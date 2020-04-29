@@ -248,7 +248,6 @@
             </div>
             <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                 <div class="sidebar">
-                   @include('partials.social')
                     @include('partials.hot_news')
                     @include('partials.top_authors')
                 </div>

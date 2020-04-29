@@ -837,8 +837,8 @@ a[href^=tel] {
 .top-nav-social-lists ul {
     list-style: none;
     padding: 0;
-    margin: 0;
-    margin-top: -3px;
+    margin: -3px 0 0;
+    width: 100%;
 }
 
 .top-nav-social-lists li {
@@ -885,9 +885,21 @@ a[href^=tel] {
     padding: 5px 10px;
     line-height: 100%;
     text-transform: uppercase;
-    float: left;
     margin: 0 20px 0 0;
     border-radius: 2px;
+}
+
+.navbar-social button {
+    background: #292931;
+    border: none;
+}
+
+.navbar-social button i {
+    color: #a3a3a3;
+}
+
+.navbar-social button i:hover {
+    color: white;
 }
 
 .trending-bar-dark .post-content, .trending-light .post-content {
@@ -1065,6 +1077,7 @@ a.post-category.absolute {
 
 .post-overlay-wrapper .post-thumbnail {
     position: relative;
+    /*height: 320px;*/
 }
 
 .post-overlay-wrapper .post-thumbnail a {
@@ -1625,7 +1638,7 @@ a.post-category.absolute {
     margin-right: 8px;
 }
 
-.share-icons a {
+.share-icons button {
     text-align: center;
     height: 38px;
     color: #000;
@@ -1633,31 +1646,36 @@ a.post-category.absolute {
     width: 38px;
     display: block;
     border-radius: 100%;
+    border: none;
 }
 
-.share-icons a i {
+.share-icons button i {
     font-size: 14px;
     line-height: 38px;
 }
 
-.share-icons > li.facebook a {
+.share-icons .facebook i{
     color: #3B5998;
 }
 
-.share-icons > li.twitter a {
+.share-icons .twitter i{
     color: #00aced;
 }
 
-.share-icons > li.gplus a {
+.share-icons .gplus i {
     color: #c53942;
 }
 
-.share-icons > li.pinterest a {
+.share-icons .pinterest i {
     color: #ce222b;
 }
 
-.share-icons > li.reddit a {
-    color: orangered;
+.share-icons .linkedin i {
+    color: #3f729b;
+}
+
+.share-icons .email i {
+    color: #F32229
 }
 
 .post-navigation {
@@ -2291,15 +2309,16 @@ a.post-category.absolute {
     margin-bottom: 0;
 }
 
-.social-widget a {
+.social-widget button {
     display: inline-block;
     width: 40px;
     height: 40px;
     text-align: center;
     margin-bottom: 10px;
+    border: none;
 }
 
-.social-widget a i {
+.social-widget button i {
     color: #fff;
     font-size: 18px;
     line-height: 40px;
@@ -2313,8 +2332,8 @@ a.post-category.absolute {
     background: #29c5f6;
 }
 
-.social-widget .youtube {
-    background: #e14e42;
+.social-widget .tumblr {
+    background: #314358;
 }
 
 .social-widget .pinterest {
@@ -2325,8 +2344,8 @@ a.post-category.absolute {
     background: #3f729b;
 }
 
-.social-widget .youtube {
-    background: #C92228;
+.social-widget .email {
+    background: #F32229
 }
 
 .sidebar .widget {

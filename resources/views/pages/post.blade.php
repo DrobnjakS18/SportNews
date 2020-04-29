@@ -1,7 +1,7 @@
 @extends('app')
 @section('title', $items->post->title .' | Single post')
 @section('description', $items->post->title)
-@section('og-image', asset('storage/images/logo.png'))
+@section('og-image', $items->post->picture)
 
 @section('content')
     <div class="breadcrumb-wrapper">
@@ -35,13 +35,60 @@
                             <img class="post-image img-fluid" src="{{asset('storage/images/'.$items->post->picture)}}" alt="{{$items->post->picture}}" alt="{{$items->post->title}}">
                             {!! $items->post->content !!}
                         </div>
-                        @if($items->post->tags->count() > 0)
-                            <div class="post-show-tags mb-4">
-                                @foreach ($items->post->tags as $tag)
-                                    <a href="{{route('tag',$tag->name)}}">{{$tag->name}}</a>
-                                    @endforeach
+                        <div class="share-block  d-flex justify-content-between align-items-center border-top border-bottom mt-5">
+                            <div class="post-tags">
+                                <span>Tags</span>
+                                @if($items->post->tags->count() > 0)
+                                        @foreach ($items->post->tags as $tag)
+                                            <a href="{{route('tag',$tag->name)}}">{{$tag->name}}</a>
+                                        @endforeach
+                                @endif
                             </div>
-                         @endif
+
+                            <ul class="share-icons list-unstyled ">
+{{--                                <li class="facebook">--}}
+{{--                                    <a href="#">--}}
+{{--                                        <i class="fa fa-facebook"></i>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li class="twitter">--}}
+{{--                                    <a href="#">--}}
+{{--                                        <i class="fa fa-twitter"></i>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li class="gplus">--}}
+{{--                                    <a href="#">--}}
+{{--                                        <i class="fa fa-google-plus"></i>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li class="pinterest">--}}
+{{--                                    <a href="#">--}}
+{{--                                        <i class="fa fa-pinterest"></i>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li class="reddit">--}}
+{{--                                    <a href="#">--}}
+{{--                                        <i class="fa fa-reddit-alien"></i>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+                                <li class="list-inline-item">
+                                    <button class="button twitter" data-sharer="twitter" data-title="{{$items->post->title}}" data-url="{{Request::url()}}"><i class="fa fa-twitter"></i></button>
+                                </li>
+                                <li class="list-inline-item">
+                                    <button class="button facebook" data-sharer="facebook"  data-url="{{Request::url()}}"><i class="fa fa-facebook"></i></button>
+                                </li>
+                                <li class="list-inline-item">
+                                    <button class="button linkedin" data-sharer="linkedin" data-url="{{Request::url()}}"><i class="fa fa-linkedin"></i></button>
+                                </li>
+                                <li class="list-inline-item">
+                                    <button class="button pinterest" data-sharer="pinterest" data-url="{{Request::url()}}"><i class="fa fa-pinterest"></i></button>
+                                </li>
+                                <li class="list-inline-item">
+                                    <button class="button email" data-sharer="email" data-title="{{$items->post->title}}" data-url="{{Request::url()}}" data-subject="{{$items->post->title}}" data-to=""><i class="fa fa-envelope"></i></button>
+                                </li>
+                            </ul>
+                        </div>
+
                     </div>
 
                     <nav class="post-navigation clearfix">
@@ -171,7 +218,6 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12">
-                        @include('partials.social')
                         @include('partials.hot_news')
                     </div>
                 </div>

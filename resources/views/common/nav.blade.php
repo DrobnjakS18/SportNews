@@ -1,15 +1,17 @@
 <div class="trending-bar-dark hidden-xs">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
+        <div class="row text-center">
+            <div class="col-md-2 px-0">
                 <h3 class="trending-bar-title">Breaking Sports News</h3>
+            </div>
+            <div class="col-md-6 my-2 my-0 pl-md-0 text-md-left">
                 <div class="trending-news-slider">
                     @if($nav->count() > 0 )
                         @foreach($nav->sortBy('created_at')->take(5) as $post)
                         <div class="item">
                             <div class="post-content">
                                 <h2 class="post-title title-sm">
-                                    <a href="{{route('post',[ucfirst($post->category->name),$post->slug])}}">{{substr($post->title,0,50).'...'}}</a>
+                                    <a href="{{route('post',[ucfirst($post->category->name),$post->slug])}}">{{substr($post->title,0,100).'...'}}</a>
                                 </h2>
                             </div>
                         </div>
@@ -17,59 +19,17 @@
                     @endif
                 </div>
             </div>
-
-            <div class="col-md-12 col-sm-12 col-xs-12 top-nav-social-lists text-lg-right col-lg-4 ml-lg-auto">
-                <ul class="list-unstyled mt-4 mt-lg-0">
-                    <li>
-                        <a href="#">
-                            <span class="social-icon">
-                                <i class="fa fa-facebook-f"></i>
-                            </span>
-                        </a>
-                        <a href="#">
-                            <span class="social-icon">
-                                <i class="fa fa-twitter"></i>
-                            </span>
-                        </a>
-                        <a href="#">
-                            <span class="social-icon">
-                                <i class="fa fa-google-plus"></i>
-                            </span>
-                        </a>
-                        <a href="#">
-                            <span class="social-icon">
-                                <i class="fa fa-youtube"></i>
-                            </span>
-                        </a>
-                        <a href="#">
-                            <span class="social-icon">
-                                <i class="fa fa-linkedin"></i>
-                            </span>
-                        </a>
-                        <a href="#">
-                            <span class="social-icon">
-                                <i class="fa fa-pinterest-p"></i>
-                            </span>
-                        </a>
-                        <a href="#">
-                            <span class="social-icon">
-                                <i class="fa fa-rss"></i>
-                            </span>
-                        </a>
-                        <a href="#">
-                            <span class="social-icon">
-                                <i class="fa fa-github"></i>
-                            </span>
-                        </a>
-                        <a href="#">
-                            <span class="social-icon">
-                                <i class="fa fa-reddit-alien"></i>
-                            </span>
-                        </a>
+            <div class="col-md-4 top-nav-social-lists text-lg-left d-flex align-items-center">
+                <ul class="list-unstyled">
+                    <li class="navbar-social d-flex justify-content-around d-lg-block text-left">
+                        <button class="button" data-sharer="facebook"  data-url="{{Request::url()}}"><i class="fa fa-facebook"></i></button>
+                        <button class="button" data-sharer="twitter" data-title="Sports News" data-url="{{Request::url()}}"><i class="fa fa-twitter"></i></button>
+                        <button class="button" data-sharer="linkedin" data-url="{{Request::url()}}"><i class="fa fa-linkedin"></i></button>
+                        <button class="button" data-sharer="pinterest" data-url="{{Request::url()}}"><i class="fa fa-pinterest"></i></button>
+                        <button class="button" data-sharer="email" data-title="Sports News" data-url="{{Request::url()}}" data-subject="Sports News" data-to=""><i class="fa fa-envelope"></i></button>
                     </li>
                 </ul>
             </div>
-
         </div>
     </div>
 </div>
@@ -93,13 +53,13 @@
                             @case("author")
                                 <a class="username-button mt-n2" href="{{route('author.profile',Auth::user()->slug)}}">
                                     <img class="img-fluid user-profile-image-small" src="{{Auth::user()->profile_picture}}" alt="Sports News profile image">
-                                    <span class="pl-2 account-name">{{ Auth::user()->name }}</span>
+                                    <span class="pl-2 account-name d-none d-md-inline">{{ Auth::user()->name }}</span>
                                 </a>
                                 @break
                             @case("user")
                                 <a class="username-button mt-n2" href="" data-toggle="modal" data-target="#modalUserAccount">
                                     <img class="img-fluid" src="{{Auth::user()->profile_picture}}" alt="Sports News profile image">
-                                    <span class="pl-2 account-name">{{ Auth::user()->name }}</span>
+                                    <span class="pl-2 account-name d-none d-md-inline">{{ Auth::user()->name }}</span>
                                 </a>
                                 @break
                             @case("admin")
@@ -158,15 +118,6 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link" href="{{route('category','Esports')}}">ESPORTS</a>
                             </li>
-
-{{--                            <li class="nav-item dropdown">--}}
-{{--                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                                    Post--}}
-{{--                                </a>--}}
-{{--                                <div class="dropdown-menu">--}}
-{{--                                    <a class="dropdown-item" href="{{route('post.create')}}">Create Post</a>--}}
-{{--                                </div>--}}
-{{--                            </li>--}}
                             <li class="nav-item dropdown">
                                 <a class="nav-link" href="{{route('about')}}">
                                     About
@@ -184,7 +135,6 @@
                         </div>
                     </div>
                 </nav>
-
             </div>
         </div>
     </div>
