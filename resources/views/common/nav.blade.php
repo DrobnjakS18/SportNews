@@ -1,7 +1,7 @@
 <div class="trending-bar-dark hidden-xs">
     <div class="container">
         <div class="row text-center">
-            <div class="col-md-2 px-0">
+            <div class="col-md-2 px-0" style="margin-top: 0.3rem;">
                 <h3 class="trending-bar-title">Breaking Sports News</h3>
             </div>
             <div class="col-md-6 my-2 my-0 pl-md-0 text-md-left">

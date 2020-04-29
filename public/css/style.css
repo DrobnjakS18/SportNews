@@ -2651,7 +2651,7 @@ select.form-control:not([size]):not([multiple]) {
     margin: 25px 0px;
 }
 
-.footer-social a {
+.footer-social button {
     font-size: 16px;
     padding: 10px 10px;
     width: 35px;
@@ -2661,6 +2661,7 @@ select.form-control:not([size]):not([multiple]) {
     background: #111;
     border-radius: 2px;
     padding-top: 5px;
+    border: none;
 }
 
 .footer-social a:hover {

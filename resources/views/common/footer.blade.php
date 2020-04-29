@@ -1,5 +1,4 @@
 <footer class="footer footer-main ">
-
   @auth
         @if(Auth::user()->role->name === "user")
             <div class="modal fade" id="modalUserAccount" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -74,12 +73,21 @@
                 <p class="mt-4">We perfectly balances the simplicity of a clean, eye-catching blog with the flexibility to create unique page layouts.</p>
 
                 <ul class="list-inline footer-social">
-                    <li class="li list-inline-item"><a href="https://www.facebook.com/themefisher"><i class="fa fa-facebook"></i></a></li>
-                    <li class="li list-inline-item"><a href="https://twitter.com/themefisher"><i class="fa fa-twitter"></i></a></li>
-                    <li class="li list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    <li class="li list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                    <li class="li list-inline-item"><a href="#"><i class="fa fa-rss"></i></a></li>
-                    <li class="li list-inline-item"><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    <li class="li list-inline-item">
+                        <button class="button" data-sharer="facebook"  data-url="{{Request::url()}}"><i class="fa fa-facebook"></i></button>
+                    </li>
+                    <li class="li list-inline-item">
+                        <button class="button" data-sharer="twitter" data-title="Sports News" data-url="{{Request::url()}}"><i class="fa fa-twitter"></i></button>
+                    </li>
+                    <li class="li list-inline-item">
+                        <button class="button" data-sharer="linkedin" data-url="{{Request::url()}}"><i class="fa fa-linkedin"></i></button>
+                    </li>
+                    <li class="li list-inline-item">
+                        <button class="button" data-sharer="pinterest" data-url="{{Request::url()}}"><i class="fa fa-pinterest"></i></button>
+                    </li>
+                    <li class="li list-inline-item">
+                        <button class="button" data-sharer="email" data-title="Sports News" data-url="{{Request::url()}}" data-subject="Sports News" data-to=""><i class="fa fa-envelope"></i></button>
+                    </li>
                 </ul>
 
                 <div class="copyright-text text-center">
