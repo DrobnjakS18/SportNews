@@ -94,6 +94,11 @@
                                         {{session('success')}}
                                     </div>
                                 @endif
+                                @if(session('fail'))
+                                    <div class="alert alert-danger">
+                                        {{session('fail')}}
+                                    </div>
+                                @endif
                                 <div class="newsletter-form">
                                     <form action="{{route('subscription.store')}}" method="post">
                                         @csrf
