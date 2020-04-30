@@ -39,7 +39,7 @@
 {{--                                                    <a href="author.html">John Snow</a>--}}
 {{--                                                </span>--}}
                                             </div>
-                                            {!! substr($item->content,0,100).'...' !!}
+                                            <p>{{$item->short_text}}</p>
                                         </div>
                                     </div>
                                 </div>

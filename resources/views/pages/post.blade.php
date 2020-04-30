@@ -1,6 +1,6 @@
 @extends('app')
 @section('title', $items->post->title .' | Single post')
-@section('description', $items->post->title)
+@section('description', $items->post->short_text)
 @section('og-image', $items->post->picture)
 
 @section('content')

@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->text('content');
+            $table->text('short_text');
             $table->string('picture');
             $table->enum('select', ["1","0"]);
             $table->bigInteger('views')->default(0);

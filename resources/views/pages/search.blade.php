@@ -37,7 +37,7 @@
                                         <a href="{{route('author',$item->user->slug)}}">{{$item->user->name}}</a>
                                     </span>
                                     </div>
-                                    {!! substr($item->content,0,100) !!}
+                                    <p>{{$item->short_text}}</p>
                                 </div>
                             </div>
                         </div>

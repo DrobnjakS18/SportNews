@@ -90,7 +90,7 @@
                                                 <a href="{{route('author',$item->user->slug)}}">{{$item->user->name}}</a>
                                             </span>
                                         </div>
-                                        {!! substr($item->content,0,100).'...' !!}
+                                        <p>{{$item->short_text}}</p>
                                     </div>
                                 </div>
                             @endforeach
@@ -115,7 +115,7 @@
                                                 <a href="{{route('author',$item->user->slug)}}">{{$item->user->name}}</a>
                                             </span>
                                         </div>
-                                        {!! substr($item->content,0,100).'...' !!}
+                                        <p>{{$item->short_text}}</p>
                                     </div>
                                 </div>
                             @endforeach
@@ -140,7 +140,7 @@
                                                 <a href="{{route('author',$item->user->slug)}}">{{$item->user->name}}</a>
                                             </span>
                                         </div>
-                                        {!! substr($item->content,0,100).'...' !!}
+                                        <p>{{$item->short_text}}</p>
                                     </div>
                                 </div>
                             @endforeach
@@ -166,7 +166,7 @@
                                                 <a href="{{route('author',$item->user->slug)}}">{{$item->user->name}}</a>
                                             </span>
                                         </div>
-                                        {!! substr($item->content,0,100).'...' !!}
+                                        <p>{{$item->short_text}}</p>
                                     </div>
                                 </div>
                             @endforeach
@@ -202,7 +202,7 @@
                                                       <a href="{{route('author',$item->user->slug)}}">{{$item->user->name}}</a>
                                                     </span>
                                                 </div>
-                                                {!! substr($item->content,0,100)."..." !!}
+                                                <p>{{$item->short_text}}</p>
                                             </div>
                                         </div>
                                     @endif
@@ -507,7 +507,7 @@
                                                 <a href="{{route('author',$item->user->slug)}}">{{$item->user->name}}</a>
                                                 </span>
                                             </div>
-                                            {!! substr($item->content,0,100).'...' !!}
+                                            <p>{{$item->short_text}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -516,11 +516,6 @@
                     </div>
                 </div>
             </div>
-{{--            <div class="col-lg-4 col-md-8 col-sm-12 col-xs-12">--}}
-{{--                <div class="sidebar sidebar-right">--}}
-{{--                    @include('partials.top_authors')--}}
-{{--                </div>--}}
-{{--            </div>--}}
         </div>
     </div>
 </section>

@@ -50,7 +50,7 @@
                                             <h2 class="post-title title-large ">
                                                 <a href="{{route('post',[ucfirst($item->category->name),$item->slug])}}">{{$item->title}}</a>
                                             </h2>
-                                            {!! substr($item->content,0,100) !!}
+                                            <p>{{$item->short_text}}</p>
                                         </div>
                                     </div>
                                 </div>

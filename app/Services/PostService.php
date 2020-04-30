@@ -51,12 +51,13 @@ class PostService
      * @param $content
      * @return array
      */
-    public static function setData($title, $file,$category, $content)
+    public static function setData($title, $file,$category, $content, $shortText)
     {
         return [
             'title' => $title,
             'slug' => Str::slug($title,'-'),
             'content' => $content,
+            'short_test' => $shortText,
             'picture' => $file,
             'select' => '0',
             'user_id' => Auth::user()->id,
@@ -224,7 +225,10 @@ class PostService
 
         try {
 
-            $postArray = self::setData($title,$file,$category,$content);
+            $stripContent = strip_tags($content);
+            $shortText = substr($stripContent,0,100)."...";
+
+            $postArray = self::setData($title,$file,$category,$content,$shortText);
 
             $post = PostRepository::create($postArray);
 

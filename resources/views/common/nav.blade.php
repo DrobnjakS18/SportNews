@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-4 top-nav-social-lists text-lg-left d-flex align-items-center">
                 <ul class="list-unstyled">
-                    <li class="navbar-social d-flex justify-content-around d-lg-block text-left">
+                    <li class="navbar-social d-flex justify-content-around d-lg-block text-center">
                         <button class="button" data-sharer="facebook"  data-url="{{Request::url()}}"><i class="fa fa-facebook"></i></button>
                         <button class="button" data-sharer="twitter" data-title="Sports News" data-url="{{Request::url()}}"><i class="fa fa-twitter"></i></button>
                         <button class="button" data-sharer="linkedin" data-url="{{Request::url()}}"><i class="fa fa-linkedin"></i></button>
