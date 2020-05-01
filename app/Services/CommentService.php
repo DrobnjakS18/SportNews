@@ -45,6 +45,7 @@ class CommentService
         $post = PostService::getBySlug($slug);
 
         $comments = CommentRepository::allCommentsByPost($post->id);
+
         return (object) [
             'post' => $post,
             'comments' => $comments
@@ -66,6 +67,7 @@ class CommentService
 
     /**
      * Get all sorted comments by post slug
+     * Updated 1.5.2020 Obrisan case newest kao visak
      * @param $slug
      * @return object
      */
@@ -74,9 +76,6 @@ class CommentService
         $post = PostService::getBySlug($slug);
 
             switch ($type) {
-                case 'newest':
-                    $comments = CommentRepository::sortedComments($post->id,'created_at');
-                    break;
                 case 'liked':
                     $comments = CommentRepository::sortedComments($post->id,'like');
                     break;
@@ -94,34 +93,4 @@ class CommentService
             ];
 
     }
-
-
-
-
-
-
-//    /**
-////     * Get all comments by post slug
-////     * @param $slug
-////     * @return object
-////     */
-////    static public function getSortedComments($postId,$type)
-////    {
-////        switch ($type) {
-////            case 'newest':
-////                $comments = CommentRepository::sortedComments($postId,'created_at');
-////                break;
-////            case 'liked':
-////                $comments = CommentRepository::sortedComments($postId,'like');
-////                break;
-////            case 'disliked':
-////                break;
-////            default:
-////                $comments = CommentRepository::sortedComments($postId,'dislike');
-////                break;
-////        }
-////
-////        return $comments;
-////
-////    }
 }

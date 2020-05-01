@@ -24,16 +24,6 @@ class UserRepository extends BaseRepository
     }
 
     /**
-     * Find top authors with defined number
-     * @param $number
-     * @return User[]|\Illuminate\Database\Eloquent\Collection
-     */
-    static public function topAuthors($number)
-    {
-        return User::with(['posts' => function($query) { $query->count(); }])->get()->take($number)->sortByDesc('posts');
-    }
-
-    /**
      * Find user by id
      * @param $slug
      * @return string
