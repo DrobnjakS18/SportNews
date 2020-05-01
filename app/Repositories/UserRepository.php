@@ -20,7 +20,7 @@ class UserRepository extends BaseRepository
      */
     static public function all()
     {
-        return User::all();
+        return User::with(['posts'])->get();
     }
 
     /**

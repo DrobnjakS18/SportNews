@@ -20,7 +20,7 @@ class CommentRepository extends BaseRepository
      */
     static public function allCommentsByPost($id)
     {
-        return Comment::wherePost_idAndComment_id($id,null)->latest()->simplePaginate(10);
+        return Comment::with(['user','likes','post'])->wherePost_idAndComment_id($id,null)->latest()->simplePaginate(10);
     }
 
     /**

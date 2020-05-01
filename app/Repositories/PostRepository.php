@@ -18,7 +18,7 @@ class PostRepository extends BaseRepository
      */
     static public function all()
     {
-        return Post::all();
+        return Post::with(['user','category'])->get();
     }
 
     /**

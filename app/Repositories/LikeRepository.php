@@ -15,6 +15,17 @@ class LikeRepository
     }
 
     /**
+     * Sorted votes by like or dislike
+     * @param $commentId
+     * @param $vote
+     * @return Like
+     */
+    static public function sortedByVotes($commentId,$vote)
+    {
+        return Like::whereVoteAndComment_id($vote,$commentId)->first();
+    }
+
+    /**
      * Store new vote
      * @param $userId
      * @param $postId
@@ -47,14 +58,4 @@ class LikeRepository
         return $vote;
     }
 
-    /**
-     * Sorted votes by like or dislike
-     * @param $commentId
-     * @param $vote
-     * @return Like
-     */
-    static public function sortedByVotes($commentId,$vote)
-    {
-        return Like::whereVoteAndComment_id($vote,$commentId)->first();
-    }
 }
