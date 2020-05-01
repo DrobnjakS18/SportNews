@@ -5,6 +5,7 @@ namespace App\Repositories;
 
 
 use App\Models\User;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Hash;
 
 class UserRepository extends BaseRepository
@@ -31,6 +32,14 @@ class UserRepository extends BaseRepository
     static public function findById($id)
     {
         return User::findOrFail($id);
+    }
+
+
+    public static function topUsers($role,$number)
+    {
+        return User::whereHas('role', function (Builder $query) use ($role) {
+            $query->where('name',$role);
+        })->limit($number)->get();
     }
 
     /**

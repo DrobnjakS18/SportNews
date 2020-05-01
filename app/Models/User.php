@@ -39,7 +39,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
 
     /**
-     * New Attributes added
+     * Count posts by single author
      *
      * @var array
      */
@@ -47,7 +47,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function getPostCountAttribute()
     {
-        return $this->attributes['post_count'] = $this->posts()->count();
+        return $this->attributes['post_count'] = $this->posts->count();
     }
 
     /**

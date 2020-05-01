@@ -39,9 +39,28 @@ class PostService
     {
         $data['posts'] = PostRepository::all();
         $data['users'] = UserService::getAll();
+        $data['top_authors'] = UserService::getTopUsers('author',4);
 
         return (object) $data;
     }
+
+    /**
+     * Get posts and users by category name
+     * @param $name
+     * @return object
+     */
+    public static function getByCategoryName($name)
+    {
+        $categoryId = CategoryService::getByName(strtolower($name));
+
+        $data['posts'] = PostRepository::findByCategory($categoryId);
+        $data['users'] = UserService::getAll();
+        $data['top_authors'] = UserService::getTopUsers('author',4);
+
+
+        return (object) $data;
+    }
+
 
     /**
      * Set sent data into array referencing Post table columns
@@ -161,21 +180,6 @@ class PostService
         $data['comments'] = $data['post']->comments->where('comment_id','=',null);
 
         session()->put('post_id',$data['post']->id);
-
-        return (object) $data;
-    }
-
-    /**
-     * Get posts and users by category name
-     * @param $name
-     * @return object
-     */
-    public static function getByCategoryName($name)
-    {
-        $categoryId = CategoryService::getByName(strtolower($name));
-
-        $data['posts'] = PostRepository::findByCategory($categoryId);
-        $data['users'] = UserService::getAll();
 
         return (object) $data;
     }

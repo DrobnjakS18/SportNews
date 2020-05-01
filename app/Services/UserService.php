@@ -25,6 +25,10 @@ class UserService
     }
 
 
+    /**
+     * Get user by id
+     * @return string
+     */
     public static function getById($id)
     {
         return UserRepository::findById($id);
@@ -38,6 +42,18 @@ class UserService
     public static function getBySlug($slug)
     {
         return UserRepository::findBySlug($slug);
+    }
+
+
+    public static function getTopUsers($role,$number)
+    {
+        $users =  UserRepository::topUsers($role,$number);
+
+        if($role === 'author') {
+           $users =  $users->sortByDesc('post_count');
+        }
+
+        return $users;
     }
 
     /**
@@ -60,6 +76,7 @@ class UserService
         $data['users'] = UserRepository::all();
         $data['user'] = self::getBySlug($name);
         $data['posts'] = PostService::getByUser($data['user']->id);
+        $data['top_authors'] = UserService::getTopUsers('author',4);
 
         return (object)$data;
     }

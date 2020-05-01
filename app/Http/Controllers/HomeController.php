@@ -33,6 +33,8 @@ class HomeController extends Controller
 
     /**
      * Display category page.
+     * @param $name
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function category($name)
     {

@@ -4,7 +4,7 @@
     </h3>
     <div class="post-list-block">
         <div class="review-post-list">
-            @foreach($items->users->where('role_id',2)->sortByDesc('post_count')->take(4) as $user)
+            @foreach($items->top_authors as $user)
             <div class="top-author">
                 <img class="img-fluid" src="{{$user->profile_picture}}" alt="author-profile">
                 <div class="info">
