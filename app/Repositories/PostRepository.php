@@ -16,7 +16,7 @@ class PostRepository extends BaseRepository
     /**
      * All posts
      */
-    static public function all()
+    public static function all()
     {
         return Post::withCount(['user','category'])->get();
     }
@@ -24,7 +24,7 @@ class PostRepository extends BaseRepository
     /**
      * Single post by Id
      */
-    static public function findById($id)
+    public static function findById($id)
     {
         return Post::find($id);
     }
@@ -40,7 +40,7 @@ class PostRepository extends BaseRepository
      * @param $slug
      * @return
      */
-    static public function findBySlugAndCategory($category_id,$slug)
+    public static function findBySlugAndCategory($category_id,$slug)
     {
         return Post::withCount('comments')->whereCategory_idAndSlug($category_id,$slug)->firstOrFail();
     }
@@ -50,7 +50,7 @@ class PostRepository extends BaseRepository
      * @param $currentPostId
      * @return
      */
-    static public function findPreviousPost($currentPostId)
+    public static function findPreviousPost($currentPostId)
     {
         return Post::where('id','<',$currentPostId)->max('id');
     }
@@ -61,7 +61,7 @@ class PostRepository extends BaseRepository
      * @param $currentPostId
      * @return
      */
-    static public function findNextPost($currentPostId)
+    public static function findNextPost($currentPostId)
     {
         return Post::where('id','>',$currentPostId)->min('id');
     }
@@ -71,7 +71,7 @@ class PostRepository extends BaseRepository
      * @param $id
      * @return
      */
-    static public function findByCategory($id)
+    public static function findByCategory($id)
     {
         return Post::where('category_id',$id)->simplePaginate(4) ;
     }
@@ -81,7 +81,7 @@ class PostRepository extends BaseRepository
      * @param $id
      * @return
      */
-    static public function findByUser($id)
+    public static function findByUser($id)
     {
         return Post::where('user_id',$id)->simplePaginate(4);
     }
@@ -91,7 +91,7 @@ class PostRepository extends BaseRepository
      * @param $search
      * @return Post
      */
-    static public function searchPost($search)
+    public static function searchPost($search)
     {
         return Post::where('title','like','%'.$search."%")->simplePaginate(9);
     }
@@ -99,7 +99,7 @@ class PostRepository extends BaseRepository
     /**
      * Insert new post
      */
-    static public function create($data){
+    public static function create($data){
 
         $post = new Post();
 
@@ -146,7 +146,7 @@ class PostRepository extends BaseRepository
     /**
      * Insert new image name into database
      */
-    static public function insertImage($image)
+    public static function insertImage($image)
     {
         $post = new Post();
 

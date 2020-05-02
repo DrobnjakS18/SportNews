@@ -18,7 +18,7 @@ class TagRepository extends BaseRepository
      * @param $tag
      * @return Tag
      */
-    static public function create($tag)
+    public static function create($tag)
     {
         $tags = new Tag();
 
@@ -36,7 +36,7 @@ class TagRepository extends BaseRepository
      * @param $name
      * @return Tag
      */
-    static public function findByName($name)
+    public static function findByName($name)
     {
         return Tag::where('name',$name)->first();
     }
@@ -46,7 +46,7 @@ class TagRepository extends BaseRepository
      * @param $name
      * @return boolean
      */
-    static public function findIfExists($name)
+    public static function findIfExists($name)
     {
         return Tag::where('name',$name)->exists();
     }

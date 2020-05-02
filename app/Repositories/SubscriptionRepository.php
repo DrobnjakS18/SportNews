@@ -14,7 +14,7 @@ class SubscriptionRepository extends BaseRepository
         $this->className = 'App\Models\Subscription';
     }
 
-    static public function create($email)
+    public static function create($email)
     {
         $newsLetter = new Subscription();
 

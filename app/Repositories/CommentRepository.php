@@ -18,7 +18,7 @@ class CommentRepository extends BaseRepository
      * @param $id
      * @return Comment
      */
-    static public function allCommentsByPost($id)
+    public static function allCommentsByPost($id)
     {
         return Comment::with(['user','likes','post'])->wherePost_idAndComment_id($id,null)->latest()->simplePaginate(10);
     }
@@ -29,7 +29,7 @@ class CommentRepository extends BaseRepository
      * @param $sortBy
      * @return Comment
      */
-    static public function sortedComments($postId,$sortBy)
+    public static function sortedComments($postId,$sortBy)
     {
         return Comment::wherePost_idAndComment_id($postId,null)->orderBy($sortBy,'DESC')->simplePaginate(10);
     }
@@ -39,7 +39,7 @@ class CommentRepository extends BaseRepository
      * @param $message
      * @return Comment
      */
-    static public function create($message,$post,$user,$comment_id = null)
+    public static function create($message,$post,$user,$comment_id = null)
     {
         $comment = new Comment();
 
@@ -70,7 +70,7 @@ class CommentRepository extends BaseRepository
      * @param $dislikes
      * @return Comment
      */
-    static public function updateVotes($commentId,$likes,$dislikes)
+    public static function updateVotes($commentId,$likes,$dislikes)
     {
         $comment = Comment::find($commentId);
 

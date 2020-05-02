@@ -20,7 +20,7 @@ class LikeRepository
      * @param $vote
      * @return Like
      */
-    static public function sortedByVotes($commentId,$vote)
+    public static function sortedByVotes($commentId,$vote)
     {
         return Like::whereVoteAndComment_id($vote,$commentId)->first();
     }
@@ -33,7 +33,7 @@ class LikeRepository
      * @param $action
      * @return Like
      */
-    static public function create($userId,$postId,$commentId,$action)
+    public static function create($userId,$postId,$commentId,$action)
     {
         $vote = new Like();
 

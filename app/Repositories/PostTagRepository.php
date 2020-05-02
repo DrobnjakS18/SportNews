@@ -21,7 +21,7 @@ class PostTagRepository extends BaseRepository
      * @param $tag_id
      * @return PostTag
      */
-    static public function create($post_id,$tag_id)
+    public static function create($post_id,$tag_id)
     {
         $postTag = new PostTag();
 
@@ -44,7 +44,7 @@ class PostTagRepository extends BaseRepository
      * @param $id
      * @return PostTag
      */
-    static public function findByTag($id)
+    public static function findByTag($id)
     {
         return PostTag::where('tag_id',$id)->get();
     }

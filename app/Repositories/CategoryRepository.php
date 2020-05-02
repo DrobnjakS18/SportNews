@@ -17,7 +17,7 @@ class CategoryRepository extends BaseRepository
      * Get all categories
      * @return Category[]|\Illuminate\Database\Eloquent\Collection
      */
-    static public function all()
+    public static function all()
     {
         return Category::all();
     }
@@ -27,7 +27,7 @@ class CategoryRepository extends BaseRepository
      * @param $name
      * @return Category[]|\Illuminate\Database\Eloquent\Collection
      */
-    static public function findIdByName($name)
+    public static function findIdByName($name)
     {
         return Category::where('name',$name)->value('id');
     }

@@ -19,7 +19,7 @@ class UserRepository extends BaseRepository
      * Get all users
      * @return User[]|\Illuminate\Database\Eloquent\Collection
      */
-    static public function all()
+    public static function all()
     {
         return User::with(['posts'])->get();
     }
@@ -29,7 +29,7 @@ class UserRepository extends BaseRepository
      * @param $slug
      * @return string
      */
-    static public function findById($id)
+    public static function findById($id)
     {
         return User::findOrFail($id);
     }
@@ -47,7 +47,7 @@ class UserRepository extends BaseRepository
      * @param $slug
      * @return string
      */
-    static public function findBySlug($slug)
+    public static function findBySlug($slug)
     {
         return User::where('slug',$slug)->firstOrFail();
     }
@@ -57,7 +57,7 @@ class UserRepository extends BaseRepository
      * @param $id
      * @return string
      */
-    static public function findByRole($id)
+    public static function findByRole($id)
     {
         return User::where('role_id',$id)->get();
     }
@@ -68,7 +68,7 @@ class UserRepository extends BaseRepository
      * @param $image
      * @return string
      */
-    static public function updateUserAccountImage($id,$image)
+    public static function updateUserAccountImage($id,$image)
     {
         $user = User::findOrFail($id);
 
@@ -89,7 +89,7 @@ class UserRepository extends BaseRepository
      * @param $roleId
      * @return string
      */
-    static public function updatAccount($name,$password,$userId,$roleId)
+    public static function updatAccount($name,$password,$userId,$roleId)
     {
         $user = User::where('role_id',$roleId)->findOrFAil($userId);
 
@@ -117,7 +117,7 @@ class UserRepository extends BaseRepository
      * @param $about
      * @return
      */
-    static public function updateAuthor($id, $name, $slug, $email, $about)
+    public static function updateAuthor($id, $name, $slug, $email, $about)
     {
         $user = User::findOrFail($id);
 
