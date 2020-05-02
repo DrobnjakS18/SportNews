@@ -11,7 +11,7 @@ class Like extends Model
      */
     public function user()
     {
-        return $this->belongsTo(User::class,'user_id','id');
+        return $this->belongsTo(User::class);
     }
 
     /**
@@ -19,7 +19,7 @@ class Like extends Model
      */
     public function post()
     {
-        return $this->belongsTo(Post::class,'post_id','id');
+        return $this->belongsTo(Post::class);
     }
 
     /**
@@ -27,7 +27,7 @@ class Like extends Model
      */
     public function comment()
     {
-        return $this->belongsTo(Comment::class,'comment_id','id');
+        return $this->belongsTo(Comment::class);
     }
 
     /**
@@ -35,7 +35,7 @@ class Like extends Model
      */
     public function reply()
     {
-        return $this->belongsTo(Comment::class,'comment_id','id')->where('comment_id','<>',null);
+        return $this->belongsTo(Comment::class)->where('comment_id','<>',null);
     }
 
 
