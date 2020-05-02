@@ -209,7 +209,7 @@
                     @endauth
                     <div id="comments" class="comments-block">
                         <h3 class="news-title ">
-                            <span>Comments ( {{$items->post->comments->where('comment_id',null)->count()}} )</span>
+                            <span>Comments ( {{$items->post->comments_count}} )</span>
                         </h3>
                         <ul class="all-comments">
                             @include('partials.comments',['comments' => $items->comments])

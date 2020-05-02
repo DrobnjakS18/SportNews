@@ -18,7 +18,7 @@ class PostRepository extends BaseRepository
      */
     static public function all()
     {
-        return Post::with(['user','category'])->get();
+        return Post::withCount(['user','category'])->get();
     }
 
     /**
@@ -42,7 +42,7 @@ class PostRepository extends BaseRepository
      */
     static public function findBySlugAndCategory($category_id,$slug)
     {
-        return Post::whereCategory_idAndSlug($category_id,$slug)->firstOrFail();
+        return Post::withCount('comments')->whereCategory_idAndSlug($category_id,$slug)->firstOrFail();
     }
 
     /**
