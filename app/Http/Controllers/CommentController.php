@@ -12,6 +12,14 @@ use Illuminate\Support\Facades\Auth;
 class CommentController extends Controller
 {
 
+    private $commentService;
+
+    public function __construct()
+    {
+
+        $this->commentService = new CommentService();
+    }
+
     /**
      * Store post comment
      * @param StoreComment $request
@@ -19,9 +27,7 @@ class CommentController extends Controller
      */
     public function store(StoreComment $request)
     {
-        $commentService = new CommentService();
-
-        $response = $commentService::store(clean($request->message,'p'),$request->post,Auth::user()->id,$request->recaptcha);
+        $response = $this->commentService::store(clean($request->message,'p'),$request->post,Auth::user()->id,$request->recaptcha);
 
         return json_encode($response);
     }
@@ -33,9 +39,7 @@ class CommentController extends Controller
      */
     public function reply(StoreComment $request)
     {
-        $commentService = new CommentService();
-
-        $response = $commentService::store(clean($request->message,'p'),$request->post,Auth::user()->id,$request->recaptcha,$request->comment);
+        $response = $this->commentService::store(clean($request->message,'p'),$request->post,Auth::user()->id,$request->recaptcha,$request->comment);
 
         return json_encode($response);
     }
@@ -61,9 +65,7 @@ class CommentController extends Controller
      */
     public function comments($slug)
     {
-        $commentsService = new CommentService();
-
-        $items = $commentsService::getCommentsByPost($slug);
+        $items = $this->commentService::getCommentsByPost($slug);
 
         return view('pages.all_comments')->with(compact('items'));
     }
@@ -76,9 +78,7 @@ class CommentController extends Controller
      */
     public function sort($slug,$type)
     {
-        $commentsService = new CommentService();
-
-        $items = $commentsService::getSortedComments($slug,$type);
+        $items = $this->commentService::getSortedComments($slug,$type);
 
         return view('pages.all_comments')->with(compact('items'));
     }

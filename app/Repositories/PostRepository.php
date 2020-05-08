@@ -116,8 +116,8 @@ class PostRepository extends BaseRepository
             $post->content = $data['content'];
         }
 
-        if (isset($data['short_test'])) {
-            $post->short_test = $data['short_test'];
+        if (isset($data['short_text'])) {
+            $post->short_text = $data['short_text'];
         }
 
         if (isset($data['picture'])) {

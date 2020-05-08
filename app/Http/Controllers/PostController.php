@@ -12,6 +12,16 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
 
+    private $postService;
+
+    /**
+     * Create a new controller instance.
+     */
+    public function __construct()
+    {
+
+        $this->postService = new PostService();
+    }
     /**
      * Display single post page.
      * @param $category
@@ -20,9 +30,7 @@ class PostController extends Controller
      */
     public function show($category,$slug)
     {
-        $postService = new PostService();
-
-        $items = $postService::getAllAboutPost($category,$slug);
+        $items =  $this->postService::getAllAboutPost($category,$slug);
 
         return view('pages.post')->with(compact('items'));
     }
@@ -36,6 +44,7 @@ class PostController extends Controller
         $categoryService = new CategoryService();
 
         $categories = $categoryService::getAll();
+
         return view('pages.post_create')->with(compact('categories'));
     }
 
@@ -46,9 +55,7 @@ class PostController extends Controller
      */
     public function store(StorePost $request)
     {
-       $postService = new PostService();
-
-       $response = $postService::store(clean($request->title,'title'),$request->url,clean($request->category,'p'),clean($request['content']),$request->tags);
+       $response =  $this->postService::store(clean($request->title,'title'),$request->url,clean($request->category,'p'),clean($request['content']),$request->tags);
 
        return json_encode($response);
     }
@@ -60,9 +67,7 @@ class PostController extends Controller
      */
     public function upload(Request $request)
     {
-       $postService = new PostService();
-
-       $response = $postService::uploadImage('post/images',$request->file('file'));
+       $response =  $this->postService::uploadImage('post/images',$request->file('file'));
 
        return json_encode($response);
     }

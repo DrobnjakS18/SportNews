@@ -76,7 +76,7 @@ class PostService
             'title' => $title,
             'slug' => Str::slug($title,'-'),
             'content' => $content,
-            'short_test' => $shortText,
+            'short_text' => $shortText,
             'picture' => $file,
             'select' => '0',
             'user_id' => Auth::user()->id,
@@ -238,16 +238,10 @@ class PostService
 
             ($tags !== null) ? $tagArray = explode(',',$tags) : $tagArray = null;
 
-            if ($tagArray !== null) {
-
-                foreach ($tagArray as $tag) {
-                    $tagExists = TagService::getIfExists($tag);
-
-                    ($tagExists) ? $tagId = TagService::getByName($tag) : $tagId = TagService::store($tag);
-
-                    PostTagService::store($post->id,$tagId->id);
-                }
+            if ($tags !== null) {
+                TagService::storeObjectTags($post,$tags);
             }
+
             DB::commit();
         } catch (\Exception $exception) {
 

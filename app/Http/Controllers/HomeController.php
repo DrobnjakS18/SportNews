@@ -9,13 +9,16 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+
+    private $postService;
+
     /**
      * Create a new controller instance.
      */
     public function __construct()
     {
 
-//        $this->middleware('guest');
+        $this->postService = new PostService();
     }
 
     /**
@@ -23,9 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $postService = new PostService();
-
-        $items = $postService::getAllWithUsers();
+        $items = $this->postService::getAllWithUsers();
 
         return view('pages.home')->with(compact('items'));
     }
@@ -38,9 +39,7 @@ class HomeController extends Controller
      */
     public function category($name)
     {
-        $postService = new PostService();
-
-        $items = $postService::getByCategoryName($name);
+        $items = $this->postService::getByCategoryName($name);
 
         return view('pages.category')->with(compact('items', 'name'));
     }
@@ -66,7 +65,6 @@ class HomeController extends Controller
      */
     public function about()
     {
-
         return view('pages.about');
     }
 
@@ -77,9 +75,8 @@ class HomeController extends Controller
     {
 
         $search = $request->search;
-        $post = new PostService();
 
-        $items = $post::getPostBySearch($search);
+        $items = $this->postService::getPostBySearch($search);
 
 //        dd($items);
 

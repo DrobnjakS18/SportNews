@@ -32,7 +32,7 @@
                             <h2 class="post-title">
                                 {{$items->post->title}}
                             </h2>
-                            <img class="post-image img-fluid" src="{{asset('storage/images/'.$items->post->picture)}}" alt="{{$items->post->picture}}" alt="{{$items->post->title}}">
+                            <img class="post-image img-fluid" src="{{$items->post->picture}}" alt="{{$items->post->title}}">
                             {!! $items->post->content !!}
                         </div>
                         <div class="share-block  d-flex justify-content-between align-items-center border-top border-bottom mt-5">

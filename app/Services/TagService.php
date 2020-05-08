@@ -41,9 +41,17 @@ class TagService
 
         $posts = PostTagService::getByTagId($tag->id);
 
-//        dd($posts);
-
         return $posts;
+    }
+
+    public static function storeObjectTags($object, $tags)
+    {
+        $tagsArray = explode(',', $tags);
+
+        for ($i = 0; $i < count($tagsArray); $i++) {
+            $tag = TagRepository::create($tagsArray[$i]);
+            $object->tags()->attach($tag->id);
+        }
     }
 
 }
