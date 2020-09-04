@@ -37,6 +37,7 @@ class NewsLetterHTMLMail extends Mailable
      */
     public function build()
     {
-        return $this->subject(self::EMAIL_SUBJECT)->view('emails.post');
+
+        return $this->subject(self::EMAIL_SUBJECT)->view('emails.postTemplate');
     }
 }

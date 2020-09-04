@@ -13,7 +13,7 @@ class SubscriptionController extends Controller
     {
         $subscritionService = new SubscriptionService();
 
-        $response = $subscritionService::store(clean($request->email, 'title'));
+        $response = $subscritionService::subscribe(clean($request->email, 'title'));
 
         return redirect()->back()->with($response->type,$response->message);
     }

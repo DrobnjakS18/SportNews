@@ -57,13 +57,14 @@ Route::get('/comments/{slug}','CommentController@comments')->name('comments.all'
 Route::get('/comments/{slug}/{type}','CommentController@sort')->name('comments.sort')->where('type','newest|liked|disliked');
 Route::get('/tag/{tag}','TagController@show')->name('tag');
 
+Route::get('/contact', 'HomeController@contact')->name('contact');
+Route::post('/contact/email', 'HomeController@contactEmail')->name('contact.email');
 
 Route::get('/about', 'HomeController@about')->name('about');
-Route::get('/contact', 'HomeController@contact')->name('contact');
+
 Route::get('/author/{name}', 'HomeController@author')->name('author');
 
 Route::get('/search', 'HomeController@search')->name('search');
-
 
 
 

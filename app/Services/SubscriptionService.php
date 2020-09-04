@@ -8,7 +8,7 @@ use Newsletter;
 
 class SubscriptionService
 {
-    public static function store($email)
+    public static function subscribe($email)
     {
 //        SubscriptionRepository::create($email);
 
@@ -25,5 +25,11 @@ class SubscriptionService
                 'message' => 'You have already subscribed'
             ];
         }
+    }
+
+    public static function email($surname,$email,$subject,$message)
+    {
+
+
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\CategoryService;
 use App\Services\PostService;
+use App\Services\SubscriptionService;
 use App\Services\UserService;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,6 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-
         $this->postService = new PostService();
     }
 
@@ -29,6 +29,7 @@ class HomeController extends Controller
         $items = $this->postService::getAllWithUsers();
 
         return view('pages.home')->with(compact('items'));
+//        return view('emails.template');
     }
 
 
@@ -90,4 +91,16 @@ class HomeController extends Controller
     {
         return view('pages.contact');
     }
+
+    public function contactEmail(Request $request)
+    {
+        dd($request->all());
+
+        $mailService = new SubscriptionService();
+
+        $response = $mailService::email($request->surname,$request->email,$request->subject,$request->message);
+    }
+
+
+
 }

@@ -35,34 +35,21 @@
                     </div>
                 </div>
 
-                <form id="contact-form" class="my-5">
+                <form id="contact-form" class="my-5" >
                     <div class="row">
                         <div class="col-md-8">
                             <div class="form-group">
-                                <label for="exampleFormControlSelect1">Hello! Why are you contacting us today?</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>Please Select</option>
-                                    <option>I need technical support</option>
-                                    <option>I am finding issue in publishing article</option>
-                                    <option>I am intrested in publishing advertisment</option>
-                                    <option>I want to pitch a story</option>
-                                    <option>I want support in security issue</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Your name*:</label>
+                                <label for="name">Your Surname*:</label>
                                 <input class="form-control form-control-name" name="name" id="name" type="text" required >
                             </div>
 
                             <div class="form-group">
                                 <label for="email">Your Email Address*:</label>
-
                                 <input class="form-control form-control-email" name="email" id="email" type="email" required >
                             </div>
 
                             <div class="form-group">
                                 <label for="topic">Your Query Topic*:</label>
-
                                 <input class="form-control form-control-subject" name="subject" id="subject" required >
                             </div>
                             <div class="form-group">
@@ -70,26 +57,10 @@
                                 <textarea class="form-control form-control-message" name="message" id="message" rows="7" required ></textarea>
                             </div>
 
-                            <button class="btn btn-primary solid blank mt-3" type="submit">Send Message</button>
-                        </div>
-                        <div class="col-lg-4">
-                            <h4 class="text-black mb-4 mt-5 mt-lg-0">Hello! We’d like to make sure that your contact submission/feedback is directed to us. </h4>
-                            <p class="lead">Please read through the following carefully before submitting below:</p>
-
-                            <ul class="list-unstyled ">
-                                <li class="mb-3">1. We can only address issues related to themefisher.com. We are not affiliated with the sites we write about.</li>
-
-                                <li class="mb-3"> 2. If you would like to submit news, please see the “Submit News to Form” page that has more details. </li>
-
-                                <li class="mb-3">3. For more information on advertising, please see our  Advertising Information Page first.</li>
-
-                            </ul>
-
+                            <button id="contact-form-button" class=" btn btn-primary solid blank mt-3" type="submit">Send Message</button>
                         </div>
                     </div>
                 </form>
-
-
             </div>
         </div>
     </div>

@@ -1,5 +1,3 @@
-
-
 jQuery(function($) {
     'use strict';
     /* ----------------------------------------------------------- */
@@ -156,6 +154,56 @@ function startLoading() {
 function stopLoading() {
     $('.loading').hide();
 }
+
+
+
+
+$('#contact-form-button').on('click', function(e) {
+    e.preventDefault();
+
+    var contactSurname = $("#name").val();
+    var contactEmail = $('#email').val();
+    var contactsubject = $("#subject").val();
+    var contactMessage = $('#message').val();
+
+    $.ajax({
+        method: 'POST',
+        url: '/contact/email',
+        data: {
+            _token : $('meta[name="csrf-token"]').attr('content'),
+            surname : contactSurname,
+            email : contactEmail,
+            subject : contactsubject,
+            message : contactMessage
+        },
+        dataType: 'json',
+    })
+        .fail(function (jqxhr, textStatus, errorThrown) {
+            // let LikeStatus = jqxhr.status;
+            //
+            // switch (LikeStatus) {
+            //     case 401:
+            //         alert('You have to be logged in to perform that action!');
+            //         break;
+            //     default:
+            //         alert('An error occured!Please try again later');
+            //         break;
+            // }
+        })
+        .done(function (data) {
+
+            // //Delete href tag so it doesnt to the top of the page
+            // element.parent().find('.comment-like, .comment-dislike').removeAttr('href');
+            // //Adds opacity class
+            // element.off('click').parent().find('.comment-like, .comment-dislike').addClass('like-after-click');
+            // //Displays votes for that single comment
+            // element.parent().find('.likes-count').html(data.votesLike);
+            // element.parent().find('.dislikes-count').html(data.votesDislike);
+
+        });
+});
+
+
 
 //Get recaptcha and put in a new variable
 let siteKey;
@@ -931,4 +979,6 @@ $('#post-submit').on('click',function (e) {
     }
 
 });
+
+
 
