@@ -5,11 +5,13 @@ namespace App\Services;
 
 
 use App\Libraries\StorageManager;
+use App\Mail\NewPostEmail;
 use App\Repositories\CategoryRepository;
 use App\Repositories\PostRepository;
 use App\Repositories\UserRepository;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use phpDocumentor\Reflection\Types\Collection;
@@ -249,7 +251,11 @@ class PostService
             return set_ajax_reponse_object(self::STATUS_EROR, self::STATUS_CODE_ERROR, null, $exception->getMessage());
         }
 
-       return set_ajax_reponse_object(self::STATUS_SUCCESS, self::STATUS_CODE_OK, route('post',['category' => ucfirst($post->category->name), 'slug' => $post->slug]), null);
+        $postLink = route('post',['category' => ucfirst($post->category->name), 'slug' => $post->slug]);
+
+        Mail::to('drobnjak.stefan18@gmail.com')->send(new NewPostEmail($title, Auth::user()->name, $category, $postArray['picture'] ,  $postArray['short_text'], $postLink));
+
+       return set_ajax_reponse_object(self::STATUS_SUCCESS, self::STATUS_CODE_OK, $postLink, null);
     }
 
     /**

@@ -665,6 +665,10 @@ a[href^=tel] {
     .navbar-nav .nav-item .nav-link {
         display: block;
     }
+
+    .top-ad-banner a {
+        padding: .5rem 2rem;
+    }
 }
 
 @media (max-width: 991px) {
@@ -2589,6 +2593,12 @@ a.post-category.absolute {
 
 /* 10. CONTACT
 ================================================== */
+
+.section-padding .contact-success {
+    display: none;
+}
+
+
 .contact-info-box {
     margin-top: 20px;
 }

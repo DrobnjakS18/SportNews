@@ -74,7 +74,7 @@
             font-size: 16px;
             font-weight: bold;
             margin-top: 0;
-            text-align: center;
+            text-align: left;
         }
 
         h3 {
@@ -82,12 +82,12 @@
             font-size: 14px;
             font-weight: bold;
             margin-top: 0;
-            text-align: center;
+            text-align: left;
         }
 
         p {
             color: #3d4852;
-            font-size: 12px;
+            font-size: 16px;
             line-height: 1.5em;
             margin-top: 0;
             text-align: left;
@@ -322,7 +322,7 @@
 
         .thanks_congrats{
             font-family: Montserrat, sans-serif;
-            font-size: 12px;
+            font-size: 20px;
             font-weight: 500;
             font-stretch: normal;
             font-style: normal;
@@ -416,7 +416,7 @@
                 <tr>
                     <td align="center">
                         <a href="{{route('home')}}">
-                            <img src="{{asset('images/logos/logo.png')}}" width="169" alt="Sports News Logo">
+                            <img src="{{asset('images/logos/logo.png')}}" width="169" alt="SportNews Logo">
                         </a>
                     </td>
                 </tr>
@@ -424,103 +424,67 @@
                 {{--  Email Body --}}
                 <tr>
                     <td class="body" width="100%" cellpadding="0" cellspacing="0">
-                        <table class="inner-body" align="center" width="520" cellpadding="0" cellspacing="0" role="presentation">
+                        <table class="inner-body" align="center" width="420" cellpadding="0" cellspacing="0" role="presentation">
                             {{--                                 Body content--}}
                             <tbody>
                             <tr>
                                 <td class="content-cell" align="center">
                                     <hr>
-                                    <h4><font face="Montserrat, sans-serif">New Post By - {{ $autor ?? '' }}</font></h4>
+                                    <h4><font face="Montserrat, sans-serif">New Message from {{ $email ?? '' }}</font></h4>
+                                    <h4><font face="Montserrat, sans-serif">Username:{{ $surname ?? '' }}</font></h4>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="content-cell" align="center">
-                                    <h2><font face="Montserrat, sans-serif">Title: {{ $title ?? '' }}</font></h2>
-                                    <h3><font face="Montserrat, sans-serif">Category: {{ $category ?? '' }}</font></h3>
+{{--                                    <h1><font face="Montserrat, sans-serif">Subject: {{ $subject ?? '' }}</font></h1>--}}
                                 </td>
+                            </tr>
+
+{{--                            <tr>--}}
+{{--                                <td class="content-cell" align="center">--}}
+                                    {{--                                    <p class="thanks_congrats" align="center">User {{ $answer->user->first_name }} {{ $answer->user->last_name }} posted an answer to your question on Unlimited3D Community</p>--}}
+{{--                                    <img src="{{asset('images/news/news-04.jpg')}}" alt="News"/>--}}
+{{--                                </td>--}}
+{{--                            </tr>--}}
+                            {{--                            <tr>--}}
+                            {{--                                <td align="center">--}}
+                            {{--                                    <img src="https://cdn.unlimited3d.com/assets/icons/line-bluegring.png" height="2px" width="100%">--}}
+                            {{--                                </td>--}}
+                            {{--                            </tr>--}}
+                            <tr>
+                                <td class="content-cell" align="left"><p class="thanks_congrats" align="left">{{ $messageText ?? '' }}</p></td>
+                            </tr>
+                            <tr>
+                                {{--                                <td class="content-cell" align="center"><h2><font face="Montserrat, sans-serif">{{ $answer->question->title }}</font></h2></td>--}}
+                            </tr>
+                            <tr>
+                                {{--                                <td class="content-cell" align="center"><p>{!! $answer->question->content !!}</p></td>--}}
+                            </tr>
+                            {{--                            <tr>--}}
+                            {{--                                <td align="center">--}}
+                            {{--                                    <img src="https://cdn.unlimited3d.com/assets/icons/line-bluegring.png" height="2px" width="100%">--}}
+                            {{--                                </td>--}}
+                            {{--                            </tr>--}}
+                            <tr>
+                                {{--                                <td class="content-cell" align="center"><p class="thanks_congrats" align="center">{{ $answer->user->first_name }}'s answer:</p></td>--}}
+                            </tr>
+                            <tr>
+                                {{--                                <td class="content-cell" align="center"><p>{!! $answer->content !!}</p></td>--}}
+                            </tr>
+                            <tr>
+                                {{--                                <td class="content-cell" align="center"><a href="{{ route('questions.show', compose_slug($answer->question->slug,  $answer->question->id)) }}" class="btn-mail">Check it out on Unlimited3D - Community</a></td>--}}
                             </tr>
 
                             <tr>
                                 <td class="content-cell" align="center">
-{{--                                    <p class="thanks_congrats" align="center">User {{ $answer->user->first_name }} {{ $answer->user->last_name }} posted an answer to your question on Unlimited3D Community</p>--}}
-                                    <img src="{{$picture ?? '' }}" alt="News"/>
+                                    <hr>
+                                    <p class="brunlimited" align="center">Best regards,<br>SportNews team</p>
                                 </td>
                             </tr>
-{{--                            <tr>--}}
-{{--                                <td align="center">--}}
-{{--                                    <img src="https://cdn.unlimited3d.com/assets/icons/line-bluegring.png" height="2px" width="100%">--}}
-{{--                                </td>--}}
-{{--                            </tr>--}}
-                            <tr>
-                                <td class="content-cell" align="left">
-                                    <p class="thanks_congrats" align="left">{{ $shortText ?? '' }}</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="content-cell" align="center">
-                                    <p class="thanks_congrats" align="left">Link:{{ $link ?? '' }}</p>
-                                </td>
-                            </tr>
-                            <tr>
-{{--                                <td class="content-cell" align="center"><p>{!! $answer->question->content !!}</p></td>--}}
-                            </tr>
-{{--                            <tr>--}}
-{{--                                <td align="center">--}}
-{{--                                    <img src="https://cdn.unlimited3d.com/assets/icons/line-bluegring.png" height="2px" width="100%">--}}
-{{--                                </td>--}}
-{{--                            </tr>--}}
-                            <tr>
-{{--                                <td class="content-cell" align="center"><p class="thanks_congrats" align="center">{{ $answer->user->first_name }}'s answer:</p></td>--}}
-                            </tr>
-                            <tr>
-{{--                                <td class="content-cell" align="center"><p>{!! $answer->content !!}</p></td>--}}
-                            </tr>
-
                             </tbody>
                         </table>
                     </td>
                 </tr>
-{{--                <tr>--}}
-{{--                    <td align="center">--}}
-{{--                        <img src="https://cdn.unlimited3d.com/assets/icons/line-bluegring.png" height="2px" width="100%">--}}
-{{--                    </td>--}}
-{{--                </tr>--}}
-{{--                <tr>--}}
-{{--                    <td class="footer-links" width="100%" cellpadding="0" cellspacing="0" style="padding: 20px 0;">--}}
-{{--                        <table align="left" width="100%" cellpadding="0" cellspacing="0" role="presentation">--}}
-{{--                            --}}{{--                               Footer links content --}}
-{{--                            <tbody>--}}
-{{--                            <tr>--}}
-{{--                                <td align="left" width="70%">--}}
-{{--                                    <a href="https://unlimited3d.com/">--}}
-{{--                                        <img src="{{asset('images/logos/logo.png')}}" alt="Unlimited3D" width="169">--}}
-{{--                                    </a>--}}
-{{--                                </td>--}}
-{{--                                <td align="right" width="7.5%">--}}
-{{--                                    <a href="https://www.facebook.com/threedium/">--}}
-{{--                                        <img src="https://cdn.unlimited3d.com/assets/icons/facebook-blue.png" width="30" height="30">--}}
-{{--                                    </a>--}}
-{{--                                </td>--}}
-{{--                                <td align="right" width="7.5%">--}}
-{{--                                    <a href="https://www.instagram.com/threedium3d/">--}}
-{{--                                        <img src="https://cdn.unlimited3d.com/assets/icons/instagram-blue.png" width="30" height="30">--}}
-{{--                                    </a>--}}
-{{--                                </td>--}}
-{{--                                <td align="right" width="7.5%">--}}
-{{--                                    <a href="https://twitter.com/Threedium">--}}
-{{--                                        <img src="https://cdn.unlimited3d.com/assets/icons/twitter-blue.png" width="30" height="30">--}}
-{{--                                    </a>--}}
-{{--                                </td>--}}
-{{--                                <td align="right" width="7.5%">--}}
-{{--                                    <a href="https://www.linkedin.com/company/threedium">--}}
-{{--                                        <img src="https://cdn.unlimited3d.com/assets/icons/linkedin-blue.png" width="30" height="30">--}}
-{{--                                    </a>--}}
-{{--                                </td>--}}
-{{--                            </tr>--}}
-{{--                            </tbody>--}}
-{{--                        </table>--}}
-{{--                    </td>--}}
-{{--                </tr>--}}
             </table>
         </td>
     </tr>

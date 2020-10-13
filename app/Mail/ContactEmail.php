@@ -33,8 +33,8 @@ class ContactEmail extends Mailable
     {
         return $this->from($this->email)
             ->replyTo($this->email,$this->surname)
-            ->view('emails.postTemplate')
-            ->subject('New message:'. $this->subject())
+            ->view('emails.contactEmailTemplate')
+            ->subject($this->subject)
             ->with([
                 'surname' => $this->surname,
                 'email' => $this->email,

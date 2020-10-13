@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ValidateContact;
 use App\Services\CategoryService;
 use App\Services\PostService;
 use App\Services\SubscriptionService;
@@ -90,15 +91,17 @@ class HomeController extends Controller
     public function contact()
     {
         return view('pages.contact');
+//        return view('emails.postTemplate');
     }
 
-    public function contactEmail(Request $request)
+    public function contactEmail(ValidateContact $request)
     {
-        dd($request->all());
 
         $mailService = new SubscriptionService();
 
         $response = $mailService::email($request->surname,$request->email,$request->subject,$request->message);
+
+        return json_encode($response);
     }
 
 

@@ -3,7 +3,10 @@
 
 namespace App\Services;
 
+
+use App\Mail\ContactEmail;
 use App\Repositories\SubscriptionRepository;
+use Illuminate\Support\Facades\Mail;
 use Newsletter;
 
 class SubscriptionService
@@ -30,6 +33,10 @@ class SubscriptionService
     public static function email($surname,$email,$subject,$message)
     {
 
+        Mail::to('drobnjak.stefan18@gmail.com')->send(new ContactEmail($surname, $email, $subject, $message));
 
+        return (object) [
+            'type' => 'success',
+        ];
     }
 }

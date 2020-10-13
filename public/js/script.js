@@ -146,7 +146,7 @@ jQuery(function($) {
 
 });
 
-
+//LOADING CIRCLE
 function startLoading() {
     $('.loading').show();
 }
@@ -160,6 +160,7 @@ function stopLoading() {
 
 $('#contact-form-button').on('click', function(e) {
     e.preventDefault();
+    startLoading();
 
     var contactSurname = $("#name").val();
     var contactEmail = $('#email').val();
@@ -179,26 +180,25 @@ $('#contact-form-button').on('click', function(e) {
         dataType: 'json',
     })
         .fail(function (jqxhr, textStatus, errorThrown) {
-            // let LikeStatus = jqxhr.status;
-            //
-            // switch (LikeStatus) {
-            //     case 401:
-            //         alert('You have to be logged in to perform that action!');
-            //         break;
-            //     default:
-            //         alert('An error occured!Please try again later');
-            //         break;
-            // }
+            stopLoading();
+            var response = JSON.parse(jqxhr.responseText);
+            var statusCode = jqxhr.status;
+
+            //On every submit the span tags disappear and appear again
+            $('.error-custom').hide();
+
+            if (statusCode == 422) {
+                $.each(response.errors, function(key, value) {
+                    $('.error-' + key).html(value).show();
+                });
+            } else {
+                alert("Application isn't currently working.Please come back later.");
+            }
         })
         .done(function (data) {
-
-            // //Delete href tag so it doesnt to the top of the page
-            // element.parent().find('.comment-like, .comment-dislike').removeAttr('href');
-            // //Adds opacity class
-            // element.off('click').parent().find('.comment-like, .comment-dislike').addClass('like-after-click');
-            // //Displays votes for that single comment
-            // element.parent().find('.likes-count').html(data.votesLike);
-            // element.parent().find('.dislikes-count').html(data.votesDislike);
+            $('#contact-form').hide();
+            $('.contact-success').show();
+            stopLoading();
 
         });
 });

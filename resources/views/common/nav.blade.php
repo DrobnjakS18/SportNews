@@ -76,7 +76,7 @@
                             @csrf
                         </form>
                     @else
-                        <a class="nav-link login-b  utton mr-5 mr-lg-4" href="{{ route('login') }}">Log in</a>
+                        <a class="nav-link login-button mr-5 mr-lg-4" href="{{ route('login') }}">Log in</a>
                         @if (Route::has('register'))
                             <a class="nav-link register-button" href="{{route('register')}}">Sign up</a>
                         @endif
