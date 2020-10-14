@@ -22,15 +22,15 @@ class LikeService
     {
         $vote = LikeRepository::create(Auth::user()->id,$postId,$commentId,$action);
 
-            $likeCount = $vote->whereVoteAndComment_id('like',$commentId)->count();
-            $dislikeCount = $vote->whereVoteAndComment_id('dislike',$commentId)->count();
+        $likeCount = $vote->whereVoteAndComment_id('like',$commentId)->count();
+        $dislikeCount = $vote->whereVoteAndComment_id('dislike',$commentId)->count();
 
-            CommentService::updateCommentVotes($commentId,$likeCount,$dislikeCount);
+        CommentService::updateCommentVotes($commentId,$likeCount,$dislikeCount);
 
-            return (object) [
-                'votesLike' => $likeCount,
-                'votesDislike' => $dislikeCount,
-            ];
+        return (object) [
+            'votesLike' => $likeCount,
+            'votesDislike' => $dislikeCount,
+        ];
     }
 
 

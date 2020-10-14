@@ -172,10 +172,16 @@ class PostService
      */
     public static function getAllAboutPost($category,$slug)
     {
+
         $categoryLowerCase = lcfirst($category);
         $category_id = CategoryService::getByName($categoryLowerCase);
         $data['post'] = self::getBySlugWithCategories($category_id, $slug);
-        self::incrementViews($data['post']);
+
+        //Samo neautorizovani korisnici i autori drugih clanaka mogu da povecaju count view
+        if(Auth::user() == null || !Auth::user()->posts->contains('id',$data['post']->id)) {
+            self::incrementViews($data['post']);
+        }
+
         $data['previous'] = self::getPreviousPost($data['post']->id);
         $data['next'] = self::getNextPost($data['post']->id);
         $data['posts'] = self::getAll();

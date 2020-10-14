@@ -58,6 +58,8 @@
 
 9. TAG PAGE STYLE
 
+9a. ABOUT
+
 10. CONTACT
 
 11. FOOTER
@@ -2590,6 +2592,17 @@ a.post-category.absolute {
     display: none;
 }
 
+
+ /* 9. 9a. ABOUT
+ ================================================== */
+
+.about-links li a{
+    color: #000000;
+}
+
+.about-links li a:hover {
+    color: #c93e4b;
+}
 
 /* 10. CONTACT
 ================================================== */
