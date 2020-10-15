@@ -2604,6 +2604,10 @@ a.post-category.absolute {
     color: #c93e4b;
 }
 
+.about-links a i {
+    font-size: 20px;
+}
+
 /* 10. CONTACT
 ================================================== */
 

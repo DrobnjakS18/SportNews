@@ -29,7 +29,7 @@
             </div>
             <div class="row d-flex flex-column text-center mt-3">
                 <div class="col-12">
-                    <h4>Stefan Drobnjak</h4>
+                    <h3>Stefan Drobnjak</h3>
 
                 </div>
                 <div class="col-12">
