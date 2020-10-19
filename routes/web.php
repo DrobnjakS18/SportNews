@@ -50,7 +50,6 @@ Route::post('/newsletter','SubscriptionController@store')->name('subscription.st
 
 //Route::get('/html-email','NewsletterController@htmlEmail')->name('newsletter.html');
 
-
 Route::post('/user-image/upload','ProfileController@uploadImage')->name('user.image');
 Route::post('/user/update','ProfileController@update')->name('user.update');
 Route::get('/comments/{slug}','CommentController@comments')->name('comments.all');
@@ -65,6 +64,14 @@ Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/author/{name}', 'HomeController@author')->name('author');
 
 Route::get('/search', 'HomeController@search')->name('search');
+
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('/', 'AdminController@showLogin')->name('admin');
+    Route::post('/login', 'AdminController@login')->name('admin.login');
+    Route::get('/logout', 'AdminController@logout')->name('admin.logout');
+
+    Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+});
 
 
 

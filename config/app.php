@@ -226,4 +226,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
     ],
 
+    'CAPTCHA_KEY' => env('CAPTCHA_KEY'),
+    'CAPTCHA_SECRET' => env('CAPTCHA_SECRET'),
+
 ];
