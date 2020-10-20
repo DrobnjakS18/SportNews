@@ -426,6 +426,7 @@ $(document).ready(function() {
             })
             .done(function(data) {
                 if (data.status === 'success' && data.code === 200) {
+                    alert('success');
                     window.location = data.url;
                 } else {
                     $('.alert').html(data.message);

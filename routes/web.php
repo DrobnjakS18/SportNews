@@ -70,7 +70,16 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('/login', 'AdminController@login')->name('admin.login');
     Route::get('/logout', 'AdminController@logout')->name('admin.logout');
 
-    Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+    Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard')->middleware('auth.custom');;
+
+    Route::get('/admins', 'AdminController@users')->name('admin.admins')->middleware('auth.custom');
+    Route::get('/admins/add', 'AdminController@create')->name('admin.admins.create')->middleware('auth.custom');
+    Route::post('/admins/add', 'AdminController@store')->name('admin.admins.store')->middleware('auth.custom');
+    Route::get('/admins/edit/{id}', 'AdminController@edit')->name('admin.admins.edit')->middleware('auth.custom');
+    Route::post('/admins/update/{id}', 'AdminController@update')->name('admin.admins.update')->middleware('auth.custom');
+    Route::get('/admins/delete/{id}', 'AdminController@destroy')->name('admin.admins.delete')->middleware('auth.custom');
+
+
 });
 
 
