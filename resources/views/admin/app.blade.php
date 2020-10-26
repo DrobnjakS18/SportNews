@@ -4,6 +4,7 @@
 @include('admin.common.head')
 
 <body class="nav-md">
+<div class="loading" delay-hide="50000"></div>
 <div class="container body">
     <div class="main_container">
         @include('admin.partials.sidebar')

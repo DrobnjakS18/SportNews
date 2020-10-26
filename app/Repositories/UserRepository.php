@@ -62,6 +62,45 @@ class UserRepository extends BaseRepository
         return User::where('role_id',$id)->get();
     }
 
+
+    public static function create($data)
+    {
+        $user = new User();
+
+        if (isset($data['username'])) {
+            $user->name = $data['username'];
+        }
+
+        if (isset($data['slug'])) {
+            $user->slug = $data['slug'];
+        }
+
+        if (isset($data['url'])) {
+            $user->profile_picture = $data['url'];
+        }
+
+        if (isset($data['email'])) {
+            $user->email = $data['email'];
+        }
+
+        if (isset($data['email_verified_at'])) {
+            $user->email_verified_at = $data['email_verified_at'];
+        }
+
+        if (isset($data['password'])) {
+            $user->password = Hash::make($data['password']);
+        }
+
+        if (isset($data['role'])) {
+            $user->role_id = $data['role'];
+        }
+
+        $user->save();
+
+        return $user;
+    }
+
+
     /**
      * Update user account image
      * @param $id
@@ -142,4 +181,9 @@ class UserRepository extends BaseRepository
         return $user;
     }
 
+
+    public static function delete($id)
+    {
+        return User::destroy($id);
+    }
 }

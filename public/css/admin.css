@@ -228,7 +228,7 @@ a.action:first-child{
 	padding: 6px 12px;
 }
 .demo-image-button,
-.blog-image-button {
+.user-image-button {
     cursor: pointer;
     display: inline-block;
     width: 150px;

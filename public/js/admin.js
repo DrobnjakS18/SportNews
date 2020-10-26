@@ -37,7 +37,7 @@ $(document).ready(function() {
         $(this).data('clicked', true);
     });
 
-    $('.blog-image-button').click(function () {
+    $('.user-image-button').click(function () {
         selectLocalImage('large');
     });
 
@@ -65,10 +65,11 @@ $(document).ready(function() {
 
         let url = "/admin/images/upload";
 
-        if($(".demo-image-button").data('clicked'))
-        {
-           url = "/admin/images/upload/demo";
-        }
+        // if($(".demo-image-button").data('clicked'))
+        // {
+        //    url = "/admin/images/upload/demo";
+        // }
+
         fd.append('file', file);
 
         $.ajax({
@@ -104,13 +105,73 @@ $(document).ready(function() {
                         $('.demo-image-url').val(response.url);
                         $('.demo-image-src').attr('src', response.url);
 
-                        $('.headline-image-url').val(response.url);
+                        $('.profile-image-url').val(response.url);
                     } else {
                         insertToEditor(response.url, response.type);
                     }
                 }
             });
     }
+
+
+
+    // Add User
+
+    $('#submit-admin-user-form').on('submit', function(e) {
+        e.preventDefault();
+
+        startLoading();
+        var username = $('input#username').val();
+        var profileImageUrl = $('.profile-image-url').val();
+        var email = $('input#email').val();
+        var password = $('input#password').val();
+        var role = $('select#user-role').val();
+
+        $.ajax({
+            method: "POST",
+            url: "/admin/users",
+            data: {
+                _token: $('meta[name="csrf-token"]').attr('content'),
+                username : username,
+                url : profileImageUrl,
+                email: email,
+                password : password,
+                role: role
+            },
+            dataType: 'json'
+        })
+            .fail(function(jqxhr, textStatus, errorThrown) {
+                stopLoading();
+
+                var response = JSON.parse(jqxhr.responseText);
+                var statusCode = jqxhr.status;
+
+                $('.error-custom').hide();
+
+                switch (statusCode) {
+                    case 403:
+                        // user is not logged in
+                        alert(response.message);
+                        break;
+                    case 422:
+                        // input fields validation failed
+                        $.each(response.errors, function(key, value) {
+                            $('.error-' + key).html(value).show();
+                        });
+                        break;
+                    default:
+                        alert('An error occured! Please try againg later.');
+                        break;
+                }
+
+            })
+            .done(function(data) {
+                stopLoading();
+                window.location = data.url;
+            });
+    });
+
+
 
 
 
@@ -206,6 +267,8 @@ $(document).ready(function() {
 
         var blogCheckboxes = document.getElementsByName('categories[]');
         var myEditor = document.querySelector('#editor');
+
+
 
         // Submit Story form
 
@@ -799,6 +862,13 @@ $(document).ready(function() {
         });
     });
 });
+
+
+
+
+
+
+
 
 function generateItem(elementName) {
     var item = document.createElement('div');

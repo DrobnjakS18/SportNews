@@ -13,7 +13,27 @@ use Exception;
 
 class UserService
 {
+    const STATUS_FAILED = 'failed';
+    const STATUS_SUCCESS = 'success';
 
+    const LOGIN_FAILED_MESSAGE = 'Invalid credentials!';
+
+    const STATUS_CODE_OK = 200;
+    const STATUS_CODE_FAILED = 403;
+
+
+    static public function setData($username, $url, $email, $password, $role_id)
+    {
+        return [
+            'username' => $username,
+            'slug' => Str::slug($username,'-'),
+            'url' => $url,
+            'email' => $email,
+            'password' => $password,
+            'role' => intval($role_id),
+            'email_verified_at' => date("Y-m-d H:m:i",time())
+        ];
+    }
 
     /**
      * Get all users
@@ -80,6 +100,26 @@ class UserService
 
         return (object)$data;
     }
+
+
+    /**
+     * Store new user
+     * @param $username
+     * @param $url
+     * @param $email
+     * @param $password
+     * @param $role
+     * @return object
+     */
+    public static function store($username, $url, $email, $password, $role)
+    {
+        $data = self::setData($username, $url, $email, $password, $role);
+
+        UserRepository::create($data);
+
+        return set_ajax_reponse_object(self::STATUS_SUCCESS, self::STATUS_CODE_OK, route('users.users'), null);
+    }
+
 
     /**
      * Upload image local
@@ -168,6 +208,11 @@ class UserService
         } else {
             throw new ModelNotFoundException('Wrong password');
         }
+    }
+
+    public static function destroy($id)
+    {
+        return UserRepository::delete($id);
     }
 
 }

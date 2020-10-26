@@ -57,7 +57,6 @@ class HomeController extends Controller
 
         $items = $userService::getByNamePostsPaginate($name);
 
-//        dd($items);
 
         return view('pages.author')->with(compact('items'));
     }

@@ -1,7 +1,7 @@
 @extends('admin.app')
 @section('title', 'Add Administrator - Unlimited3D')
 @section('description', 'Add Administrator - Unlimited3D')
-@section('og-image', asset('assets/website/images/logo.png'))
+@section('og-image', asset('images/logo.png'))
 
 @section('content')
 

@@ -32,8 +32,14 @@
                   </li>
                   <li><a><i class="fa fa-users"></i> Admins <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
-                        <li><a href="{{ route('admin.admins.create') }}">Add</a></li>
-                        <li><a href="{{ route('admin.admins') }}">All</a></li>
+                          <li><a href="{{ route('admin.admins.create') }}">Add</a></li>
+                          <li><a href="{{ route('admin.admins') }}">All</a></li>
+                      </ul>
+                  </li>
+                  <li><a><i class="fa fa-users"></i> Users <span class="fa fa-chevron-down"></span></a>
+                      <ul class="nav child_menu">
+                          <li><a href="{{ route('users.create') }}">Add</a></li>
+                          <li><a href="{{ route('users.users') }}">All</a></li>
                       </ul>
                   </li>
 {{--                   <li><a><i class="fa fa-user" aria-hidden="true"></i> Users <span class="fa fa-chevron-down"></span></a>--}}
