@@ -21,6 +21,49 @@ class CommentController extends Controller
     }
 
     /**
+     *  Display only comments in admin panel
+     */
+    public function commentsIndex()
+    {
+        $items = $this->commentService::getOnlyComments();
+
+        return view('admin.pages.comments')->with(compact('items'));
+    }
+
+    /**
+     *  Display all unverified comments
+     */
+    public function unverified()
+    {
+        $items = $this->commentService::getByStatus('unverified');
+
+        return view('admin.pages.comments')->with(compact('items'));
+    }
+
+    /**
+     *  Display all verified comments
+     */
+    public function verified()
+    {
+        $items = $this->commentService::getByStatus('verified');
+
+        return view('admin.pages.comments')->with(compact('items'));
+    }
+
+    /**
+     *  Verify comment
+     * @param Request $request
+     * @return false|string
+     */
+    public function verify(Request $request)
+    {
+        $response = $this->commentService::verify($request->id, $request->status);
+
+        return json_encode($response);
+    }
+
+
+    /**
      * Store post comment
      * @param StoreComment $request
      * @return false|string
@@ -82,5 +125,21 @@ class CommentController extends Controller
 
         return view('pages.all_comments')->with(compact('items'));
     }
+
+
+    /**
+     * Remove specified comment.
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $this->commentService::delete($id);
+
+        return redirect()->route('admin.comment.index');
+    }
+
 
 }

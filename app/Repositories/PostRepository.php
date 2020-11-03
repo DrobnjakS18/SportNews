@@ -8,6 +8,10 @@ use App\Models\Post;
 
 class PostRepository extends BaseRepository
 {
+
+    const STATUS_VERIFIED = 'verified';
+    const STATUS_UNVERIFIED = 'unverified';
+
     public function __construct()
     {
         $this->className = 'App\Models\Post';
@@ -21,8 +25,13 @@ class PostRepository extends BaseRepository
         return Post::withCount(['user','category'])->get();
     }
 
+    public static function findByStatus($status)
+    {
+        return Post::where('status',$status)->get();
+    }
+
     /**
-     * Single post by Id
+     * Find post by Id
      */
     public static function findById($id)
     {
@@ -143,6 +152,17 @@ class PostRepository extends BaseRepository
 
     }
 
+    static public function verify($id, $status)
+    {
+        $post = Post::findOrFail($id);
+
+        $post->status = ($status != self::STATUS_VERIFIED) ? self::STATUS_VERIFIED : self::STATUS_UNVERIFIED;
+
+        $post->save();
+
+        return $post;
+    }
+
     /**
      * Insert new image name into database
      */
@@ -158,6 +178,15 @@ class PostRepository extends BaseRepository
 
         return $post;
 
+    }
+
+    static public function delete($id)
+    {
+        $post = self::findById($id);
+
+        $post->tags()->detach();
+
+        return $post->delete();
     }
 
 

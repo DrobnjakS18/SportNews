@@ -8,11 +8,44 @@ use App\Models\Comment;
 
 class CommentRepository extends BaseRepository
 {
+    const STATUS_VERIFIED = 'verified';
+    const STATUS_UNVERIFIED = 'unverified';
+
+
     public function __construct()
     {
         $this->className = 'App\Models\Comment';
     }
 
+    /**
+     * Find comment by Id
+     */
+    public static function findById($id)
+    {
+        return Comment::find($id);
+    }
+
+    public static function onlyComments()
+    {
+        return Comment::where('comment_id',null)->get();
+    }
+
+
+    public static function findByStatus($status)
+    {
+        return Comment::where('status',$status)->get();
+    }
+
+    static public function verify($id, $status)
+    {
+        $comment = Comment::findOrFail($id);
+
+        $comment->status = ($status != self::STATUS_VERIFIED) ? self::STATUS_VERIFIED : self::STATUS_UNVERIFIED;
+
+        $comment->save();
+
+        return $comment;
+    }
     /**
      * Find all comments by post pagenate per page 10
      * @param $id
@@ -85,6 +118,14 @@ class CommentRepository extends BaseRepository
         $comment->save();
 
         return  $comment;
+    }
+
+
+    static public function delete($id)
+    {
+        $comment = self::findById($id);
+
+        return $comment->delete();
     }
 
 }

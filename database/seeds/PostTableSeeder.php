@@ -31,6 +31,7 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'Sports are cruel. There, we said it. They play with our emotions, mess with our hearts, fill us with...',
                 'picture' => 'i_1581585212.jpg',
                 'select' => "1",
+                'status' => "unverified",
                 'user_id' => 1,
                 'category_id' => 1
             ],
@@ -57,6 +58,7 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'On Thursday, two of the most prolific goal scorers of their generation will meet for the ninth ti...',
                 'picture' => 'ronaldo_ibra_1581588318.jpg',
                 'select' => "0",
+                'status' => "unverified",
                 'user_id' => 2,
                 'category_id' => 1
             ],
@@ -77,6 +79,7 @@ class PostTableSeeder extends Seeder
                 'short_text' => '"I am really happy to be back on the pitch," Blind told Fox Sports Netherlands. "I was so eager t...',
                 'picture' => 'ajax_1581588851.jpg',
                 'select' => "0",
+                'status' => "unverified",
                 'user_id' => 3,
                 'category_id' => 1
             ],
@@ -99,6 +102,7 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'To compile the 2019 edition of ESPN FC 100, more than 40 ESPN FC experts from around the world...',
                 'picture' => 'world_1581589191.jpg',
                 'select' => "0",
+                'status' => "unverified",
                 'user_id' => 1,
                 'category_id' => 1
             ],
@@ -125,6 +129,7 @@ class PostTableSeeder extends Seeder
                 'short_text' => '"Not in my wildest dreams could I have imagined being coach of Barcelona," Quique Setien said aft...',
                 'picture' => 'barselona_1581589486.jpg',
                 'select' => "0",
+                'status' => "unverified",
                 'user_id' => 2,
                 'category_id' => 1
             ],
@@ -156,6 +161,7 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'It was one of the young Dallas franchise cornerstones\' best performances as a duo, as Doncic and...',
                 'picture' => 'doncic_1581589947.jpg',
                 'select' => "1",
+                'status' => "unverified",
                 'user_id' => 3,
                 'category_id' => 2
             ],
@@ -182,6 +188,7 @@ class PostTableSeeder extends Seeder
                 'short_text' => '"He\'s a guy who takes a lot of contact," Saunders said. "He\'s a guy who attacks the rim with forc...',
                 'picture' => 'towns_1581682412.jpg',
                 'select' => "0",
+                'status' => "unverified",
                 'user_id' => 1,
                 'category_id' => 2
             ],
@@ -248,6 +255,7 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'NBA All-Star Weekend is Feb. 14-16 in Chicago, and this is the third consecutive year in which ca...',
                 'picture' => 'NBA-All-Star-2020_1581682602.jpg',
                 'select' => "0",
+                'status' => "unverified",
                 'user_id' => 1,
                 'category_id' => 2
             ],
@@ -266,6 +274,7 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'Cleveland hired associate head coach J.B. Bickerstaff with the expectation that he would eventual...',
                 'picture' => 'cleveland_1581945330.jpg',
                 'select' => "0",
+                'status' => "unverified",
                 'user_id' => 2,
                 'category_id' => 2
             ],
@@ -280,6 +289,7 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'New changes to the format of a game constantly wrought with questionable defense and effort would...',
                 'picture' => 'lebron_1581945606.jpg',
                 'select' => "0",
+                'status' => "unverified",
                 'user_id' => 3,
                 'category_id' => 2
             ],
@@ -306,6 +316,7 @@ class PostTableSeeder extends Seeder
                 'short_text' => '"It\'s really such a unique experience," Mattek-Sands told reporters at the team\'s post-event news...',
                 'picture' => 'tenis_1581592368.jpg',
                 'select' => "1",
+                'status' => "unverified",
                 'user_id' => 1,
                 'category_id' => 3
             ],
@@ -326,6 +337,7 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'Truth be told, the kids didn\'t seem to know who the two sporting greats were, but the Simon Says...',
                 'picture' => 'feder_nadal_1581592577.jpg',
                 'select' => "0",
+                'status' => "unverified",
                 'user_id' => 2,
                 'category_id' => 3
             ],
@@ -361,6 +373,7 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'World number five Medvedev, long-touted as one of the most likely of the new generation of player...',
                 'picture' => 'medvedev_1581592762.jpg',
                 'select' => "0",
+                'status' => "unverified",
                 'user_id' => 2,
                 'category_id' => 3
             ],
@@ -379,6 +392,7 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'With bushfires ravaging Australia, a tennis tournament was the last thing on everyone\'s mind. How...',
                 'picture' => 'donation_1581945916.jpg',
                 'select' => "0",
+                'status' => "unverified",
                 'user_id' => 2,
                 'category_id' => 3
             ],
@@ -397,6 +411,7 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'The 42-year drought between homegrown Australian Open singles champions might still remain, but l...',
                 'picture' => 'nick_1581946053.jpg',
                 'select' => "0",
+                'status' => "unverified",
                 'user_id' => 3,
                 'category_id' => 3
             ],
@@ -437,6 +452,7 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'We\'re over halfway through the BLAST Premier Spring Series, and, after an incredibly eventful ope...',
                 'picture' => 'csgo-new_1581682725.jpg',
                 'select' => "0",
+                'status' => "unverified",
                 'user_id' => 1,
                 'category_id' =>4
             ],
@@ -459,6 +475,7 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'NEW YORK -- The basement of the Hammerstein Ballroom shook. A loud cry echoed from above followed...',
                 'picture' => 'overwatch_1581593171.jpg',
                 'select' => "1",
+                'status' => "unverified",
                 'user_id' => 2,
                 'category_id' => 4
             ],
@@ -475,6 +492,7 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'The Chicago Huntsmen took the crown this past weekend as the champions of the Call of Duty League...',
                 'picture' => 'cod_1581593541.jpg',
                 'select' => "0",
+                'status' => "unverified",
                 'user_id' => 3,
                 'category_id' => 4
             ],
@@ -495,6 +513,7 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'NEW YORK -- As Carlos Rodríguez Santiago walks down the busy streets of Manhattan, he takes in a...',
                 'picture' => 'ocelote_1581946218.jpg',
                 'select' => "0",
+                'status' => "unverified",
                 'user_id' => 4,
                 'category_id' => 4
             ],
@@ -511,6 +530,7 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'The third season of the Overwatch League kicked off this past...',
                 'picture' => 'overwatch_1581946566.jpg',
                 'select' => "0",
+                'status' => "unverified",
                 'user_id' => 4,
                 'category_id' => 4
             ]

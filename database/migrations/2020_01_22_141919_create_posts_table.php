@@ -21,6 +21,7 @@ class CreatePostsTable extends Migration
             $table->text('short_text');
             $table->string('picture');
             $table->enum('select', ["1","0"]);
+            $table->enum('status', ['verified', 'unverified']);
             $table->bigInteger('views')->default(0);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();

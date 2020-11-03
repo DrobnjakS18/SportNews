@@ -423,3 +423,22 @@ a.action:first-child{
     bottom: auto;
     left: auto;
 }
+
+
+/*ARTICLES*/
+
+.article-preview-link {
+    color: #0b97c4;
+}
+
+.offset-2 {
+    margin-left: 8.333333%;
+}
+
+.offset-1 {
+    margin-left: 4%;
+}
+
+.preview-content p {
+    font-size: 18px;
+}

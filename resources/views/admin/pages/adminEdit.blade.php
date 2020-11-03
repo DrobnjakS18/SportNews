@@ -1,6 +1,6 @@
 @extends('admin.app')
-@section('title', 'Edit Administrator - Unlimited3D')
-@section('description', 'Edit Administrator - Unlimited3D')
+@section('title', 'Edit Administrator - SportsNews')
+@section('description', 'Edit Administrator - SportsNews')
 @section('og-image', asset('assets/website/images/logo.png'))
 
 @section('content')
@@ -54,7 +54,7 @@
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="password" name="password" id="password" class="form-control col-md-7 col-xs-12">
                                     <span class="error-custom error-custom-input error-password"></span>
-                                </div>                                
+                                </div>
                             </div>
                             <div class="ln_solid"></div>
                             <div class="form-group">

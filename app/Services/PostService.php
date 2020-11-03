@@ -33,6 +33,18 @@ class PostService
        return PostRepository::all();
     }
 
+    public static function getByStatus($status)
+    {
+        return PostRepository::findByStatus($status);
+    }
+
+    static public function verify($id, $status)
+    {
+        $post = PostRepository::verify($id, $status);
+
+        return set_ajax_reponse_object($post->status, self::STATUS_CODE_OK, null, 'Post ' . $post->status . '!');
+    }
+
     /**
      * Gets all posts with users
      * @return object
@@ -288,6 +300,11 @@ class PostService
         return  (object) [
             'url' => $url
         ];
+    }
+
+    static public function delete($id)
+    {
+        return PostRepository::delete($id);
     }
 
 }

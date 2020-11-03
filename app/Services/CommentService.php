@@ -8,6 +8,29 @@ use App\Repositories\CommentRepository;
 
 class CommentService
 {
+    const STATUS_SUCCESS = 'success';
+    const STATUS_CODE_OK = 200;
+
+    const STATUS_EROR = "error";
+    const STATUS_CODE_ERROR = 500;
+
+    public static function getOnlyComments()
+    {
+        return CommentRepository::onlyComments();
+    }
+
+    public static function getByStatus($status)
+    {
+        return CommentRepository::findByStatus($status);
+    }
+
+    static public function verify($id, $status)
+    {
+        $post = CommentRepository::verify($id, $status);
+
+        return set_ajax_reponse_object($post->status, self::STATUS_CODE_OK, null, 'Comment ' . $post->status . '!');
+    }
+
     /**
      * Store comment
      * @param $message
@@ -92,5 +115,10 @@ class CommentService
                 'comments' => $comments
             ];
 
+    }
+
+    static public function delete($id)
+    {
+        return CommentRepository::delete($id);
     }
 }

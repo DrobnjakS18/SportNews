@@ -1,6 +1,6 @@
 @extends('admin.app')
-@section('title', 'Administrators - Unlimited3D')
-@section('description', 'Administrators - Unlimited3D')
+@section('title', 'Administrators - SportsNews')
+@section('description', 'Administrators - SportsNews')
 @section('og-image', asset('assets/website/images/logo.png'))
 
 @section('content')

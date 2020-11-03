@@ -87,6 +87,19 @@ Route::group(['prefix' => 'admin'], function() {
 //    Route::post('/admins/update/{id}', 'AdminController@update')->name('admin.admins.update')->middleware('auth.custom');
     Route::get('/users/destroy/{id}', 'UserController@destroy')->name('users.destroy')->middleware('auth.custom');
 
+    Route::get('/posts', 'PostController@adminIndex')->name('admin.post.index')->middleware('auth.custom');
+    Route::get('/posts/unverified', 'PostController@unverified')->name('admin.post.unverified')->middleware('auth.custom');
+    Route::get('/posts/verified', 'PostController@verified')->name('admin.post.verified')->middleware('auth.custom');
+    Route::post('/posts/verify', 'PostController@verify')->name('admin.post.verify')->middleware('auth.custom');
+    Route::get('/posts/{id}', 'PostController@adminShow')->name('admin.post.show')->middleware('auth.custom');
+    Route::get('/posts/destroy/{id}', 'PostController@destroy')->name('admin.post.destroy')->middleware('auth.custom');
+
+    Route::get('/comments', 'CommentController@commentsIndex')->name('admin.comment.index')->middleware('auth.custom');
+    Route::get('/comments/unverified', 'CommentController@unverified')->name('admin.comment.unverified')->middleware('auth.custom');
+    Route::get('/comments/verified', 'CommentController@verified')->name('admin.comment.verified')->middleware('auth.custom');
+    Route::post('/comments/verify', 'CommentController@verify')->name('admin.comment.verify')->middleware('auth.custom');
+    Route::get('/comments/destroy/{id}', 'CommentController@destroy')->name('admin.comment.destroy')->middleware('auth.custom');
+
 });
 
 

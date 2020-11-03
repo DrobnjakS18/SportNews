@@ -16,9 +16,9 @@ class CreateCommentsTable extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('text');
-            $table->enum('verifird',[1,0])->default(0);
             $table->bigInteger('like')->default(0);
             $table->bigInteger('dislike')->default(0);
+            $table->enum('status', ['verified', 'unverified'])->default('unverified');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
 

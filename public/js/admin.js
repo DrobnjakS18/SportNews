@@ -404,8 +404,6 @@ $(document).ready(function() {
 
 
 
-
-
     if ($('#login-form')) {
         $('#login-form').on('submit', function(e) {
             e.preventDefault();
@@ -806,15 +804,23 @@ $(document).ready(function() {
         });
     });
 
-    $('.question-verification').on('click', function(e) {
+
+
+    $('.post-verification, .comment-verification').on('click', function(e) {
+
         e.preventDefault();
 
         var id = $(this).data('id');
         var status = $(this).data('status');
+        var url = "/admin/posts/verify";
+
+        if($(this).hasClass('comment-verification')) {
+            url = "/admin/comments/verify";
+        }
 
         $.ajax({
             method: "POST",
-            url: "/admin/questions/verify",
+            url: url,
             context: $(this),
             data: {
                 _token: $('meta[name="csrf-token"]').attr('content'),
@@ -833,6 +839,11 @@ $(document).ready(function() {
             alert(data.message);
         });
     });
+
+
+
+
+
 
     $('.answer-verification').on('click', function(e) {
         e.preventDefault();

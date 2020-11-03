@@ -22,6 +22,60 @@ class PostController extends Controller
 
         $this->postService = new PostService();
     }
+
+    /**
+     *  Display all posts in admin panel
+     */
+    public function adminIndex()
+    {
+        $items = $this->postService::getAll();
+
+        return view('admin.pages.posts')->with(compact('items'));
+    }
+
+
+    /**
+     *  Display all unverified posts
+     */
+    public function unverified()
+    {
+        $items = $this->postService::getByStatus('unverified');
+
+        return view('admin.pages.posts')->with(compact('items'));
+    }
+
+    /**
+     *  Display all verified posts
+     */
+    public function verified()
+    {
+        $items = $this->postService::getByStatus('verified');
+
+        return view('admin.pages.posts')->with(compact('items'));
+    }
+
+    /**
+     *  Verify post
+     * @param Request $request
+     * @return false|string
+     */
+    public function verify(Request $request)
+    {
+        $response = $this->postService::verify($request->id, $request->status);
+
+        return json_encode($response);
+    }
+
+    /**
+     *  Display single post in admin panel
+     */
+    public function adminShow($id)
+    {
+        $item = $this->postService::getById($id);
+
+        return view('admin.pages.single_post')->with(compact('item'));
+    }
+
     /**
      * Display single post page.
      * @param $category
@@ -70,5 +124,19 @@ class PostController extends Controller
        $response =  $this->postService::uploadImage('post/images',$request->file('file'));
 
        return json_encode($response);
+    }
+
+    /**
+     * Remove specified question.
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $this->postService::delete($id);
+
+        return redirect()->route('admin.post.index');
     }
 }
