@@ -129,6 +129,9 @@
                                 @endif
                             </div>
                     </nav>
+
+
+
                     <div class="author-block">
                         <div class="author-thumb">
                             <a href="{{route('author',$items->post->user->slug)}}"><img src="{{$items->post->user->profile_picture}}" alt="Sport News profile image"></a>

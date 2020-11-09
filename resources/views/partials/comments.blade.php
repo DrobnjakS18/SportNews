@@ -22,7 +22,9 @@
                                 <i class="fa fa-thumbs-down text-danger comment-likes" aria-hidden="true"></i>
                             </a>
                                 <span class="dislikes-count">{{$comment->dislike}}</span>
-                            <button class="comment-reply ml-3" onclick="ToggleReplyForm({{$comment->id}})"><i class="fa fa-reply"></i>  Reply</button>
+                            @auth
+                                <button class="comment-reply ml-3" onclick="ToggleReplyForm({{$comment->id}})"><i class="fa fa-reply"></i>  Reply</button>
+                            @endauth
 {{--                        @endif--}}
                     </div>
                 </div>
@@ -71,7 +73,7 @@
                                                         {{$reply->text}}
                                                     </p>
                                                 </div>
-                                                @auth
+{{--                                                @auth--}}
                                                     <a href="#" class="reply-like @if($comment->likes->where('user_id','=',Auth::id())->where('comment_id','=',$comment->id)->count() > 0) like-after-click @endif" data-post-id="{{$reply->post->id}}" data-comment-id="{{$reply->id}}" data-action="like">
                                                         <i class="fa fa-thumbs-up text-success reply-likes" aria-hidden="true"></i>
                                                     </a>
@@ -80,7 +82,7 @@
                                                         <i class="fa fa-thumbs-down text-danger reply-likes" aria-hidden="true"></i>
                                                     </a>
                                                     <span class="reply-dislike-count">{{$reply->dislike}}</span>
-                                                @endauth
+{{--                                                @endauth--}}
                                             </div>
                                     </div>
                                 </li>

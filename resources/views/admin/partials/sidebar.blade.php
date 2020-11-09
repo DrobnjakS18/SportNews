@@ -44,6 +44,7 @@
                   </li>
                   <li><a><i class="fa fa-newspaper-o"></i> Articles <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
+                          <li><a href="{{ route('admin.post.selected') }}">Editors Pick</a></li>
                           <li><a href="{{ route('admin.post.unverified') }}">Unverified</a></li>
                           <li><a href="{{ route('admin.post.verified') }}">Verified</a></li>
                           <li><a href="{{ route('admin.post.index') }}">All</a></li>
@@ -56,12 +57,13 @@
                           <li><a href="{{ route('admin.comment.index') }}">All</a></li>
                       </ul>
                   </li>
-{{--                  <li><a><i class="fa fa-comment"></i> Answers to Commants<span class="fa fa-chevron-down"></span></a>--}}
-{{--                      <ul class="nav child_menu">--}}
-{{--                          <li><a href="{{ route('users.create') }}">Add</a></li>--}}
-{{--                          <li><a href="{{ route('users.users') }}">All</a></li>--}}
-{{--                      </ul>--}}
-{{--                  </li>--}}
+                  <li><a><i class="fa fa-comment"></i> Answers to Commants<span class="fa fa-chevron-down"></span></a>
+                      <ul class="nav child_menu">
+                          <li><a href="{{ route('admin.answer.unverified') }}">Unverified</a></li>
+                          <li><a href="{{ route('admin.answer.verified') }}">Verified</a></li>
+                          <li><a href="{{ route('admin.answer.index') }}">All</a></li>
+                      </ul>
+                  </li>
 
               </ul>
           </div>

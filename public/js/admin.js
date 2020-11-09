@@ -776,23 +776,64 @@ $(document).ready(function() {
         });
     }
 
-    $('.user-verification').on('click', function(e) {
-        e.preventDefault();
 
-        var id = $(this).data('id');
-        var status = $(this).data('status');
+    // $('.answer-verification').on('click', function(e) {
+    //     e.preventDefault();
+    //
+    //     var id = $(this).data('id');
+    //     var status = $(this).data('status');
+    //
+    //     $.ajax({
+    //         method: "POST",
+    //         url: "/admin/answers/verify",
+    //         context: $(this),
+    //         data: {
+    //             _token: $('meta[name="csrf-token"]').attr('content'),
+    //             id: id,
+    //             status: status
+    //         },
+    //         dataType: 'json'
+    //     })
+    //     .fail(function(jqxhr, textStatus, errorThrown) {
+    //         alert('Something went wrong! Please try again later.');
+    //     })
+    //     .done(function(data) {
+    //         $(this).data('status', data.status);
+    //         $(this).next('span').click();
+    //
+    //         alert(data.message);
+    //     });
+    // });
 
-        $.ajax({
-            method: "POST",
-            url: "/admin/users/verify",
-            context: $(this),
-            data: {
-                _token: $('meta[name="csrf-token"]').attr('content'),
-                id: id,
-                status: status
-            },
-            dataType: 'json'
-        })
+});
+
+$('.post-verification, .comment-verification, .answer-verification').on('click', function(e) {
+
+    e.preventDefault();
+
+    var id = $(this).data('id');
+    var status = $(this).data('status');
+    var url = "/admin/posts/verify";
+
+    if($(this).hasClass('comment-verification')) {
+        url = "/admin/comments/verify";
+    }
+
+    if($(this).hasClass('answer-verification')) {
+        url = "/admin/answers/verify";
+    }
+
+    $.ajax({
+        method: "POST",
+        url: url,
+        context: $(this),
+        data: {
+            _token: $('meta[name="csrf-token"]').attr('content'),
+            id: id,
+            status: status
+        },
+        dataType: 'json'
+    })
         .fail(function(jqxhr, textStatus, errorThrown) {
             alert('Something went wrong! Please try again later.');
         })
@@ -802,79 +843,67 @@ $(document).ready(function() {
 
             alert(data.message);
         });
-    });
-
-
-
-    $('.post-verification, .comment-verification').on('click', function(e) {
-
-        e.preventDefault();
-
-        var id = $(this).data('id');
-        var status = $(this).data('status');
-        var url = "/admin/posts/verify";
-
-        if($(this).hasClass('comment-verification')) {
-            url = "/admin/comments/verify";
-        }
-
-        $.ajax({
-            method: "POST",
-            url: url,
-            context: $(this),
-            data: {
-                _token: $('meta[name="csrf-token"]').attr('content'),
-                id: id,
-                status: status
-            },
-            dataType: 'json'
-        })
-        .fail(function(jqxhr, textStatus, errorThrown) {
-            alert('Something went wrong! Please try again later.');
-        })
-        .done(function(data) {
-            $(this).data('status', data.status);
-            $(this).next('span').click();
-
-            alert(data.message);
-        });
-    });
-
-
-
-
-
-
-    $('.answer-verification').on('click', function(e) {
-        e.preventDefault();
-
-        var id = $(this).data('id');
-        var status = $(this).data('status');
-
-        $.ajax({
-            method: "POST",
-            url: "/admin/answers/verify",
-            context: $(this),
-            data: {
-                _token: $('meta[name="csrf-token"]').attr('content'),
-                id: id,
-                status: status
-            },
-            dataType: 'json'
-        })
-        .fail(function(jqxhr, textStatus, errorThrown) {
-            alert('Something went wrong! Please try again later.');
-        })
-        .done(function(data) {
-            $(this).data('status', data.status);
-            $(this).next('span').click();
-
-            alert(data.message);
-        });
-    });
 });
 
 
+$('.post-selection').on('click', function(e) {
+    e.preventDefault();
+
+    var id = $(this).data('id');
+    var select = $(this).data('status');
+
+    $.ajax({
+        method: "POST",
+        url: '/admin/posts/select',
+        context: $(this),
+        data: {
+            _token: $('meta[name="csrf-token"]').attr('content'),
+            id: id,
+            select: select
+        },
+        dataType: 'json'
+    })
+        .fail(function(jqxhr, textStatus, errorThrown) {
+            alert('Something went wrong! Please try again later.');
+        })
+        .done(function(data) {
+            $(this).data('status', data.status);
+            $(this).next('span').click();
+
+            alert(data.message);
+        });
+});
+
+
+
+
+$('.user-verification').on('click', function(e) {
+    e.preventDefault();
+
+    var id = $(this).data('id');
+    var status = $(this).data('status');
+
+    $.ajax({
+        method: "POST",
+        url: "/admin/users/verify",
+        context: $(this),
+        data: {
+            _token: $('meta[name="csrf-token"]').attr('content'),
+            id: id,
+            status: status
+        },
+        dataType: 'json'
+    })
+        .fail(function(jqxhr, textStatus, errorThrown) {
+            alert('Something went wrong! Please try again later.');
+        })
+        .done(function(data) {
+            $(this).data('status', data.status);
+            $(this).next('span').click();
+
+            alert(data.message);
+        });
+});
 
 
 

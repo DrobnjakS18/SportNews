@@ -126,7 +126,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('contact')}}">Contact</a>
                             </li>
-
                         </ul>
                         <div class="nav-search ml-auto d-none d-lg-block">
                             <span id="search">

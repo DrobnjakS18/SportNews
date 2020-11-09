@@ -30,8 +30,6 @@ class PostTableSeeder extends Seeder
 <p>When older Botafogo fans speak of their club\'s golden age, it is not rose-tinted nostalgia. They really did grow up watching the legends. The Brazil teams that won the World Cup in 1958, \'62 and \'70, thereby establishing the country as football\'s spiritual home, were basically formed by the Santos team that included Pele, and Botafogo, which contributed great winger Garrincha, second in the pantheon of the Brazilian game, and epic left-back Nilton Santos, nicknamed the "encyclopaedia" because he knew it all. Didi and Gerson, the <em>Selecao</em> midfield pass masters, were Botafogo players, as were Mario Zagallo on the wing, Amarildo, who stepped in so well when Pele was injured in \'62, and Jairzinho, who scored in every game in the magical 1970 campaign.</p>',
                 'short_text' => 'Sports are cruel. There, we said it. They play with our emotions, mess with our hearts, fill us with...',
                 'picture' => 'i_1581585212.jpg',
-                'select' => "1",
-                'status' => "unverified",
                 'user_id' => 1,
                 'category_id' => 1
             ],
@@ -57,8 +55,6 @@ class PostTableSeeder extends Seeder
 <p><img src="http://sport.test/storage/images/ronaldo_1581588296.jpg" alt="ronaldo_1581588296.jpg"></p>',
                 'short_text' => 'On Thursday, two of the most prolific goal scorers of their generation will meet for the ninth ti...',
                 'picture' => 'ronaldo_ibra_1581588318.jpg',
-                'select' => "0",
-                'status' => "unverified",
                 'user_id' => 2,
                 'category_id' => 1
             ],
@@ -78,8 +74,6 @@ class PostTableSeeder extends Seeder
 <p>Ajax, who missed out on the Champions League round of 16 after making it to the semifinals in 2019, next face RKC Waalwijk in the Eredivisie on Feb. 16.</p>',
                 'short_text' => '"I am really happy to be back on the pitch," Blind told Fox Sports Netherlands. "I was so eager t...',
                 'picture' => 'ajax_1581588851.jpg',
-                'select' => "0",
-                'status' => "unverified",
                 'user_id' => 3,
                 'category_id' => 1
             ],
@@ -101,8 +95,6 @@ class PostTableSeeder extends Seeder
 <p><br></p>',
                 'short_text' => 'To compile the 2019 edition of ESPN FC 100, more than 40 ESPN FC experts from around the world...',
                 'picture' => 'world_1581589191.jpg',
-                'select' => "0",
-                'status' => "unverified",
                 'user_id' => 1,
                 'category_id' => 1
             ],
@@ -128,8 +120,6 @@ class PostTableSeeder extends Seeder
 <p>In short, Barcelona recruits no-name coaches. At this club, the coach isn\'t the boss. He doesn\'t determine how the team plays. Rather, now that the Cruyffian house style is fading out inside Barca, the team\'s style of play is largely determined by the players, in particular by <a href="http://espnfc.com/player/_/id/45843/Lionel-Messi">Lionel Messi</a>.</p>',
                 'short_text' => '"Not in my wildest dreams could I have imagined being coach of Barcelona," Quique Setien said aft...',
                 'picture' => 'barselona_1581589486.jpg',
-                'select' => "0",
-                'status' => "unverified",
                 'user_id' => 2,
                 'category_id' => 1
             ],
@@ -160,8 +150,6 @@ class PostTableSeeder extends Seeder
 <p>"Maybe in a sense where [I could] get my rhythm a bit more. Maybe in that sense," said Porzingis, who averaged 28.8 points per game on 48.8% shooting during Doncic\'s recent absence, compared to 18.4 points on 41.6% shooting overall this season. "But I felt like, yeah, right before he got hurt, we were also getting in a pretty good rhythm, we were playing with each other. Tonight was great."</p>',
                 'short_text' => 'It was one of the young Dallas franchise cornerstones\' best performances as a duo, as Doncic and...',
                 'picture' => 'doncic_1581589947.jpg',
-                'select' => "1",
-                'status' => "unverified",
                 'user_id' => 3,
                 'category_id' => 2
             ],
@@ -187,8 +175,6 @@ class PostTableSeeder extends Seeder
 <p><br></p>',
                 'short_text' => '"He\'s a guy who takes a lot of contact," Saunders said. "He\'s a guy who attacks the rim with forc...',
                 'picture' => 'towns_1581682412.jpg',
-                'select' => "0",
-                'status' => "unverified",
                 'user_id' => 1,
                 'category_id' => 2
             ],
@@ -254,8 +240,6 @@ class PostTableSeeder extends Seeder
 <p><strong>11. </strong><a href="https://www.espn.com/nba/player/_/id/3908809/donovan-mitchell">Donovan Mitchell</a>, Jazz</p>',
                 'short_text' => 'NBA All-Star Weekend is Feb. 14-16 in Chicago, and this is the third consecutive year in which ca...',
                 'picture' => 'NBA-All-Star-2020_1581682602.jpg',
-                'select' => "0",
-                'status' => "unverified",
                 'user_id' => 1,
                 'category_id' => 2
             ],
@@ -273,8 +257,6 @@ class PostTableSeeder extends Seeder
 <p>Beilein has also dealt with some personal and family turmoil, as his son Patrick was dismissed before the start of his first season as head coach at <a href="https://www.espn.com/mens-college-basketball/team/_/id/315/niagara-purple-eagles">Niagara University</a>. Personal issues were cited.</p>',
                 'short_text' => 'Cleveland hired associate head coach J.B. Bickerstaff with the expectation that he would eventual...',
                 'picture' => 'cleveland_1581945330.jpg',
-                'select' => "0",
-                'status' => "unverified",
                 'user_id' => 2,
                 'category_id' => 2
             ],
@@ -288,8 +270,6 @@ class PostTableSeeder extends Seeder
 <p>That number was 157 after Team Giannis led Team LeBron 133-124 at the end of three quarters. Fifty-one minutes of commercial-free chaos ensued in the form of charges, coach\'s challenges, fouls and defense -- and the people ate it all up:</p>',
                 'short_text' => 'New changes to the format of a game constantly wrought with questionable defense and effort would...',
                 'picture' => 'lebron_1581945606.jpg',
-                'select' => "0",
-                'status' => "unverified",
                 'user_id' => 3,
                 'category_id' => 2
             ],
@@ -315,8 +295,6 @@ class PostTableSeeder extends Seeder
 <p>Kenin, who turned 21 in November, has appeared in just three previous Fed Cup ties, only one of them a win. She was thrown into the deep end as an 18-year-old in her first appearance, a final in Prague against a veteran Czech team. She lost a pair of three-set heartbreakers in the defeat for the U.S., but that didn\'t dim her enthusiasm.</p>',
                 'short_text' => '"It\'s really such a unique experience," Mattek-Sands told reporters at the team\'s post-event news...',
                 'picture' => 'tenis_1581592368.jpg',
-                'select' => "1",
-                'status' => "unverified",
                 'user_id' => 1,
                 'category_id' => 3
             ],
@@ -336,8 +314,6 @@ class PostTableSeeder extends Seeder
 <p>The 51,954 people who turned up, and the sponsors who plastered their names around the place, came to the party big time, and the children in South Africa will be the big beneficiaries as all the net proceeds will go to the Roger Federer Foundation to support education in the rural areas in the country.</p>',
                 'short_text' => 'Truth be told, the kids didn\'t seem to know who the two sporting greats were, but the Simon Says...',
                 'picture' => 'feder_nadal_1581592577.jpg',
-                'select' => "0",
-                'status' => "unverified",
                 'user_id' => 2,
                 'category_id' => 3
             ],
@@ -372,8 +348,6 @@ class PostTableSeeder extends Seeder
 <p>Goffin will face Italian Jannik Sinner, who was awarded a walkover after his opponent <a href="https://www.espn.com/sports/tennis/players/profile?playerId=884">Radu Albot</a> withdrew.</p>',
                 'short_text' => 'World number five Medvedev, long-touted as one of the most likely of the new generation of player...',
                 'picture' => 'medvedev_1581592762.jpg',
-                'select' => "0",
-                'status' => "unverified",
                 'user_id' => 2,
                 'category_id' => 3
             ],
@@ -391,8 +365,6 @@ class PostTableSeeder extends Seeder
 <p>Further creative donations came in thick and fast, in the end over AU$6 million was raised to help with bushfire recovery efforts.</p>',
                 'short_text' => 'With bushfires ravaging Australia, a tennis tournament was the last thing on everyone\'s mind. How...',
                 'picture' => 'donation_1581945916.jpg',
-                'select' => "0",
-                'status' => "unverified",
                 'user_id' => 2,
                 'category_id' => 3
             ],
@@ -410,8 +382,6 @@ class PostTableSeeder extends Seeder
 <p>The 23-year-old and reigning French Open champion fell to eventual champion Kenin in the semis, but what a memorable run it was.</p>',
                 'short_text' => 'The 42-year drought between homegrown Australian Open singles champions might still remain, but l...',
                 'picture' => 'nick_1581946053.jpg',
-                'select' => "0",
-                'status' => "unverified",
                 'user_id' => 3,
                 'category_id' => 3
             ],
@@ -451,8 +421,6 @@ class PostTableSeeder extends Seeder
 <p>"It\'s something we\'ve abused with some of the other teams so it\'s quite stupid that we fell into that trap of not speaking. It\'s been a while since we played our last game on stage so we just have to get back into it."</p>',
                 'short_text' => 'We\'re over halfway through the BLAST Premier Spring Series, and, after an incredibly eventful ope...',
                 'picture' => 'csgo-new_1581682725.jpg',
-                'select' => "0",
-                'status' => "unverified",
                 'user_id' => 1,
                 'category_id' =>4
             ],
@@ -474,8 +442,6 @@ class PostTableSeeder extends Seeder
 <p>There was a time when OGN\'s APEX tournament in South Korea was the premier Overwatch event in the world. It hasn\'t existed since 2017, when Sp9rk1e was just beginning his semi-professional career. Element Mystic came up through the offline qualifier during APEX Season 4 and performed well in APEX Challengers Season 5 before OGN\'s tournament was shuttered, becoming Contenders: Korea. Sp9rk1e\'s initial Element Mystic team was a star-studded lineup that included Lee "Happy" Jung-woo (Guangzhou Charge), Lee "Guard" Hee-dong (London Spitfire, now retired), Lee "Fearless" Eui-seok (Shanghai Dragons), Kim "Rapel" Joon-keun (Vancouver Titans, Houston Outlaws), Lee "Jecse" Seung-soo (Seoul Dynasty, Houston Outlaws), and Seo "DACO" Dong-hyeong (Atlanta Reign), all of whom made it to the league well before Sp9rk1e was eligible. Now he plays a different waiting game than his time in Contenders Korea, counting down the days until he can play on the Overwatch League stage.</p>',
                 'short_text' => 'NEW YORK -- The basement of the Hammerstein Ballroom shook. A loud cry echoed from above followed...',
                 'picture' => 'overwatch_1581593171.jpg',
-                'select' => "1",
-                'status' => "unverified",
                 'user_id' => 2,
                 'category_id' => 4
             ],
@@ -491,8 +457,6 @@ class PostTableSeeder extends Seeder
 <p>Here\'s how our staff voted to rank the 12 teams after London. Each participating staff member ranked the CDL teams from No. 1 to No. 12, and the results were aggregated to determine the list below. All player stats are courtesy of Atlanta FaZe stat analyst Austin O\'Neil.</p>',
                 'short_text' => 'The Chicago Huntsmen took the crown this past weekend as the champions of the Call of Duty League...',
                 'picture' => 'cod_1581593541.jpg',
-                'select' => "0",
-                'status' => "unverified",
                 'user_id' => 3,
                 'category_id' => 4
             ],
@@ -512,8 +476,6 @@ class PostTableSeeder extends Seeder
 <p>For now, that\'s New York.</p>',
                 'short_text' => 'NEW YORK -- As Carlos Rodríguez Santiago walks down the busy streets of Manhattan, he takes in a...',
                 'picture' => 'ocelote_1581946218.jpg',
-                'select' => "0",
-                'status' => "unverified",
                 'user_id' => 4,
                 'category_id' => 4
             ],
@@ -529,8 +491,6 @@ class PostTableSeeder extends Seeder
 <p>This year, Mei is once again <a href="https://public.tableau.com/shared/RJQ3D6NDZ?:display_count=y&amp;:origin=viz_share_link&amp;:embed=y">toward the top of the list</a> with an 83.3 percent usage rate. The only heroes above her are Reinhardt (88.94 percent) and Lúcio (a whopping 91.83 percent). If hero pools were to begin next week, the heroes most likely to be at risk of a ban would be Reinhardt, Lúcio, Mei, and McCree (41.94 percent usage rate), eliminating the popular Mei/McCree combo of obnoxious slows that allow McCree to shoot freely at his opponents.</p>',
                 'short_text' => 'The third season of the Overwatch League kicked off this past...',
                 'picture' => 'overwatch_1581946566.jpg',
-                'select' => "0",
-                'status' => "unverified",
                 'user_id' => 4,
                 'category_id' => 4
             ]

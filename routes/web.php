@@ -91,15 +91,22 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('/posts/unverified', 'PostController@unverified')->name('admin.post.unverified')->middleware('auth.custom');
     Route::get('/posts/verified', 'PostController@verified')->name('admin.post.verified')->middleware('auth.custom');
     Route::post('/posts/verify', 'PostController@verify')->name('admin.post.verify')->middleware('auth.custom');
+    Route::post('/posts/select', 'PostController@select')->name('admin.post.select')->middleware('auth.custom');
+    Route::get('/posts/selected', 'PostController@selected')->name('admin.post.selected')->middleware('auth.custom');
     Route::get('/posts/{id}', 'PostController@adminShow')->name('admin.post.show')->middleware('auth.custom');
     Route::get('/posts/destroy/{id}', 'PostController@destroy')->name('admin.post.destroy')->middleware('auth.custom');
 
-    Route::get('/comments', 'CommentController@commentsIndex')->name('admin.comment.index')->middleware('auth.custom');
+    Route::get('/comments', 'CommentController@adminIndex')->name('admin.comment.index')->middleware('auth.custom');
     Route::get('/comments/unverified', 'CommentController@unverified')->name('admin.comment.unverified')->middleware('auth.custom');
     Route::get('/comments/verified', 'CommentController@verified')->name('admin.comment.verified')->middleware('auth.custom');
     Route::post('/comments/verify', 'CommentController@verify')->name('admin.comment.verify')->middleware('auth.custom');
     Route::get('/comments/destroy/{id}', 'CommentController@destroy')->name('admin.comment.destroy')->middleware('auth.custom');
 
+    Route::get('/answers', 'CommentController@adminIndex')->name('admin.answer.index')->middleware('auth.custom');
+    Route::get('/answers/unverified', 'CommentController@unverified')->name('admin.answer.unverified')->middleware('auth.custom');
+    Route::get('/answers/verified', 'CommentController@verified')->name('admin.answer.verified')->middleware('auth.custom');
+    Route::post('/answers/verify', 'CommentController@verify')->name('admin.answer.verify')->middleware('auth.custom');
+    Route::get('/answers/destroy/{id}', 'CommentController@destroyAnswer')->name('admin.answer.destroy')->middleware('auth.custom');
 });
 
 

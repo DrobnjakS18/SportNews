@@ -34,6 +34,7 @@
                                     <th>Category</th>
                                     <th>Created at</th>
                                     <th>Verified</th>
+                                    <th>Editors Pick</th>
                                     <th class="text-center">Delete</th>
                                 </tr>
                                 </thead>
@@ -49,6 +50,11 @@
                                             <td class="text-center">
                                                 <label>
                                                     <input type="checkbox" class="js-switch post-verification" data-id="{{ $post->id }}" data-status="{{ $post->status }}" @if($post->status == 'verified') checked @endif />
+                                                </label>
+                                            </td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input type="checkbox" class="js-switch post-selection" data-id="{{ $post->id }}" data-status="{{ $post->select }}" @if($post->select == 'selected') checked @endif />
                                                 </label>
                                             </td>
                                             <td class="text-center">

@@ -14,19 +14,65 @@ class CommentService
     const STATUS_EROR = "error";
     const STATUS_CODE_ERROR = 500;
 
-    public static function getOnlyComments()
+    /**
+     * Set sent data into array referencing Comments table columns
+     * @param $data
+     * @param $view
+     * @return array
+     */
+    public static function setData($data, $view)
     {
-        return CommentRepository::onlyComments();
+        return [
+            'data' => $data,
+            'view' => $view,
+            'all' => CommentRepository::getAll()
+        ];
+    }
+
+    public static function getAllComments()
+    {
+
+        $data = CommentRepository::getAll();
+        $lastPage = extract_last_from_url(url()->current());
+
+        switch ($lastPage) {
+            case 'comments':
+                return self::setData($data,'admin.pages.comments');
+                break;
+            case 'answers':
+                return self::setData($data,'admin.pages.answers');
+                break;
+            default:
+                return CommentRepository::getAll();
+                break;
+        }
     }
 
     public static function getByStatus($status)
     {
-        return CommentRepository::findByStatus($status);
+        $data = CommentRepository::findByStatus($status);
+        $lastPage = extract_last_from_url(url()->current(),'prev');
+
+
+        switch ($lastPage) {
+            case 'comments':
+                return self::setData($data,'admin.pages.comments');
+                break;
+            case 'answers':
+                return self::setData($data,'admin.pages.answers');
+                break;
+            default:
+                return CommentRepository::findByStatus($status);
+                break;
+        }
+
     }
 
     static public function verify($id, $status)
     {
         $post = CommentRepository::verify($id, $status);
+
+        $lastPage = extract_last_from_url(url()->current(),'prev');
 
         return set_ajax_reponse_object($post->status, self::STATUS_CODE_OK, null, 'Comment ' . $post->status . '!');
     }

@@ -1,6 +1,6 @@
 @extends('admin.app')
-@section('title', 'Comments - SportsNews')
-@section('description', 'Comments - SportsNews')
+@section('title', 'Answers - SportsNews')
+@section('description', 'Answers - SportsNews')
 @section('og-image', asset('assets/website/images/logo.png'))
 
 @section('content')
@@ -10,7 +10,7 @@
         <div class="">
             <div class="page-title">
                 <div class="title_left">
-                    <h3>Comments</h3>
+                    <h3>Answers</h3>
                 </div>
             </div>
 
@@ -20,7 +20,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>List of all comments</h2>
+                            <h2>List of all answers</h2>
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
@@ -30,8 +30,9 @@
                                 <thead>
                                 <tr>
                                     <th>User</th>
-                                    <th>Comment</th>
-                                    <th>Commented Post</th>
+                                    <th>Answer</th>
+                                    <th>To Comment</th>
+                                    <th>Post</th>
                                     <th>Likes</th>
                                     <th>Dislikes</th>
                                     <th>Created at</th>
@@ -43,21 +44,22 @@
                                 <tbody>
                                 @if($comments)
                                     @foreach($comments as $comment)
-                                        @if(!$comment->comment_id)
+                                        @if($comment->comment_id)
                                             <tr>
                                                 <td>{{ $comment->user->name }}</td>
                                                 <td>{{ $comment->text }}</td>
+                                                <td>{{ $allComments->find($comment->comment_id)->text }}</td>
                                                 <td><a href="{{ route('admin.post.show', $comment->post->id) }}" class="article-preview-link">{{ $comment->post->title }}</a></td>
                                                 <td>{{$comment->like}}</td>
                                                 <td>{{$comment->dislike}}</td>
                                                 <td>{{ $comment->created_at->format('m/d/Y H:i:s') }}</td>
                                                 <td class="text-center">
                                                     <label>
-                                                        <input type="checkbox" class="js-switch comment-verification" data-id="{{ $comment->id }}" data-status="{{ $comment->status }}" @if($comment->status == 'verified') checked @endif />
+                                                        <input type="checkbox" class="js-switch answer-verification" data-id="{{ $comment->id }}" data-status="{{ $comment->status }}" @if($comment->status == 'verified') checked @endif />
                                                     </label>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a href="{{ route('admin.comment.destroy', $comment->id) }}" class="action"><i class="fa fa-trash-o"></i></a>
+                                                    <a href="{{ route('admin.answer.destroy', $comment->id) }}" class="action"><i class="fa fa-trash-o"></i></a>
                                                 </td>
                                             </tr>
                                         @endif

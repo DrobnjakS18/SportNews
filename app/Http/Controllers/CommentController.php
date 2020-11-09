@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
-
     private $commentService;
 
     public function __construct()
@@ -23,11 +22,13 @@ class CommentController extends Controller
     /**
      *  Display only comments in admin panel
      */
-    public function commentsIndex()
+    public function adminIndex()
     {
-        $items = $this->commentService::getOnlyComments();
+        $items = $this->commentService::getAllComments();
+        $comments = $items['data'];
+        $allComments = $items['all'];
 
-        return view('admin.pages.comments')->with(compact('items'));
+        return view($items['view'])->with(compact('comments','allComments'));
     }
 
     /**
@@ -36,8 +37,11 @@ class CommentController extends Controller
     public function unverified()
     {
         $items = $this->commentService::getByStatus('unverified');
+        $comments = $items['data'];
+        $allComments = $items['all'];
 
-        return view('admin.pages.comments')->with(compact('items'));
+
+        return view($items['view'])->with(compact('comments','allComments'));
     }
 
     /**
@@ -46,8 +50,10 @@ class CommentController extends Controller
     public function verified()
     {
         $items = $this->commentService::getByStatus('verified');
+        $comments = $items['data'];
+        $allComments = $items['all'];
 
-        return view('admin.pages.comments')->with(compact('items'));
+        return view($items['view'])->with(compact('comments','allComments'));
     }
 
     /**
@@ -139,6 +145,20 @@ class CommentController extends Controller
         $this->commentService::delete($id);
 
         return redirect()->route('admin.comment.index');
+    }
+
+    /**
+     * Remove specified answer.
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function destroyAnswer($id)
+    {
+        $this->commentService::delete($id);
+
+        return redirect()->route('admin.answer.index');
     }
 
 

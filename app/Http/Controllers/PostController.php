@@ -67,6 +67,30 @@ class PostController extends Controller
     }
 
     /**
+     *  Select post for editors pick
+     * @param Request $request
+     * @return false|string
+     */
+    public function select(Request $request)
+    {
+        $response = $this->postService::select($request->id, $request->select);
+
+        return json_encode($response);
+    }
+
+    /**
+     *  Display selected posts for editors pick
+     * @return false|string
+     */
+    public function selected()
+    {
+        $items = $this->postService::getSelectedPost('selected');
+
+
+        return view('admin.pages.posts')->with(compact('items'));
+    }
+
+    /**
      *  Display single post in admin panel
      */
     public function adminShow($id)

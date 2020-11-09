@@ -45,15 +45,38 @@ class PostService
         return set_ajax_reponse_object($post->status, self::STATUS_CODE_OK, null, 'Post ' . $post->status . '!');
     }
 
+    static public function select($id, $select)
+    {
+        $post = PostRepository::select($id, $select);
+
+        return set_ajax_reponse_object($post->select, self::STATUS_CODE_OK, null, 'Post ' . $post->select . '!');
+    }
+
+    /**
+     * Gets all editors picked posts
+     * @param $selected
+     * @return object
+     */
+    static public function getSelectedPost($selected)
+    {
+        return PostRepository::findBySelectedPost($selected);
+    }
+
     /**
      * Gets all posts with users
      * @return object
      */
     public static function getAllWithUsers()
     {
-        $data['posts'] = PostRepository::all();
+        $data['posts'] = self::getByStatus('verified');
         $data['users'] = UserService::getAll();
         $data['top_authors'] = UserService::getTopUsers('author',4);
+        $data['tennis'] = PostRepository::findByCategory(3);
+        $data['esports'] = PostRepository::findByCategory(4);
+        $data['basketball'] = PostRepository::findByCategory(2);
+        $data['football'] = PostRepository::findByCategory(1);
+        $data['selected'] = self::getSelectedPost('selected');
+        $data['editorPickCounter'] = ceil($data['selected']->count() /2);
 
         return (object) $data;
     }
@@ -92,7 +115,6 @@ class PostService
             'content' => $content,
             'short_text' => $shortText,
             'picture' => $file,
-            'select' => '0',
             'user_id' => Auth::user()->id,
             'category_id' => CategoryService::getByName($category)
         ];

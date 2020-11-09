@@ -17,6 +17,11 @@ class CommentRepository extends BaseRepository
         $this->className = 'App\Models\Comment';
     }
 
+    public static function getAll()
+    {
+        return Comment::all();
+    }
+
     /**
      * Find comment by Id
      */
@@ -24,12 +29,6 @@ class CommentRepository extends BaseRepository
     {
         return Comment::find($id);
     }
-
-    public static function onlyComments()
-    {
-        return Comment::where('comment_id',null)->get();
-    }
-
 
     public static function findByStatus($status)
     {
@@ -123,9 +122,7 @@ class CommentRepository extends BaseRepository
 
     static public function delete($id)
     {
-        $comment = self::findById($id);
-
-        return $comment->delete();
+        return Comment::destroy($id);
     }
 
 }

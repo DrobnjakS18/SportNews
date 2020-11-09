@@ -30,6 +30,11 @@ class PostRepository extends BaseRepository
         return Post::where('status',$status)->get();
     }
 
+    public static function findBySelectedPost($selected)
+    {
+        return Post::where('select',$selected)->get();
+    }
+
     /**
      * Find post by Id
      */
@@ -157,6 +162,17 @@ class PostRepository extends BaseRepository
         $post = Post::findOrFail($id);
 
         $post->status = ($status != self::STATUS_VERIFIED) ? self::STATUS_VERIFIED : self::STATUS_UNVERIFIED;
+
+        $post->save();
+
+        return $post;
+    }
+
+    static public function select($id, $select)
+    {
+        $post = Post::findOrFail($id);
+
+        $post->select = ($select != 'selected') ? 'selected' : 'unselected';
 
         $post->save();
 

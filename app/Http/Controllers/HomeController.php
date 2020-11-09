@@ -29,6 +29,19 @@ class HomeController extends Controller
     {
         $items = $this->postService::getAllWithUsers();
 
+//        $editorsPages = ceil($items->count() /2);
+//        for( $i = 1; $i <= $editorsPages;$i++) {
+//           if($i % 3)
+//           {
+//               echo 'child<br>';
+//               continue;
+//           }
+//            echo 'parent<br>';
+//        }
+
+
+//        dd($items->editorPickCounter);
+
         return view('pages.home')->with(compact('items'));
 //        return view('emails.template');
     }

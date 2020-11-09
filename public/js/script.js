@@ -461,7 +461,16 @@ replyVotes.on('click touchstart',function (e) {
         custom: element
     })
         .fail(function (jqxhr, textStatus, errorThrown) {
-            alert('An error occured!Please try again later');
+            let LikeStatus = jqxhr.status;
+
+            switch (LikeStatus) {
+                case 401:
+                    alert('You have to be logged in to perform that action!');
+                    break;
+                default:
+                    alert('An error occured!Please try again later');
+                    break;
+            }
         })
         .done(function (data) {
 
