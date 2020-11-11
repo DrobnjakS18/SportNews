@@ -589,8 +589,10 @@ a[href^=tel] {
 .breadcrumb {
     color: #777;
     margin: 20px 0 20px 0;
-    padding: 0;
-    background: none;
+    /*padding: 0;*/
+    /*background: none;*/
+    background: #7777771c;
+    padding: 10px ;
 }
 
 .breadcrumb > li + li:before {
@@ -618,7 +620,9 @@ a[href^=tel] {
     font-weight: 600;
 }
 
-
+.fa-search {
+    color: #ffffff;
+}
 
 .header-navigation {
     padding: 10px 0;
@@ -967,6 +971,7 @@ a[href^=tel] {
 .post-title a {
     color: #292931;
     transition: .2s all;
+    word-break: initial;
 }
 
 .post-title.title-xl {
@@ -1034,7 +1039,7 @@ a.post-category.absolute {
 
 .post-meta {
     text-transform: capitalize;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .post-meta span {
@@ -1125,6 +1130,7 @@ a.post-category.absolute {
 
 .post-overlay-wrapper .post-title a, .post-overlay-wrapper .posted-time {
     color: #fff;
+    word-break: initial;
 }
 
 .thumb-float-style .post-category {
@@ -1226,6 +1232,7 @@ a.post-category.absolute {
 
 .post-block-wrapper.post-float .post-title {
     margin-top: 0;
+    word-break: initial;
 }
 
 .post-block-wrapper.post-float .post-content {
@@ -1448,6 +1455,7 @@ a.post-category.absolute {
 
 .post-featured-style .post-title a {
     color: #fff;
+    word-break: initial;
 }
 
 .post-featured-style .post-meta span {
@@ -1975,6 +1983,26 @@ a.post-category.absolute {
  /* 5a. AUTHOR PROFILE
  ================================================== */
 
+.author-post-delete-button {
+    border: none;
+    font-weight: 100;
+    background: #fff;
+    color: #dc3545;
+    padding: 0;
+
+}
+
+.author-post-delete-button:hover {
+    background-color: white;
+    color: #dc3545;
+}
+
+.author-post-delete-link {
+    padding: 7px;
+    border-radius: 5px;
+    font-weight: 100;
+}
+
 .author-options a{
     padding: 10px 20px;
     color: white;
@@ -2126,10 +2154,13 @@ a.post-category.absolute {
 
 .featured-slider .slider-post-title a {
     color: #fff;
+    word-break: initial;
+
 }
 
 .featured-post .posted-time, .featured-post .post-title a {
     color: #fff;
+    word-break: initial;
 }
 
 .featured-slider.content-bottom .featured-post {
@@ -3150,6 +3181,28 @@ a {
 @media (max-width: 575px) {
     .username-button {
         padding: 0.5rem 1rem !important;
+    }
+
+    h2, .h2 {
+        font-size: 18px;
+    }
+
+    .block-wrapper {
+        padding: 0;
+    }
+
+    .breadcrumb li {
+        font-size: 12px;
+    }
+
+
+    .single-post .post-title {
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    .post-navigation h3 {
+        font-size: 13px;
     }
 }
 

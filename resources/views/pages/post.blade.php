@@ -171,7 +171,7 @@
                                     <div class="post-block-wrapper clearfix">
                                         <div class="post-thumbnail mb-3">
                                             <a href="{{route('post',[ucfirst($post->category->name),$post->slug])}}">
-                                                <img class="img-fluid" src="{{asset('storage/images/'.$post->picture)}}" alt="{{$post->title}}"/>
+                                                <img class="img-fluid" src="{{$post->picture}}" alt="{{$post->title}}"/>
                                             </a>
                                         </div>
 {{--                                        <a class="post-category" href="{{route('category',ucfirst($post->category->name))}}"  style="background:{{$post->category->color}}">{{$post->category->name}}</a>--}}
@@ -212,7 +212,7 @@
                     @endauth
                     <div id="comments" class="comments-block">
                         <h3 class="news-title ">
-                            <span>Comments ( {{$items->post->comments_count}} )</span>
+                            <span>Comments ( {{$items->post->comments->where('status','verified')->count()}} )</span>
                         </h3>
                         <ul class="all-comments">
                             @include('partials.comments',['comments' => $items->comments])

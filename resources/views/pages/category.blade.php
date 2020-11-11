@@ -28,7 +28,7 @@
                         <h3 class="news-title"><span>{{$name}}</span></h3>
                         @foreach($items->posts as $item)
                             <div class="post-block-wrapper post-list-view clearfix">
-                                <div class="row">
+                                <div class="row d-flex justify-content-center align-items-center">
                                     <div class="col-md-5 col-sm-6">
                                         <div class="post-thumbnail thumb-float-style">
                                             <a href="{{route('post',[ucfirst($item->category->name),$item->slug])}}">

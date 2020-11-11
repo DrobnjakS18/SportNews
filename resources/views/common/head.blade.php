@@ -44,10 +44,13 @@
     <link rel="stylesheet" href="{{asset('plugins/slick-carousel/slick.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/slick-carousel/slick-theme.css')}}">
     <!-- Styles -->
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="{{ asset('tags-input/dist/jquery.tagsinput.min.css') }}" rel="stylesheet">
     <!-- Quill Snow Theme included stylesheets -->
     <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
+
+
+
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>

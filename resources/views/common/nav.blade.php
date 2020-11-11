@@ -41,7 +41,7 @@
                 <!-- Logo -->
                 <div class="logo">
                     <a href="{{route('home')}}">
-                        <img src="{{asset('storage/images/logo.png')}}" alt="Sports News logo"> <!-- Replace Logo Here -->
+                        <img src="{{asset('images/logo.png')}}" alt="Sports News logo"> <!-- Replace Logo Here -->
                     </a>
                 </div>
                 <!-- End Logo -->
@@ -94,7 +94,7 @@
             <div class="col-lg-12">
                 <nav class="navbar navbar-expand-lg site-main-nav navigation">
                     <a class="navbar-brand d-lg-none" href="{{route('home')}}">
-                        <img src="{{asset('storage/images/footer-logo.png')}}" alt="Sport News logo">
+                        <img src="{{asset('images/footer-logo.png')}}" alt="Sport News logo">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="fa fa-bars"></span>
@@ -113,7 +113,7 @@
                                 <a class="nav-link" href="{{route('category','Basketball')}}">Basketball</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link" href="{{route('category','Tenis')}}">Tenis</a>
+                                <a class="nav-link" href="{{route('category','Tennis')}}">Tennis</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link" href="{{route('category','Esports')}}">ESPORTS</a>

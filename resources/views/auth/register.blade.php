@@ -9,7 +9,7 @@
         <div class="row align-items-center justify-content-center">
             <div class="col-lg-7">
                 <div class="signup">
-                    <div class="text-center"><a href="{{route('home')}}"><img src="{{asset('images/logos/logo.png')}}" alt="" class="Sports News logo"></a></div>
+                    <div class="text-center"><a href="{{route('home')}}"><img src="{{asset('images/logo.png')}}" alt="" class="Sports News logo"></a></div>
                     <h3 class="mt-4">Sign Up Here</h3>
                     <p class="mb-5">Join with us and feel better</p>
                     <form action="{{ route('register') }}" class="signup-form row" method="POST">

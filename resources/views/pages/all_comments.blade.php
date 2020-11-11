@@ -4,8 +4,21 @@
 @section('og-image', $items->post->picture)
 
 @section('content')
-    <section class="all-comments section-padding mt-5">
+    <section class="all-comments section-padding">
         <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <ol class="breadcrumb mt-0">
+                        <li>
+                            <a href="{{route('home')}}">Home</a>
+                        </li>
+                        <li>
+                            <a href="{{route('category',ucfirst($items->post->category->name))}}">{{ucfirst($items->post->category->name)}}</a>
+                        </li>
+                        <li>{{ucfirst($items->post->title)}}</li>
+                    </ol>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-12 col-md-10">
                    <div class="single-post">
@@ -44,14 +57,14 @@
                     @endauth
                     <div id="comments" class="comments-block">
                         <h3 class="news-title">
-                            <span>Comments ( {{$items->post->comments->where('comment_id',null)->count()}} )</span>
+                            <span>Comments ( {{$items->post->comments->where('comment_id',null)->where('status','verified')->count()}} )</span>
                             <span class="title-sort" data-type="disliked"><a href="{{route('comments.sort',['slug' => $items->post->slug, 'type' => 'disliked'])}}">Most Disliked</a></span>
                             <span class="title-sort" data-type="liked"><a href="{{route('comments.sort',['slug' => $items->post->slug, 'type' => 'liked'])}}">Most Liked</a></span>
                             <span class="title-sort" data-type="newest"><a href="{{route('comments.sort',['slug' => $items->post->slug, 'type' => 'newest'])}}">Newest</a></span>
                         </h3>
                         <ul class="all-comments">
                             @if($items->comments->count() > 0)
-                                @foreach($items->comments as $comment)
+                                @foreach($items->comments->where('status','verified') as $comment)
                                     @if($comment->comment_id == null)
                                         <li>
                                             <div class="comment">
@@ -65,7 +78,7 @@
                                                         <p>{{$comment->text}}
                                                         </p>
                                                     </div>
-                                                    @auth
+
                                                         <a href="#" class="comment-like @if($comment->likes->where('user_id','=',Auth::id())->where('comment_id','=',$comment->id)->count() > 0) like-after-click @endif" data-post-id="{{$comment->post->id}}" data-comment-id="{{$comment->id}}" data-action="like">
                                                             <i class="fa fa-thumbs-up text-success comment-likes" aria-hidden="true"></i>
                                                         </a>
@@ -74,6 +87,7 @@
                                                             <i class="fa fa-thumbs-down text-danger comment-likes" aria-hidden="true"></i>
                                                         </a>
                                                         <span class="dislikes-count">{{$comment->dislike}}</span>
+                                                    @auth
                                                         <button class="comment-reply ml-3" onclick="ToggleReplyForm({{$comment->id}})"><i class="fa fa-reply"></i>  Reply</button>
                                                     @endauth
                                                 </div>

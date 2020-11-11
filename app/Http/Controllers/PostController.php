@@ -135,6 +135,8 @@ class PostController extends Controller
     {
        $response =  $this->postService::store(clean($request->title,'title'),$request->url,clean($request->category,'p'),clean($request['content']),$request->tags);
 
+//       dd($response);
+
        return json_encode($response);
     }
 
@@ -151,7 +153,7 @@ class PostController extends Controller
     }
 
     /**
-     * Remove specified question.
+     * Remove specified article.
      *
      * @param  int  $id
      *
@@ -163,4 +165,5 @@ class PostController extends Controller
 
         return redirect()->route('admin.post.index');
     }
+
 }

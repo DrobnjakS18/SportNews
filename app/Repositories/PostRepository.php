@@ -43,6 +43,14 @@ class PostRepository extends BaseRepository
         return Post::find($id);
     }
 
+    /**
+     * Find post by author name and post id
+     */
+    public static function findByAuthorAndId($authorId,$id)
+    {
+        return Post::where('user_id',$authorId)->find($id);
+    }
+
     public static function findBySlug($slug)
     {
         return Post::where('slug',$slug)->firstOrFail();
@@ -87,7 +95,7 @@ class PostRepository extends BaseRepository
      */
     public static function findByCategory($id)
     {
-        return Post::where('category_id',$id)->simplePaginate(4) ;
+        return Post::where('category_id',$id)->orderBy('created_at','DESC')->simplePaginate(4) ;
     }
 
     /**
@@ -97,7 +105,7 @@ class PostRepository extends BaseRepository
      */
     public static function findByUser($id)
     {
-        return Post::where('user_id',$id)->simplePaginate(4);
+        return Post::where('user_id',$id)->orderBy('created_at','DESC')->simplePaginate(4);
     }
 
     /**
@@ -200,7 +208,20 @@ class PostRepository extends BaseRepository
     {
         $post = self::findById($id);
 
-        $post->tags()->detach();
+        if(tags()->count()) {
+            $post->tags()->detach();
+        }
+
+        return $post->delete();
+    }
+
+    static public function authorDelete($authorId,$id)
+    {
+        $post = self::findByAuthorAndId($authorId,$id);
+
+        if(tags()->count()) {
+            $post->tags()->detach();
+        }
 
         return $post->delete();
     }

@@ -8,7 +8,7 @@
         <div class="row align-items-center justify-content-center">
             <div class="col-lg-7">
                 <div class="login">
-                    <div class="text-center"><a href="{{route('home')}}"><img src="{{asset('images/logos/logo.png')}}" alt="" class="img-fluid"></a></div>
+                    <div class="text-center"><a href="{{route('home')}}"><img src="{{asset('images/logo.png')}}" alt="" class="img-fluid"></a></div>
 
                     <h3 class="mt-4">Login Here</h3>
                     <p class="mb-5">Enter your valid mail & password</p>

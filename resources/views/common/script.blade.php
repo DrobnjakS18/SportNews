@@ -11,10 +11,19 @@
 <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
 
 <script src="{{ asset('tags-input/dist/jquery.tagsinput.min.js') }}"></script>
+
+
+
+
+
+
 <script src="{{ asset('js/script.js') }}"></script>
 
-<script src="{{asset('plugins/slick-carousel/slick.min.js')}}"></script>
 
+
+
+
+<script src="{{asset('plugins/slick-carousel/slick.min.js')}}"></script>
 <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 {{--<!-- Google Map -->--}}
 {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>--}}

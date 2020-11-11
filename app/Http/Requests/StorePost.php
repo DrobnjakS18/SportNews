@@ -28,7 +28,7 @@ class StorePost extends FormRequest
             'title' => ['bail','required','unique:posts,title'],
             'category' => ['bail','required','exists:categories,name'],
             'content' => ['bail','required', new NotEmptyHtml],
-            'url' => ['bail','required','url']
+            'url' => ['bail','required']
         ];
     }
 
@@ -50,7 +50,7 @@ class StorePost extends FormRequest
             'content.required' => 'Content is required',
 
             'url.required' => 'Headline image is required',
-            'url.url' => 'Headline image invalid'
+//            'url.url' => 'Headline image invalid'
 
         ];
     }

@@ -13,263 +13,268 @@ class PostTableSeeder extends Seeder
     {
         DB::table('posts')->insert([
             [
-                'title' => 'Soccer\'s Misery Index features Man United, Rangers, Malaga and other painful tales',
-                'slug' => 'soccers-misery-index-features-man-united-rangers-malaga-and-other-painful-tales',
-                'content' => '<p>Sports are cruel. There, we said it. They play with our emotions, mess with our hearts, fill us with joy and smash it just as quickly. Every team has known what it\'s like to lose a big game, but how about a full season of losing? How about a decade? How about a lifetime?</p>
+                'title' => 'Ex-NYCFC boss, Pep Guardiola assistant Domenec Torrent sacked at Flamengo',
+                'slug' => 'ex-nycfc-boss-pep-guardiola-assistant-domenec-torrent-sacked-at-flamengo',
+                'content' => '<p>Brazilian champions Flamengo fired Spanish coach Domenec Torrent just 10 weeks after hiring the former <a href="https://www.espn.com/soccer/team?id=17606">New York City FC</a> boss, the club announced on Monday.</p>
 
-<p>There are unhappy fan bases all over soccer, but if your definition of pain is not winning every trophy, or getting knocked out of the Champions League in the quarterfinals, think again. You\'ve not heard anything yet.</p>
+<p>Rogerio Ceni has been appointed the new manager after resigning from his post at <a href="https://www.espn.com/football/team/_/id/6272/fortaleza">Fortaleza</a> and will take up his new position in Rio de Janeiro immediately.</p>
 
-<p>The ESPN FC Misery Index is a chance to shine a light on those teams that have endured far more than their fair share of sadness in the modern era, to let those fans tell their stories and explain why it has been so tough to be a fan.<img src="http://sport.test/storage/images/i_(1)_1581585198.jpg" alt="i_(1)_1581585198.jpg"></p>
+<p><strong>- Vickery: </strong><a href="https://www.espn.com/soccer/flamengo/story/4231305/flamengo-unfairly-sacked-scapegoat-domenec-torrent-in-the-era-of-no-coaches"><strong>Torrent unfairly made scapegoat at Flamengo</strong></a></p>
 
-<p><br></p>
+<p><strong>- </strong><a href="https://www.espn.com/watch/catalog/88f27099-2a08-4c9c-9792-6aa026eff3f1"><strong>Stream ESPN FC Daily on ESPN+ (U.S. only)</strong></a></p>
 
-<p>"There are things that only happen to Botafogo."</p>
+<p>The former <a href="https://www.espn.com/football/team/_/id/2026/s%C3%A3o-paulo">Sao Paulo</a> and <a href="https://www.espn.com/football/team/_/id/205/brazil">Brazil</a> goalkeeper signed a contract until December 2021.</p>
 
-<p>It is a common phrase in Rio de Janeiro football, usually uttered by fans of the club. The depth of self-pity is revealing and, in a sense, understandable.</p>
+<p>The move was made after Flamengo suffered two heavy defeats in their last three games.</p>
 
-<p>When older Botafogo fans speak of their club\'s golden age, it is not rose-tinted nostalgia. They really did grow up watching the legends. The Brazil teams that won the World Cup in 1958, \'62 and \'70, thereby establishing the country as football\'s spiritual home, were basically formed by the Santos team that included Pele, and Botafogo, which contributed great winger Garrincha, second in the pantheon of the Brazilian game, and epic left-back Nilton Santos, nicknamed the "encyclopaedia" because he knew it all. Didi and Gerson, the <em>Selecao</em> midfield pass masters, were Botafogo players, as were Mario Zagallo on the wing, Amarildo, who stepped in so well when Pele was injured in \'62, and Jairzinho, who scored in every game in the magical 1970 campaign.</p>',
-                'short_text' => 'Sports are cruel. There, we said it. They play with our emotions, mess with our hearts, fill us with...',
-                'picture' => 'i_1581585212.jpg',
+<p>"Domenec Torrent and his backroom staff are no longer in charge of the first team," the Rio de Janeiro club said in a statement.</p>
+
+<p>Flamengo are third in the Serie A table, one point behind leaders Internacional, having lost just twice in the past 15 games.</p>
+
+<p>They also won their group to qualify for the last-16 of the Copa Libertadores, a title they are defending after beating River Plate in last year\'s final.</p>
+
+<p>However, a 4-0 defeat by second-place Atletico Mineiro on Sunday, coming a week after a 4-1 trouncing at home to Sao Paulo, prompted directors to act.</p>
+
+<p>Torrent always faced a tough task trying to repeat the success of previous Flamengo manager Jorge Jesus, who had a spectacular one-year stay before leaving for <a href="https://www.espn.com/soccer/team?id=1929">Benfica</a> in the summer. The Portuguese, who became an icon at the club, guided Flamengo to their first Brazilian first division title since 2009, their first Copa Libertadores since 1981 and a Rio de Janeiro state championship.</p>
+
+<p>The 58-year-old Torrent had spent 10 years as Pep Guardiola\'s assistant at <a href="https://www.espn.com/soccer/team?id=83">Barcelona</a>, <a href="https://www.espn.com/soccer/team?id=132">Bayern Munich</a> and <a href="https://www.espn.com/soccer/team?id=382">Manchester City</a> before managing NYCFC from June 2018 to November 2019.</p>
+
+<p>Before joining Guardiola at Barca in 2007 he coached three clubs in Spain.</p>
+
+<p><em>Information from Reuters was used in this report.</em></p>',
+                'short_text' => 'Brazilian champions Flamengo fired Spanish coach Domenec Torrent just 10 weeks after hiring the form...',
+                'picture' => 'https://sport-news.s3.amazonaws.com/post/images/pep.jpg',
+                'select' => 'selected',
                 'user_id' => 1,
                 'category_id' => 1
             ],
             [
-                'title' => 'Ronaldo and Zlatan clash for the first time since 2015. Are you ready?',
-                'slug' => 'ronaldo-and-zlatan-clash-for-the-first-time-since-2015-are-you-ready',
-                'content' => '<p>On Thursday, two of the most prolific goal scorers of their generation will meet for the ninth time in their respective careers. AC Milan host Juventus in the first leg of the Coppa Italia semifinals -- <strong>stream live on ESPN+, 2:45 p.m. ET Thursday</strong> -- and that means 38-year-old recent Milan signing (well, re-signing) <a href="http://espnfc.com/player/_/id/11001/Zlatan-Ibrahimovic">Zlatan Ibrahimovic</a> and 35-year-old second-year Juve striker <a href="http://espnfc.com/player/_/id/22774/Cristiano-Ronaldo">Cristiano Ronaldo</a> will face off for the first time since November 2015.</p>
+                'title' => 'Man City, Liverpool show flaws and fatigue, giving hope to Premier League title rivals',
+                'slug' => 'man-city-liverpool-show-flaws-and-fatigue-giving-hope-to-premier-league-title-rivals',
+                'content' => '<p>MANCHESTER, <a href="https://www.espn.com/soccer/team?id=448">England</a> -- After 90 minutes between the Premier League\'s best two teams there was no clear winner, and if anything, <a href="https://www.espn.com/soccer/team?id=382">Manchester City</a><a href="https://www.espn.com/soccer/report?gameId=578585">\'s 1-1 draw with </a><a href="https://www.espn.com/soccer/team?id=364">Liverpool</a> served as more evidence that this season\'s title race is open to anyone. After a weekend that saw <a href="https://www.espn.com/soccer/team?id=376">Southampton</a>, Tottenham and Leicester all lead the table at one time or another, a stalemate at the Etihad Stadium reminded the chasing pack that this year they have a chance.</p>
 
-<p>Ronaldo and Ibrahimovic have played each other eight times at the club level: six times in the Champions League and twice in La Liga, when Zlatan was with Barcelona. These matches resulted in three draws, three wins for Ronaldo, two wins for Ibrahimovic and just three combined goals for the two strikers. This matchup itself is not without short-term consequence. Winning the Coppa Italia might represent Milan\'s best chance to qualify for European competition next year, and the whole point of Juve signing Ronaldo was to win countless trophies. Still, Thursday\'s battle is more interesting for the big-picture perspective than anything else.</p>
+<p><strong>- </strong><a href="https://www.espn.com/watch/catalog/88f27099-2a08-4c9c-9792-6aa026eff3f1"><strong>Stream ESPN FC Daily on ESPN+ (U.S. only)</strong></a></p>
 
-<p>Aside from their goal-scoring capabilities -- the two combined for upward of 800 goals in the 2010s (admittedly, about two-thirds of that total came from Ronaldo) -- these two strikers don\'t have a ton in common. Ronaldo has played for just three clubs in the past 17 years (Manchester United, Real Madrid and, for the past season and a half, Juventus), and Ibrahimovic has primarily been a hired gun, playing for more than three seasons with one club just once (Paris Saint-Germain, 2012-16). Ronaldo has won both the Champions League and the Ballon d\'Or five times each; Ibrahimovic has zero of either.</p>
+<p><strong>- </strong><a href="https://fantasy.espn.com/games/english-premier-league-pickem-2020/make-picks?addata=englishsoccerpickem2020_soccer_web_inline"><strong>Predict results in ESPN\'s English Soccer Pick \'Em!</strong></a></p>
 
-<p><br></p>
+<p><strong>- </strong><a href="https://www.espn.com/soccer/blog-espn-fc-united/story/4172733/espn+-viewers-guide-bundesligaserie-amajor-league-socceruefa-nations-leaguefa-cupmore"><strong>ESPN+ viewer\'s guide: Bundesliga, Serie A, MLS, FA Cup and more</strong></a></p>
 
-<p>Juventus\' acquisition of Ronaldo was the grandest of gestures, costing more than £100 million and bringing enormous expectations. Milan\'s goals in bringing in Ibrahimovic were far more modest. In the end, there\'s a chance we look at the latter move as more successful than the former.</p>
+<p>Liverpool remain within touching distance of the top but whether they will be there at the end depends largely on how quickly they can start keeping clean sheets. City, meanwhile, will rue <a href="https://www.espn.com/soccer/player/_/id/134947/Kevin-De-Bruyne">Kevin De Bruyne</a>\'s missed penalty at the end of the first half, leaving Pep Guardiola answering more questions about why his team are not scoring more goals.</p>
 
-<p>It\'s all about where you set the bar.</p>
+<p>Liverpool, without <a href="https://www.espn.com/soccer/player/_/id/157892/Virgil-van-Dijk">Virgil van Dijk</a>, are conceding too many and City, without <a href="https://www.espn.com/soccer/player/_/id/44927/Sergio-Ag%C3%BCero">Sergio Aguero</a>, are not scoring enough. Make no mistake, these are still England\'s best two teams, and whoever solves their issue first will be favourites for the title.</p>
 
-<p><strong>It was clear that, in signing Ronaldo, Juventus were thinking beyond Italy</strong></p>
+<p>Perhaps crucially, Aguero is expected back after the international while Liverpool will have to cope without Van Dijk for many months yet. Remember, City could not cope when they lost <a href="https://www.espn.com/soccer/player/_/id/159317/Aymeric-Laporte">Aymeric Laporte</a> to injury last season.</p>
 
-<p><br></p>
+<p>The one problem they have got in common is the schedule, and it was noticeable that after an entertaining first half, the quality dropped after the break at the end of a long week that included Champions League commitments.</p>
 
-<p><img src="http://sport.test/storage/images/ronaldo_1581588296.jpg" alt="ronaldo_1581588296.jpg"></p>',
-                'short_text' => 'On Thursday, two of the most prolific goal scorers of their generation will meet for the ninth ti...',
-                'picture' => 'ronaldo_ibra_1581588318.jpg',
+<p>"I actually like the whole game, but the start was probably the best period," Jurgen Klopp said.</p>
+
+<p>"That is how football is. Especially against City, you have to use your chances or create even more. For the football we played in that period, we didn\'t have enough. You just have to stay in the game. The energy level of both teams, it was a proper fight on the highest level."</p>
+
+<p><br></p>',
+                'short_text' => 'MANCHESTER, England -- After 90 minutes between the Premier League\'s best two teams there was no c...',
+                'picture' => 'https://sport-news.s3.amazonaws.com/post/images/liverpool.jpg',
+                'select' => 'selected',
                 'user_id' => 2,
                 'category_id' => 1
             ],
             [
-                'title' => 'Ajax defender Daley Blind makes first appearance since heart procedure',
-                'slug' => 'ajax-defender-daley-blind-makes-first-appearance-since-heart-procedure',
-                'content' => '<p>"I am really happy to be back on the pitch," Blind told Fox Sports Netherlands. "I was so eager to get back. I had a little bit of tension beforehand because you don\'t know how it will go. But I knew before the match that I would come on, so I looked forward to it."</p>
+                'title' => 'Soccer Star Megan Rapinoe On Equal Pay, And What The U.S. Flag Means To Her',
+                'slug' => 'soccer-star-megan-rapinoe-on-equal-pay-and-what-the-us-flag-means-to-her',
+                'content' => '<p>In the 2019 Women\'s World Cup finals, when the final whistle blew and the U.S. team stormed the field in celebration, thousands of fans chanted, "Equal pay! Equal Pay!"</p>
 
-<p>The procedure Blind underwent in December saw the former Manchester United defender fitted with a subcutaneous implantable defibrillator, according to the club.</p>
+<p>The U.S. Women\'s National Team, co-captained by Megan Rapinoe, has been a symbol of gender equality ever since they filed a lawsuit in March 2019<strong> </strong>against the U.S. Soccer Federation alleging pay discrimination.</p>
 
-<p>Blind said: "It was heavy period because you don\'t know what is coming or which news you will get but luckily it didn\'t last long for everything to look good. I have been positive most of the time and was busy with my return.</p>
+<p>Members of the women\'s soccer team earn significantly less than their male counterparts — despite the fact that their team has been more successful and more profitable. (The women\'s team has won four World Cup tournaments; the men\'s team has never won the World Cup.)</p>
 
-<p>"The doctor really needed to hold me back and step on the brakes because I wanted to get back asap. I wasn\'t scared at all, I wanted to get back on the pitch as fast as possible.</p>
+<p>Rapinoe says that when it comes to pay equity, the U.S. is due for a "paradigm shift" in how we understand the value and potential of women.</p>
 
-<p>"I have missed [playing] a lot. I missed my teammates and I missed being on the pitch. I need to build up now, I am not fully fit to play 90 minutes."</p>
+<p>"Men are so often paid and compensated on the potential that they show, not necessarily what they\'ve done," Rapinoe says. "And women are so often paid on what they\'ve actually done — which normally I would say, we outperform what our contract was."</p>
 
-<p>Ajax, who missed out on the Champions League round of 16 after making it to the semifinals in 2019, next face RKC Waalwijk in the Eredivisie on Feb. 16.</p>',
-                'short_text' => '"I am really happy to be back on the pitch," Blind told Fox Sports Netherlands. "I was so eager t...',
-                'picture' => 'ajax_1581588851.jpg',
+<p>A federal judge <a href="https://www.npr.org/2020/05/02/849492863/federal-judge-dismisses-u-s-womens-soccer-team-s-equal-pay-claim">dismissed</a> the claim in May 2020, but the team plans to file an appeal.</p>
+
+<p><span style="color:rgb(51,51,51);">"The amount of money that [the women\'s team players] could possibly earn in our contract — compared to the amount of money that the men could possibly earn in the contract — is very different," Rapinoe says. "We\'ve been very successful ... and to get paid about the same dollar-for-dollar amount [as the men] — that\'s sort of at the heart of pay inequity and gender discrimination. "</span></p>',
+                'short_text' => 'In the 2019 Women\'s World Cup finals, when the final whistle blew and the U.S. team stormed the fiel...',
+                'picture' => 'https://sport-news.s3.amazonaws.com/post/images/women.jpg',
+                'select' => 'selected',
                 'user_id' => 3,
                 'category_id' => 1
             ],
             [
-                'title' => 'ESPN FC 100: Liverpool, Man City dominate our ranking of world\'s best soccer players',
-                'slug' => 'espn-fc-100-liverpool-man-city-dominate-our-ranking-of-worlds-best-soccer-players',
-                'content' => '
+                'title' => 'Portuguese police raid Benfica and Sporting offices in corruption inquiry',
+                'slug' => 'portuguese-police-raid-benfica-and-sporting-offices-in-corruption-inquiry',
+                'content' => '<p>Police in <a href="https://www.theguardian.com/world/portugal">Portugal</a> have raided the offices of Primeira Liga clubs Benfica, Sporting and Santa Clara as part of a corruption and money laundering investigation linked to player transfers.</p>
 
-<p>To compile the 2019 edition of ESPN FC 100, more than 40 ESPN FC experts from around the world were given a list of about 250 players and managers to make their selections.</p>
+<p>The Portuguese general prosecutor’s office revealed that nearly 30 searches were carried out on Monday by Judicial Police and the Tax Authority under the direction of the Public Ministry. All three clubs confirmed the searches, with <a href="https://www.theguardian.com/football/benfica">Benfica</a> underlining their “total willingness to collaborate with the authorities”.</p>
 
-<p>Now here\'s the key: We didn\'t use one mega-list with all players mixed together -- such conceits inevitably favor attackers because everyone loves a good goal, don\'t they? But that isn\'t fair to those engaged in the dark arts at the back. So instead, we broke down the world\'s best players by position in a 4-3-3 formation, plus manager. Each expert then contributed a top 10 for each category: we crunched the numbers and did a final review with a select few writers.</p>
+<p>Sporting said in a statement the investigation is related to alleged irregularities from 2011-14 and congratulated the efforts to promote transparency in Portuguese football. Prosecutors said they were investigating “a range of cases, all linked to professional football, which could include crimes of economic participation in business or undue receipt of advantage, active and passive corruption, qualified tax fraud and money laundering”.</p>
 
-<p>Also new for this year: we presented the No. 1 players at each position with an FC 100 award. You can watch our presentations in the video atop this file. (And you thought emotions ran high for the Ballon d\'Or.)</p>
+<p>They added: “The investigation is also looking into the acquisition of sports and economic rights by players from national football clubs, loans granted to one of these clubs and to a sports company by a citizen of Singapore with interests in companies based in the British Virgin Islands and the use of accounts of the same club and another, for the circulation of money.”</p>
 
-<p>ESPN FC 100 is back, and our annual ranking of the best men\'s players and managers in the world <em>right now</em> made something abundantly clear: <a href="https://www.espn.com/soccer/club/_/id/364/liverpool">Liverpool</a> rule.</p>
+<p>According to reports by Portuguese broadcasters TVI, the Benfica president Luís Filipe Vieira<strong> </strong>is the main target of the authorities, with prosecutors also focusing on the transfer of three Libyan players who signed for Santa Clara. Real estate businessman Vieira was re-elected president of the 37-times Portuguese champions last month, extending a reign that began in 2003.</p>
 
-<p>The Merseyside club took home more than a few top honors, followed by <a href="https://www.espn.com/soccer/league/_/name/eng.1">Premier League</a> defending champions <a href="https://www.espn.com/soccer/club/_/id/382/manchester-city">Manchester City</a> and, oh yeah, this Average Joe who plies his trade in <a href="https://www.espn.com/soccer/team/_/id/83/Barcelona">Barcelona</a>. (Three guesses who that is -- and the first two don\'t count.)</p>
+<p>The 71-year-old is already facing a corruption trial alongside 16 other people, including three judges, and was also indicted in a tax fraud investigation targeting Benfica, who have also been implicated in match-fixing.</p>
 
-<p><br></p>',
-                'short_text' => 'To compile the 2019 edition of ESPN FC 100, more than 40 ESPN FC experts from around the world...',
-                'picture' => 'world_1581589191.jpg',
+<p>On Tuesday, Varandas Fernandes, Benfica’s vice-president, told Rádio Renascença that Vieira is “relaxed” over the investigations. “President Luís Filipe Vieira remains calm and gives all his time to Benfica,” he said.</p>
+
+<p><br></p>
+
+<p>“The processes are with the legal teams, the investigation has to be respected and we will collaborate as usual. Benfica fans can be confident that we will maintain the course that enabled us to get here with good financial, sporting and patrimonial results. Whatever the outcome of the process, it will prove the legality of all the procedures that have been used.”</p>',
+                'short_text' => 'Police in Portugal have raided the offices of Primeira Liga clubs Benfica, Sporting and Santa Clar...',
+                'picture' => 'https://sport-news.s3.amazonaws.com/post/images/benfica.jpg',
+                'select' => 'selected',
                 'user_id' => 1,
                 'category_id' => 1
             ],
             [
-                'title' => 'At Barcelona it\'s Lionel Messi, Pique and the players who hold the power, not the manager',
-                'slug' => 'at-barcelona-its-lionel-messi-pique-and-the-players-who-hold-the-power-not-the-manager',
-                'content' => '<p>"Not in my wildest dreams could I have imagined being coach of Barcelona," Quique Setien said after the club appointed him last week, ending a turbulent chapter under the previous boss, Ernesto Valverde. "I never thought Barcelona would choose me."</p>
+                'title' => 'Has Zlatan Ibrahimovic found the Holy Grail? – Football Weekly',
+                'slug' => 'has-zlatan-ibrahimovic-found-the-holy-grail-football-weeklyr',
+                'content' => '<p>It’s another European special for Max and the pod, who look at Lazio’s weird Covid test results, and whether has Zlatan Ibrahimovic has found football’s Holy Grail, allowing him to keep playing forever.</p>
 
-<p>Nor did most people. Betis\' 61-year-old former coach is a committed follower of Johan Cruyff, father of Barcelona\'s football, but he was jobless with an unremarkable coaching career when the club tapped him to replace the sacked Valverde. Yet it\'s precisely Setien\'s modest coaching career that appeals to Barca, and the same applied to the club\'s first choice, Xavi, who turned them down.</p>
+<p>Bayern win <em>Der Klassiker</em> again, and we get out the Giroud-ometer after a glorious scorpion kick goal for Gladbach.</p>
 
-<p>Xavi was a great player whose coaching experience to date amounts to a few months with Al Sadd in Qatar. I realized recently while reporting a book I\'m writing about how Barcelona works: The last thing this club wants is a big-name coach. Almost everywhere in football, the role of the coach is shrinking -- and nowhere more so than at the Camp Nou.</p>
+<p>And in Spain, Leo Messi is on the bench, Real Madrid’s back-line have a day to forget and Granada have to field the kids.</p>
 
-<p><br></p>
-
-<p>The last time Barca chose someone who was an A-list coach at the moment of his appointment was in 2002, when Louis van Gaal briefly returned to the club. After his failure, Barcelona decided to reverse its decision-making. Instead of hiring a coach and letting him decide what kind of football to play, the club would decide what kind of football to play and find a coach to go with it.</p>
-
-<p>What kind of football to play was obvious: the fast-passing, attacking, pressing Dutch style introduced by Cruyff in his years as club coach from 1988 to \'96. In 2003, Barca\'s new president, Joan Laporta, asked Cruyff which coach could bring that football back. Cruyff recommended his fellow Dutchman Frank Rijkaard, freshly relegated from the Dutch Eredivisie with Sparta Rotterdam. Rijkaard came to Barcelona and won the Champions League in 2006.</p>
+<p>Back on Thursday.</p>
 
 <p><br></p>
 
-<p>When Rijkaard left in 2008, Barca nearly appointed a big-name coach, as club officials flew to Lisbon to interview Jose Mourinho. Hiring him seemed the obvious choice, but Barca didn\'t. Mourinho\'s defensive game was the opposite of Cruyffian, and his abrasive public persona was the opposite of the "respect" the club wanted to project. Instead, Barca appointed a no-name coach in 37-year-old Josep Guardiola, who, although a former A-list player for the club, at that point had managed only one team, Barca B. Guardiola quickly became the biggest-name coach in football, but after he left in 2012, he was succeeded by a string of "lesser" names. First was Guardiola\'s assistant, Tito Vilanova, and after he resigned, the obscure Argentine Gerardo Daniel \'Tata\' Martino came in, followed by the inexperienced Luis Enrique, Valverde and, finally, Setién.</p>
+<p><strong>Support The Guardian</strong></p>
 
-<p>In short, Barcelona recruits no-name coaches. At this club, the coach isn\'t the boss. He doesn\'t determine how the team plays. Rather, now that the Cruyffian house style is fading out inside Barca, the team\'s style of play is largely determined by the players, in particular by <a href="http://espnfc.com/player/_/id/45843/Lionel-Messi">Lionel Messi</a>.</p>',
-                'short_text' => '"Not in my wildest dreams could I have imagined being coach of Barcelona," Quique Setien said aft...',
-                'picture' => 'barselona_1581589486.jpg',
+<p>The Guardian is editorially independent. And we want to keep our journalism open and accessible to all. But we increasingly need our readers to fund our work.</p>',
+                'short_text' => 'It’s another European special for Max and the pod, who look at Lazio’s weird Covid test results,...',
+                'picture' => 'https://sport-news.s3.amazonaws.com/post/images/zlatan.jpg',
+                'select' => 'unselected',
                 'user_id' => 2,
                 'category_id' => 1
             ],
             [
-                'title' => 'Luka Doncic, Kristaps Porzingis shine as a duo in Doncic\'s return from injury',
-                'slug' => 'luka-doncic-kristaps-porzingis-shine-as-a-duo-in-doncics-return-from-injury',
-                'content' => '
-<p>It was one of the young Dallas franchise cornerstones\' best performances as a duo, as Doncic and Porzingis showed the kind of synergy they struggled to form early in the season and then saw interrupted by extended injury absences for each.</p>
+                'title' => 'Giannis Antetokounmpo\'s future, All-Star trades, the NBA draft and everything else to watch this offseason',
+                'slug' => 'giannis-antetokounmpos-future-all-star-trades-the-nba-draft-and-everything-else-to-watch-this-offseason',
+                'content' => '<p>There hasn\'t been a trade in the NBA for almost nine months! Do you have the shakes? Let\'s take a look at the broader questions that will define the wild next month -- and maybe the next few years. How does a pandemic offseason unfold when almost every team is trying to win, limiting the number of sellers?</p>
 
-<p>"It\'s great that we both had those nights," said Doncic, who fed Porzingis on five of his eight assists. "We\'ve got to keep working, and we\'re going to get better and better."</p>
+<p><strong>The Giannis domino</strong></p>
 
-<p>The 20-year-old Doncic, an All-Star starter averaging 28.9 points, 9.5 rebounds and 8.7 assists in his second season, has put up spectacular numbers on a consistent basis when healthy all season. Porzingis, 24, got off to a frustratingly slow start after sitting out the previous season and a half while recovering from a torn ACL in his left knee.</p>
+<p>• Many within the Bucks remain confident <a href="http://www.espn.com/nba/player/_/id/3032977/giannis-antetokounmpo">Giannis Antetokounmpo</a> will sign a five-year supermax extension valued at between $220 million and $250 million (depending on the cap level) before the start of the 2020-21 regular season. Unless something drastic changes, Milwaukee is not trading him. If Antetokounmpo doesn\'t sign, the Bucks are prepared to play it out, sources have said.</p>
 
-<p>The chemistry between the two was clunky early in the season, while Doncic starred and Porzingis struggled. The Mavs averaged only 101.9 points per 100 possessions with both on the floor in the first 10 games.</p>
+<p>As an aside, it\'s an interesting quirk -- one that disadvantages the Bucks -- that Antetokounmpo is not allowed to sign that same deal <em>during</em> the season. A huge subset of players can sign extensions (for below the supermax) in-season.</p>
 
-<p>All-Star point guard <a href="http://www.espn.com/nba/player/_/id/3945274/luka-doncic">Luka Doncic</a> displayed no signs of rust in his return after missing seven games due to a sprained right ankle. Nor did he disrupt the rhythm <a href="http://www.espn.com/nba/player/_/id/3102531/kristaps-porzingis">Kristaps Porzingis</a> established during Doncic\'s absence.</p>
+<p>Antetokounmpo has already met supermax criteria, so there is no need to wait and see if he hits relevant benchmarks.</p>
 
-<p>Doncic had 33 points, 12 rebounds and 8 assists in the <a href="https://www.espn.com/nba/team/_/name/dal/dallas-mavericks">Dallas Mavericks</a>\' <a href="https://www.espn.com/nba/recap?gameId=401161456">130-111 victory</a> over the <a href="https://www.espn.com/nba/team/_/name/sac/sacramento-kings">Sacramento Kings</a> on Wednesday night. Porzingis contributed 27 points, 13 rebounds, 5 assists and 3 blocked shots in the blowout victory during the Mavs\' finale before the <a href="https://www.espn.com/nba/story/_/id/28292088/nba-all-star-game-2020-rosters-schedule-news-how-watch">All-Star break</a>.</p>
+<p>What if the Bucks start 30-5, and Antetokounmpo wants to commit?</p>
 
-<p><br></p>
+<p>Then again: What if the Bucks then disappoint in the playoffs? That\'s one intent of the rule: to give supermax-level players the most information before they decide. The league was also wary about supermax eligibility hovering over the season -- about superstars being asked if every win and loss impacts their thinking.</p>
 
-<p>As Porzingis accepted a secondary role, often spacing the floor as a weakside 3-point threat, the Dallas offense scored at a historic rate. The Mavs averaged 124.0 points per 100 possessions with Doncic and Porzingis on the floor during a monthlong stretch after those first 10 games, and Dallas went 11-3 during that span. (Dallas\' offensive rating of 116.5 this season ranks as the best ever.)</p>
+<p>In any case, the Bucks will be active. They love <a href="http://www.espn.com/nba/player/_/id/3037789/bogdan-bogdanovic">Bogdan Bogdanovic</a>, a restricted free agent with the <a href="https://www.espn.com/nba/team/_/name/sac/sacramento-kings">Sacramento Kings</a> who would require a sign-and-trade; the Bucks have kicked around scenarios in which they also absorb <a href="http://www.espn.com/nba/player/_/id/6578/harrison-barnes">Harrison Barnes</a>, sources have told ESPN. It is unclear if they have engaged the Kings in real discussions; it\'s early. (Acquiring any player in a sign-and-trade would trigger the hard cap.)</p>
 
-<p>Doncic and Porzingis had played only 160 minutes together over a 30-game span since then entering Wednesday night. Doncic twice sprained his right ankle, causing him to miss a total of 11 games. Between those sprains, Porzingis missed 10 consecutive games due to soreness in his right knee.</p>
+<p>The Bucks are also eyeing Indiana\'s <a href="http://www.espn.com/nba/player/_/id/2527963/victor-oladipo">Victor Oladipo</a>, though no substantive talks with the Pacers have taken place, sources say. Other teams are monitoring the Oladipo situation, but several of them would like to see Oladipo in action before engaging Indiana, sources say.</p>
 
-<p>If there was a silver lining with Doncic\'s ankle sprains for the Mavs, it was that Porzingis thrived as the focal point of the offense.</p>
+<p>Oladipo has struggled since his leg injury in January 2019, but he\'s only 28 and two years removed from an All-NBA season -- and on an expiring contract, which might deflate his trade value. If you don\'t give up too much now, letting Oladipo walk after the season (in the worst case) doesn\'t kill you. If Oladipo recovers 90% of peak form, any team that trades for him has a leg up on re-signing him (or extending him) through his prime.</p>
 
-<p>"Maybe in a sense where [I could] get my rhythm a bit more. Maybe in that sense," said Porzingis, who averaged 28.8 points per game on 48.8% shooting during Doncic\'s recent absence, compared to 18.4 points on 41.6% shooting overall this season. "But I felt like, yeah, right before he got hurt, we were also getting in a pretty good rhythm, we were playing with each other. Tonight was great."</p>',
-                'short_text' => 'It was one of the young Dallas franchise cornerstones\' best performances as a duo, as Doncic and...',
-                'picture' => 'doncic_1581589947.jpg',
+<p>The <a href="https://www.espn.com/nba/team/_/name/ny/new-york-knicks">New York Knicks</a> had past interest in Oladipo, sources say, but they might have shifted into "wait and watch" mode. Oladipo would be an interesting fallback option as the <a href="https://www.espn.com/nba/team/_/name/bkn/brooklyn-nets">Brooklyn Nets</a>\' "third star," though I\'d be <em>very</em> surprised if Brooklyn dealt <a href="http://www.espn.com/nba/player/_/id/2991043/caris-levert">Caris LeVert</a> for him.</p>
+
+<p>It would <em>not</em> surprise me if Oladipo and the Pacers come back to the table on extension talks. (Oladipo can sign an extension at any point during the season.) Indiana can offer him a four-year deal starting at $25 million per season. I\'m not sure the Pacers would approach that number, but considering Oladipo\'s recent play -- and that some potential suitors, including the <a href="https://www.espn.com/nba/team/_/name/mia/miami-heat">Miami Heat</a>, have likely backed away -- he would be wise to consider securing something.</p>
+
+<p>• The broader issue is what Milwaukee can offer for Oladipo (or <a href="http://www.espn.com/nba/player/_/id/3995/jrue-holiday">Jrue Holiday</a>) -- something like <a href="http://www.espn.com/nba/player/_/id/4238/eric-bledsoe">Eric Bledsoe</a>, <a href="http://www.espn.com/nba/player/_/id/3934673/donte-divincenzo">Donte DiVincenzo</a>, filler salary, and an extra first-round pick (or two) that will be low if Antetokounmpo stays. Bledsoe\'s trade value has cratered. The Pacers are probably not in any hurry to reunite the <a href="http://www.espn.com/nba/player/_/id/2566769/malcolm-brogdon">Malcolm Brogdon</a>/Bledsoe backcourt; would Milwaukee have to find a three-team deal sending Bledsoe elsewhere?</p>
+
+<p>The Bucks could sweeten the pot by trading lightly protected first-rounders further out -- picks that could become valuable (dangerously so from Milwaukee\'s perspective) if Antetokounmpo leaves.</p>
+
+<p>• There has been no traction so far -- and maybe not even any talks -- on any deal sending <a href="http://www.espn.com/nba/player/_/id/2779/chris-paul">Chris Paul</a> from the <a href="https://www.espn.com/nba/team/_/name/okc/oklahoma-city-thunder">Oklahoma City Thunder</a> to the Bucks, multiple sources say.</p>
+
+<p>• I don\'t know what Antetokounmpo is going to do, but I\'m on record betting against him signing the supermax this offseason. That said, as I told Bill Simmons <a href="http://www.espn.com/espnradio/play?id=30149918">on the Lowe Post podcast last month</a>, there is value in locking in between $220 million and $250 million. Rivals will be able to offer Antetokounmpo a four-year deal worth between $140 million and $160 million. Antetokounmpo would make up some of that difference in his next deal -- but not all of it. The economic outlook is uncertain. Antetokounmpo can always sign now, and ask for a trade after a one-year waiting period.</p>',
+                'short_text' => 'There hasn\'t been a trade in the NBA for almost nine months! Do you have the shakes? Let\'s take a lo...',
+                'picture' => 'https://sport-news.s3.amazonaws.com/post/images/gianis.jpg',
+                'select' => 'selected',
                 'user_id' => 3,
                 'category_id' => 2
             ],
             [
-                'title' => 'Karl-Anthony Towns out vs. Hornets with injured wrist',
-                'slug' => 'karl-anthony-towns-out-vs-hornets-with-injured-wrist',
-                'content' => '<p>"He\'s a guy who takes a lot of contact," Saunders said. "He\'s a guy who attacks the rim with force. There\'s been times where he\'s getting knocked to the floor. So we know that there is wear in that sense but no specific action."</p>
+                'title' => 'Election 2020: How does political perception differ from reality in American sports?',
+                'slug' => 'election-2020-how-does-political-perception-differ-from-reality-in-american-sports',
+                'content' => '<p><strong>THE LOS ANGELES DODGERS</strong> faced a decision. They had just paid one of baseball\'s highest-profile stars, <a href="http://www.espn.com/mlb/player/_/id/33039/mookie-betts">Mookie Betts</a>, $365 million. And now their star, after expressing hesitancy in 2016 to kneel during the national anthem because of his father\'s military service in Vietnam, had changed his position.</p>
 
-<p>Towns is averaging a career-best 26.5 points and 10.8 rebounds in 35 games this season. He missed 15 games earlier this season because of a sprained left knee.</p>
+<p>"I wasn\'t educated," Betts said in July about why his stance changed. "That\'s my fault. I need to be educated on the situation. I know my dad served, and I\'ll never disrespect the flag, but there\'s also gotta be change in the world, and kneeling has nothing to do with those who served our country."</p>
+
+<p>How would the team respond?</p>
+
+<p><a href="https://twitter.com/Dodgers/status/1286483621792997377">The organization backed him publicly</a> -- a purposeful move into politics that historically hasn\'t been a choice that sports franchises have been all that comfortable making. Image, the saying goes, is everything, and businesses have long been concerned about alienating customers. Yet the Dodgers\' move, like so many similar efforts seen in 2020 from throughout the sports industry, would seem to indicate a significant philosophical change that emanates right from the top of these organizations.</p>
+
+<p>Not so much, at least by one measure: Campaign donations by owners to politicians and parties can be at odds with the public statements and actions of the teams they own. <a href="http://preview.espn.com/nba/story/_/id/30155186/election-2020-political-donation-history-wealthy-sports-owners">According to an ESPN study of publicly accessible Federal Election Commission donation records</a>, owners of American pro sports teams have tended to support Republican politicians over their Democratic counterparts since 2015.</p>
+
+<p>Looking closer over the past two years, owners in the NFL, NBA, MLB, NHL and NASCAR all donated significantly more money to the Republican Party than they did to Democrats. Among these leagues, owners in the NBA -- the league most often at the center of discussion regarding its overt messaging -- actually contributed the second-most cash to the GOP ($8.4 million), trailing MLB ($15.1 million).</p>
+
+<p>The WNBA, a league that has been on the forefront of social activism in American professional sports, provides a clear example of perception vs. reality. The league is the only one of the six in ESPN\'s research with a liberal tilt, though it\'s small, with owners sending $1,634,153 (51.7%) to purely Democratic causes vs. $1,338,459 (42.3%) to Republicans. The conservative donations from the league as a whole come largely from a single source, Atlanta Dream co-owner and U.S. Sen. Kelly Loeffler (R-Georgia). She accounts for more than 65% of the WNBA ownership\'s GOP donations. (WNBA players have worn shirts reading "Vote Warnock" to support Raphael Warnock, one of Loeffler\'s opponents in her 2020 Senate race.)</p>
+
+<p>"It appears there\'s no link between a league\'s image and the politics of its owners, or at least their political spending patterns," said University of California, Davis political science professor Ethan Scheiner, who studies the intersection of sports and politics. "This pattern of no connection between image and politics is common in business."</p>',
+                'short_text' => 'THE LOS ANGELES DODGERS faced a decision. They had just paid one of baseball\'s highest-profile star...',
+                'picture' => 'https://sport-news.s3.amazonaws.com/post/images/kyrie.jpg',
+                'select' => 'selected',
+                'user_id' => 1,
+                'category_id' => 2
+            ],
+            [
+                'title' => 'NBA free agents 2020: Predicting starting salaries for the best available players',
+                'slug' => 'nba-free-agents-2020-predicting-starting-salaries-for-the-best-available-players',
+                'content' => '<p>Which players will be available in the <a href="https://www.espn.com/nba/story/_/id/20229609/nba-free-agents-team-team-lists-2020-2021">2020 NBA free-agent class</a>, and how much money are they expected to command?</p>
+
+<p>It\'s easy to project a max contract for <a href="https://www.espn.com/nba/team/_/name/lal/los-angeles-lakers">Los Angeles Lakers</a> star <a href="http://www.espn.com/nba/player/_/id/6583/anthony-davis">Anthony Davis</a>, the best player in free agency.</p>
+
+<p>But what about the other starters and rotation players waiting to sign new deals?</p>
+
+<p>Here are complete lists, broken down by position, of the salary ranges for each free agent along with their likely roles.</p>
+
+<p>Based on a projected $109.1 million salary cap, ESPN is projecting only four teams -- the <a href="https://www.espn.com/nba/team/_/name/atl/atlanta-hawks">Atlanta Hawks</a>, <a href="https://www.espn.com/nba/team/_/name/cha/charlotte-hornets">Charlotte Hornets</a>, <a href="https://www.espn.com/nba/team/_/name/det/detroit-pistons">Detroit Pistons</a> and <a href="https://www.espn.com/nba/team/_/name/ny/new-york-knicks">New York Knicks</a> -- to have significant cap space this offseason. (The <a href="https://www.espn.com/nba/team/_/name/phx/phoenix-suns">Phoenix Suns</a> could create room but at the cost of not re-signing centers <a href="https://www.espn.com/nba/player/_/id/2968439/aron-baynes">Aron Baynes</a> and <a href="https://www.espn.com/nba/player/_/id/2579294/frank-kaminsky">Frank Kaminsky</a> and forward <a href="https://www.espn.com/nba/player/_/id/3032978/dario-saric">Dario Saric</a>.)</p>',
+                'short_text' => 'Which players will be available in the 2020 NBA free-agent class, and how much money are they expec...',
+                'picture' => 'https://sport-news.s3.amazonaws.com/post/images/i_3.jpg',
+                'select' => 'unselected',
+                'user_id' => 1,
+                'category_id' => 2
+            ],
+            [
+                'title' => 'Stats Review: Rim protection',
+                'slug' => 'stats-review-rim-protection',
+                'content' => '<p>The resurgence of Real Madrid, which has consecutive wins against top-ranked teams, with Walter Tavares serving as a sentinel in the paint, shows that preventing certain types of shots is part of a team\'s overall defensive effectiveness.</p><p>High-Gravity Matchup</p>
+
+<p>Round 7 had no shortage of competitive action, including three one-possession finishes. Real Madrid\'s 93-90 win over Zalgiris Kaunas at Zalgirio Arena was the highest-scoring of those affairs. After stumbling a bit out of the gate this season, Real has won the last two games against the second- and third-ranked teams in the Turkish Airlines EuroLeague standings.</p>
+
+<p>In the matchup with Zalgiris – the EuroLeague\'s most efficient offensive team this season – Walter Tavares proved to be the difference for the visitors. The 2.20-meter center is one of the league\'s most unique players, for obvious reasons, and came through with one of the best efforts of his career in a key road win. When he can stay out of foul trouble, his ability to lock down the paint changes the calculus for opposing offenses. And when he\'s adding value on the offensive end the way he did against Zalgiris as a roller and rebounder, his impact on games is unmistakable.</p>
+
+<p>Scoring 22 points and pulling down 12 rebounds in just 21 minutes of action, Tavares did not record a block, but that does not tell the whole story. Real allowed just 0.87 points per possession when he was on the court compared to 1.41 points per possession when he went to the bench. With opposing teams regularly challenging Real\'s other defenders by putting Tavares – who seldom leaves the paint – in the pick-and-roll, his presence is nothing short of polarizing and gave the EuroLeague\'s top offense fits last week.</p><p>Rim Protection</p>
 
 <p><br></p>
 
-<p>The Wolves led for most of the first three quarters Wednesday but blew a double-digit lead to fall in <a href="https://www.espn.com/nba/player/_/id/3136776/dangelo-russell">D\'Angelo Russell</a>\'s home debut. Russell, whom Minnesota acquired last week from the <a href="https://www.espn.com/nba/team/_/name/gs/golden-state-warriors">Golden State Warriors</a>, finished with 26 points and 11 assists.</p>
+<p><img src="https://sport-news.s3.amazonaws.com/post/images/stats.png" alt="stats.png"></p>
 
-<p>Wednesday\'s game was the Timberwolves\' last before the break. Their next game is Feb. 21 against Boston.</p>
+<p>It is not hard to see how players like Tavares change the game defensively, but it is not simple to evaluate how <em>much</em> they change it. There are a number of layers to how well a team protects the rim. Whether it\'s how many shots they block, how many they challenge, the percentage they allow opposing teams to convert, or the numbers of shots they discourage from being attempted entirely, there\'s a lot of things at play when measuring defense in the immediate area of the basket.</p>
 
-<p><em>Information from The Associated Press was used in this report.</em></p>
-<p><a href="https://www.espn.com/nba/team/_/name/min/minnesota-timberwolves">Minnesota Timberwolves</a> center <a href="http://www.espn.com/nba/player/_/id/3136195/karl-anthony-towns">Karl-Anthony Towns</a> missed Wednesday\'s <a href="https://www.espn.com/nba/game?gameId=401161455">115-108 home loss</a> to the <a href="https://www.espn.com/nba/team/_/name/cha/charlotte-hornets">Charlotte Hornets</a> because of a left wrist injury.</p>
+<p>Real is a good example. While ranking eighth in points-per-shot allowed in finishing situations in half-court defense this season, Real doesn\'t really see many of those shots. In fact, only two teams see fewer such attempts around the basket. And when Tavares is on the floor, those rankings rise to fourth and first respectively. Overall, Madrid joins Fenerbahce Beko Istanbul, Maccabi Playtika Tel Aviv, TD Systems Baskonia Vitoria-Gasteiz and Crvena Zvezda mts Belgrade as the teams successfully limiting both the quantity and quality of the shots that they allow around the rim in half-court situations.</p>
 
-<p>On Tuesday, Towns had an MRI on the wrist, which revealed the injury. He will be further evaluated over the All-Star break, according to the team.</p>
-
-<p>Timberwolves coach Ryan Saunders said before Wednesday\'s game that he did not know when or how Towns was injured. Towns had 23 points, 10 rebounds and 7 assists in 37 minutes in Monday night\'s loss to Toronto.</p>
 <p><br></p>',
-                'short_text' => '"He\'s a guy who takes a lot of contact," Saunders said. "He\'s a guy who attacks the rim with forc...',
-                'picture' => 'towns_1581682412.jpg',
-                'user_id' => 1,
-                'category_id' => 2
-            ],
-            [
-                'title' => 'NBA All-Star Game 2020: Draft results, news, rosters, schedules and how to watch',
-                'slug' => 'nba-all-star-game-2020-draft-results-news-rosters-schedules-and-how-to-watch',
-                'content' => '<p>NBA All-Star Weekend is Feb. 14-16 in Chicago, and this is the third consecutive year in which captains participated in a fantasy draft and selected their own teams, compared to the traditional East vs. West format.</p>
-
-<p>All-Star captains <a href="https://www.espn.com/nba/player/_/id/1966/lebron-james">LeBron James</a> and <a href="http://www.espn.com/nba/player/_/id/3032977/giannis-antetokounmpo">Giannis Antetokounmpo</a> have made their draft picks. All-Star Saturday night participants have been unveiled. Rising Stars and Celebrity Game rosters are set.</p>
-
-<p>Keep it here as we count down the days until the league\'s best showcase their skills in Chicago.</p>
-
-<p><strong>Jump to: </strong><a href="https://www.espn.com/nba/story/_/id/28292088/nba-all-star-game-2020-rosters-schedule-news-how-watch#rosters">Draft results</a> | <a href="https://www.espn.com/nba/story/_/id/28292088/nba-all-star-game-2020-rosters-schedule-news-how-watch#bestof">Best of All-Star</a> | <a href="https://www.espn.com/nba/story/_/id/28292088/nba-all-star-game-2020-rosters-schedule-news-how-watch#faq">FAQs</a> | <a href="https://www.espn.com/nba/story/_/id/28292088/nba-all-star-game-2020-rosters-schedule-news-how-watch#watch">How to watch</a> | <a href="https://www.espn.com/nba/story/_/id/28292088/nba-all-star-game-2020-rosters-schedule-news-how-watch#news">Latest news</a></p>
-
-<p><br></p>
-
-<p><strong>Team </strong><a href="https://www.espn.com/nba/player/_/id/1966/lebron-james"><strong>LeBron James</strong></a><strong>*</strong></p>
-
-<p><strong>1. </strong><a href="http://www.espn.com/nba/player/_/id/6583/anthony-davis">Anthony Davis</a>*, Lakers</p>
-
-<p><strong>2. </strong><a href="http://www.espn.com/nba/player/_/id/6450/kawhi-leonard">Kawhi Leonard</a>*, Clippers</p>
-
-<p><strong>3. </strong><a href="http://www.espn.com/nba/player/_/id/3945274/luka-doncic">Luka Doncic</a>*, Mavericks</p>
-
-<p><strong>4. </strong><a href="http://www.espn.com/nba/player/_/id/3992/james-harden">James Harden</a>*, Rockets</p>
-
-<p><strong>5. </strong><a href="http://www.espn.com/nba/player/_/id/6606/damian-lillard">Damian Lillard</a>, Trail Blazers</p>
-
-<p><strong>6. </strong><a href="http://www.espn.com/nba/player/_/id/3907387/ben-simmons">Ben Simmons</a>, 76ers</p>
-
-<p><strong>7. </strong><a href="http://www.espn.com/nba/player/_/id/3112335/nikola-jokic">Nikola Jokic</a>, Nuggets</p>
-
-<p><strong>8. </strong><a href="http://www.espn.com/nba/player/_/id/4065648/jayson-tatum">Jayson Tatum</a>, Celtics</p>
-
-<p><strong>9. </strong><a href="http://www.espn.com/nba/player/_/id/2779/chris-paul">Chris Paul</a>, Thunder</p>
-
-<p><strong>10. </strong><a href="http://www.espn.com/nba/player/_/id/3468/russell-westbrook">Russell Westbrook</a>, Rockets</p>
-
-<p><strong>11. </strong><a href="https://www.espn.com/nba/player/_/id/3155942/domantas-sabonis">Domantas Sabonis</a>, Pacers</p>
-
-<p><strong>Team </strong><a href="http://www.espn.com/nba/player/_/id/3032977/giannis-antetokounmpo"><strong>Giannis Antetokounmpo</strong></a><strong>*</strong></p>
-
-<p><strong>1. </strong><a href="http://www.espn.com/nba/player/_/id/3059318/joel-embiid">Joel Embiid</a>*, 76ers</p>
-
-<p><strong>2. </strong><a href="https://www.espn.com/nba/player/_/id/3149673/pascal-siakam">Pascal Siakam</a>*, Raptors</p>
-
-<p><strong>3. </strong><a href="https://www.espn.com/nba/player/_/id/6479/kemba-walker">Kemba Walker</a>*, Celtics</p>
-
-<p><strong>4. </strong><a href="http://www.espn.com/nba/player/_/id/4277905/trae-young">Trae Young</a>*, Hawks</p>
-
-<p><strong>5. </strong><a href="https://www.espn.com/nba/player/_/id/6609/khris-middleton">Khris Middleton</a>, Bucks</p>
-
-<p><strong>6. </strong><a href="http://www.espn.com/nba/player/_/id/4066261/bam-adebayo">Bam Adebayo</a>, Heat</p>
-
-<p><strong>7. </strong><a href="http://www.espn.com/nba/player/_/id/3032976/rudy-gobert">Rudy Gobert</a>, Jazz</p>
-
-<p><strong>8. </strong><a href="https://www.espn.com/nba/player/_/id/6430/jimmy-butler">Jimmy Butler</a>, Heat</p>
-
-<p><strong>9. </strong><a href="http://www.espn.com/nba/player/_/id/3012/kyle-lowry">Kyle Lowry</a>, Raptors</p>
-
-<p><strong>10. </strong><a href="http://www.espn.com/nba/player/_/id/3913176/brandon-ingram">Brandon Ingram</a>, Pelicans</p>
-
-<p><strong>11. </strong><a href="https://www.espn.com/nba/player/_/id/3908809/donovan-mitchell">Donovan Mitchell</a>, Jazz</p>',
-                'short_text' => 'NBA All-Star Weekend is Feb. 14-16 in Chicago, and this is the third consecutive year in which ca...',
-                'picture' => 'NBA-All-Star-2020_1581682602.jpg',
-                'user_id' => 1,
-                'category_id' => 2
-            ],
-            [
-                'title' => 'Sources: Cavaliers and coach John Beilein have discussed possibility of him stepping down',
-                'slug' => 'sources-cavaliers-and-coach-john-beilein-have-discussed-possibility-of-him-stepping-down',
-                'content' => '<p>Cleveland hired associate head coach J.B. Bickerstaff with the expectation that he would eventually replace Beilein as part of a succession plan, but no one -- not the organization nor Bickerstaff -- imagined it would be inside one of season.</p>
-
-<p>Cleveland is 14-40, the worst record in the Eastern Conference and behind only that of <a href="https://www.espn.com/nba/team/_/name/gs/golden-state-warriors">Golden State</a> (12-43) for the worst in the NBA. Management expected the team to lose a significant number of games as it turned toward rebuilding its roster around a younger core, but Beilein has struggled to connect with NBA players and has had several missteps along the way that have shaken the players\' confidence in his leadership, league sources said.</p>
-
-<p><br></p>
-
-<p>Altman hired Beilein with the hope that his illustrious history as a teacher on the college level would infuse the Cavaliers with a strong program for player development and his storied offensive sets. However, opposing teams realized early that Beilein had scrapped his offense shortly into the season and retreated to more traditional NBA sets.</p>
-
-<p>Beilein has also dealt with some personal and family turmoil, as his son Patrick was dismissed before the start of his first season as head coach at <a href="https://www.espn.com/mens-college-basketball/team/_/id/315/niagara-purple-eagles">Niagara University</a>. Personal issues were cited.</p>',
-                'short_text' => 'Cleveland hired associate head coach J.B. Bickerstaff with the expectation that he would eventual...',
-                'picture' => 'cleveland_1581945330.jpg',
+                'short_text' => 'The resurgence of Real Madrid, which has consecutive wins against top-ranked teams, with Walter Tava...',
+                'picture' => 'https://sport-news.s3.amazonaws.com/post/images/tavares.jpg',
+                'select' => 'unselected',
                 'user_id' => 2,
                 'category_id' => 2
             ],
             [
-                'title' => 'The Elam Ending led to an INTENSE All-Star fourth quarter',
-                'slug' => 'the-elam-ending-led-to-an-intense-all-star-fourth-quarter',
-                'content' => '<p>New changes to the format of a game constantly wrought with questionable defense and effort would ensure a unique experience, and those changes were made in honor of the late Kobe Bryant.</p>
+                'title' => 'EuroLeague Fantasy Challenge Round 7 winner',
+                'slug' => 'euroleague-fantasy-challenge-round-7-winner',
+                'content' => '<p>Turkish Airlines EuroLeague fans, we have our seventh winner in the <a href="https://fantasychallenge.euroleague.net/"><strong>EuroLeague Fantasy Challenge</strong></a>!</p>
 
-<p>The new format featured a revamped fourth quarter in which the teams play to a final target score, <a href="https://www.espn.com/nba/story/_/id/23825970/zach-lowe-basketball-tournament-nba-crunch">first introduced in The Basketball Tournament as the Elam Ending</a>. The final target score was determined by taking the leading team\'s total cumulative score through three quarters and adding 24 points -- the 24 representing Bryant\'s jersey number. The first team to reach the final target score during the untimed fourth quarter wins the game.</p>
+<p>Nikos Kyprizlian of Greece beat everyone else in Round 7 with his team Kypri 2. He had a Fantasy Challenge score of 216.2, which was 4.6 ahead of the next-best team.</p>
 
-<p>That number was 157 after Team Giannis led Team LeBron 133-124 at the end of three quarters. Fifty-one minutes of commercial-free chaos ensued in the form of charges, coach\'s challenges, fouls and defense -- and the people ate it all up:</p>',
-                'short_text' => 'New changes to the format of a game constantly wrought with questionable defense and effort would...',
-                'picture' => 'lebron_1581945606.jpg',
+<p>Nikos had the following lineup: Facu Campazzo of Real Madrid (29.7), Alexey Shved of Khimki Moscow Region (13.0), Shavon Shields of AX Armani Exchange Milan (14.0), Hassan Martin of Olympiacos Piraeus (16.5), Moustapha Fall of LDLC ASVEL Villeurbanne (30.8), Wade Baldwin of FC Bayern Munich (13.2), Rolands Smits of FC Barcelona (24.2), and team captain Edy Tavares of Real (74.8). As his prize for finishing first in Round 7, Nikos wins a free subscription to Euroleague TV!</p>
+
+<p>Dimitrios Avgeris of Greece now leads the <a href="https://fantasychallenge.euroleague.net/"><strong>EuroLeague Fantasy Challenge</strong></a> overall standings with a score of 1,114.6.</p>
+
+<p>Trades are now open for Round 8. Remember, three trades are allowed before each round until the end of the regular season.</p>
+
+<p>The first game in Round 8, CSKA Moscow vs. TD Systems Baskonia Vitoria-Gasteiz, is scheduled to tip off on Thursday, November 12 at 18:00 CET, and thus marks next week\'s deadline.</p>
+
+<p>Make new teams now or improve your existing ones and try to become our next weekly winner!</p>',
+                'short_text' => 'Turkish Airlines EuroLeague fans, we have our seventh winner in the EuroLeague Fantasy Challenge!...',
+                'picture' => 'https://sport-news.s3.amazonaws.com/post/images/fantasy.jpg',
+                'select' => 'unselected',
                 'user_id' => 3,
                 'category_id' => 2
             ],
@@ -294,203 +299,206 @@ class PostTableSeeder extends Seeder
 
 <p>Kenin, who turned 21 in November, has appeared in just three previous Fed Cup ties, only one of them a win. She was thrown into the deep end as an 18-year-old in her first appearance, a final in Prague against a veteran Czech team. She lost a pair of three-set heartbreakers in the defeat for the U.S., but that didn\'t dim her enthusiasm.</p>',
                 'short_text' => '"It\'s really such a unique experience," Mattek-Sands told reporters at the team\'s post-event news...',
-                'picture' => 'tenis_1581592368.jpg',
+                'picture' => 'https://sport-news.s3.amazonaws.com/post/images/sofia.jpg',
+                'select' => 'selected',
                 'user_id' => 1,
                 'category_id' => 3
             ],
             [
-                'title' => 'Match in Africa: Highlights from Roger Federer, Rafael Nadal charity event',
-                'slug' => 'match-in-africa-highlights-photos-results-and-reaction-from-roger-federer-rafael-nadal-charity-event',
-                'content' => '<p>Truth be told, the kids didn\'t seem to know who the two sporting greats were, but the Simon Says activity and the reading session with their "tutors" went down a treat.</p>
+                'title' => 'Rafael Nadal becomes fourth man with 1,000 match wins',
+                'slug' => 'rafael-nadal-becomes-fourth-man-with-1000-match-wins',
+                'content' => '<p>PARIS -- Becoming only the fourth man to reach 1,000 match wins should have drawn deafening cheers and a standing ovation for tennis great <a href="https://www.espn.com/sports/tennis/players/profile?playerId=261">Rafael Nadal</a>.</p>
 
-<p>One day when they are a little older, they will realize the magnitude of February 7, 2020, when Roger Federer, in full dad mode, sang If You\'re Happy and You Know It and stamped his feet at the base of Table Mountain.</p>
+<p>Instead, he reached his milestone at the Paris Masters amid a cathedral-like silence Wednesday in a 20,000-seat stadium left completely empty because of the coronavirus pandemic. There was only a fist bump from <a href="https://www.espn.com/sports/tennis/players/profile?playerId=426">Feliciano Lopez</a>, after Nadal beat him 4-6, 7-6 (5), 6-4 in a subdued atmosphere more worthy of a library study area than a sports arena.</p>
 
-<p>Those who attended the festivities at Cape Town Stadium will without a doubt say the Fedal match was the main course, despite the result (Federer won, 6-4, 3-6, 6-3, incidentally) being irrelevant. The match itself was light-hearted, as you\'d expect from an exhibition event, but also had its fair share of quality shots.</p>
+<p>"The real feeling, the personal feeling is completely different,\'\' Nadal said. "It makes a big difference that the court is empty.\'\'</p>
 
-<p>South African comedian and The Daily Show host Trevor Noah and philanthropist Bill Gates played in the doubles (Mr Gates being by far the superior player), while local acts the Ndlovu Youth Choir, of America\'s Got Talent fame, added some African flavor, and the Zip Zap Circus brought the acrobatics.</p>
+<p>The 34-year-old Nadal joins towering company in Jimmy Connors (1,274), <a href="https://www.espn.com/sports/tennis/players/profile?playerId=425">Roger Federer</a> (1,242) and Ivan Lendl (1,068) as the only men in the 1,000-wins club since the Open era began in 1968.</p>
 
-<p>But it was the main purpose of the event, the charity aspect, that truly won the day. A charity that started 16 years ago, and has already benefitted 1.5 million children in Africa and Switzerland by providing them with better quality education, can now help even more vulnerable kids.</p>
+<p>"I know it is a very special number, one thousand,\'\' Nadal said. "Even if it\'s not the same to celebrate something like this without a crowd.\'\'</p>
 
-<p>The 51,954 people who turned up, and the sponsors who plastered their names around the place, came to the party big time, and the children in South Africa will be the big beneficiaries as all the net proceeds will go to the Roger Federer Foundation to support education in the rural areas in the country.</p>',
-                'short_text' => 'Truth be told, the kids didn\'t seem to know who the two sporting greats were, but the Simon Says...',
-                'picture' => 'feder_nadal_1581592577.jpg',
+<p>Nadal smiled as he posed at the net with the number 1,000 displayed on the court in a brief ceremony, and then he walked off center court like after any other match.</p>
+
+<p>It was the second milestone he reached in Paris this year, having won the French Open last month to tie Federer with 20 majors. But while 1,000 fans cheered him at Roland Garros, none were at the Bercy Arena.</p>
+
+<p>"Of course it\'s sad -- the level of energy is difficult to compare,\'\' Nadal said. "So the feeling, even if 1,000 [fans] or 1,500 or 2,000, is not a lot.\'\'</p>
+
+<p>Nadal\'s first win came in May 2002 at the age of 15, when he beat Paraguayan <a href="https://www.espn.com/sports/tennis/players/profile?playerId=1463">Ramon Delgado</a> in the first round at Mallorca.</p>
+
+<p>A year later, the 16-year-old Nadal stunned the tennis world by beating French Open champion Albert Costa under floodlights in the second round at the Monte Carlo Masters.</p>
+
+<p>By the age of 24, he had already reached 500 wins. His career tally also includes 35 Masters titles and 86 tournament victories overall.</p>',
+                'short_text' => 'PARIS -- Becoming only the fourth man to reach 1,000 match wins should have drawn deafening cheers a...',
+                'picture' => 'https://sport-news.s3.amazonaws.com/post/images/nadal.jpg',
+                'select' => 'selected',
                 'user_id' => 2,
                 'category_id' => 3
             ],
             [
-                'title' => 'Medvedev crashes out in Rotterdam while Evans eases through',
-                'slug' => 'medvedev-crashes-out-in-rotterdam-while-evans-eases-through',
-                'content' => '<p>World number five Medvedev, long-touted as one of the most likely of the new generation of players to win a Grand Slam, saw his Rotterdam challenge ended in just 68 minutes by Pospisil.</p>
+                'title' => 'Taylor Townsend excited about her future in tennis and journey into motherhood',
+                'slug' => 'taylor-townsend-excited-about-her-future-in-tennis...',
+                'content' => '<p><a href="http://www.espn.com/sports/tennis/players/profile?playerId=2114">Taylor Townsend</a> watched in admiration as the <a href="https://www.espn.com/tennis/story/_/id/29821399/march-moms-inspiring-journeys-continue-quarterfinals-2020-us-open">march of moms</a> dominated the conversation at the US Open in September. With nine mothers in the singles draw -- and three advancing to the quarterfinals -- tennis fans were inspired by their talent, grit and ability to multitask during the COVID-19 pandemic.</p>
 
-<p>The 29-year-old Canadian, who continues a fine run of form having reached the final at the Open Sud de France in Montpellier last week, managed to save five of six break points while converting three of his own en route to a huge upset.</p>
+<p>Townsend had a front-row seat to it all, making a run to the US Open semifinals in women\'s doubles with partner <a href="http://www.espn.com/sports/tennis/players/profile?playerId=3547">Asia Muhammad</a>.</p>
 
-<p>British number one <a href="https://www.espn.com/tennis/player/_/id/901/daniel-evans">Dan Evans</a> is through to the quarterfinals at the Rotterdam Open after a 4-6 6-3 6-4 victory over Russia\'s <a href="https://www.espn.com/tennis/player/_/id/2367/karen-khachanov">Karen Khachanov</a> on Wednesday.</p>
+<p>Townsend was in awe, but it was more personal. She had recently discovered she was pregnant. Still in the first trimester, she fought the urge to share her news with anyone outside of her tight-knit circle.</p>
 
-<p>Evans came back from a set down and will face either France\'s <a href="https://www.espn.com/tennis/player/_/id/242/gael-monfils">Gael Monfils</a> or <a href="https://www.espn.com/tennis/player/_/id/302/gilles-simon">Giles Simon</a> in the next round.</p>
+<p>"It was strange being so close to the final with Asia and knowing I\'ll soon be part of that category," Townsend said. "I actually think for me being part of this US Open at this time was so great for me to see it\'s possible, to balance professional goals and aspirations with motherhood and raising a child. That was so perfectly shown this year by <a href="http://www.espn.com/sports/tennis/players/profile?playerId=394">Serena [Williams]</a>, <a href="http://www.espn.com/sports/tennis/players/profile?playerId=421">Victoria [Azarenka]</a>, <a href="http://www.espn.com/sports/tennis/players/profile?playerId=376">Kim [Clijsters]</a> and <a href="http://www.espn.com/sports/tennis/players/profile?playerId=407">[Tsvetana] Pironkova</a>. I know this [journey] is going to be difficult, but watching them made me really excited."</p>
 
-<p>Top seed <a href="https://www.espn.com/tennis/player/_/id/2383/daniil-medvedev">Daniil Medvedev</a> crashed out of the last 16, losing to 104th-ranked Canadian <a href="https://www.espn.com/tennis/player/_/id/1352/vasek-pospisil">Vasek Pospisil</a>, who marched in with a 6-4 6-3 victory.</p>
-
-
-<p><a href="https://www.espn.com/tennis/player/_/id/242/gael-monfils">Monfils</a> started his Rotterdam Open title defence with a convincing 6-3 6-2 victory over Portugal\'s <a href="https://www.espn.com/tennis/player/_/id/2109/joao-sousa">Joao Sousa</a>.</p>
-
-<p>Monfils who beat Pospisil in the final to win in Montpellier last week, needed only 70 minutes to dispatch his Portuguese opponent, firing five aces and converting four break points.</p>
-
-<p>The 33-year-old Frenchman, who is looking to become the first player to win back-to-back Rotterdam titles since Sweden\'s <a href="https://www.espn.com/tennis/player/_/id/217/robin-soderling">Robin Soderling</a> in 2011, next faces compatriot <a href="https://www.espn.com/tennis/player/_/id/302/gilles-simon">Gilles Simon</a> who beat <a href="https://www.espn.com/tennis/player/_/id/1141/mikhail-kukushkin">Mikhail Kukushkin</a> 7-6(3) 3-6 6-3.</p>
-
-<p>"It\'s never easy to come back after a win," Monfils said. "But I have great memories from last year."</p>
-
-<p>In an all-Spanish showdown, <a href="https://www.espn.com/tennis/player/_/id/1590/pablo-carreno-busta">Pablo Carreno Busta</a> beat sixth seed <a href="https://www.espn.com/tennis/player/_/id/1733/roberto-bautista-agut">Roberto Bautista Agut</a> 6-4 2-6 7-6(4) to qualify for the quarter-finals after a battle lasting nearly two-and-a-half hours.</p>
-
-<p>Carreno Busta fired 11 aces and saved seven break points to advance at his higher-ranked compatriot\'s expense.</p>
-
-<p>Belgian fourth seed<a href="https://www.espn.com/sports/tennis/players/profile?playerId=1360"> David Goffin</a> battled back from a set down and saved two break points in the decider to beat local hope <a href="https://www.espn.com/sports/tennis/players/profile?playerId=650">Robin Haase</a> 3-6 7-6(5) 6-4.</p>
-
-<p>Goffin will face Italian Jannik Sinner, who was awarded a walkover after his opponent <a href="https://www.espn.com/sports/tennis/players/profile?playerId=884">Radu Albot</a> withdrew.</p>',
-                'short_text' => 'World number five Medvedev, long-touted as one of the most likely of the new generation of player...',
-                'picture' => 'medvedev_1581592762.jpg',
+<p>In October, Townsend revealed her pregnancy and March 2021 due date in a video <a href="https://www.instagram.com/p/CGUo8dSgVgR/">posted to her Instagram account</a>.</p>',
+                'short_text' => 'Taylor Townsend watched in admiration as the march of moms dominated the conversation at the US O...',
+                'picture' => 'https://sport-news.s3.amazonaws.com/post/images/taylor.jpg',
+                'select' => 'selected',
                 'user_id' => 2,
                 'category_id' => 3
             ],
             [
-                'title' => 'Donation, donation, donation',
-                'slug' => 'donation-donation-donation',
-                'content' => '<p>With bushfires ravaging Australia, a tennis tournament was the last thing on everyone\'s mind. However, that didn\'t mean the tennis community wouldn\'t unite and raise much-needed funds for those in need.</p>
+                'title' => 'Kyrgios on mental health struggles: I was in a dark place',
+                'slug' => 'kyrgios-on-mental-health-struggles-i-was-in-a-dark-place',
+                'content' => '<p>Australia\'s <a href="http://www.espn.com/tennis/player/_/id/1984/nick-kyrgios">Nick Kyrgios</a> has opened up on his experiences with depression and has said returning to live with his parents in Canberra this year has been good for his mind and soul.</p>
 
-<p>Before the Australian Open even began, a number of the game\'s top players came together for what was dubbed the Rally for Relief. The tennis exhibition, staged at Rod Laver Arena, raised a staggering AU$4.8 million</p>
+<p>Kyrgios, who started seeing a psychologist in 2018, has been criticised by some for not caring enough about his tennis career.</p>
 
-<p><br></p>
+<p>"I felt like no one wanted to know me as a person, they wanted to get a hold of me as a tennis player and use me," Kyrgios told Stellar magazine. "I didn\'t feel like I could trust anyone. It was a lonely, dark place."</p>
 
-<p>Australian star <a href="http://www.espn.com/tennis/player/_/id/1984/nick-kyrgios">Nick Kyrgios</a>, who was the catalyst in organizing the Rally for Relief, then pledged an AU$200 donation for every ace he hit across the summer of tennis.</p>
+<p>Kyrgios, 25, recalled a time he "didn\'t want to see the light of day" when in Shanghai.</p>
 
-<p>Further creative donations came in thick and fast, in the end over AU$6 million was raised to help with bushfire recovery efforts.</p>',
-                'short_text' => 'With bushfires ravaging Australia, a tennis tournament was the last thing on everyone\'s mind. How...',
-                'picture' => 'donation_1581945916.jpg',
+<p>"There are people who live and breathe tennis and that\'s fine. I\'m not saying that\'s wrong or right," he added. "I\'ve reached a level of freedom in my life that I really don\'t care what anyone thinks of me."</p>
+
+<p>Kyrgios has received several fines for his on-court behaviour and was handed a suspended 16-week ban by the ATP for "aggravated behaviour" last year.</p>
+
+<p>The world No. 45 opted to remain in Canberra when his rivals returned to the tour after the COVID-19 shutdown to play in the US and French Opens.</p>
+
+<p>"On tour there\'s a seven-month block when I don\'t get to see my family or be home, so I\'m really taking advantage of everything going on at the moment," Kyrgios said.</p>
+
+<p>Kyrgios is hoping to return to action in time for the Australian Open in January</p>',
+                'short_text' => 'Australia\'s Nick Kyrgios has opened up on his experiences with depression and has said returning t...',
+                'picture' => 'https://sport-news.s3.amazonaws.com/post/images/kyrguos.jpg',
+                'select' => 'unselected',
                 'user_id' => 2,
                 'category_id' => 3
             ],
             [
-                'title' => 'New Nick and awesome Ash',
-                'slug' => 'new-nick-and-awesome-ash',
-                'content' => '<p>The 42-year drought between homegrown Australian Open singles champions might still remain, but local stars Kyrgios and Barty won millions of admirers Down Under this past fortnight.</p>
+                'title' => 'Daniil Medvedev rallies past Alexander Zverev to win Paris Masters',
+                'slug' => 'daniil-medvedev-rallies-past-alexander-zverev-to-win-paris-masters',
+                'content' => '<p>Once <a href="http://www.espn.com/sports/tennis/players/profile?playerId=2383">Daniil Medvedev</a> found a way to counter <a href="http://www.espn.com/sports/tennis/players/profile?playerId=2375">Alexander Zverev</a>\'s huge serve, his metronome-like rhythm clicked in and he counterattacked clinically to win the Paris Masters for the first time.</p>
 
-<p>As mentioned, Kyrgios, the world No. 26, inspired dozens of other professional players to make donations towards the bushfire appeal, but it was his gritty performances against 16th seed <a href="http://www.espn.com/tennis/player/_/id/2367/karen-khachanov">Karen Khachanov</a> in the third round and Nadal in the fourth round that showed why many have been tipping him to soon breakthrough for a major title.</p>
+<p>Medvedev\'s 5-7, 6-4, 6-1 victory Sunday gave him his eighth career title and third at a Masters event.</p>
 
-<p><br></p>
+<p>"I managed to stay really strong, be there all the time," the third-seeded Russian said. "Putting pressure on him all the time, raising my level step by step, and finally he broke.\'" Medvedev\'s style of play is unspectacular -- and not "wild" as Zverev put it afterward.</p>
 
-<p>Meanwhile, world No. 1 Barty excited Australians with a glorious run to the semifinals at Melbourne Park -- the first homegrown player to reach the final four at the Australian Open since <a href="http://www.espn.com/tennis/player/_/id/306/lleyton-hewitt">Lleyton Hewitt</a> in 2005.</p>
+<p>But what he does well is relentlessly chip away with flat, unerringly accurate strokes, punctuated by sudden accelerations of speed and whipped, fizzing forehands that always seem to land just in. Zverev, like many others before him, soon became exasperated and momentum quickly shifted.</p>
 
-<p>The 23-year-old and reigning French Open champion fell to eventual champion Kenin in the semis, but what a memorable run it was.</p>',
-                'short_text' => 'The 42-year drought between homegrown Australian Open singles champions might still remain, but l...',
-                'picture' => 'nick_1581946053.jpg',
+<p>"I\'m really trying to make my opponent crazy," Medvedev said with a wry smile in his postmatch interview. It was just his second win against the fourth-seeded Zverev in seven matches. His previous victory against the imposing German was also in a Masters final last year in Shanghai.</p>
+
+<p>"I think it\'s not easy for guys to play against me when I play like this," Medvedev said. "Of course it\'s tough to compare with the Shanghai final, where I was on top of him all of the match. Here it was a really tight match where both could be the winners."</p>
+
+<p>It was Medvedev\'s first final and title of the year, while Zverev was playing in his third straight final after winning back-to-back tournaments in Cologne, Germany.</p>',
+                'short_text' => 'Once Daniil Medvedev found a way to counter Alexander Zverev\'s huge serve, his metronome-like rhy...',
+                'picture' => 'https://sport-news.s3.amazonaws.com/post/images/medvedev.jpg',
+                'select' => 'unselected',
                 'user_id' => 3,
                 'category_id' => 3
             ],
             [
-                'title' => 'CSGO: 4 things we learned from Week 2 of BLAST Premier Spring Series',
-                'slug' => 'csgo-4-things-we-learned-from-week-2-of-blast-premier-spring-series',
-                'content' => '<p>We\'re over halfway through the BLAST Premier Spring Series, and, after an incredibly eventful opening weekend, it was difficult to imagine anything that could top FaZe Clan\'s dominant run in Group A.</p>
+                'title' => 'Microsoft\'s Phil Spencer on Xbox\'s new approach to gaming',
+                'slug' => 'microsofts-phil-spencer-on-xboxs-new-approach-to-gaming',
+                'content' => '<p>The "console wars" are over.</p>
 
-<p>But Week 2 of BLAST upped the ante, producing some of the biggest upsets in the tournament\'s history.</p>
+<p>At least in the way they\'ve usually been fought.</p>
 
-<p>Underdogs Complexity stunned world No. 1 Astralis in their opening game before pulling off another shock victory against Team Vitality to reach the Spring Finals.</p>
+<p>As we approach a brand new generation of consoles, with Sony passing the baton from the PS4 to the PS5, and Microsoft succeeding the Xbox One with the Xbox Series X and Series S, Microsoft executive vice-president of Gaming Phil Spencer insists that the paradigm to look at this console generation is by how many people are playing video games, not a head-to-head comparison of console sales. The Series X/S are but a piece of the Microsoft offering, with a complete gaming approach across multiple devices, spearheaded by Microsoft Game Pass.</p>
 
-<p>Na\'Vi did the uneasy job and ended Complexity\'s unlikely crusade with victory in the final game, with both teams joining FaZe and Team Liquid at the finals in June.</p>
+<p>"I think our our pivot is really to build the best experience for players on the devices that they want to play on," Spencer told ESPN in an interview. "... I mean, so many of the things that we\'re doing now are available on different platforms. So for us in the gaming space, it\'s an approach to allow gamers to play the games that they want to play on the devices that they want to play on, and we think that\'s the best approach to growing Xbox."</p>
 
-<p>With plenty to unpack from Group B, here are some of the things we learned from Week 2.</p>
+<p>Ths "family approach" strategy, which has been kicked into overdrive by Game Pass, has been a few years in the making. Spencer said that the Xbox leadership team has been planting the seeds since 2014 and has a focus to make games more accessible as a whole, not just to those that are willing and able to dish out $499 for the Series X or $299 for the Series S.</p>
 
-<p><strong>What\'s going on with Astralis?</strong></p>
-
-<p><br></p>
-
-<p><img src="http://sport.test/storage/images/csgo2_1581593236.jpg" alt="csgo2_1581593236.jpg"></p>
-
-<p><br></p>
-
-<p>Astralis were the heavy favourites going into the entire tournament, never mind this weekend. But the veteran front runners suffered a shock 2-0 defeat to a fresh-faced Complexity roster -- a side widely considered to be the underdogs of Group B.</p>
-
-<p>They picked themselves back up in the losers\' bracket and dominated Na\'Vi on Train but failed to find the edge to secure a win and were subsequently relegated to the Spring Showdown after losing the second and third maps.</p>
-
-<p>Make no mistake, losing in this fashion will be a distant feeling for many in the Astralis roster --the last time the team finished in last place at an event was in the inaugural finals of ECS back in 2016. So, how did a four-time Major winning side fall flat after finishing 2019 on such a high?</p>
-
-<p>Nicolai "dev1ce"Reedtz said there were some communication issues during the match against Complexity that contributed to their loss.</p>
-
-<p>"A lot of things went wrong," dev1ce said. "It was the first game of the year so it\'s hard to pinpoint exactly what went wrong. There\'s a lot of things in game and also communication and preparation so I guess you have to mix that with Complexity playing well and it being an off day.</p>
-
-<p>"Sometimes when we lost the first kill the communication just died, it doesn\'t really happen that often. What happens is we just run into them instead of resetting and talking about what to do next.</p>
-
-<p>"It\'s something we\'ve abused with some of the other teams so it\'s quite stupid that we fell into that trap of not speaking. It\'s been a while since we played our last game on stage so we just have to get back into it."</p>',
-                'short_text' => 'We\'re over halfway through the BLAST Premier Spring Series, and, after an incredibly eventful ope...',
-                'picture' => 'csgo-new_1581682725.jpg',
+<p>"If we\'re really going to be in the gaming space, shouldn\'t we be about all gamers?" Spencer said. "There are three billion people who play video games on the planet today, and there are about 200 million households that will buy a console. Console is an important consideration, but there are also a ton of people who play on PC. A ton of people play on the devices that they already own. I was really trying to expand our strategy to reach gamers on the devices that they want to play on, but also when we build a console to build absolutely the best console anyone could buy, and I think that\'s what the team is done."</p>',
+                'short_text' => 'The "console wars" are over. At least in the way they\'ve usually been fought. As we approach a...',
+                'picture' => 'https://sport-news.s3.amazonaws.com/post/images/microsoft.jpg',
+                'select' => 'unselected',
                 'user_id' => 1,
                 'category_id' =>4
             ],
             [
-                'title' => 'Sp9rk1e and Hanbin are ready to prove they\'re Overwatch League material',
-                'slug' => 'sp9rk1e-and-hanbin-are-ready-to-prove-theyre-overwatch-league-material',
-                'content' => '<p>NEW YORK -- The basement of the Hammerstein Ballroom shook. A loud cry echoed from above followed by rolling cheers of "M-V-P, M-V-P!" for Bang "JJoNak" Sung-hyeon. They drowned out a slight young man in a Paris Eternal windbreaker. DPS prodigy Kim "Sp9rk1e" Yeong-han stood next to his Paris Eternal and former Element Mystic teammate Choi "Hanbin" Han-bin and frowned a bit, tossing his head before smiling slightly.</p>
+                'title' => 'Going a-viking with Assassin\'s Creed Valhalla',
+                'slug' => 'going-a-viking-with-assassins-creed-valhalla',
+                'content' => '<p>Assassin\'s Creed Valhalla, the 12th main game in Assassin\'s Creed franchise, releases this week for the new Xbox Series X and Playstation 5 as well as Xbox One and Playstation 4.</p>
 
-<p>"It feels like I\'m in the dark," Sp9rk1e said as the cheers faded. "May 31 seems so far away."</p>
+<p>As its name indicates, Valhalla features a heavy dose of Norse mythology. It\'s a Viking saga that follows your character, Eivor, setting out from Norway in 872 CE to settle in England at a time when the Angles and the Saxons rule the land</p>
 
-<p>He and Hanbin laughed in the stairwell with their Paris Eternal brethren who played in both games last weekend and chatted with coach Yoon "RUSH" Hee-won. It will be months before Sp9rk1e can play in the league. He\'ll be able to play in the second Excelsior homestand, but only on Day 2 -- his 18th birthday, May 31st, is that Sunday. Hanbin will likely start in the Eternal\'s next match on Feb. 22, two days after his birthday.</p>
+<p>Like the franchise\'s two previous games, Origins and Odyssey, Valhalla continues a trend toward becoming more of an open-world RPG game. It features a familiar storyline in which you will have to eliminate members of the shadowy Order and shares a lot of gameplay similarities with its immediate predecessors, but it also incorporates some interesting new features. It\'s a long game that I\'m still in the middle of playing, but after 20 hours of gametime, here are some takeaways.</p>
 
-<p><strong>ESPN Daily Newsletter:</strong> <a href="http://www.espn.com/espn/feature/story/_/id/16794438/sign-espn-daily-email-newsletter">Sign up now!</a></p>
+<p><img src="https://sport-news.s3.amazonaws.com/post/images/viking%202.jpg" alt="viking 2.jpg"></p><p>Customizing your experience</p>
 
-<p>"Because I play soon, I\'m trying to work hard and push myself to think that I can be better than other players," Hanbin said.</p>
+<p>The start of the game provides many options for customizing your playing experience. Rather than choosing one level of difficulty for your gameplay, you can customize three different aspects. The first involves how difficult you want exploration to be -- that\'s basically about how much info you want displayed on screen to guide you in your missions and finding items. Regardless of how easy you make exploration, I still found it quite a bit harder than previous games when it came to finding items like loot chests and artifacts. It appears to be an intentional choice by Ubisoft to make exploration more challenging in general and make the entire world more immersive (more on that below).</p>
 
-<p>Sp9rk1e has been playing Overwatch at a semi-professional level on Element Mystic in South Korea since 2017, but doesn\'t turn age-eligible for the Overwatch League until this May. Until then, he\'ll be on the sideline, cheering on his Paris Eternal teammates while getting in as much practice time as possible. His rookie debut is one of Overwatch League\'s most highly anticipated this season. Hanbin has been playing since early 2018 in both China and South Korea. Both players have been playing for years, but have had to wait on their Overwatch League debuts due to their ages.</p>
+<p>The second level of difficulty determines your combat experience, with skald being the easiest and ranging up to vikingr, berserkr and the hardest level being drengr. The last aspect regards stealth. Do you want to easily walk past enemies or do you want it to be more challenging to evade their sight?</p>
 
-<p>There was a time when OGN\'s APEX tournament in South Korea was the premier Overwatch event in the world. It hasn\'t existed since 2017, when Sp9rk1e was just beginning his semi-professional career. Element Mystic came up through the offline qualifier during APEX Season 4 and performed well in APEX Challengers Season 5 before OGN\'s tournament was shuttered, becoming Contenders: Korea. Sp9rk1e\'s initial Element Mystic team was a star-studded lineup that included Lee "Happy" Jung-woo (Guangzhou Charge), Lee "Guard" Hee-dong (London Spitfire, now retired), Lee "Fearless" Eui-seok (Shanghai Dragons), Kim "Rapel" Joon-keun (Vancouver Titans, Houston Outlaws), Lee "Jecse" Seung-soo (Seoul Dynasty, Houston Outlaws), and Seo "DACO" Dong-hyeong (Atlanta Reign), all of whom made it to the league well before Sp9rk1e was eligible. Now he plays a different waiting game than his time in Contenders Korea, counting down the days until he can play on the Overwatch League stage.</p>',
-                'short_text' => 'NEW YORK -- The basement of the Hammerstein Ballroom shook. A loud cry echoed from above followed...',
-                'picture' => 'overwatch_1581593171.jpg',
+<p>The other aspect of customization is choosing your gender. Like Odyssey, you can play as a male or female version of your character. Eivor was a woman in my playthrough, but not because I chose that. What\'s a little different about this game is that if you don\'t want to choose, you can just let the Animus decide your character\'s gender.</p>',
+                'short_text' => 'Assassin\'s Creed Valhalla, the 12th main game in Assassin\'s Creed franchise, releases this week for ...',
+                'picture' => 'https://sport-news.s3.amazonaws.com/post/images/viking.jpg',
+                'select' => 'selected',
                 'user_id' => 2,
                 'category_id' => 4
             ],
             [
-                'title' => 'Call of Duty Power Rankings: Crowning the best players after London homestand',
-                'slug' => 'call-of-duty-power-rankings-crowning-the-best-players-after-london-homestand',
-                'content' => '<p>The Chicago Huntsmen took the crown this past weekend as the champions of the Call of Duty League\'s tournament in London. With the Atlanta FaZe idle, it was a chance for the Huntsmen to assert themselves as potentially the best team in the league.</p>
+                'title' => 'Jensen signs three-year extension with Team Liquid',
+                'slug' => 'jensen-signs-three-year-extension-with-team-liquid',
+                'content' => '<p>Team Liquid has announced that mid laner Nicolaj "Jensen" Jensen has signed a three-year extension with the organization.</p>
 
-<p>For this week\'s Call of Duty Power Rankings, our staff decided it would be fitting to crown a king for each team following the London Royal Ravens\' home series. On some teams, it is easy to pick out standouts, while on others, it\'s a bit harder; but every team has at least one player who has carried them on certain maps or entire games.</p>
+<p>The news of Jensen\'s re-signing was first reported on October 27 <a href="https://twitter.com/TravisGafford/status/1321207778749263873">by Travis Gafford</a>, with a contract value of $4.2 million across the three year deal.</p>
 
-<p><strong>Read more: </strong><a href="https://www.espn.com/esports/story/_/id/28673904/trash-talk-big-crowds-beer-tower-look-back-cdl-london">Trash talk, big crowds and a beer tower in London</a> | <a href="https://www.espn.com/esports/story/_/id/28666995/every-cod-map-royal-ravens-london-homestand-one-sentence">Every COD map from London in one sentence</a></p>
+<p>Jensen has been with Team Liquid since the 2019 season, where the team won both splits and made it to the finals of the Mid-Season Invitational.</p>
 
-<p>Here\'s how our staff voted to rank the 12 teams after London. Each participating staff member ranked the CDL teams from No. 1 to No. 12, and the results were aggregated to determine the list below. All player stats are courtesy of Atlanta FaZe stat analyst Austin O\'Neil.</p>',
-                'short_text' => 'The Chicago Huntsmen took the crown this past weekend as the champions of the Call of Duty League...',
-                'picture' => 'cod_1581593541.jpg',
+<p>Team Liquid qualified for the 2020 League of Legends World championships. Despite going 3-3 in groups after advancing through the play-in stage, they failed to qualify for the knockout rounds.</p>
+
+<p>ESPN\'s Jacob Wolf has reported that <a href="https://www.espn.com/esports/story/_/id/30191573/sources-team-liquid-close-multi-year-deal-alphari">Team Liquid is also nearing</a> a multi-year seven-figure deal with former Origen top laner Barney "Alphari" Morris.</p>
+
+<p>The League of Legends free agency period begins on November 16 at 7 p.m. ET.</p>',
+                'short_text' => 'Team Liquid has announced that mid laner Nicolaj "Jensen" Jensen has signed a three-year extension w...',
+                'picture' => 'https://sport-news.s3.amazonaws.com/post/images/jensen.jpg',
+                'select' => 'unselected',
                 'user_id' => 3,
                 'category_id' => 4
             ],
             [
-                'title' => 'From Europe to America, G2 Esports\' brash frontman Ocelote is building an empire',
-                'slug' => 'from-europe-to-america-g2-esports-brash-frontman-ocelote-is-building-an-empire',
-                'content' => '<p>NEW YORK -- As Carlos Rodríguez Santiago walks down the busy streets of Manhattan, he takes in an empire that he hopes will soon be his.</p>
+                'title' => 'DAMWON Gaming win 2020 League of Legends World Championship',
+                'slug' => 'damwon-gaming-win-2020-league-of-legends-world-championship',
+                'content' => '<p>South Korea\'s DAMWON Gaming defeated China\'s Suning 3-1 to claim the 2020 League of Legends World Championship on Saturday in front of 6,000 fans at the newly opened Pudong Stadium in Shanghai, China.</p>
 
-<p>The center of the business world, but far from it in gaming, New York provides a new opportunity for the 29-year-old CEO, who in the past six years has built Europe\'s most popular esports franchise.</p>
+<p>After a month of competition among 22 of the best teams in the world in a quarantined bubble setting in Shanghai, the South Korean No. 1 seed outlasted the rest of the competition to hoist the Summoner\'s Cup in the 10th iteration of the world\'s most watched esports event, with last year\'s final bringing in more than 100 million viewers worldwide.</p>
 
-<p>Throughout the years, Santiago has taken over Spain, then Germany, then the entire continent, building championship-winning franchises -- most notably in League of Legends, the game that he once played professionally. Mostly forgotten as a pro, Santiago\'s profile as a front-facing, comedic yet competitive executive of G2 Esports has increased his stardom significantly compared to his glory days using a keyboard and mouse.</p>
+<p><strong>More</strong>: <a href="https://www.espn.com/esports/story/_/id/30224933/way-too-early-2021-league-legends-global-power-rankings">Way-too-early 2021 League of Legends Global Power Rankings</a> | <a href="https://www.espn.com/esports/story/_/id/30225632/sources-rogue-sign-odoamne-promote-trymbi">Sources: Rogue to sign Odoamne, promote Trymbi</a> | <a href="https://www.espn.com/esports/story/_/id/30218496/my-first-worlds-stories-players-casters-more">My First Worlds: Stories from players, casters and more</a></p>
 
-<p><br></p>
+<p>DAMWON Gaming began their tournament as one of the favorites and entered the final by amassing a 34-3 record in the tournament heading into the clash against Suning. DWG finished first in their pool during the group stage en route to a dominant bracket stage performance, steamrolling fellow South Korean side DRX 3-0 in the quarterfinals before crushing Europe\'s top seed, G2 Esports, in the semifinals. In the decisive Game 4 victory over G2, DAMWON recorded the quickest victory in world championship history with a time of 19 minutes and 3 seconds.</p>
 
-<p>Santiago now holds the keys to a $165 million business, one he founded after a train of thought that occurred to him randomly while in the back of a cab more than a half decade ago. In November, G2 nearly completed the League of Legends grand slam -- winning two domestic titles, a Mid-Season Invitational title and a League of Legends World Championship -- but finished as the runner-up to FunPlus Phoenix at worlds in front of thousands of their fans in Paris. Santiago is now looking forward from that heartbreaking moment, focusing on the positives and the things within his control presently.</p>
-
-<p>For now, that\'s New York.</p>',
-                'short_text' => 'NEW YORK -- As Carlos Rodríguez Santiago walks down the busy streets of Manhattan, he takes in a...',
-                'picture' => 'ocelote_1581946218.jpg',
+<p>The League of Legends World Championship is hosted by Riot Games, the developer of the game. Since 2011, with the inaugural seasonal championship in Jönköping, Sweden, the world championship final has become a worldwide phenomenon, selling out stadiums and arenas from Beijing\'s Beijing National Stadium to Staples Center in Los Angeles. Although no fans were permitted in attendance for the tournament before the last match, a lottery was held for more than 3 million hopefuls in China to select 6,000 socially distanced fans to attend the finale in Shanghai.</p>',
+                'short_text' => 'South Korea\'s DAMWON Gaming defeated China\'s Suning 3-1 to claim the 2020 League of Legends World Ch...',
+                'picture' => 'https://sport-news.s3.amazonaws.com/post/images/lol.jpg',
+                'select' => 'unselected',
                 'user_id' => 4,
                 'category_id' => 4
             ],
             [
-                'title' => 'How the meta shook out in Overwatch League Week 1',
-                'slug' => 'how-the-meta-shook-out-in-overwatch-league-week-1',
-                'content' => '<p><span style="color:rgb(72,73,74);">The third season of the Overwatch League kicked off this past weekend. Amid rumors of where and when the Chinese homestands would be rescheduled and a more general unease around hero pools in competitive play, the weekend also gave the community actual games to analyze. With hero pools on the horizon, here is a look at general hero usage during Stage 4 and playoffs of last year compared with hero usage in the first week, and a few slightly-too-early predictions about which heroes will be off the table for teams first come Week 4.</span></p>
+                'title' => 'Sources: Rogue to sign Odoamne, promote Trymbi',
+                'slug' => 'sources-rogue-to-sign-odoamne-promote-trymbi',
+                'content' => '<p>Rogue will sign former Schalke 04 top laner Andrei "Odoamne" Pascu for their League of Legends European Championship lineup, league sources told ESPN.</p>
 
-<p><br></p>
+<p>The team will also promote support Adrian "Trymbi" Trybus from their secondary team AGO Rogue, moving him into the position currently held by Oskar "VandeR" Bogdan, sources said. VandeR, whose contract with Rogue lasts through the end of the 2021 season, will become available for buyout.</p>
 
-<p>Looking at last year, Orisa was the dominant hero picked in the <a href="https://public.tableau.com/shared/B6K453NWM?:display_count=y&amp;:origin=viz_share_link&amp;:embed=y">majority of compositions</a>, followed by Mei, Lúcio, Ana, and D.Va. After that, compositions diverged regarding flex supports in Moira and Baptiste, flex tanks in Roadhog and Sigma, and a variety of DPS heroes including Reaper and Hanzo. These statistics back up the idea that tanks and supports are far more static than DPS heroes, where the usage rate drops significantly after Mei, by nearly 20 percent.</p>
+<p>Odoamne will replace Finn "Finn" Wiestål, who competed with Rogue throughout the 2020 season. Finn was often criticized by analysts and commentators as a weak link for Rogue due to a limited champion pool. Odoamne cannot sign with Rogue officially until Nov. 16 at 7 p.m. ET, the start of the 2020-21 League of Legends free-agency window.</p>
 
-<p>This year, Mei is once again <a href="https://public.tableau.com/shared/RJQ3D6NDZ?:display_count=y&amp;:origin=viz_share_link&amp;:embed=y">toward the top of the list</a> with an 83.3 percent usage rate. The only heroes above her are Reinhardt (88.94 percent) and Lúcio (a whopping 91.83 percent). If hero pools were to begin next week, the heroes most likely to be at risk of a ban would be Reinhardt, Lúcio, Mei, and McCree (41.94 percent usage rate), eliminating the popular Mei/McCree combo of obnoxious slows that allow McCree to shoot freely at his opponents.</p>',
-                'short_text' => 'The third season of the Overwatch League kicked off this past...',
-                'picture' => 'overwatch_1581946566.jpg',
+<p><strong>Read more:</strong> <a href="https://www.espn.com/esports/story/_/id/30204409/sources-evil-geniuses-hire-ex-mad-lions-coach-peter-dun">Evil Geniuses to sign Peter Dun as head coach</a> | <a href="https://www.espn.com/esports/story/_/id/30169085/immortals-plans-decline-xmithie-option-hire-guilhoto-new-head-coach">Immortals plan to decline Xmithie\'s option</a> | <a href="https://www.espn.com/esports/story/_/id/30218902/damwon-look-close-dominant-league-legends-world-championship-run">DAMWON look to close out dominant worlds run</a></p>
+
+<p>Following their exit from the 2020 League of Legends World Championship, Rogue began negotiating with former Origen top laner Barney "Alphari" Morris, considered one of the best in his role in the LEC. Toward the end of his decision-making process, he narrowed it down to Rogue and Team Liquid, but <a href="https://www.espn.com/esports/story/_/id/30191573/sources-team-liquid-close-multi-year-deal-alphari">Alphari ultimately will sign with Liquid</a> on Nov. 16 after they offered a multiyear deal worth more than $1 million per year in total compensation, as reported by ESPN.</p>
+
+<p>In their second year in the LEC, Rogue became one of the best teams in the league. The team finished first in the summer regular season, securing itself a spot at the world championship. There, they played in a group with DAMWON Gaming and JD Gaming, considered two of the best teams in the world. Rogue\'s went 1-5 at worlds, taking a game off Pacific Championship Series team PSG Talon.</p>
+
+<p>Odoamne spent 2019 and 2020 as a part of Schalke 04 Esports, who despite an awful spring split this year rebounded at the end of the summer regular season, qualifying for the playoffs and finishing just one place shy of making the world championship. Schalke 04 will rebuild around jungler Erberk "Gilius" Demir and mid laner Felix "Abbedagge" Braun, although other members of that team may be brought back depending on how the remainder of the offseason shakes out, sources said.</p>',
+                'short_text' => 'Rogue will sign former Schalke 04 top laner Andrei "Odoamne" Pascu for their League of Legends Europ...',
+                'picture' => 'https://sport-news.s3.amazonaws.com/post/images/dawson.jpg',
+                'select' => 'unselected',
                 'user_id' => 4,
                 'category_id' => 4
             ]

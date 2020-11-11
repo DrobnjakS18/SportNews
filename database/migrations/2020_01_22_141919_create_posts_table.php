@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration
             $table->text('content');
             $table->text('short_text');
             $table->string('picture');
-            $table->enum('select', ['selected','unselected'])->default('unselected');
+            $table->enum('select', ['selected','unselected']);
             $table->enum('status', ['verified', 'unverified'])->default('verified');
             $table->bigInteger('views')->default(0);
             $table->timestamp('created_at')->useCurrent();

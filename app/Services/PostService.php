@@ -70,7 +70,7 @@ class PostService
     {
         $data['posts'] = self::getByStatus('verified');
         $data['users'] = UserService::getAll();
-        $data['top_authors'] = UserService::getTopUsers('author',4);
+        $data['top_authors'] = UserService::getTopUsers('author',6);
         $data['tennis'] = PostRepository::findByCategory(3);
         $data['esports'] = PostRepository::findByCategory(4);
         $data['basketball'] = PostRepository::findByCategory(2);
@@ -89,6 +89,7 @@ class PostService
     public static function getByCategoryName($name)
     {
         $categoryId = CategoryService::getByName(strtolower($name));
+
 
         $data['posts'] = PostRepository::findByCategory($categoryId);
         $data['users'] = UserService::getAll();
@@ -219,7 +220,7 @@ class PostService
         $data['previous'] = self::getPreviousPost($data['post']->id);
         $data['next'] = self::getNextPost($data['post']->id);
         $data['posts'] = self::getAll();
-        $data['comments'] = $data['post']->comments->where('comment_id','=',null);
+        $data['comments'] = $data['post']->comments->where('comment_id','=',null)->where( 'status','verified');
 
         session()->put('post_id',$data['post']->id);
 
@@ -327,6 +328,13 @@ class PostService
     static public function delete($id)
     {
         return PostRepository::delete($id);
+    }
+
+    static public function authorDelete($slug,$id)
+    {
+        $author = UserService::getBySlug($slug);
+
+        return PostRepository::authorDelete($author->id,$id);
     }
 
 }

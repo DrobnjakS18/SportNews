@@ -21,7 +21,7 @@ class CategoriesTableSeeder extends Seeder
                 'color' => 'green'
             ],
             [
-                'name' => 'tenis',
+                'name' => 'tennis',
                 'color' => 'blue'
             ],
             [

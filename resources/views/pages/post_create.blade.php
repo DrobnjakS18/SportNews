@@ -24,7 +24,7 @@
                             <input type="file" class="custom-file-input" id="imageFile" required>
                             <label class="custom-file-label" for="imageFile">Choose file...</label>
                             <input type="hidden" id="headline-image-url" value="">
-                            <span class="error-custom error-file"></span>
+                            <span class="error-custom error-url"></span>
                         </div>
                     </div>
 

@@ -19,6 +19,7 @@ class ProfileController extends Controller
     {
 //        $this->middleware(['auth','verified']);
         $this->userService = new UserService();
+        $this->postService = new PostService();
     }
 
     /**
@@ -102,5 +103,21 @@ class ProfileController extends Controller
         return json_encode($response);
     }
 
+    /**
+     * Remove specified article.
+     *
+     * @param $name
+     * @param int $id
+     *
+     * @return void
+     */
+    public function authorPostDestroy($name,$id)
+    {
+        $this->postService::authorDelete($name,$id);
+
+        $items = $this->userService::getByNamePostsPaginate($name);
+
+        return view('pages.author_profile')->with(compact('items'));
+    }
 
 }

@@ -35,10 +35,12 @@ Route::group(['middleware' => ['auth','verified']],function () {
         Route::post('/profile/update','ProfileController@authorUpdate')->name('author.email');
         Route::post('/profile/update/password','ProfileController@passwordUpdate')->name('author.password');
         Route::get('/profile/{name}/edit/password','ProfileController@editPassword')->name('author.edit.password');
+        Route::get('/profile/{name}/post/destroy/{id}', 'ProfileController@authorPostDestroy')->name('author.post.destroy');
 
         Route::get('/post/create', 'PostController@create')->name('post.create');
         Route::post('/post/store', 'PostController@store')->name('post.store');
         Route::post('/image/upload','PostController@upload')->name('image');
+
     });
 
 });

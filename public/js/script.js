@@ -922,6 +922,7 @@ $('#post-submit').on('click',function (e) {
     var url = $("#headline-image-url").val();
     formData.append('url', url);
 
+
     var subject = $('#subject').val();
     formData.append('title',subject);
 
@@ -934,6 +935,8 @@ $('#post-submit').on('click',function (e) {
 
     var tags = $('#post-tags').val();
     formData.append('tags',tags);
+
+    // console.log(formData);
 
     $.ajax({
         type:"POST",
