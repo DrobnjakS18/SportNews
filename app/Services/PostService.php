@@ -101,29 +101,6 @@ class PostService
 
 
     /**
-     * Set sent data into array referencing Post table columns
-     * @param $title
-     * @param $file
-     * @param $category
-     * @param $content
-     * @return array
-     */
-    public static function setData($title, $file,$category, $content, $shortText)
-    {
-        return [
-            'title' => $title,
-            'slug' => Str::slug($title,'-'),
-            'content' => $content,
-            'short_text' => $shortText,
-            'picture' => $file,
-            'user_id' => Auth::user()->id,
-            'category_id' => CategoryService::getByName($category)
-        ];
-
-    }
-
-
-    /**
      * Get post id
      * @param $id
      * @return \App\Repositories\PostRepository
@@ -258,6 +235,29 @@ class PostService
     }
 
     /**
+     * Set sent data into array referencing Post table columns
+     * @param $title
+     * @param $file
+     * @param $category
+     * @param $content
+     * @param $shortText
+     * @return array
+     */
+    public static function setData($title, $url,$category, $content, $shortText)
+    {
+        return [
+            'title' => $title,
+            'slug' => Str::slug($title,'-'),
+            'content' => $content,
+            'short_text' => $shortText,
+            'picture' => $url,
+            'user_id' => Auth::user()->id,
+            'category_id' => CategoryService::getByName($category)
+        ];
+
+    }
+
+    /**
      * Store new post
      * @param $title
      * @param $file
@@ -300,6 +300,46 @@ class PostService
     }
 
     /**
+     * Update post
+     * @param $path
+     * @param $file
+     * @param null $id
+     * @return object
+     */
+    public static function update($id,$title,$url,$category,$content,$tags)
+    {
+        DB::beginTransaction();
+
+        try {
+            $stripContent = strip_tags($content);
+            $shortText = substr($stripContent,0,100)."...";
+
+            $postArray = self::setData($title,$url,$category,$content,$shortText);
+
+
+            $post = PostRepository::update($id,$postArray);
+
+            ($tags !== null) ? $tagArray = explode(',',$tags) : $tagArray = null;
+
+            if ($tags !== null) {
+                TagService::storeObjectTags($post,$tags);
+            }
+
+            DB::commit();
+        } catch(\Exception $exception) {
+            DB::rollback();
+            return set_ajax_reponse_object(self::STATUS_EROR, self::STATUS_CODE_ERROR, null, $exception->getMessage());
+        }
+
+        $postLink = route('post',['category' => ucfirst($post->category->name), 'slug' => $post->slug]);
+
+        Mail::to('drobnjak.stefan18@gmail.com')->send(new NewPostEmail($title, Auth::user()->name, $category, $postArray['picture'] ,  $postArray['short_text'], $postLink));
+
+        return set_ajax_reponse_object(self::STATUS_SUCCESS, self::STATUS_CODE_OK, $postLink, null);
+    }
+
+
+    /**
      * Store text editor upload image
      * @param $path
      * @param $file
@@ -333,6 +373,7 @@ class PostService
     static public function authorDelete($slug,$id)
     {
         $author = UserService::getBySlug($slug);
+
 
         return PostRepository::authorDelete($author->id,$id);
     }

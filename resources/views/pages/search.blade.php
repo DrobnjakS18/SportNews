@@ -1,7 +1,7 @@
 @extends('app')
 @section('title', 'Search | Sport News')
 @section('description', 'Search results for all the news on SportNews')
-@section('og-image', asset('storage/images/logo.png'))
+@section('og-image', asset('images/logo.png'))
 
 @section('content')
     <section class="error-404 section-padding bg-white">

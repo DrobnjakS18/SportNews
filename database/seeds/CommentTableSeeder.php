@@ -13,17 +13,20 @@ class CommentTableSeeder extends Seeder
     {
         DB::table('comments')->insert([
             [
-                'text' => 'comment1',
+                'text' => 'Liverpool title',
+                'status' => 'verified',
                 'user_id' => '1',
                 'post_id' => '2'
             ],
             [
-                'text' => 'comment2',
+                'text' => 'Good luck Domenec Torrent',
+                'status' => 'verified',
                 'user_id' => '2',
                 'post_id' => '1'
             ],
             [
-                'text' => 'comment3',
+                'text' => 'Pep Guardiola great coach',
+                'status' => 'verified',
                 'user_id' => '1',
                 'post_id' => '1'
             ],

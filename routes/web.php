@@ -39,8 +39,10 @@ Route::group(['middleware' => ['auth','verified']],function () {
 
         Route::get('/post/create', 'PostController@create')->name('post.create');
         Route::post('/post/store', 'PostController@store')->name('post.store');
-        Route::post('/image/upload','PostController@upload')->name('image');
+        Route::get('/post/{slug}/edit', 'PostController@edit')->name('post.edit');
+        Route::post('/post/update', 'PostController@update')->name('post.update');
 
+        Route::post('/image/upload','PostController@upload')->name('image');
     });
 
 });

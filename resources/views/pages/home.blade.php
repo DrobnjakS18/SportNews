@@ -1,7 +1,7 @@
 @extends('app')
 @section('title', 'Home | Sport News')
 @section('description', 'Latest sports news from all over the world')
-@section('og-image', asset('storage/images/logo.png'))
+@section('og-image', asset('images/logo.png'))
 
 @section('content')
 <div class="py-30"></div>
@@ -258,7 +258,8 @@
                                             </span>
                                             <span class="pull-right">
                                                 <i class="fa fa-comments"></i>
-                                              <span>{{$item->comments->where('comment_id',null)->count()}}</span>
+                                              <span>{{$item->comments->where('status','verified')->count()}}</span>
+
                                             </span>
                                         </div>
                                     </div>
@@ -313,7 +314,7 @@
                                         </span>
                                         <span class="pull-right">
                                             <i class="fa fa-comments"></i>
-                                        <span>{{$item->comments->count()}}</span>
+                                            <span>{{$item->comments->where('status','verified')->count()}}</span>
                                         </span>
                                     </div>
                                 </div>
@@ -366,7 +367,7 @@
                                         </span>
                                         <span class="pull-right">
                                             <i class="fa fa-comments"></i>
-                                               <span>{{$item->comments->count()}}</span>
+                                                 <span>{{$item->comments->where('status','verified')->count()}}</span>
                                         </span>
                                     </div>
                                 </div>
@@ -419,7 +420,7 @@
                                         </span>
                                         <span class="pull-right">
                                             <i class="fa fa-comments"></i>
-                                               <span>{{$item->comments->count()}}</span>
+                                                 <span>{{$item->comments->where('status','verified')->count()}}</span>
                                         </span>
                                     </div>
                                 </div>

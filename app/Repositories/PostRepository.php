@@ -120,6 +120,8 @@ class PostRepository extends BaseRepository
 
     /**
      * Insert new post
+     * @param $data
+     * @return Post
      */
     public static function create($data){
 
@@ -165,6 +167,55 @@ class PostRepository extends BaseRepository
 
     }
 
+    /**
+     * Update post
+     * @param $data
+     * @return Post
+     */
+    static public function update($id, $data)
+    {
+        $post = self::findById($id);
+
+        if (isset($data['title'])) {
+            $post->title = $data['title'];
+        }
+
+        if (isset($data['slug'])) {
+            $post->slug = $data['slug'];
+        }
+
+
+        if (isset($data['content'])) {
+            $post->content = $data['content'];
+        }
+
+        if (isset($data['short_text'])) {
+            $post->short_text = $data['short_text'];
+        }
+
+        if (isset($data['picture'])) {
+            $post->picture = $data['picture'];
+        }
+
+
+        if (isset($data['select'])) {
+            $post->select = $data['select'];
+        }
+
+        if (isset($data['user_id'])) {
+            $post->user_id = $data['user_id'];
+        }
+
+        if (isset($data['category_id'])) {
+            $post->category_id = $data['category_id'];
+        }
+
+        $post->save();
+
+        return $post;
+    }
+
+
     static public function verify($id, $status)
     {
         $post = Post::findOrFail($id);
@@ -208,7 +259,7 @@ class PostRepository extends BaseRepository
     {
         $post = self::findById($id);
 
-        if(tags()->count()) {
+        if($post->tags()->count()) {
             $post->tags()->detach();
         }
 
@@ -217,9 +268,10 @@ class PostRepository extends BaseRepository
 
     static public function authorDelete($authorId,$id)
     {
+
         $post = self::findByAuthorAndId($authorId,$id);
 
-        if(tags()->count()) {
+        if($post->tags()->count()) {
             $post->tags()->detach();
         }
 

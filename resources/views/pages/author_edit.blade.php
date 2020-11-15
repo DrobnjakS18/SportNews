@@ -1,7 +1,7 @@
 @extends('app')
 @section('title', Auth::user()->name . " Edit | Sport News")
 @section('description', 'Form to edit author profile')
-@section('og-image', asset('storage/images/logo.png'))
+@section('og-image', asset('images/logo.png'))
 
 @section('content')
     <section id="returnButton">

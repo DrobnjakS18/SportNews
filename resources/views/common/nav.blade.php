@@ -47,7 +47,7 @@
                 <!-- End Logo -->
             </div>
             <div class="col-12 col-lg-9">
-                <div class="top-ad-banner d-flex justify-content-center justify-content-lg-end ">
+                <div class="top-ad-banner d-flex justify-content-center justify-content-lg-end align-items-baseline ">
                     @auth
                         @switch(Auth::user()->role->name)
                             @case("author")

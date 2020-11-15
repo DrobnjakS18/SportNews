@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePost;
+use App\Http\Requests\UpdatePost;
 use App\Services\CategoryService;
 use App\Services\PostService;
 use Illuminate\Http\Request;
@@ -21,6 +22,7 @@ class PostController extends Controller
     {
 
         $this->postService = new PostService();
+        $this->categoryService = new CategoryService();
     }
 
     /**
@@ -139,6 +141,33 @@ class PostController extends Controller
 
        return json_encode($response);
     }
+
+
+    /**
+     * Display author post to edit
+     * @param $slug
+     * @return void
+     */
+    public function edit($slug)
+    {
+        $item = $this->postService::getBySlug($slug);
+        $categories = $this->categoryService::getAll();
+
+        return view('pages.post_edit')->with(compact('item', 'categories'));
+    }
+
+    /**
+     * Update author post to edit
+     * @param UpdatePost $request
+     * @return void
+     */
+    public function update(UpdatePost $request)
+    {
+        $response =  $this->postService::update($request->postId,$request->title,$request->url,$request->category,$request->content,$request->tags);
+
+        return json_encode($response);
+    }
+
 
     /**
      * Store a newly created post.

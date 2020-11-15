@@ -57,7 +57,7 @@
                     @endauth
                     <div id="comments" class="comments-block">
                         <h3 class="news-title">
-                            <span>Comments ( {{$items->post->comments->where('comment_id',null)->where('status','verified')->count()}} )</span>
+                            <span>Comments ( {{$items->post->comments->where('status','verified')->count()}} )</span>
                             <span class="title-sort" data-type="disliked"><a href="{{route('comments.sort',['slug' => $items->post->slug, 'type' => 'disliked'])}}">Most Disliked</a></span>
                             <span class="title-sort" data-type="liked"><a href="{{route('comments.sort',['slug' => $items->post->slug, 'type' => 'liked'])}}">Most Liked</a></span>
                             <span class="title-sort" data-type="newest"><a href="{{route('comments.sort',['slug' => $items->post->slug, 'type' => 'newest'])}}">Newest</a></span>
@@ -121,7 +121,7 @@
                                                     </form>
                                                 </div>
                                             @endauth
-                                            @foreach($comment->replies as $reply)
+                                            @foreach($comment->replies->where('status','verified')  as $reply)
                                                 @if($reply->comment_id !== null && $reply->comment_id === $comment->id)
                                                     <ul class="comments-reply">
                                                         <li>
@@ -165,7 +165,6 @@
                                 </ul>
                             </nav>
                         </ul>
-
                     </div>
                 </div>
             </div>

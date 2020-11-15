@@ -416,7 +416,7 @@
                 <tr>
                     <td align="center">
                         <a href="{{route('home')}}">
-                            <img src="{{asset('images/logos/logo.png')}}" width="169" alt="SportNews Logo">
+                            <img src="{{asset('images/logo.png')}}" width="169" alt="SportNews Logo">
                         </a>
                     </td>
                 </tr>

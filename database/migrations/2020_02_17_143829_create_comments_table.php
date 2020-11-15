@@ -18,7 +18,7 @@ class CreateCommentsTable extends Migration
             $table->text('text');
             $table->bigInteger('like')->default(0);
             $table->bigInteger('dislike')->default(0);
-            $table->enum('status', ['verified', 'unverified'])->default('unverified');
+            $table->enum('status', ['verified', 'unverified']);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
 

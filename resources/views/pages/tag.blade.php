@@ -1,7 +1,7 @@
 @extends('app')
 @section('title',  $items->name.' | Sport News')
 @section('description', 'All news results for the tag that you selected')
-@section('og-image', asset('storage/images/logo.png'))
+@section('og-image', asset('images/logo.png'))
 
 @section('content')
     <section class="section-padding mt-5">

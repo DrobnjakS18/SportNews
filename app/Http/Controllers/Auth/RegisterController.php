@@ -53,9 +53,10 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:32'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'name' => ['required', 'string', 'max:32', 'unique:users,name'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'string','max:255', 'min:8', 'confirmed'],
         ]);
     }
@@ -75,20 +76,22 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
-//
-//    /**
-//     * Handle a registration request for the application.
-//     *
-//     * @param  \Illuminate\Http\Request  $request
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function register(Request $request)
-//    {
-//        $this->validator($request->all())->validate();
-//
-//        event(new Registered($user = $this->create($request->all())));
-//
-//        return $this->registered($request, $user)
-//            ?: redirect($this->redirectPath());
-//    }
+
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function register(Request $request)
+    {
+
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+        dd($request);
+
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath());
+    }
 }

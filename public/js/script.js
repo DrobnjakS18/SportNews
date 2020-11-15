@@ -518,7 +518,6 @@ $('#authorImageUpload').change(function () {
 });
 
 function selectLocalProfileImage() {
-
     alert('Preferred profile image size to upload is 150x150px');
 
     const input = document.createElement('input');
@@ -941,6 +940,86 @@ $('#post-submit').on('click',function (e) {
     $.ajax({
         type:"POST",
         url:'/post/store',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        data: formData,
+        dataType: 'json',
+        processData: false,
+        contentType: false
+    })
+        .fail(function (jqxhr, textStatus, errorThrown) {
+            stopLoading();
+            var response = JSON.parse(jqxhr.responseText);
+            var statusCode = jqxhr.status;
+
+            //On every submit the span tags disappear and appear again
+            $('.error-custom').hide();
+
+            switch(statusCode) {
+                case 403:
+                    // user is not logged in
+                    alert(response.message);
+                    break;
+                case 422:
+                    // input fields validation failed
+                    $.each(response.errors, function(key, value) {
+                        $('.error-' + key).html(value).show();
+                    });
+                    break;
+                default:
+                    alert("Application isn't currently working.Please come back later.");
+            }
+
+        })
+        .done(function (data) {
+            if (data.status === 'success') {
+                stopLoading();
+                window.location = data.url;
+            }
+        });
+
+    // Add tag to post on Submit
+
+    if ($('.tags-add').length) {
+        $('#post-tags').tagsInput({
+            'height': '100%',
+            'width': 'inherit',
+            'defaultText': '',
+        });
+    }
+
+});
+
+// Update post on submit
+$('#post-edit').on('click',function (e) {
+    e.preventDefault();
+
+    startLoading();
+    var formData = new FormData();
+
+    var subject = $('#subject').val();
+    formData.append('title',subject);
+
+    var url = $("#headline-image-url").val();
+    formData.append('url', url);
+
+    var category = $('#post-category').val();
+    formData.append('category',category);
+
+    var myEditor = document.querySelector('#editor');
+    var content = myEditor.children[0].innerHTML;
+    formData.append('content',content);
+
+    var tags = $('#post-tags').val();
+    formData.append('tags',tags);
+
+    var id = $('#postID').val();
+    formData.append('postId',id);
+
+    $.ajax({
+        type:"POST",
+        url:'/post/update',
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },

@@ -43,7 +43,7 @@ class HomeController extends Controller
 //        dd($items->editorPickCounter);
 
         return view('pages.home')->with(compact('items'));
-//        return view('emails.template');
+//        return view('emails.postTemplate');
     }
 
 

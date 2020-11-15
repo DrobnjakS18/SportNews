@@ -1,5 +1,5 @@
 @if($comments->count() > 0)
-    @foreach($comments->sortByDesc('created_at')->take(3) as $comment)
+    @foreach($comments->where('status','verified')->sortByDesc('created_at')->take(3) as $comment)
         @if($comment->comment_id == null)
             <li>
                 <div class="comment">
@@ -57,7 +57,7 @@
                         </form>
                     </div>
                 @endauth
-                    @foreach($comment->replies as $reply)
+                    @foreach($comment->replies->where('status','verified') as $reply)
                         @if($reply->comment_id !== null && $reply->comment_id === $comment->id)
                             <ul class="comments-reply">
                                 <li>

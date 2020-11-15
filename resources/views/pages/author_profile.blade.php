@@ -1,7 +1,7 @@
 @extends('app')
 @section('title', $items->user->name . ' | Sport News')
 @section('description', 'Authorized author profile page')
-@section('og-image', asset('storage/images/logo.png'))
+@section('og-image', asset('images/logo.png'))
 
 @section('content')
     <section class="block-wrapper author-profile">
@@ -52,24 +52,22 @@
                                 <div class="col-3 col-lg text-center">
                                     Options
                                    <p class="author-post-options pt-3">
-                                       <a class="pl-md-2" href="#">Edit</a>|
-                                       <button type="button" class="btn btn-primary author-post-delete-button" data-toggle="modal" data-target="#postDelete">
+                                       <a class="pl-md-2 pr-md-1" href="{{ route('post.edit',$item->slug) }}">Edit</a>
+                                       |
+                                       <button type="button" class="btn btn-primary author-post-delete-button" data-toggle="modal" data-target="#postDelete{{$item->id}}">
                                            Delete
                                        </button>
 
                                    </p>
                                 </div>
                             </div>
-                            <div class="modal fade" id="postDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="postDelete{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
-                                        <div class="modal-header">
-                                            {{--                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>--}}
+                                        <div class="modal-body">
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
-                                        </div>
-                                        <div class="modal-body">
                                             Are you sure you want to delete this article?
                                         </div>
                                         <div class="modal-footer">
@@ -79,6 +77,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         @endforeach
                             <nav aria-label="pagination-wrapper" class="pagination-wrapper">
                                 <ul class="pagination justify-content-center">
@@ -93,6 +92,4 @@
 
         </div>
     </section>
-
-
 @endsection
