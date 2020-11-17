@@ -104,7 +104,7 @@
                         <ul class="navbar-nav mr-auto">
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link" href="{{route('home')}}">Pocetna</a>
+                                <a class="nav-link" href="{{route('home')}}">Home</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link" href="{{route('category','Football')}}">Football</a>
