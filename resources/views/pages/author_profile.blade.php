@@ -79,7 +79,7 @@
                             </div>
 
                         @endforeach
-                            <nav aria-label="pagination-wrapper" class="pagination-wrapper">
+                            <nav aria-label="pagination-wrapper" class="pagination-wrapper mb-5">
                                 <ul class="pagination justify-content-center">
                                     {{$items->posts->links()}}
                                 </ul>

@@ -35,8 +35,8 @@
                             <img class="post-image img-fluid" src="{{$items->post->picture}}" alt="{{$items->post->title}}">
                             {!! $items->post->content !!}
                         </div>
-                        <div class="share-block  d-flex justify-content-between align-items-center border-top border-bottom mt-5">
-                            <div class="post-tags">
+                        <div class="share-block  d-flex flex-column flex-sm-row justify-content-between align-items-center border-top border-bottom mt-5">
+                            <div class="post-tags mb-3 mb-sm-0">
                                 <span>Tags</span>
                                 @if($items->post->tags->count() > 0)
                                         @foreach ($items->post->tags as $tag)

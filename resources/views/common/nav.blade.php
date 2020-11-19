@@ -53,7 +53,7 @@
                             @case("author")
                                 <a class="username-button mt-n2" href="{{route('author.profile',Auth::user()->slug)}}">
                                     <img class="img-fluid user-profile-image-small" src="{{Auth::user()->profile_picture}}" alt="Sports News profile image">
-                                    <span class="pl-2 account-name d-none d-md-inline">{{ Auth::user()->name }}</span>
+                                    <span class="pl-2 account-name  d-inline">{{ Auth::user()->name }}</span>
                                 </a>
                                 @break
                             @case("user")

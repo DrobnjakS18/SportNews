@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-12 col-md-10">
                     @auth
-                        <div class="text-center mt-5"><button class="comment-toggle-button w-100">Leave a Comment</button></div>
+                        <div class="text-center mt-3 mt-sm-5"><button class="comment-toggle-button w-100">Leave a Comment</button></div>
                         <div class="comment-form mt-4">
                             <p class="comment-ajax-message_success"></p>
                             <p class="comment-ajax-message_error"></p>

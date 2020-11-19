@@ -610,6 +610,7 @@ a[href^=tel] {
     margin-right: 15px;
 }
 
+
 /* 2. HEADER
 ================================================== */
 .navigation {
@@ -3190,7 +3191,8 @@ a {
     }
 
     h2, .h2 {
-        font-size: 18px;
+        font-size: 16px;
+        line-height: 25px;
     }
 
     .block-wrapper {
@@ -3210,6 +3212,140 @@ a {
     .post-navigation h3 {
         font-size: 13px;
     }
+
+    .top-author {
+        margin-bottom: 0;
+    }
+
+    .top-author img {
+        height: 3rem;
+    }
+
+    .post-title.title-sm {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .navbar-brand img {
+        width: 100px;
+    }
+
+    .post-block-wrapper.post-float-half .post-thumbnail img,
+    .post-block-wrapper .post-thumbnail {
+        margin-bottom: 0;
+    }
+
+    body, p {
+        font-size: 15px;
+    }
+
+    .copyright-text p {
+        font-size: 12px;
+    }
+
+    /*LOGIN AND REGISTRATION PAGE*/
+    .login {
+        padding: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 0.5rem;
+    }
+
+    section.login-signup .btn-primary,
+    section.login-signup .btn-dark{
+        padding: 5px 25px;
+    }
+
+    section.login-signup {
+        padding: 40px 0 30px 0;
+    }
+
+    section.login-signup .logo {
+        padding: 12px 0;
+    }
+
+    .signup {
+        border: 2px solid #eee;
+        padding: 10px;
+    }
+
+    section.login-signup form {
+        margin-bottom: 0;
+    }
+
+    .post-navigation {
+        padding: 10px;
+    }
+
+    .post-navigation .previous-post {
+        padding-right: 5px;
+    }
+
+    .post-navigation .next-post {
+        padding-left: 5px;
+    }
+
+    .author-thumb img {
+        width: 90px;
+        height: auto;
+    }
+
+    .author-block {
+        margin-top: 50px;
+        padding: 25px 10px 35px 10px;
+    }
+
+    .all-comments img.commented-person {
+        height: 50px;
+        margin-right: 5px;
+    }
+
+    .all-comments .commented-person-name {
+        font-size: 14px;
+    }
+
+    .all-comments .comment-hour {
+        font-size: 12px;
+    }
+
+    .comment-likes, .reply-likes {
+        padding-right: 0;
+    }
+
+    .comments-reply {
+        margin: -5px 0 0 10px;
+    }
+
+    section.all-comments .single-post .post-title {
+        /*font-size: 20px;*/
+        line-height: 25px;
+    }
+
+    .news-title span {
+        line-height: 14px;
+        padding-bottom: 5px;
+    }
+
+    .title-sort {
+        padding: 7px 5px 0 0;
+    }
+
+    .news-title {
+        font-size: 11px;
+        padding-bottom: 0;
+        margin: 0 0 5px;
+    }
+
+    .author-update-image {
+        width: 90px;
+        height: auto;
+    }
+
+    .tag-big-name {
+        font-size: 16px;
+    }
+
 }
 
 /*# sourceMappingURL=maps/style.css.map */

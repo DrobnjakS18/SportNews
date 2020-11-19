@@ -10,8 +10,8 @@
             <div class="col-lg-7">
                 <div class="signup">
                     <div class="text-center"><a href="{{route('home')}}"><img src="{{asset('images/logo.png')}}" alt="" class="Sports News logo"></a></div>
-                    <h3 class="mt-4">Sign Up Here</h3>
-                    <p class="mb-5">Join with us and feel better</p>
+                    <h3 class="mt-1 mb-0 mt-sm-4">Sign Up Here</h3>
+                    <p class="mb-1 mb-sm-5">Join with us and feel better</p>
                     <form action="{{ route('register') }}" class="signup-form row" method="POST">
                         @csrf
                         <div class="col-md-12">
@@ -58,7 +58,7 @@
                         </div>
                         <div class="col-md-12">
                             <button class="btn btn-primary" type="submit">Sign Up</button>
-                            <p class="mt-5 mb-0">Already a member? <a href="{{route('login')}}">Log in</a></p>
+                            <p class="mt-2 mt-sm-5 mb-0">Already a member? <a href="{{route('login')}}">Log in</a></p>
                         </div>
                     </form>
                 </div>

@@ -69,7 +69,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 col-sm-12 col-lg-6 text-center">
-                <a href="{{route('home')}}"><img src="{{asset('images/footer-logo.png')}}" alt="" class="Sport News logo"></a>
+                <a href="{{route('home')}}"><img src="{{asset('images/footer-logo.png')}}" alt="Sport News logo" class="footer-logo"></a>
                 <p class="mt-4">We perfectly balances the simplicity of a clean, eye-catching blog with the flexibility to create unique page layouts.</p>
 
                 <ul class="list-inline footer-social">

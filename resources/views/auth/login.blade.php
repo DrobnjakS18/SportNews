@@ -11,7 +11,7 @@
                     <div class="text-center"><a href="{{route('home')}}"><img src="{{asset('images/logo.png')}}" alt="" class="img-fluid"></a></div>
 
                     <h3 class="mt-4">Login Here</h3>
-                    <p class="mb-5">Enter your valid mail & password</p>
+                    <p class="mb-2 mb-sm-5">Enter your valid mail & password</p>
                     <form method="POST" action="{{ route('login') }}" class="login-form row">
                         @csrf
                         <div class="col-md-12">
@@ -52,9 +52,9 @@
                         <div class="col-md-12">
                             <button class="btn btn-primary" type="submit">Login</button>
                             @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}">Forgot Your Password?</a>
+                                <a class="btn btn-link pl-0 pl-sm-3" href="{{ route('password.request') }}">Forgot Your Password?</a>
                             @endif
-                            <p class="mt-5 mb-0">Not a member yet? <a href="{{route('register')}}">Register Here</a></p>
+                            <p class="mt-2 mt-sm-5 mb-0">Not a member yet? <a href="{{route('register')}}">Register Here</a></p>
                         </div>
                     </form>
                 </div>

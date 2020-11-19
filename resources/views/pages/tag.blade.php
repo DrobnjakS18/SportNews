@@ -9,7 +9,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="block category-listing category-style2">
-                        <h3 class="news-title text-center"><span class="tag-big-name">Show results by tag: "{{$items->name}}"</span></h3>
+                        <h3 class="news-title text-center mb-5 mb-sm-0">
+                            <span class="tag-big-name">Show results by tag: "{{$items->name}}"</span>
+                        </h3>
 
                         @foreach($items->posts as $item)
                             <div class="post-block-wrapper post-list-view clearfix ">

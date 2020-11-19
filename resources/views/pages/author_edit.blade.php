@@ -18,7 +18,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12  col-md-6 col-lg-5 offset-lg-1 order-2 order-md-1">
-                    <form method="POST">
+                    <form method="POST" class="mb-5 mb-sm-0">
                         <div class="form-group col-md-12">
                             <label for="AuthorName">Name</label>
                             <input type="text" class="form-control" id="AuthorName" value="{{Auth::user()->name}}">
