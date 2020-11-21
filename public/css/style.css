@@ -3235,6 +3235,10 @@ a {
         margin-bottom: 0;
     }
 
+    .post-block-wrapper.post-float {
+        margin-bottom: 10px;
+    }
+
     body, p {
         font-size: 15px;
     }
