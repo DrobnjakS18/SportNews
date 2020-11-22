@@ -31,7 +31,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="offset-2 col-xs-10">
+                                    <div class="offset-2 col-xs-10 text-center">
                                         <h1 class="text-center">{{$item->title}}</h1>
                                         <img class="post-image img-fluid" src="{{$item->picture}}" alt="{{$item->title}}">
                                     </div>

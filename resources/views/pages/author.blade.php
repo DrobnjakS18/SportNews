@@ -1,6 +1,6 @@
 @extends('app')
-@section('title', $items->user->name.'| Sport News')
-@section('description', 'All information about author')
+@section('title', 'Sport News | Author page')
+@section('description', 'Latest sports news from all over the world. See all ther latest sport news on one place. Daily news and magazine')
 @section('og-image', asset('images/logo.png'))
 
 @section('content')

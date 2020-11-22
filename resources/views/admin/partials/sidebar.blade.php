@@ -28,6 +28,7 @@
                   <li><a><i class="fa fa-list" aria-hidden="true"></i> General Settings <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
 {{--                          <li><a href="{{ route('admin.email') }}">Email</a></li>--}}
+                                <li><a href="{{ route('admin.dashboard') }}">Home page</a></li>
                       </ul>
                   </li>
                   <li><a><i class="fa fa-user"></i> Admins <span class="fa fa-chevron-down"></span></a>

@@ -1,6 +1,6 @@
 @extends('admin.app')
-@section('title', 'Admin Panel - SportsNews')
-@section('description', 'Admin Panel - SportsNews')
+@section('title', 'Admin Panel Dashboard - SportsNews')
+@section('description', 'Admin Panel Dashboard - SportsNews')
 @section('og-image', asset('/images/logo.png'))
 
 @section('content')

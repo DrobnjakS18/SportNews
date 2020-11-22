@@ -1,6 +1,6 @@
 @extends('app')
-@section('title', Auth::user()->name . " Edit Password | Sport News")
-@section('description', 'Form to edit author password')
+@section('title', 'Sport News | Edit Author Password')
+@section('description', 'Latest sports news from all over the world. See all ther latest sport news on one place. Daily news and magazine')
 @section('og-image', asset('images/logo.png'))
 
 @section('content')

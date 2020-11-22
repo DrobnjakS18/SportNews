@@ -1,5 +1,5 @@
 @extends('app')
-@section('title', 'Contact | Sport News')
+@section('title', 'Sport News | Contact Us')
 @section('description', 'Get in touch with us if you have any problem, suggestions. We want to hear from you.')
 @section('og-image', asset('images/logo.png'))
 
