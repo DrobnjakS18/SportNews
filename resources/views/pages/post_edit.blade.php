@@ -1,6 +1,6 @@
 @extends('app')
-@section('title', 'Edit post | Sport News')
-@section('description', 'Form for editing your author post')
+@section('title', 'Sport News | Edit article')
+@section('description', 'Latest sports news from all over the world. See all ther latest sport news on one place. Daily news and magazine')
 @section('og-image', asset('images/logo.png'))
 
 @section('content')

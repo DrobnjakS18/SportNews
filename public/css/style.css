@@ -2511,6 +2511,7 @@ a.post-category.absolute {
 
 .top-author img {
     height: 5rem;
+    width: 5rem;
 }
 
 .top-author .info {
@@ -3219,6 +3220,7 @@ a {
 
     .top-author img {
         height: 3rem;
+        width: 3rem;
     }
 
     .post-title.title-sm {
@@ -3233,6 +3235,10 @@ a {
     .post-block-wrapper.post-float-half .post-thumbnail img,
     .post-block-wrapper .post-thumbnail {
         margin-bottom: 0;
+    }
+
+    .post-block-wrapper.post-float {
+        margin-bottom: 10px;
     }
 
     body, p {

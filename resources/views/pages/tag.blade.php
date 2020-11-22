@@ -1,6 +1,6 @@
 @extends('app')
-@section('title',  $items->name.' | Sport News')
-@section('description', 'All news results for the tag that you selected')
+@section('title', 'SportNews: All sports news on one place')
+@section('description', 'Latest sports news from all over the world. See all ther latest sport news on one place. Daily news and magazine')
 @section('og-image', asset('images/logo.png'))
 
 @section('content')

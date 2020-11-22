@@ -1,8 +1,7 @@
 @extends('app')
-@section('title', 'About me | Sport News')
-@section('description', 'All about the author of this website')
+@section('title', 'Sport News | About me')
+@section('description', 'Latest sports news from all over the world. See all ther latest sport news on one place. Daily news and magazine')
 @section('og-image', asset('images/logo.png'))
-
 
 @section('content')
     <div class="breadcrumb-wrapper">

@@ -3,10 +3,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+    <title>@yield('title')</title>
+
 {{--    IKONICE --}}
-{{--    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.unlimited3d.com/assets/favicon/apple-touch-icon.png">--}}
-{{--    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.unlimited3d.com/assets/favicon/favicon-32x32.png">--}}
-{{--    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.unlimited3d.com/assets/favicon/favicon-16x16.png">--}}
+    <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('images/logo_48X48.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/logo_32X32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/logo_16X16.png') }}">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#a42828">
     {{--SEO Optimization--}}
@@ -34,7 +36,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title')</title>
+    @yield('style')
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -48,8 +50,6 @@
     <link href="{{ asset('tags-input/dist/jquery.tagsinput.min.css') }}" rel="stylesheet">
     <!-- Quill Snow Theme included stylesheets -->
     <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-
-
 
 
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">

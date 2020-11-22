@@ -1,6 +1,6 @@
 @extends('app')
-@section('title', 'Home | Sport News')
-@section('description', 'Latest sports news from all over the world')
+@section('title', 'SportNews: All sports news on one place')
+@section('description', 'Latest sports news from all over the world. See all ther latest sport news on one place. Daily news and magazine')
 @section('og-image', asset('images/logo.png'))
 
 @section('content')

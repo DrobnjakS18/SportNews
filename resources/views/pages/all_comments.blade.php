@@ -1,6 +1,6 @@
 @extends('app')
-@section('title', $items->post->title)
-@section('description', 'All comments about' . $items->post->title ."news")
+@section('title', 'SportNews | Comments on ' .$items->post->title)
+@section('description', 'All comments about' . $items->post->title ."article")
 @section('og-image', $items->post->picture)
 
 @section('content')
