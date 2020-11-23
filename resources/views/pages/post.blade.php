@@ -3,6 +3,10 @@
 @section('description', $items->post->short_text)
 @section('og-image', $items->post->picture)
 
+{{--@section('head')--}}
+{{--    <script src="https://www.google.com/recaptcha/api.js" async defer></script>--}}
+{{--    @endsection--}}
+
 @section('content')
     <div class="breadcrumb-wrapper">
         <div class="container">
@@ -199,7 +203,7 @@
                                         </div>
                                     </div>
                                     <div id="comment-recaptcha" class="pl-3" data-sitekey="{{ config('app.CAPTCHA_KEY') }}"></div>
-
+                                    <span class="error-custom error-captcha"></span>
                                     <div class="form-group">
                                         <input type="hidden" name="comment_post" id="comment_post" value="{{$items->post->id}}">
                                     </div>

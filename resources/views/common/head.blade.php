@@ -36,8 +36,6 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    @yield('style')
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -52,5 +50,8 @@
     <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
 
+    @yield('head')
+
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    @yield('style')
 </head>

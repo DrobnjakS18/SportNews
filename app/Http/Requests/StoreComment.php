@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\Captcha;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreComment extends FormRequest
@@ -25,21 +26,21 @@ class StoreComment extends FormRequest
     {
         return [
             'message' => ['bail','required','max:1000'],
-            'recaptcha' => ['bail','required']
+            'recaptcha' => ['bail','required', new Captcha()]
         ];
     }
 
-//
-//    /**
-//     * Get custom messages for validator errors.
-//     *
-//     * @return array
-//     */
-//    public function messages()
-//    {
-//        return [
-//            'message.required' => 'Message is required',
-//            'message.max' => 'Max length is 1000 letters',
-//        ];
-//    }
+
+    /**
+     * Get custom messages for validator errors.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'message.required' => 'Message is required',
+            'message.max' => 'Max length is 1000 letters',
+        ];
+    }
 }

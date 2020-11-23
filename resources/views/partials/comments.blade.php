@@ -40,7 +40,7 @@
                                         <textarea class="form-control required-field  reply-message" class="reply-message" name="reply-message" placeholder="Message" rows="8"></textarea>
                                     </div>
                                 </div>
-                                <div id="recaptcha-{{$loop->index}}" class="recaptcha-class pl-3"></div>
+                                <div id="recaptcha-{{$loop->index}}" class="recaptcha-class pl-3" ></div>
 
                                 <div class="form-group">
                                     <input type="hidden" name="reply-post" class="reply-post" class="reply-post" value="{{$items->post->id}}">

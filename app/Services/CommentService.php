@@ -86,22 +86,15 @@ class CommentService
      * @param null $comment_id
      * @return object
      */
-    public static function store($message,$post,$user,$recaptcha,$comment_id = null)
+    public static function store($message,$post,$user,$comment_id = null)
     {
-        $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" .config('app.CAPTCHA_SECRET') ."&response=".$recaptcha);
+        ($comment_id)? CommentRepository::create($message,$post,$user,$comment_id) : CommentRepository::create($message,$post,$user);
 
-        if ($response) {
-            CommentRepository::create($message,$post,$user,$comment_id);
+        return (object) [
+            'code' => 200,
+            'message' => 'Your message has been successfully sent'
+        ];
 
-            return (object) [
-                'code' => 200,
-                'message' => 'Your message has been successfully sent'
-            ];
-        } else {
-            return (object) [
-                'code' => 422,
-            ];
-        }
     }
 
     /**

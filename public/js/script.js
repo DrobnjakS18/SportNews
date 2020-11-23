@@ -217,6 +217,7 @@ let widgetIdArray = [];
 
 var onloadCallback = function() {
     var recapchaSiteKey = $('#comment-recaptcha').data('sitekey');
+
     widgetCommentId =  grecaptcha.render('comment-recaptcha', {
         'sitekey' : recapchaSiteKey,
         'callback' : storeSiteKey
@@ -226,7 +227,6 @@ var onloadCallback = function() {
 
         for (let i = 0; i <= replyForms.length;i++ ) {
             let replyRecaptcha = 'recaptcha-' +  i;
-
             widgetIdArray.push(
                 grecaptcha.render(replyRecaptcha, {
                     'sitekey': recapchaSiteKey,
@@ -287,7 +287,7 @@ $('.reply-submit').on('submit ',function (e) {
             message : message,
             post : post,
             comment : comment,
-            recaptcha : siteKey
+            recaptcha : siteKey,
         },
         dataType: 'json',
     })
@@ -344,7 +344,7 @@ $('#comment-submit').on('click touchstart',function (e) {
             _token : $('meta[name="csrf-token"]').attr('content'),
             message : comment,
             post : commentPostId,
-            recaptcha : grecaptcha.getResponse()
+            recaptcha : siteKey
         },
         dataType: 'json',
     })

@@ -400,54 +400,6 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-    if ($('#login-form')) {
-        $('#login-form').on('submit', function(e) {
-            e.preventDefault();
-
-            $('.alert').hide();
-
-            var email = $('input[name=email]').val();
-            var password = $('input[name=password]').val();
-
-            $.ajax({
-                method: "POST",
-                url: "/admin/login",
-                data: {
-                    _token: $('meta[name="csrf-token"]').attr('content'),
-                    email: email,
-                    password: password,
-                    captcha : grecaptcha.getResponse()
-                },
-                dataType: 'json'
-            })
-            .fail(function(jqxhr, textStatus, errorThrown) {
-                var response = JSON.parse(jqxhr.responseText);
-                var statusCode = jqxhr.status;
-
-                $('.error-custom').hide();
-
-                if(statusCode === 422) {
-                    // input fields validation failed
-                    $.each(response.errors, function(key, value) {
-                        $('.error-' + key).html(value).show();
-                    });
-                }
-            })
-            .done(function(data) {
-                if (data.status === 'success' && data.code === 200) {
-                    window.location = data.url;
-                } else {
-                    $('.alert').html(data.message);
-                    $('.alert').show();
-                }
-            });
-        });
-    }
-
     if ($('#submit-admin-form')) {
         $('#submit-admin-form').on('submit', function(e) {
             e.preventDefault();

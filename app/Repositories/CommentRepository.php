@@ -75,6 +75,8 @@ class CommentRepository extends BaseRepository
     {
         $comment = new Comment();
 
+//        dd($comment_id);
+
         if (isset($message)) {
            $comment->text = $message;
         }
@@ -87,8 +89,9 @@ class CommentRepository extends BaseRepository
             $comment->user_id = $user;
         }
 
-        $comment->comment_id = $comment_id;
-
+        if(isset($comment_id)) {
+            $comment->comment_id = $comment_id;
+        }
 
         $comment->save();
 

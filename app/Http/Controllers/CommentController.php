@@ -76,8 +76,7 @@ class CommentController extends Controller
      */
     public function store(StoreComment $request)
     {
-//        dd($request->recaptcha);
-        $response = $this->commentService::store(clean($request->message,'p'),$request->post,Auth::user()->id,$request->recaptcha);
+        $response = $this->commentService::store(clean($request->message,'p'),$request->post,Auth::user()->id);
 
         return json_encode($response);
     }
@@ -89,7 +88,7 @@ class CommentController extends Controller
      */
     public function reply(StoreComment $request)
     {
-        $response = $this->commentService::store(clean($request->message,'p'),$request->post,Auth::user()->id,$request->recaptcha,$request->comment);
+        $response = $this->commentService::store(clean($request->message,'p'),$request->post,Auth::user()->id,$request->comment);
 
         return json_encode($response);
     }
