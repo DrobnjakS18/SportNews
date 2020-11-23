@@ -215,11 +215,10 @@ var replyForms = document.getElementsByClassName('reply-form');
 var widgetCommentId;
 let widgetIdArray = [];
 
-
 var onloadCallback = function() {
-
+    var recapchaSiteKey = $('#comment-recaptcha').data('sitekey');
     widgetCommentId =  grecaptcha.render('comment-recaptcha', {
-        'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI',
+        'sitekey' : recapchaSiteKey,
         'callback' : storeSiteKey
     });
 
@@ -230,7 +229,7 @@ var onloadCallback = function() {
 
             widgetIdArray.push(
                 grecaptcha.render(replyRecaptcha, {
-                    'sitekey': '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI',
+                    'sitekey': recapchaSiteKey,
                     'callback': storeSiteKey
                 })
             );
@@ -345,7 +344,7 @@ $('#comment-submit').on('click touchstart',function (e) {
             _token : $('meta[name="csrf-token"]').attr('content'),
             message : comment,
             post : commentPostId,
-            recaptcha : siteKey
+            recaptcha : grecaptcha.getResponse()
         },
         dataType: 'json',
     })

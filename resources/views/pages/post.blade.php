@@ -1,5 +1,5 @@
 @extends('app')
-@section('title',  'Single post | ' .$items->post->title)
+@section('title',  $items->post->title)
 @section('description', $items->post->short_text)
 @section('og-image', $items->post->picture)
 
@@ -198,7 +198,7 @@
                                             <textarea class="form-control required-field" id="message" name="message" placeholder="Messege" rows="8" required></textarea>
                                         </div>
                                     </div>
-                                    <div id="comment-recaptcha" class="pl-3"></div>
+                                    <div id="comment-recaptcha" class="pl-3" data-sitekey="{{ config('app.CAPTCHA_KEY') }}"></div>
 
                                     <div class="form-group">
                                         <input type="hidden" name="comment_post" id="comment_post" value="{{$items->post->id}}">

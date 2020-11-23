@@ -76,6 +76,7 @@ class CommentController extends Controller
      */
     public function store(StoreComment $request)
     {
+//        dd($request->recaptcha);
         $response = $this->commentService::store(clean($request->message,'p'),$request->post,Auth::user()->id,$request->recaptcha);
 
         return json_encode($response);

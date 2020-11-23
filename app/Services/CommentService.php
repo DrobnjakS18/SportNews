@@ -88,7 +88,7 @@ class CommentService
      */
     public static function store($message,$post,$user,$recaptcha,$comment_id = null)
     {
-        $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe&response=".$recaptcha);
+        $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" .config('app.CAPTCHA_SECRET') ."&response=".$recaptcha);
 
         if ($response) {
             CommentRepository::create($message,$post,$user,$comment_id);
