@@ -1,4 +1,4 @@
-@section('title', 'Login | Sport News')
+@section('title', 'Sport News | Login')
 @section('description', 'Login form to access the website')
 @section('og-image', asset('storage/images/logo.png'))
 

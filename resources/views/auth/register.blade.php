@@ -1,4 +1,4 @@
-@section('title', 'Registration | Sport News')
+@section('title', 'Sport News | Registration')
 @section('description', 'Registter your account so you can have accesss to SportNews additional features')
 @section('og-image', asset('storage/images/logo.png'))
 
