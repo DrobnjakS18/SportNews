@@ -9,6 +9,7 @@ use Auth;
 use App\Http\Requests\Login;
 use App\Services\AdminService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -92,6 +93,8 @@ class AdminController extends Controller
     public function store(StoreAdmin $request)
     {
         $adminService = new AdminService;
+
+//        dd($request->password,Hash::make($request->password));
 
         $response = $adminService->store($request->first_name, $request->last_name, $request->email, $request->password);
 

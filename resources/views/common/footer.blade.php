@@ -1,6 +1,7 @@
 <footer class="footer footer-main ">
   @auth
         @if(Auth::user()->role->name === "user")
+            <div class="loading" delay-hide="50000"></div>
             <div class="modal fade" id="modalUserAccount" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                  aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -74,19 +75,19 @@
 
                 <ul class="list-inline footer-social">
                     <li class="li list-inline-item">
-                        <button class="button" data-sharer="facebook"  data-url="{{Request::url()}}"><i class="fa fa-facebook"></i></button>
+                        <button class="button" data-sharer="facebook"  data-url="https://sportnewsmag.com/"><i class="fa fa-facebook"></i></button>
                     </li>
                     <li class="li list-inline-item">
-                        <button class="button" data-sharer="twitter" data-title="Sports News" data-url="{{Request::url()}}"><i class="fa fa-twitter"></i></button>
+                        <button class="button" data-sharer="twitter" data-title="Sports News" data-url="https://sportnewsmag.com/"><i class="fa fa-twitter"></i></button>
                     </li>
                     <li class="li list-inline-item">
-                        <button class="button" data-sharer="linkedin" data-url="{{Request::url()}}"><i class="fa fa-linkedin"></i></button>
+                        <button class="button" data-sharer="linkedin" data-url="https://sportnewsmag.com/"><i class="fa fa-linkedin"></i></button>
                     </li>
                     <li class="li list-inline-item">
-                        <button class="button" data-sharer="pinterest" data-url="{{Request::url()}}"><i class="fa fa-pinterest"></i></button>
+                        <button class="button" data-sharer="pinterest" data-url="https://sportnewsmag.com/"><i class="fa fa-pinterest"></i></button>
                     </li>
                     <li class="li list-inline-item">
-                        <button class="button" data-sharer="email" data-title="Sports News" data-url="{{Request::url()}}" data-subject="Sports News" data-to=""><i class="fa fa-envelope"></i></button>
+                        <button class="button" data-sharer="email" data-title="Sports News" data-url="https://sportnewsmag.com/" data-subject="Sports News" data-to=""><i class="fa fa-envelope"></i></button>
                     </li>
                 </ul>
 

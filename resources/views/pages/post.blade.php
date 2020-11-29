@@ -143,23 +143,23 @@
                         <div class="author-content">
                             <h3><a href="{{route('author',$items->post->user->slug)}}">{{$items->post->user->name}}</a></h3>
                             <p>{{$items->post->user->about}}</p>
-                            <div class="authors-social">
-                                <a href="#">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-pinterest-p"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-dribbble"></i>
-                                </a>
-                            </div>
+{{--                            <div class="authors-social">--}}
+{{--                                <a href="#">--}}
+{{--                                    <i class="fa fa-facebook"></i>--}}
+{{--                                </a>--}}
+{{--                                <a href="#">--}}
+{{--                                    <i class="fa fa-twitter"></i>--}}
+{{--                                </a>--}}
+{{--                                <a href="#">--}}
+{{--                                    <i class="fa fa-google-plus"></i>--}}
+{{--                                </a>--}}
+{{--                                <a href="#">--}}
+{{--                                    <i class="fa fa-pinterest-p"></i>--}}
+{{--                                </a>--}}
+{{--                                <a href="#">--}}
+{{--                                    <i class="fa fa-dribbble"></i>--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
 

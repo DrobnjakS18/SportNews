@@ -1,6 +1,6 @@
 @extends('app')
 @section('title',  'Sport News | ' .$name)
-@section('description', 'Latest ' .$namme .' news from all over the world. See all ther latest  ' .$namme .' news on one place. Daily news and magazine')
+@section('description', 'Latest ' .$name .' news from all over the world. See all ther latest  ' .$name .' news on one place. Daily news and magazine')
 @section('og-image', asset('images/logo.png'))
 
 @section('content')

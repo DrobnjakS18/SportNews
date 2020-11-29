@@ -17,7 +17,7 @@
                             <div class="post-block-wrapper post-list-view clearfix ">
                                 <div class="row">
                                     <div class="col-md-5 col-sm-6">
-                                        <div class="post-thumbnail thumb-float-style">
+                                        <div class="post-thumbnail thumb-float-style tag-margin">
                                             <a href="{{route('post',[ucfirst($item->category->name),$item->slug])}}">
                                                 <img class="img-fluid" src="{{$item->picture}}" alt="{{$item->title}}" />
                                             </a>
