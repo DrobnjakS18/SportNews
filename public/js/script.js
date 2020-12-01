@@ -698,8 +698,10 @@ $('#submitAuthorUpdate').on('click touchstart',function (e) {
             $('.error-custom').hide();
             $('.reply-ajax-message_success').html(data.message).slideDown(400,function () {
                 setTimeout(function () {
-                    $('.reply-ajax-message_success').slideUp();
-                },2000)
+                    $('.reply-ajax-message_success').slideUp(400, function() {
+                        location.reload();
+                    });
+                },1000)
             });
         });
 });

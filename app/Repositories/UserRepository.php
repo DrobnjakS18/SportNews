@@ -4,6 +4,7 @@
 namespace App\Repositories;
 
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Hash;
@@ -174,6 +175,24 @@ class UserRepository extends BaseRepository
 
         if(isset($about)) {
             $user->about = $about;
+        }
+
+        $user->save();
+
+        return $user;
+    }
+
+
+    public static function UpdateRole($id, $name)
+    {
+
+        $user = User::findOrFail($id);
+
+        $role = Role::where('name',$name)->firstOrFail();
+        $roleId = $role->id;
+
+        if(isset($name)) {
+            $user->role_id = $roleId;
         }
 
         $user->save();

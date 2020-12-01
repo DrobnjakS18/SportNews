@@ -1116,7 +1116,7 @@ a.post-category.absolute {
 .post-overlay-wrapper .post-content {
     position: absolute;
     bottom: 0;
-    padding: 25px;
+    padding: 15px;
     width: 100%;
     z-index: 9;
 }

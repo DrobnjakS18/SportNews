@@ -87,6 +87,7 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('/users', 'UserController@index')->name('users.users')->middleware('auth.custom');
     Route::get('/users/create', 'UserController@create')->name('users.create')->middleware('auth.custom');
     Route::post('/users', 'UserController@store')->name('users.store')->middleware('auth.custom');
+    Route::post('/user/role', 'UserController@changeRole')->name('users.role')->middleware('auth.custom');
 //    Route::get('/admins/edit/{id}', 'AdminController@edit')->name('admin.admins.edit')->middleware('auth.custom');
 //    Route::post('/admins/update/{id}', 'AdminController@update')->name('admin.admins.update')->middleware('auth.custom');
     Route::get('/users/destroy/{id}', 'UserController@destroy')->name('users.destroy')->middleware('auth.custom');

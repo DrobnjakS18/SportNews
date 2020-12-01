@@ -43,7 +43,14 @@
                                         <tr>
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
-                                            <td>{{ $user->role->name }}</td>
+{{--                                            <td>{{ $user->role->name }}</td>--}}
+                                            <td>
+                                                <select class="form-control changeUserRole"  data-id="{{$user->id}}">
+                                                    @foreach($user->role->all() as $role)
+                                                        <option value="{{ $role->name }}" @if($user->role->name == $role->name) selected @endif >{{ $role->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
                                             <td>{{ $user->created_at->format('m/d/Y H:i:s') }}</td>
                                             <td class="text-center">
                                                 <a href="{{ route('users.destroy', $user->id) }}" class="action"><i class="fa fa-trash-o"></i></a>

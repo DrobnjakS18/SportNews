@@ -184,7 +184,6 @@ class PostRepository extends BaseRepository
             $post->slug = $data['slug'];
         }
 
-
         if (isset($data['content'])) {
             $post->content = $data['content'];
         }
@@ -196,7 +195,6 @@ class PostRepository extends BaseRepository
         if (isset($data['picture'])) {
             $post->picture = $data['picture'];
         }
-
 
         if (isset($data['select'])) {
             $post->select = $data['select'];

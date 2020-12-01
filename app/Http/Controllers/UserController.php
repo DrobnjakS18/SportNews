@@ -51,6 +51,19 @@ class UserController extends Controller
     }
 
     /**
+     * Change user role
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function changeRole(Request $request)
+    {
+        $response = $this->userService::UpdateRole($request->userId,$request->role);
+
+        return json_encode($response);
+    }
+
+    /**
      * Display the specified resource.
      *
      * @param  int  $id

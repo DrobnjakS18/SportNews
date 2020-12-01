@@ -45,6 +45,7 @@ class AdminService
 
     static public function getAllSorted($orderBy = 'first_name', $order = 'asc')
     {
+
         return AdminRepository::allSorted($orderBy, $order);
     }
 

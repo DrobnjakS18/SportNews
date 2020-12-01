@@ -182,10 +182,19 @@ class UserService
 
         $slug = Str::slug($name,'-');
 
-        $user = UserRepository::updateAuthor($id,$name,$slug,$email,$about);
+        UserRepository::updateAuthor($id,$name,$slug,$email,$about);
 
         return (object) [
             'message' =>  'You have successfully updated you profile'
+        ];
+    }
+
+    public static function updateRole($id, $role)
+    {
+       UserRepository::UpdateRole($id, $role);
+
+        return (object) [
+            'message' =>  'User role successfully updated into.'
         ];
     }
 

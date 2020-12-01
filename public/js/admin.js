@@ -172,6 +172,33 @@ $(document).ready(function() {
     });
 
 
+    $('.changeUserRole').on('change', function() {
+
+        let role = this.value;
+        let userId = $(this).data('id');
+
+        $.ajax({
+            method: "POST",
+            url: '/admin/user/role',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: {
+                'role': role,
+                'userId' : userId
+            },
+            dataType: 'json',
+        })
+            .fail(function(jqxhr, textStatus, errorThrown, data) {
+                stopLoading();
+                // alert('An error occured! Please try againg later.');
+            })
+            .done(function(response) {
+                stopLoading();
+                alert(response.message);
+            });
+    });
+
 
 
 
