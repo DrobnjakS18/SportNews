@@ -45,6 +45,8 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'Brazilian champions Flamengo fired Spanish coach Domenec Torrent just 10 weeks after hiring the form...',
                 'picture' => 'https://sport-news.s3.amazonaws.com/post/images/pep.jpg',
                 'select' => 'selected',
+                'status' => 'verified',
+                'views' => 10,
                 'user_id' => 1,
                 'category_id' => 1
             ],
@@ -75,6 +77,8 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'MANCHESTER, England -- After 90 minutes between the Premier League\'s best two teams there was no c...',
                 'picture' => 'https://sport-news.s3.amazonaws.com/post/images/liverpool.jpg',
                 'select' => 'selected',
+                'status' => 'verified',
+                'views' => 10,
                 'user_id' => 2,
                 'category_id' => 1
             ],
@@ -97,6 +101,8 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'In the 2019 Women\'s World Cup finals, when the final whistle blew and the U.S. team stormed the fiel...',
                 'picture' => 'https://sport-news.s3.amazonaws.com/post/images/women.jpg',
                 'select' => 'selected',
+                'status' => 'verified',
+                'views' => 10,
                 'user_id' => 3,
                 'category_id' => 1
             ],
@@ -123,6 +129,8 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'Police in Portugal have raided the offices of Primeira Liga clubs Benfica, Sporting and Santa Clar...',
                 'picture' => 'https://sport-news.s3.amazonaws.com/post/images/benfica.jpg',
                 'select' => 'selected',
+                'status' => 'verified',
+                'views' => 10,
                 'user_id' => 1,
                 'category_id' => 1
             ],
@@ -145,6 +153,8 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'It’s another European special for Max and the pod, who look at Lazio’s weird Covid test results,...',
                 'picture' => 'https://sport-news.s3.amazonaws.com/post/images/zlatan.jpg',
                 'select' => 'unselected',
+                'status' => 'verified',
+                'views' => 10,
                 'user_id' => 2,
                 'category_id' => 1
             ],
@@ -185,6 +195,8 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'There hasn\'t been a trade in the NBA for almost nine months! Do you have the shakes? Let\'s take a lo...',
                 'picture' => 'https://sport-news.s3.amazonaws.com/post/images/gianis.jpg',
                 'select' => 'selected',
+                'status' => 'verified',
+                'views' => 10,
                 'user_id' => 3,
                 'category_id' => 2
             ],
@@ -209,6 +221,8 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'THE LOS ANGELES DODGERS faced a decision. They had just paid one of baseball\'s highest-profile star...',
                 'picture' => 'https://sport-news.s3.amazonaws.com/post/images/kyrie.jpg',
                 'select' => 'selected',
+                'status' => 'verified',
+                'views' => 10,
                 'user_id' => 1,
                 'category_id' => 2
             ],
@@ -227,6 +241,8 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'Which players will be available in the 2020 NBA free-agent class, and how much money are they expec...',
                 'picture' => 'https://sport-news.s3.amazonaws.com/post/images/i_3.jpg',
                 'select' => 'unselected',
+                'status' => 'verified',
+                'views' => 10,
                 'user_id' => 1,
                 'category_id' => 2
             ],
@@ -253,6 +269,8 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'The resurgence of Real Madrid, which has consecutive wins against top-ranked teams, with Walter Tava...',
                 'picture' => 'https://sport-news.s3.amazonaws.com/post/images/tavares.jpg',
                 'select' => 'unselected',
+                'status' => 'verified',
+                'views' => 10,
                 'user_id' => 2,
                 'category_id' => 2
             ],
@@ -275,6 +293,8 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'Turkish Airlines EuroLeague fans, we have our seventh winner in the EuroLeague Fantasy Challenge!...',
                 'picture' => 'https://sport-news.s3.amazonaws.com/post/images/fantasy.jpg',
                 'select' => 'unselected',
+                'status' => 'verified',
+                'views' => 10,
                 'user_id' => 3,
                 'category_id' => 2
             ],
@@ -301,6 +321,8 @@ class PostTableSeeder extends Seeder
                 'short_text' => '"It\'s really such a unique experience," Mattek-Sands told reporters at the team\'s post-event news...',
                 'picture' => 'https://sport-news.s3.amazonaws.com/post/images/sofia.jpg',
                 'select' => 'selected',
+                'status' => 'verified',
+                'views' => 10,
                 'user_id' => 1,
                 'category_id' => 3
             ],
@@ -331,6 +353,8 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'PARIS -- Becoming only the fourth man to reach 1,000 match wins should have drawn deafening cheers a...',
                 'picture' => 'https://sport-news.s3.amazonaws.com/post/images/nadal.jpg',
                 'select' => 'selected',
+                'status' => 'verified',
+                'views' => 10,
                 'user_id' => 2,
                 'category_id' => 3
             ],
@@ -349,6 +373,8 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'Taylor Townsend watched in admiration as the march of moms dominated the conversation at the US O...',
                 'picture' => 'https://sport-news.s3.amazonaws.com/post/images/taylor.jpg',
                 'select' => 'selected',
+                'status' => 'verified',
+                'views' => 10,
                 'user_id' => 2,
                 'category_id' => 3
             ],
@@ -375,6 +401,8 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'Australia\'s Nick Kyrgios has opened up on his experiences with depression and has said returning t...',
                 'picture' => 'https://sport-news.s3.amazonaws.com/post/images/kyrguos.jpg',
                 'select' => 'unselected',
+                'status' => 'verified',
+                'views' => 10,
                 'user_id' => 2,
                 'category_id' => 3
             ],
@@ -397,6 +425,8 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'Once Daniil Medvedev found a way to counter Alexander Zverev\'s huge serve, his metronome-like rhy...',
                 'picture' => 'https://sport-news.s3.amazonaws.com/post/images/medvedev.jpg',
                 'select' => 'unselected',
+                'status' => 'verified',
+                'views' => 10,
                 'user_id' => 3,
                 'category_id' => 3
             ],
@@ -417,6 +447,8 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'The "console wars" are over. At least in the way they\'ve usually been fought. As we approach a...',
                 'picture' => 'https://sport-news.s3.amazonaws.com/post/images/microsoft.jpg',
                 'select' => 'unselected',
+                'status' => 'verified',
+                'views' => 10,
                 'user_id' => 1,
                 'category_id' =>4
             ],
@@ -439,6 +471,8 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'Assassin\'s Creed Valhalla, the 12th main game in Assassin\'s Creed franchise, releases this week for ...',
                 'picture' => 'https://sport-news.s3.amazonaws.com/post/images/viking.jpg',
                 'select' => 'selected',
+                'status' => 'verified',
+                'views' => 10,
                 'user_id' => 2,
                 'category_id' => 4
             ],
@@ -459,6 +493,8 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'Team Liquid has announced that mid laner Nicolaj "Jensen" Jensen has signed a three-year extension w...',
                 'picture' => 'https://sport-news.s3.amazonaws.com/post/images/jensen.jpg',
                 'select' => 'unselected',
+                'status' => 'verified',
+                'views' => 10,
                 'user_id' => 3,
                 'category_id' => 4
             ],
@@ -477,6 +513,8 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'South Korea\'s DAMWON Gaming defeated China\'s Suning 3-1 to claim the 2020 League of Legends World Ch...',
                 'picture' => 'https://sport-news.s3.amazonaws.com/post/images/lol.jpg',
                 'select' => 'unselected',
+                'status' => 'verified',
+                'views' => 10,
                 'user_id' => 4,
                 'category_id' => 4
             ],
@@ -499,6 +537,8 @@ class PostTableSeeder extends Seeder
                 'short_text' => 'Rogue will sign former Schalke 04 top laner Andrei "Odoamne" Pascu for their League of Legends Europ...',
                 'picture' => 'https://sport-news.s3.amazonaws.com/post/images/dawson.jpg',
                 'select' => 'unselected',
+                'status' => 'verified',
+                'views' => 10,
                 'user_id' => 4,
                 'category_id' => 4
             ]

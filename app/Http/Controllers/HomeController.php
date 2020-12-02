@@ -29,6 +29,8 @@ class HomeController extends Controller
     {
         $items = $this->postService::getAllWithUsers();
 
+//        dd($items);
+
 //        $editorsPages = ceil($items->count() /2);
 //        for( $i = 1; $i <= $editorsPages;$i++) {
 //           if($i % 3)

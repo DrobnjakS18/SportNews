@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
                 'email_verified_at' => '2020-03-05 18:08:19',
                 'about' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quod molestias delectus illum quisquam. Quasi iure perferendis suscipit officiis dicta!',
                 'password' => Hash::make('123123123'),
-                'role_id' => 2,
+                'role_id' => 1,
             ],
             [
                 'name' => 'Author2 Stefan',
@@ -29,7 +29,7 @@ class UsersTableSeeder extends Seeder
                 'email_verified_at' => '2020-03-05 18:08:19',
                 'about' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quod molestias delectus illum quisquam. Quasi iure perferendis suscipit officiis dicta!',
                 'password' => Hash::make('123123123'),
-                'role_id' => 2,
+                'role_id' => 1,
             ],
             [
                 'name' => 'Author3 Stefan',
@@ -38,7 +38,7 @@ class UsersTableSeeder extends Seeder
                 'email_verified_at' => '2020-03-05 18:08:19',
                 'about' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quod molestias delectus illum quisquam. Quasi iure perferendis suscipit officiis dicta!',
                 'password' => Hash::make('123123123'),
-                'role_id' => 2,
+                'role_id' => 1,
             ],
             [
                 'name' => 'Author4 Stefan',
@@ -47,7 +47,7 @@ class UsersTableSeeder extends Seeder
                 'email_verified_at' => '2020-03-05 18:08:19',
                 'about' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quod molestias delectus illum quisquam. Quasi iure perferendis suscipit officiis dicta!',
                 'password' => Hash::make('123123123'),
-                'role_id' => 2,
+                'role_id' => 1,
             ],
             [
                 'name' => 'User Stefan',
@@ -56,7 +56,7 @@ class UsersTableSeeder extends Seeder
                 'email_verified_at' => '2020-03-05 18:08:19',
                 'about' => null,
                 'password' => Hash::make('123123123'),
-                'role_id' => 3,
+                'role_id' => 2,
             ],
         ]);
     }
