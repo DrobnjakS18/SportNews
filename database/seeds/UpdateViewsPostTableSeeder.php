@@ -16,6 +16,7 @@ class UpdateViewsPostTableSeeder extends Seeder
         for ($i = 1; $i <= 20; $i++){
             array_push($ids, $i);
         }
+
         DB::table('posts')->whereIn('id', $ids)->update(['views' => 1]);
     }
 }
