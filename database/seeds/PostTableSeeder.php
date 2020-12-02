@@ -11,7 +11,7 @@ class PostTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('posts')->update([
+        DB::table('posts')->insert([
             [
                 'title' => 'Ex-NYCFC boss, Pep Guardiola assistant Domenec Torrent sacked at Flamengo',
                 'slug' => 'ex-nycfc-boss-pep-guardiola-assistant-domenec-torrent-sacked-at-flamengo',

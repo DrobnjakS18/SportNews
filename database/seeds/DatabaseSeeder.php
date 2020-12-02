@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CommentTableSeeder::class);
         $this->call(PostTagTableSeeder::class);
         $this->call(AdminTableSeeder::class);
+        $this->call(DeleteAdminRoleTableSeeder::class);
     }
 }
