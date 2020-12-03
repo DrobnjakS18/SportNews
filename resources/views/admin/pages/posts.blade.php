@@ -58,7 +58,30 @@
                                                 </label>
                                             </td>
                                             <td class="text-center">
-                                                <a href="{{ route('admin.post.destroy', $post->id) }}" class="action"><i class="fa fa-trash-o"></i></a>
+
+                                                <button type="button" class="btn admin-delete-button" data-toggle="modal" data-target="#articleDelete{{$post->id}}">
+                                                    <i class="fa fa-trash-o"></i>
+                                                </button>
+
+                                                {{--MODAL--}}
+                                                <div class="modal fade" id="articleDelete{{$post->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-body">
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                                Are you sure you want to delete this article?
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                                <a class="btn btn-primary author-post-delete-link" href="{{ route('admin.post.destroy', $post->id) }}">Delete</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
                                             </td>
                                         </tr>
                                     @endforeach

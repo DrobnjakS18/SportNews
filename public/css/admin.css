@@ -442,3 +442,8 @@ a.action:first-child{
 .preview-content p {
     font-size: 18px;
 }
+
+.btn.admin-delete-button {
+    background: transparent;
+    padding-top: 0;
+}
