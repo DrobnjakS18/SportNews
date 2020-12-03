@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Foundation\Auth\VerifiesEmails;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -27,14 +28,15 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+    use VerifiesEmails;
 
     /**
      * Where to redirect users after registration.
      *
      * @var string
      */
-//    protected $redirectTo = RouteServiceProvider::HOME;
-    protected $redirectTo = "/email/verify";
+    protected $redirectTo = RouteServiceProvider::HOME;
+//    protected $redirectTo = "/email/verify";
     /**
      * Create a new controller instance.
      *
@@ -87,9 +89,11 @@ class RegisterController extends Controller
     {
         $this->validator($request->all())->validate();
 
+
         event(new Registered($user = $this->create($request->all())));
 
-        return $this->registered($request, $user)
-            ?: redirect($this->redirectPath());
+        return $user->hasVerifiedEmail()
+            ? redirect($this->redirectPath())
+            : view('auth.verify');
     }
 }
