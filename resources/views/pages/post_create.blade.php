@@ -41,7 +41,7 @@
                     <div id="editor"></div>
                     <span class="error-custom error-content"></span>
 
-                    <div class="float-right mt-3">
+                    <div class="float-right d-flex mt-3">
                         <a href="{{route('home')}}" class="btn btn-light px-5">Cancel</a>
                         <button type="submit" id="post-submit" class="btn btn-secondary px-5">Submit</button>
                     </div>

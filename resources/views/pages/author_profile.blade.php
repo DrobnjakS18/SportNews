@@ -16,7 +16,7 @@
                             <h3>{{$items->user->name}}</h3>
                             <p class="w-100 mx-auto">{{$items->user->about}}</p>
                             <div class="author-options text-center mt-5">
-                                <a class="author-create-post mr-4" href="{{route('post.create')}}">Create Post</a>
+                                <a class="author-create-post mr-4" href="{{route('post.create')}}">Create Article</a>
                                 <a class="author-edit-post" href="{{route('author.edit',[$items->user->slug])}}">Edit Profile</a>
                             </div>
                         </div>
@@ -39,21 +39,21 @@
                                 </div>
                                 <div class="col-3 col-lg text-center">
                                     Published
-                                    <p class="pt-3">{{$item->created_at->format('d.m.Y')}}</p>
+                                    <p class="pt-0 pt-sm-3">{{$item->created_at->format('d.m.Y')}}</p>
                                 </div>
                                 <div class="col-3 col-lg text-center">
                                     Views
-                                    <p class="pt-3">{{$item->views}}</p>
+                                    <p class="pt-0 pt-sm-3">{{$item->views}}</p>
                                 </div>
                                 <div class="col-3 col-lg text-center">
                                     Comments
-                                    <p class="pt-3">{{$item->comments->count()}}</p>
+                                    <p class="pt-0 pt-sm-3">{{$item->comments->count()}}</p>
                                 </div>
                                 <div class="col-3 col-lg text-center">
                                     Options
                                    <p class="author-post-options pt-3">
                                        <a class="pl-md-2 pr-md-1" href="{{ route('post.edit',$item->slug) }}">Edit</a>
-                                       |
+
                                        <button type="button" class="btn btn-primary author-post-delete-button" data-toggle="modal" data-target="#postDelete{{$item->id}}">
                                            Delete
                                        </button>
