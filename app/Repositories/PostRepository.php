@@ -149,10 +149,6 @@ class PostRepository extends BaseRepository
         }
 
 
-        if (isset($data['select'])) {
-            $post->select = $data['select'];
-        }
-
         if (isset($data['user_id'])) {
             $post->user_id = $data['user_id'];
         }

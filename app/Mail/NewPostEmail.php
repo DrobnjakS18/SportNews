@@ -42,7 +42,7 @@ class NewPostEmail extends Mailable
     public function build()
     {
 
-        return $this->from('steficar97@gmail.com')
+        return $this->from('drobnjak.milan11@gmail.com')
             ->view('emails.postTemplate')
             ->subject('New post has been publish - Sport News')
             ->with([

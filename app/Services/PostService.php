@@ -277,6 +277,8 @@ class PostService
 
             $postArray = self::setData($title,$file,$category,$content,$shortText);
 
+//            dd($postArray);
+
             $post = PostRepository::create($postArray);
 
             ($tags !== null) ? $tagArray = explode(',',$tags) : $tagArray = null;
