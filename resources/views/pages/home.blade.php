@@ -197,7 +197,7 @@
                                 @foreach($items->football as $item)
                                     @if($loop->iteration > 1 && $loop->iteration <= 5)
                                             <div class="post-block-wrapper post-float clearfix">
-                                                <div class="post-thumbnail">
+                                                <div class="post-thumbnail other-football">
                                                     <a href="{{route('post',[ucfirst($item->category->name),$item->slug])}}">
                                                         <img class="img-fluid" src="{{$item->picture}}" alt="{{$item->title}}"/>
                                                     </a>

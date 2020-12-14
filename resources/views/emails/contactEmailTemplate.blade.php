@@ -431,7 +431,7 @@
                                 <td class="content-cell" align="center">
                                     <hr>
                                     <h4><font face="Montserrat, sans-serif">New Message from {{ $email ?? '' }}</font></h4>
-                                    <h4><font face="Montserrat, sans-serif">Username:{{ $surname ?? '' }}</font></h4>
+                                    <h4><font face="Montserrat, sans-serif">Surname:{{ $surname ?? '' }}</font></h4>
                                 </td>
                             </tr>
                             <tr>

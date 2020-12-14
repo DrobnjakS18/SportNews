@@ -92,8 +92,11 @@ class RegisterController extends Controller
 
         event(new Registered($user = $this->create($request->all())));
 
+
+
         return $user->hasVerifiedEmail()
             ? redirect($this->redirectPath())
             : view('auth.verify');
     }
+
 }

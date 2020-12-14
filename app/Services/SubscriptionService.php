@@ -32,6 +32,7 @@ class SubscriptionService
 
     public static function email($surname,$email,$subject,$message)
     {
+//        dd('dsadsa');
 
         Mail::to('drobnjak.stefan18@gmail.com')->send(new ContactEmail($surname, $email, $subject, $message));
 

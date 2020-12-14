@@ -31,7 +31,7 @@ class ContactEmail extends Mailable
      */
     public function build()
     {
-        return $this->from($this->email)
+        return $this->from(env('MAIL_FROM_ADDRESS'))
             ->replyTo($this->email,$this->surname)
             ->view('emails.contactEmailTemplate')
             ->subject($this->subject)

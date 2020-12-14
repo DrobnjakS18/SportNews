@@ -268,6 +268,7 @@ class PostService
      */
     public static function store($title,$file,$category,$content,$tags = null)
     {
+
         DB::beginTransaction();
 
         try {
@@ -296,7 +297,7 @@ class PostService
 
         $postLink = route('post',['category' => ucfirst($post->category->name), 'slug' => $post->slug]);
 
-        Mail::to('drobnjak.stefan18@gmail.com')->send(new NewPostEmail($title, Auth::user()->name, $category, $postArray['picture'] ,  $postArray['short_text'], $postLink));
+        Mail::to(env('MAIL_FROM_ADDRESS'))->send(new NewPostEmail($title, Auth::user()->name, $category, $postArray['picture'] ,  $postArray['short_text'], $postLink));
 
        return set_ajax_reponse_object(self::STATUS_SUCCESS, self::STATUS_CODE_OK, $postLink, null);
     }
