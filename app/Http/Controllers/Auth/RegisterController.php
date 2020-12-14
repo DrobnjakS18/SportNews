@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\NewRegistration;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
@@ -89,10 +91,9 @@ class RegisterController extends Controller
     {
         $this->validator($request->all())->validate();
 
-
         event(new Registered($user = $this->create($request->all())));
 
-
+        Mail::to('drobnjak.stefan18@gmail.com')->send(new NewRegistration($user->name, $user->email));
 
         return $user->hasVerifiedEmail()
             ? redirect($this->redirectPath())
