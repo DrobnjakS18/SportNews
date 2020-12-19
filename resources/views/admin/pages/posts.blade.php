@@ -32,6 +32,7 @@
                                     <th>Author</th>
                                     <th>Preview Article</th>
                                     <th>Category</th>
+                                    <th>Views</th>
                                     <th>Created at</th>
                                     <th>Verified</th>
                                     <th>Editors Pick</th>
@@ -46,6 +47,7 @@
                                             <td>{{ $post->user->name }}</td>
                                             <td><a href="{{ route('admin.post.show', $post->id) }}" class="article-preview-link">{{ $post->title }}</a></td>
                                             <td>{{ $post->category->name }}</td>
+                                            <td>{{ $post->views }}</td>
                                             <td>{{ $post->created_at->format('m/d/Y H:i:s') }}</td>
                                             <td class="text-center">
                                                 <label>

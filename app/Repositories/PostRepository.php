@@ -32,7 +32,7 @@ class PostRepository extends BaseRepository
 
     public static function findBySelectedPost($selected)
     {
-        return Post::where('select',$selected)->get();
+        return Post::where('select',$selected)->where('status','verified')->get();
     }
 
     /**
@@ -95,7 +95,7 @@ class PostRepository extends BaseRepository
      */
     public static function findByCategory($id)
     {
-        return Post::where('category_id',$id)->orderBy('created_at','DESC')->simplePaginate(4) ;
+        return Post::where('category_id',$id)->where('status','verified')->orderBy('created_at','DESC')->simplePaginate(4) ;
     }
 
     /**
@@ -105,7 +105,7 @@ class PostRepository extends BaseRepository
      */
     public static function findByUser($id)
     {
-        return Post::where('user_id',$id)->orderBy('created_at','DESC')->simplePaginate(4);
+        return Post::where('user_id',$id)->where('status','verified')->orderBy('created_at','DESC')->simplePaginate(4);
     }
 
     /**
@@ -203,6 +203,9 @@ class PostRepository extends BaseRepository
         if (isset($data['category_id'])) {
             $post->category_id = $data['category_id'];
         }
+
+        //Kad se updatuje clanak, mora opet da prodje kroz verifikaciju
+        $post->status = 'unverified';
 
         $post->save();
 

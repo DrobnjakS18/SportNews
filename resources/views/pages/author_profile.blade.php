@@ -42,6 +42,10 @@
                                     <p class="pt-0 pt-sm-3">{{$item->created_at->format('d.m.Y')}}</p>
                                 </div>
                                 <div class="col-3 col-lg text-center">
+                                    Status
+                                    <p class="pt-0 pt-sm-3">{{$item->status}}</p>
+                                </div>
+                                <div class="col-3 col-lg text-center">
                                     Views
                                     <p class="pt-0 pt-sm-3">{{$item->views}}</p>
                                 </div>

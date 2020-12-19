@@ -319,7 +319,6 @@ class PostService
 
             $postArray = self::setData($title,$url,$category,$content,$shortText);
 
-            //Treba videli da li kada korisnik izmeni svoj article da se status vrati na unverified
             $post = PostRepository::update($id,$postArray);
 
             ($tags !== null) ? $tagArray = explode(',',$tags) : $tagArray = null;
