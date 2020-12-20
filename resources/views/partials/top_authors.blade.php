@@ -10,7 +10,7 @@
                 <div class="info">
                     <h4 class="name"><a href="{{route('author',$user->slug)}}">{{$user->name}}</a></h4>
                     <ul class="list-unstyled">
-                        <li>{{$user->posts->count()}} Posts</li>
+                        <li>{{$user->posts->count()}} Articles</li>
                     </ul>
                 </div>
             </div>
