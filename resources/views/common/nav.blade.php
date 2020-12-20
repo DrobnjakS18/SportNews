@@ -7,7 +7,7 @@
             <div class="col-md-6 my-2 my-0 pl-md-0 text-md-left">
                 <div class="trending-news-slider">
                     @if($nav->count() > 0 )
-                        @foreach($nav->sortBy('created_at')->take(5) as $post)
+                        @foreach($nav->sortByDesc('created_at')->take(5) as $post)
                         <div class="item">
                             <div class="post-content">
                                 <h2 class="post-title title-sm">

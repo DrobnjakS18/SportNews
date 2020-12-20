@@ -29,7 +29,7 @@ class GlobalSettingsProvider extends ServiceProvider
 
         if (Schema::hasTable('posts')) {
             $postService = new PostService();
-            $nav = $postService::getAll();
+            $nav = $postService::getAll()->where('status','verified');
 
             View::share('nav', $nav);
         }
