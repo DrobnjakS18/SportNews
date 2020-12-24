@@ -27,9 +27,12 @@
                 </div>
             </div>
             <div class="row d-flex flex-column text-center mt-3">
-                <div class="col-12">
-                    <h3>Stefan Drobnjak</h3>
-
+                <div class=" col-md-6 offset-md-3">
+                    <h3>About Author</h3>
+                    <p>My name is Stefan Drobnjak, age 23 from Belgrade. This website is a part of my school project as a final exam that I worked on for the last few mother.
+                        This project is made in Laravel 6 and represents online sports news.To see all my project you have a link to my GitHub under this text.
+                    </p>
+                    <p>Disclaimer: I do not own images or articles on this website. I used it in educational purposes.</p>
                 </div>
                 <div class="col-12">
                     <ul class="list-inline about-links">

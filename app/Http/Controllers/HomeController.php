@@ -29,23 +29,7 @@ class HomeController extends Controller
     {
         $items = $this->postService::getAllWithUsers();
 
-//        dd($items);
-
-//        $editorsPages = ceil($items->count() /2);
-//        for( $i = 1; $i <= $editorsPages;$i++) {
-//           if($i % 3)
-//           {
-//               echo 'child<br>';
-//               continue;
-//           }
-//            echo 'parent<br>';
-//        }
-
-
-//        dd($items->editorPickCounter);
-
         return view('pages.home')->with(compact('items'));
-//        return view('emails.newRegistrationTemplate');
     }
 
 
@@ -94,7 +78,6 @@ class HomeController extends Controller
 
         $items = $this->postService::getPostBySearch($search);
 
-//        dd($items);
 
         return view('pages.search')->with(compact('items', 'search'));
     }
@@ -105,7 +88,7 @@ class HomeController extends Controller
     public function contact()
     {
         return view('pages.contact');
-//        return view('emails.postTemplate');
+
     }
 
     public function contactEmail(ValidateContact $request)
