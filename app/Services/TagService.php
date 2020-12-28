@@ -49,8 +49,15 @@ class TagService
         $tagsArray = explode(',', $tags);
 
         for ($i = 0; $i < count($tagsArray); $i++) {
-            $tag = TagRepository::create($tagsArray[$i]);
-            $object->tags()->attach($tag->id);
+            $findTag = self::getByName($tagsArray[$i]);
+
+            if($findTag->name) {
+                $object->tags()->attach($findTag->id);
+            } else {
+                $tag = TagRepository::create($tagsArray[$i]);
+                $object->tags()->attach($tag->id);
+            }
+
         }
     }
 

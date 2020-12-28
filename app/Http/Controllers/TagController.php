@@ -21,6 +21,7 @@ class TagController extends Controller
     {
         $items = $this->tagService::getByName($tag);
 
+//        dd($items);
         return view('pages.tag')->with(compact('items'));
 
     }
