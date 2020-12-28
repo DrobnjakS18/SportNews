@@ -95,7 +95,7 @@ class UserService
     {
         $data['users'] = UserRepository::all();
         $data['user'] = self::getBySlug($name);
-        $data['posts'] = PostService::getByUser($data['user']->id);
+        $data['posts'] = PostService::getByUserAllPosts($data['user']->id);
         $data['top_authors'] = UserService::getTopUsers('author',4);
 
         return (object)$data;

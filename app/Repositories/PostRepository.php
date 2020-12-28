@@ -109,6 +109,16 @@ class PostRepository extends BaseRepository
     }
 
     /**
+     * Find post by user id pagination  all posts
+     * @param $id
+     * @return
+     */
+    public static function findByUserIdAll($id)
+    {
+        return Post::where('user_id',$id)->orderBy('created_at','DESC')->simplePaginate(4);
+    }
+
+    /**
      * Search post by title
      * @param $search
      * @return Post

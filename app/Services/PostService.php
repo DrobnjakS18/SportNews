@@ -143,6 +143,16 @@ class PostService
     }
 
     /**
+     * Get post by users id paginated all posts
+     * @param $id
+     * @return \App\Repositories\PostRepository
+     */
+    public static function getByUserAllPosts($id)
+    {
+        return PostRepository::findByUserIdAll($id);
+    }
+
+    /**
      * Get previous post of the current sent post id
      * @param $id
      * @return \App\Repositories\PostRepository
