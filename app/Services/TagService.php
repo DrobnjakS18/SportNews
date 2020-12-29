@@ -47,18 +47,16 @@ class TagService
     public static function storeObjectTags($object, $tags)
     {
         $tagsArray = explode(',', $tags);
-
         for ($i = 0; $i < count($tagsArray); $i++) {
             $findTag = self::getByName($tagsArray[$i]);
-
-            if($findTag->name) {
+            if($findTag) {
                 $object->tags()->attach($findTag->id);
             } else {
                 $tag = TagRepository::create($tagsArray[$i]);
                 $object->tags()->attach($tag->id);
             }
-
         }
+
     }
 
 }

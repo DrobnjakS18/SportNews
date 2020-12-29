@@ -74,11 +74,11 @@
                                                     </p>
                                                 </div>
 {{--                                                @auth--}}
-                                                    <a href="#" class="reply-like @if($comment->likes->where('user_id','=',Auth::id())->where('comment_id','=',$comment->id)->count() > 0) like-after-click @endif" data-post-id="{{$reply->post->id}}" data-comment-id="{{$reply->id}}" data-action="like">
+                                                    <a href="#" class="reply-like @if($reply->likes->where('user_id','=',Auth::id())->where('comment_id','=',$reply->id)->count() > 0) like-after-click @endif" data-post-id="{{$reply->post->id}}" data-comment-id="{{$reply->id}}" data-action="like">
                                                         <i class="fa fa-thumbs-up text-success reply-likes" aria-hidden="true"></i>
                                                     </a>
                                                         <span class="reply-like-count">{{$reply->like}}</span>
-                                                    <a href="#" class="reply-dislike @if($comment->likes->where('user_id','=',Auth::id())->where('comment_id','=',$comment->id)->count() > 0) like-after-click @endif" data-post-id="{{$reply->post->id}}" data-comment-id="{{$reply->id}}" data-action="dislike">
+                                                    <a href="#" class="reply-dislike @if($reply->likes->where('user_id','=',Auth::id())->where('comment_id','=',$reply->id)->count() > 0) like-after-click @endif" data-post-id="{{$reply->post->id}}" data-comment-id="{{$reply->id}}" data-action="dislike">
                                                         <i class="fa fa-thumbs-down text-danger reply-likes" aria-hidden="true"></i>
                                                     </a>
                                                     <span class="reply-dislike-count">{{$reply->dislike}}</span>
