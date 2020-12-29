@@ -34,7 +34,7 @@ class SubscriptionService
     {
 //        dd('dsadsa');
 
-        Mail::to('drobnjak.stefan18@gmail.com')->send(new ContactEmail($surname, $email, $subject, $message));
+        Mail::to(env('MAIL_TO_ADDRESS'))->send(new ContactEmail($surname, $email, $subject, $message));
 
         return (object) [
             'type' => 'success',

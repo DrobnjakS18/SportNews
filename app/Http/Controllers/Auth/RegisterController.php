@@ -93,7 +93,7 @@ class RegisterController extends Controller
 
         event(new Registered($user = $this->create($request->all())));
 
-        Mail::to('drobnjak.stefan18@gmail.com')->send(new NewRegistration($user->name, $user->email));
+        Mail::to(env('MAIL_TO_ADDRESS'))->send(new NewRegistration($user->name, $user->email));
 
         return $user->hasVerifiedEmail()
             ? redirect($this->redirectPath())
